@@ -1,4 +1,5 @@
 <template name="postItem">
+   {{#if isCurrentUser}} 
    <div class="post">
       <div class="post-content">
          <h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
@@ -15,4 +16,5 @@
       {{> social_buttons}}
       <button class="fork">Fork</button>
    </div>
+   {{/if}}
 </template>
