@@ -1,0 +1,18 @@
+<template name="postItem">
+   <div class="post">
+      <div class="post-content">
+         <h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
+         <h3>published by {{username}}</h3>
+         {{#if isForked}}
+            <h3>forked from {{forkedFrom}}</h3>
+         {{/if}}
+         <h4>at {{date}}</h4>
+      </div>
+      <a href="{{pathFor "postPage"}}" class="discuss btn btn-default"> Discuss </a>
+      {{#if isOwner}}
+      	<button class="delete">Remove</button>
+      {{/if}}
+      {{> social_buttons}}
+      <button class="fork">Fork</button>
+   </div>
+</template>
