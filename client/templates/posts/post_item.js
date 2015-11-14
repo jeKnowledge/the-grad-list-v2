@@ -22,6 +22,13 @@ Template.postItem.helpers({
     forkedFrom: function() {
     	return this.forkedFrom;
     },
+    
+    isLoggedIn: function() {
+    	var user = Meteor.user()
+    	if(user) {
+    		return true;
+    	}
+    }
 
 });
 
