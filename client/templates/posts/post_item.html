@@ -14,7 +14,9 @@
       	<button class="delete">Remove</button>
       {{/if}}
       {{> social_buttons}}
-      <button class="fork">Fork</button>
+      {{#if isNotOwner}}
+         <button class="fork">Fork</button>
+      {{/if}}
    </div>
    {{/if}}
 </template>
