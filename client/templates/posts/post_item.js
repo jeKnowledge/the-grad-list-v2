@@ -28,6 +28,10 @@ Template.postItem.helpers({
     	if(user) {
     		return true;
     	}
+    },
+    
+    isNotOwner: function() {
+    	return this.owner !== Meteor.userId();
     }
 
 });
