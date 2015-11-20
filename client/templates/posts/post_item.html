@@ -3,7 +3,7 @@
    <div class="post">
       <div class="post-content">
          <h3><a href="{{url}}">{{title}}</a></h3>
-         <h3 class="published">published by {{username}}</h3>
+         <h3 class="published">published by <a href="/user/{{ownerUsername}}">{{username}}</a></h3>
          {{#if isForked}}
             <h3 class="published">forked from {{forkedFrom}}</h3>
          {{/if}}

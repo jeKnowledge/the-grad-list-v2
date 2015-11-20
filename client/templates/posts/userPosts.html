@@ -1,5 +1,6 @@
 <template name="userPosts">
-	{{#each postsByMe}}
+   <h2>{{getUsername}}</h2>
+	{{#each postsByUser}}
 		{{> postItem}}
 	{{/each}}
 </template>

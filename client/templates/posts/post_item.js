@@ -27,7 +27,11 @@ Template.postItem.helpers({
     
     isNotOwner: function() {
     	return this.owner !== Meteor.userId();
-    }
+    },
+
+    ownerUsername: function() {
+      return Meteor.users.findOne({"_id": this.owner}).username;
+}
 
 });
 
