@@ -1,6 +1,6 @@
 Template.userPosts.helpers({
 	postsByUser: function() {
-		return Posts.find({owner: this._id});
+		return Posts.find({owner: this._id}, {sort: {date: -1}});
 	},
   
   getUsername: function() {
