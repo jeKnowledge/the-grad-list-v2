@@ -23,6 +23,26 @@
 	font-family: Helvetica;
 }
 
+.Title .title:hover {
+	text-decoration: none;
+	color: white;
+}
+
+
+.profile {
+	margin-top: 25px;
+	margin-left: 50px;
+	color: white;
+	font-size: 18px;
+	list-style: none;
+	text-decoration: none;
+}
+
+.profile:hover {
+	text-decoration: none;
+	color: white;
+}
+
 .submit {
 	margin-top: 25px;
 	margin-left: -5px;
@@ -31,6 +51,12 @@
 	list-style: none;
 	text-decoration: none;
 }
+
+.submit:hover {
+	text-decoration: none;
+	color: white;
+}
+
 
 .login {
 	color: black;
@@ -66,14 +92,19 @@ body {
 	margin-bottom: 30px;
 }
 
-
-
 #spinner {
 height: 300px;
 }
 
-.post {
+.post .post-content .published {
+	margin-top: 10px;
+	line-height: 1.4;
+	font-size: 15px;
+	margin-left: 12px;
+	font-size: 13px;
+}
 
+.post {
 *zoom: 1;
 position: relative;
 opacity: 1;
@@ -120,12 +151,14 @@ float: left;
 margin-top: 10px;
 line-height: 1.4;
 font-size: 15px;
+margin-left: 12px;
 }
 
 .post .post-content h4 {
 margin-top: 10px;
 line-height: 1.4;
 font-size: 10px;
+margin-left: 16px;
 }
 
 .post .post-content h3 a {
@@ -148,6 +181,7 @@ margin: 0;
 display: block;
 float: right;
 margin-top: 7px;
+margin-right: 18px;
 background-color: #c7c7c7;
 }
 
