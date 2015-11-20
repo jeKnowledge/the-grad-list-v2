@@ -30,8 +30,8 @@ Template.postItem.helpers({
     },
 
     ownerUsername: function() {
-      return Meteor.users.findOne({"_id": this.owner}).username;
-}
+      return Meteor.users.findOne({"_id": this.owner}).username || Meteor.users.findOne({"_id": this.owner}).profile.name;
+    }
 
 });
 
