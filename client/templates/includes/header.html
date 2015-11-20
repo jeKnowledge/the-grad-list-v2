@@ -2,12 +2,11 @@
    <div class="One">
          <div class="Title">
             <a class="title" href="{{pathFor 'postsList'}}">The Grad List</a>
-            <a href="/user/{{username}}"> {{username}} </a>
          </div>
          <div class="submit">
             <ul>
                {{#if currentUser}}
-               <li class="submit"> <a class="submit" href="{{pathFor 'postSubmit'}}">Submit Post</a> </li>
+               <li class="submit"> <a class="submit" href="{{pathFor 'postSubmit'}}">Submit Post</a> <a href="/user/{{username}}" class="profile">Profile</a> </li>
                {{/if}}
             </ul>
          </div>
