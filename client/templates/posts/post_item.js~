@@ -56,7 +56,7 @@ Template.postItem.events({
 			owner: Meteor.userId()
 		});
 
-		Meteor.call("addCommentToPost", this._id, commentId);
+		Meteor.call("addCommentToPost", 
 		
 		event.target.comment.value = "";
 	}

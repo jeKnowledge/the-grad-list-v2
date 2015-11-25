@@ -1,0 +1,3 @@
+<template name=commentItem>
+	<h5>{{text}}</h5>
+</template>

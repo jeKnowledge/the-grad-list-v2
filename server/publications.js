@@ -1,6 +1,11 @@
 Meteor.publish("posts", function()
 {
-	return Posts.find({}, {sort: {date: -1}, limit: 20});
+	return Posts.find({}, {sort: {date: -1}});
+});
+
+Meteor.publish("comments", function()
+{
+	return Comments.find({}, {sort: {date: -1}});
 });
 
 Meteor.publish("usersData", function() {

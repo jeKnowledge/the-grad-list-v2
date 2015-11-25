@@ -30,6 +30,7 @@ Meteor.methods({
 	
 		var temp = Posts.findOne( {_id: postId} ).comments;
 		temp.push(commentId);
+		console.log(temp);
 
 		Posts.update(postId, {$set: {comments: temp}});
 	}

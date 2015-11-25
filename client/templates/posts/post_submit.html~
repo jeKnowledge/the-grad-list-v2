@@ -1,6 +1,6 @@
 <template name="postSubmit">
 	<form class="main form">
-	<div class="form-group">
+		<div class="form-group">
          <label class="control-label" for="title">Title</label>
          <div class="controls">
             <input name="title" id="title" type="text" value="" placeholder="Name your post" class="form-control"/>

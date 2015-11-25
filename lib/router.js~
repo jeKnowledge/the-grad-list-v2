@@ -3,7 +3,7 @@ Router.configure({
 	loadingTemplate: "loading",
 	waitOn: function()
 	{
-		return Meteor.subscribe("posts") && Meteor.subscribe("usersData") && Meteor.subscribe("comments");
+		return Meteor.subscribe("posts") && Meteor.subscribe("usersData");
 	},
 	notFoundTemplate: "notFound"
 });
