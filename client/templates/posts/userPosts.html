@@ -1,6 +1,6 @@
 <template name="userPosts">
-   <h2>{{getUsername}}</h2>
 	{{#each postsByUser}}
-		{{> postItem}}
+            {{> postItem}}
 	{{/each}}
+	<button class="delete" id="follow"> Follow </button>
 </template>
