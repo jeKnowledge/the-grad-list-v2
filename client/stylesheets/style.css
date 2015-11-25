@@ -1,3 +1,14 @@
+.follow {
+	float:right;
+	margin-right: 25px;
+	background-color: #c7c7c7;
+	border-radius: 4px;
+	border: none;
+	padding: 5px 10px;
+	color: black;
+
+}
+
 .One {
 	background: #6BCEEC;
 	width: 100%;
