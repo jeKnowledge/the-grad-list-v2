@@ -1,3 +1,9 @@
+.image {
+	max-height: 200px;
+	max-width: 300px;
+	margin-left: 10px;
+}
+
 .follow {
 	float:right;
 	margin-right: 25px;
