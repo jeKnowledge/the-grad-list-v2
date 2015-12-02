@@ -4,6 +4,7 @@
       <div class="post-content">
          <h3><a href="{{pathFor "postPage"}}">{{title}}</a></h3>
          <img class="image" src="{{image}}"/>
+         <h3>Completed: {{completed}}</h3>
          <h3 class="published">published by <a href="/user/{{ownerUsername}}">{{username}}</a></h3>
          {{#if isForked}}
             <h3 class="published">forked from {{forkedFrom}}</h3>
@@ -12,6 +13,7 @@
       </div>
       {{#if isOwner}}
       	<button class="delete">Remove</button>
+      	<h2><a href="/completed/{{_id}}">COMPLETE</a></h2>
       {{/if}}
       {{> social_buttons}}
       {{#if isNotOwner}}

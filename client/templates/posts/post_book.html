@@ -1,0 +1,6 @@
+<template name="postBook">
+    <h1> Completed posts by {{username}}!</h1>
+    {{#each postsCompleted}}
+        {{>postItem}}
+    {{/each}}
+</template>
