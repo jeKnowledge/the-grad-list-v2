@@ -1,5 +1,8 @@
 <template name="userPosts">
-	<button class="follow" id="follow"> Follow </button>
+	<div class="Two">
+		<button class="follow" id="follow"> Follow </button>
+		<h2><a class="profile" href="/Book/{{getUsername}}">Book</a></h2>
+	</div>
 	{{#each postsByUser}}
             {{> postItem}}
 	{{/each}}
