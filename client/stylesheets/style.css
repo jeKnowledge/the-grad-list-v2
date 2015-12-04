@@ -1,3 +1,8 @@
+.dropdown {
+	float: right;
+	margin-right: 50px;
+}
+
 .new-comment {
 	margin-bottom: 15px;
 	margin-top: -10px;
