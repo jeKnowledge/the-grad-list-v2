@@ -1,3 +1,9 @@
+.complete {
+	float:right;
+	font-size: 20px;
+	margin-top: 40px;
+	margin-right: -60px;
+}
 .dropdown {
 	float: right;
 	margin-right: 50px;
