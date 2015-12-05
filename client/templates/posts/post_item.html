@@ -13,7 +13,7 @@
       </div>
       {{#if isOwner}}
       	<button class="delete">Remove</button>
-      	<a href="/completed/{{_id}}"><button class="complete">complete</button></a>
+      	<a href="/completed/{{_id}}"><button class="complete2">complete</button></a>
       {{/if}}
       {{> social_buttons}}
       {{#if isNotOwner}}
@@ -24,5 +24,4 @@
 	<form class = "new-comment">
 		 <input name="comment" id="comment" type="text" value="" placeholder="Add a comment" class="form-control"/>
 	</form>
-	
 </template>
