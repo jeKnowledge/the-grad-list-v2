@@ -13,7 +13,7 @@
       </div>
       {{#if isOwner}}
       	<button class="delete">Remove</button>
-      	<button class="complete">complete</button>
+      	<a href="/completed/{{_id}}"><button class="complete">complete</button></a>
       {{/if}}
       {{> social_buttons}}
       {{#if isNotOwner}}
