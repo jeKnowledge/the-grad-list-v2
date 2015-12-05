@@ -42,6 +42,10 @@ Template.postItem.events({
 		Meteor.call("deletePost", this._id);
 	},
 
+	'click .complete': function() {
+		Router.go("/completed/{{_id}}")
+	},
+
 	'click .fork': function() {
 		Meteor.call("forkPost", this._id);
 	},
