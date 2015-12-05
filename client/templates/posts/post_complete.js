@@ -7,8 +7,7 @@ Template.postComplete.events({
 	e.preventDefault();
         Posts.update({_id: this._id} , 
                     {$set: {completed: true, date: new Date()}, 
-                    $push: {imagesOfCompletion: $(e.target).find('[name=image1]').val(), 
-                            imagesOfCompletion: $(e.target).find('[name=image2]').val()}
+                    $push: {imagesOfCompletion: $(e.target).find('[name=image1]').val()}
                     });
         Router.go("/");
     }
