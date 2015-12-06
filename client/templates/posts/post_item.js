@@ -10,6 +10,10 @@ Template.postItem.helpers({
       return this.owner === Meteor.userId();
     },
 
+    isNotCompleted: function() {
+    	return this.completed === false;
+    },
+
     isForked: function() {
     	return this.hasOwnProperty("forkedFrom");
     },
