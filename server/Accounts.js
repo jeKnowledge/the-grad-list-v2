@@ -1,7 +1,8 @@
 Accounts.onCreateUser(function(options, user) {
     
-     user.follows = new Array();
+    user.follows = new Array();
+
+    user.followed = new Array();
 
     return user;
 });
-
