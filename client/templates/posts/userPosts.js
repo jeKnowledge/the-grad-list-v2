@@ -9,6 +9,10 @@ Template.userPosts.helpers({
 
     following: function() {
     	return Meteor.users.findOne({"_id": this._id}).follows.length;
+    },
+
+    followers: function() {
+        return Meteor.users.findOne({"_id": this._id}).followed.length;
     }
 });
 
