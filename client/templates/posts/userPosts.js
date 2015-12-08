@@ -6,6 +6,10 @@ Template.userPosts.helpers({
     getUsername: function() {
         return Meteor.users.findOne({"_id": this._id}).username || Meteor.users.findOne({"_id": this._id}).profile.name;
     },
+
+    following: function() {
+    	return Meteor.users.findOne({"_id": this._id}).follows.length;
+    }
 });
 
 Template.userPosts.events({
@@ -13,4 +17,3 @@ Template.userPosts.events({
         Meteor.call("followId", this._id);
     }
 });
-
