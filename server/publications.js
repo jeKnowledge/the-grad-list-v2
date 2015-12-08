@@ -10,7 +10,7 @@ Meteor.publish("comments", function()
 
 Meteor.publish("usersData", function() {
   if (this.userId) {
-    return Meteor.users.find({}, {fields: {"username" :true, _id: true, follows: true} });
+    return Meteor.users.find({}, {fields: {"username" :true, _id: true, follows: true, followed: true} });
   } else {
     this.ready();
   }
