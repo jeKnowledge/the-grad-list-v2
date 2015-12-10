@@ -2,6 +2,8 @@
     <div class = "post">
 		<h5>{{text}}</h5>
 		<h5>by <a href="/user/{{ownerUsername}}">{{ownerUsername}}</a></h5>
-		<button class="delete2">Remove</button>
+		{{#if owner}}
+			<button class="delete2">Remove</button>
+		{{/if}}
     </div>
 </template>
