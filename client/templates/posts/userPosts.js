@@ -1,4 +1,8 @@
 Template.userPosts.helpers({
+    owner: function() {
+        return Meteor.users.findOne({"_id": this._id})._id !== Meteor.userId();
+    },
+
     postsByUser: function() {
         return Posts.find({owner: this._id}, {sort: {date: -1}});
     },
