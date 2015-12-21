@@ -3,6 +3,17 @@ Template.userPosts.helpers({
         return Meteor.users.findOne({"_id": this._id})._id !== Meteor.userId();
     },
 
+    checkFollowing: function() {
+        var a = Meteor.users.findOne({"_id": this._id}).followed;
+        var obj = Meteor.userId();
+        for (var i = 0; i < a.length; i++) {
+            if (a[i] === obj) {
+                return false;
+            }
+        }
+        return true;
+    },
+
     postsByUser: function() {
         return Posts.find({owner: this._id}, {sort: {date: -1}});
     },
