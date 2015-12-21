@@ -1,7 +1,9 @@
 <template name="userPosts">
 	<div class="Two">
 		{{#if owner}}
-			<button class="follow" id="follow"> Follow </button>
+			{{#if checkFollowing}}
+				<button class="follow" id="follow"> Follow </button>
+			{{/if}}
 		{{/if}}
 		<h2><a class="book" href="/Book/{{getUsername}}">Book</a></h2>
 		<h5>Followers:{{followers}}</h5>
