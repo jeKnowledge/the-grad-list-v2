@@ -34,5 +34,8 @@ Template.userPosts.helpers({
 Template.userPosts.events({
     'click #follow': function() {
         Meteor.call("followId", this._id);
+    },
+    'click #unfollow': function() {
+        Meteor.call("unfollowId", this._id);
     }
 });
