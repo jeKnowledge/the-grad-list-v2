@@ -1,12 +1,10 @@
 Template.home.events({
-    'submit form': function(event){
+
+        'submit form': function(event){
         event.preventDefault();
         var username = $('[name=username]').val();
         var password = $('[name=password]').val();
-        Accounts.createUser({
-            username: username,
-            password: password
-        });
+        Meteor.loginWithPassword(username, password);
         Router.go('postsList');
     }
 });
