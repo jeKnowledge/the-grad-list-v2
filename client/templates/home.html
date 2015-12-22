@@ -1,8 +1,9 @@
 <template name="home">
-	<h2>Register</h2>
-    <form class="register">
+    <h2>Login</h2>
+    <form class="login">
         <p>Username: <input type="username" name="username"></p>
         <p>Password: <input type="password" name="password"></p>
-        <p><input type="submit" value="Register"></p>
+        <p><input type="submit" value="Login"></p>
     </form>
+    <h2><a href="{{pathFor 'register'}}">or Register</a></h2>
 </template>
