@@ -1,365 +1,46 @@
-.book {
-	color:black;
-	font-size: 30px;
-}
+Meteor.methods({
+	deletePost: function(id) {
+		if (Meteor.userId() == Posts.findOne({_id: id}).owner)
+			Posts.remove(id);			
+	},
 
-.complete {
-	margin-left: 20px;
-	margin-right: 20px;
-}
-
-.done {
-	font-size: 30px;
-}
-.complete2 {
-	float:right;
-	margin-top: 50px;
-	margin-right: -70px;
-	display: block;
-	background-color: #c7c7c7;
-	border-radius: 4px;
-	border: none;
-	padding: 5px 10px;
-	color: black;
-}
-.dropdown {
-	float: right;
-	margin-right: 50px;
-}
-
-.new-comment {
-	margin-bottom: 15px;
-	margin-top: -10px;
-}
-
-.comment {
-	margin-top: -5px;
-	display: table-row;
-	border-color: black;
+	deleteComment: function(id) {
+		if (Meteor.userId() == Comments.findOne({_id: id}).owner)
+			Comments.remove(id);
+	},
 	
-}
+	forkPost: function(id) {
+		var post2 = {
+			title: Posts.findOne({_id:id}).title,
+			owner: Meteor.userId(),
+			forkedFrom: Posts.findOne({_id:id}).username,
+			date: new Date(),
+			username: Meteor.user().username || Meteor.user().profile.name,
+			image: Posts.findOne({_id:id}).image,
+            completed: false,
+            };
+		post2._id = Posts.insert(post2);
+        },
+    followId: function(id) {
+            
+            Meteor.users.update(Meteor.userId(), {$addToSet: {follows: id}});
+            Meteor.users.update(Meteor.users.findOne({"_id": id}), {$addToSet: {followed: Meteor.userId()}});
+            /*Meteor.users.findOne({_id: Meteor.userId() }).follows.push(id);
+            console.log(id +" " + Meteor.userId());*/
+        },
+    unfollowId: function(id) {
+            
+            Meteor.users.update(Meteor.userId(), {$pull: {follows: id}});
+            Meteor.users.update(Meteor.users.findOne({"_id": id}), {$pull: {followed: Meteor.userId()}});
+            /*Meteor.users.findOne({_id: Meteor.userId() }).follows.push(id);
+            console.log(id +" " + Meteor.userId());*/
+        },
+	
+	addCommentToPost: function(postId, commentId) {
+	
+		var temp = Posts.findOne( {_id: postId} ).comments;
+		temp.push(commentId);
 
-.image {
-	max-height: 200px;
-	max-width: 300px;
-	margin-left: 10px;
-}
-
-.follow {
-	float:right;
-	margin-right: 25px;
-	margin-top: 5px;
-	background-color: #c7c7c7;
-	border-radius: 4px;
-	border: none;
-	padding: 5px 10px;
-	color: black;
-
-}
-
-.One {
-	background: #6BCEEC;
-	width: 100%;
-	height: 175px;
-	margin-right: 0;
-	margin-left: 0;
-	margin-top: 0;
-
-}
-
-.Two {
-	width: 100%;
-	height: 100px;
-}
-
-.Title {
-	color: white;
-	text-decoration: none;
-	font-size: 2em;
-	margin-left: 23px;
-	padding-top: 20px;
-	font-family: Helvetica;
-}
-
-.title {
-	color: white;
-	text-decoration: none;
-	font-size: 2em;
-	font-family: Helvetica;
-}
-
-.Title .title:hover {
-	text-decoration: none;
-	color: white;
-}
-
-
-.profile {
-	margin-top: 25px;
-	margin-left: 50px;
-	color: white;
-	font-size: 18px;
-	list-style: none;
-	text-decoration: none;
-}
-
-.profile:hover {
-	text-decoration: none;
-	color: white;
-}
-
-.submit {
-	margin-top: 25px;
-	margin-left: -4px;
-	color: white;
-	font-size: 18px;
-	list-style: none;
-	text-decoration: none;
-}
-
-.submit:hover {
-	text-decoration: none;
-	color: white;
-}
-
-
-.login {
-	color: black;
-	float: right;
-	margin-right: 260px;
-	text-decoration: none;
-	list-style: none;
-	margin-top: -100px;
-	font-family: Helvetica;
-}
-
-.grid-block, .main, .post, .comments li, .comment-form {
-	width: 100%;
-	background: #fff;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	-ms-border-radius: 3px;
-	-o-border-radius: 3px;
-	border-radius: 3px;
-	padding: 10px;
-	margin-bottom: 10px;
-	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15); 
-}
-
-body {
-	background: #eee;
-	color: #666666; 
-}
-
-.navbar {
-	margin-bottom: 30px;
-}
-
-#spinner {
-height: 300px;
-}
-
-.post .post-content .published {
-	margin-top: 10px;
-	line-height: 1.4;
-	font-size: 15px;
-	margin-left: 12px;
-	font-size: 13px;
-}
-
-.post {
-*zoom: 1;
-position: relative;
-opacity: 1;
-}
-
-.post:before, .post:after {
-content: "";
-display: table;
-}
-
-.post:after {
-clear: both;
-}
-
-.post.invisible {
-opacity: 0;
-}
-
-.post.instant {
--webkit-transition: none;
--moz-transition: none;
--o-transition: none;
-transition: none;
-}
-
-.post.animate{
--webkit-transition: all 300ms 0ms;
--webkit-transition-delay: ease-in;
--moz-transition: all 300ms 0ms ease-in;
--o-transition: all 300ms 0ms ease-in;
-transition: all 300ms 0ms ease-in;
-}
-
-.post .upvote {
-display: block;
-float: left;
-}
-
-.post .post-content {
-float: left;
-}
-
-.post .post-content h3 {
-margin-top: 10px;
-line-height: 1.4;
-font-size: 15px;
-margin-left: 12px;
-}
-
-.post .post-content h4 {
-margin-top: 10px;
-line-height: 1.4;
-font-size: 10px;
-margin-left: 16px;
-}
-
-.post .post-content h3 a {
-display: inline-block;
-margin-right: 5px;
-}
-
-.post .post-content h3 span {
-font-weight: normal;
-font-size: 14px;
-display: inline-block;
-color: black;
-}
-
-.post .post-content p {
-margin: 0;
-}
-
-.post .discuss {
-display: block;
-float: right;
-margin-top: 7px;
-margin-right: 18px;
-background-color: #c7c7c7;
-}
-
-.delete {
-display: block;
-float: right;
-margin-top: 7px;
-margin-right: 25px;
-background-color: #c7c7c7;
-border-radius: 4px;
-border: none;
-padding: 5px 10px;
-color: black;
-}
-
-.fork {
-display: block;
-float: right;
-margin-top: 7px;
-margin-right: 25px;
-background-color: #c7c7c7;
-border-radius: 4px;
-border: none;
-padding: 5px 10px;
-color: black;
-}
-
-.comments {
-list-style-type: none;
-margin: 0;
-}
-.comments li h4 {
-font-size: 16px;
-margin: 0; 
-}
-
-.comments li h4 .date {
-font-size: 12px;
-font-weight: normal;
-}
-
-.comments li h4 a {
-font-size: 12px;
-}
-
-.comments li p:last-child {
-margin-bottom: 0;
-}
-
-.dropdown-menu span {
-display: block;
-padding: 3px 20px;
-clear: both;
-line-height: 20px;
-color: #bbb;
-white-space: nowrap;
-}
-
-.load-more {
-display: block;
--webkit-border-radius: 3px;
--moz-border-radius: 3px;
--ms-border-radius: 3px;
--o-border-radius: 3px;
-border-radius: 3px;
-background: rgba(0, 0, 0, 0.05);
-text-align: center;
-height: 60px;
-line-height: 60px;
-margin-bottom: 10px; }
-.load-more:hover {
-text-decoration: none;
-background: rgba(0, 0, 0, 0.1); }
-.posts .spinner-container{
-position: relative;
-height: 100px;
-}
-.jumbotron{
-text-align: center;
-}
-.jumbotron h2{
-font-size: 60px;
-font-weight: 100;
-}
-@-webkit-keyframes fadeOut {
-0% {opacity: 0;}
-10% {opacity: 1;}
-90% {opacity: 1;}
-100% {opacity: 0;}
-}
-@keyframes fadeOut {
-0% {opacity: 0;}
-10% {opacity: 1;}
-90% {opacity: 1;}
-100% {opacity: 0;}
-}
-.errors{
-position: fixed;
-z-index: 10000;
-padding: 10px;
-top: 0px;
-left: 0px;
-right: 0px;
-bottom: 0px;
-pointer-events: none;
-}
-.alert {
-animation: fadeOut 2700ms ease-in 0s 1 forwards;
--webkit-animation: fadeOut 2700ms ease-in 0s 1 forwards;
--moz-animation: fadeOut 2700ms ease-in 0s 1 forwards;
-width: 250px;
-float: right;
-clear: both;
-margin-bottom: 5px;
-pointer-events: auto;
-}
+		Posts.update(postId, {$set: {comments: temp}});
+	}
+});
