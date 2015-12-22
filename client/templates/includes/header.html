@@ -22,9 +22,11 @@
                 </li>
                 {{/if}}
             </ul>
-                 </div>
-                 <div class="login">
-                    {{>loginButtons}}
-                 </div>
-                </div>  
+        </div>
+        {{#if currentUser}}
+            <div class="login">
+                <h3><a href='#' class="logout">Logout</a></h3>
+            </div>
+        {{/if}}
+        </div>  
 </template>
