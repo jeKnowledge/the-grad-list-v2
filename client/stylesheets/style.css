@@ -182,59 +182,9 @@ html, body {
 	width: 40%;
 }
 
-
 .input-field label {
 	color: white;
 }
-
-/* icon prefix focus color
-.input-field .prefix.active {
-	color: white;
-}
-/* valid color
-.input-field input[type=email].validate {
-	border-bottom: 3px solid white;
-	box-shadow: 0 3px 0 0 white;
-}
-
-/* valid color
-.input-field input[type=password].validate {
-	border-bottom: 3px solid white;
-	box-shadow: 0 3px 0 0 white;
-}
-
-/* valid color
-.input-field input[type=email].validate .invalid {
-	border-bottom: 3px solid white;
-	box-shadow: 0 3px 0 0 white;
-}
-
-/* valid color
-.input-field input[type=password].invalid {
-	border-bottom: 3px solid white;
-	box-shadow: 0 3px 0 0 white;
-}
-/* label focus color
-.input-field input[type=email]:focus + label {
-	color: white;
-}
-
-/* label focus color
-.input-field input[type=password]:focus + label {
-	color: white;
-}
-/* label underline focus color
-.input-field input[type=email]:focus {
-	border-bottom: 3px solid white;
-	box-shadow: 0 3px 0 0 white;
-}
-
-/* label underline focus color
-.input-field input[type=password]:focus {
-	border-bottom: 3px solid white;
-	box-shadow: 0 3px 0 0 white;
-}
-*/
 
 .container {
 	margin-top: 4%;
@@ -256,28 +206,32 @@ html, body {
 }
 
 #form-front-page {
-	width: 100%;
-	height: 100%;
+	width: 30%;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 12%;
 }
 
 #sign-up-btn {
-	margin-left: 35%;
 	background-color: #034D5E;
 	color: white;
 }
 
 #sign-in-link {
-	margin-right: 35%;
+	color: white;
+	background-color: #034D5E;
+}
+
+#sign-in-link li a {
 	color: white;
 }
+
+
 
 #footer {
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 10%;
+	margin-top: 3%;
 }
 
 #footer-list {
@@ -288,14 +242,12 @@ html, body {
 	list-style-type: none;
 }
 
-/*guigas*/
-
 .navbar {
 	margin-bottom: 30px;
 }
 
 #spinner {
-height: 300px;
+	height: 300px;
 }
 
 .post .post-content .published {
