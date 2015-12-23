@@ -1,3 +1,11 @@
 <head>
-   <title>The Grad List</title>
+    <title>The Grad List</title>
 </head>
+
+<template name="main">
+    {{#if currentUser}}
+        {{> home}}
+    {{else}}
+        {{> authentication}}
+    {{/if}}
+</template>

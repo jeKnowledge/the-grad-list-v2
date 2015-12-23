@@ -1,0 +1,46 @@
+<template name="authentication">
+    <div class="title">
+        <h3>The Grad List</h3>
+
+        <p>A partilha de histórias começa aqui.</p>
+    </div>
+
+    <div class="container">
+        <div class="form-front-page">
+
+            <form id="authentication-form">
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="sign-up-tab">
+                        <p><input class="text-input form-control" placeholder="Username" type="text"
+                                  id="username-input"></p>
+
+                        <p><input class="text-input form-control" placeholder="Password" type="password"
+                                  id="password-input"></p>
+
+                        <p><input class="text-input form-control" placeholder="Confirm Password" type="password"
+                                  id="password-confirm-input"></p>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane" id="sign-in-tab">
+                        <p><input class="text-input" placeholder="Username" type="text" id="username-input"></p>
+
+                        <p><input class="text-input" placeholder="Password" type="password" id="password-input"></p>
+                    </div>
+                </div>
+
+
+                <ul id="authentication-form-btns" class="nav nav-pills" role="tablist">
+                    <li class="nav-item">
+                        <a id="sign-up-btn" role="tab" data-toggle="tab" class="nav-link active" href="#sign-up-tab">Sign
+                            Up</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a id="sign-in-btn" role="tab" data-toggle="tab" class="nav-link" href="#sign-in-tab">Sign
+                            In</a>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+</template>
