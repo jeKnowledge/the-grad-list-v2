@@ -217,16 +217,14 @@ html, body {
 	color: white;
 }
 
-#sign-in-link {
-	color: white;
-	background-color: #034D5E;
-}
-
-#sign-in-link li a {
+#sign-in-btn {
 	color: white;
 }
 
-
+#authentication-form { text-align:center; }
+#authentication-form ul.nav-pills { display:inline-block; }
+#authentication-form li { display:inline; }
+#authentication-form a { float:left; }
 
 #footer {
 	margin-left: auto;
