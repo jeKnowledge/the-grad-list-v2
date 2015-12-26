@@ -9,15 +9,13 @@
                 <li class="submit"> 
                     <a class="submit" href="{{pathFor 'postSubmit'}}">Submit Post</a> 
                     <a class="profile" href="/feed">Feed</a> 
+                    <a class="profile" href="/user/{{getUsername}}"> {{getUsername}}</a>
+                    <a class="profile" href="/Book/{{getUsername}}"> My Book</a>
                     <div class="dropdown">
                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             <a class="profile" href="/user/{{getUsername}}">{{getUsername}}</a> 
                             <span class="caret"></span>
                         </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a class="profile" href="/user/{{getUsername}}"> {{getUsername}}</a></li>
-                            <li><a class="profile" href="/Book/{{getUsername}}"> My Book</a></li>
-                        </ul>
                     </div> 
                 </li>
                 {{/if}}
