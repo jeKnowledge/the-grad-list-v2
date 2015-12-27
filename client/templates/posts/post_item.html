@@ -4,12 +4,12 @@
       <div class="post-content">
          <h3><a href="{{pathFor "postPage"}}">{{title}}</a></h3>
          <img class="submitPost-image" src="{{image}}"/>
-         <h3>Completed: {{completed}}</h3>
          <h3 class="published">published by <a href="/user/{{ownerUsername}}">{{username}}</a></h3>
          {{#if isForked}}
             <h3 class="published">forked from <a href="/user/{{forkedFrom}}">{{forkedFrom}}</a></h3>
          {{/if}}
          <h4>at {{date}}</h4>
+          <h3>Completed: {{completed}}</h3>
          <img class="submitPost-image" src="{{imagesOfCompletion}}"/>
       </div>
       <button class="like">Like</button>

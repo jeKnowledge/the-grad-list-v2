@@ -284,7 +284,7 @@ html, body {
 .post .post-content .published {
     margin-top: 10px;
     line-height: 1.4;
-    font-size: 15px;
+    font-size: 1em;
     margin-left: 12px;
 }
 
