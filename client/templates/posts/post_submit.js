@@ -11,7 +11,8 @@ Template.postSubmit.events({
                 completed: false,
                 imagesOfCompletion:[],
                 witnessedBy: [],
-                dateOfCompletion: {}
+                dateOfCompletion: {},
+                likes: 0,
             };
             post._id = Posts.insert(post);
             Router.go('postPage', post);
