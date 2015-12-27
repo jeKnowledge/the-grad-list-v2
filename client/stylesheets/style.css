@@ -56,7 +56,8 @@ html, body {
 }
 
 .new-comment {
-    margin-left: 20%;
+    margin-left: auto;
+    margin-right: auto;
     width: 50%;
 }
 
@@ -92,7 +93,17 @@ html, body {
 }
 
 .followers-following-book {
-    color: black;
+    color: #231F20;
+    font-family: Montserrat;
+}
+
+#completed-posts-title {
+    color: #231F20;
+    font-family: Montserrat;
+    text-align: center;
+    font-size: 2em;
+    /* top | right | bottom | left */
+    margin: 2% auto 2% auto;
 }
 
 .header-style {
@@ -114,9 +125,9 @@ html, body {
     margin-top: 4%;
 }
 
-#header-title a:hover {
+#header-title a:focus, a:hover {
     text-decoration: none;
-    color: #ff1f63;
+    color: #3EFFFD;
 }
 
 .submit {
@@ -130,16 +141,16 @@ html, body {
     font-size: 1em;
     list-style: none;
     text-decoration: none;
-    padding-left: 0.5%;
+    padding-left: 0.7%;
 }
 
 .submit .profile li a {
-    color: #ff7e7b;
+    color: #3EFFFD;
 }
 
 .profile:hover {
     text-decoration: none;
-    color: #3effe7;
+    color: #3efffd;
 }
 
 .logout {
@@ -159,11 +170,11 @@ html, body {
     -o-border-radius: 3px;
     border-radius: 3px;
     padding: 10px;
-    margin-bottom: 10px;
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-    margin-left: 20%;
+    /* top | right | bottom | left */
+    margin: 2% auto 2% auto;
 }
 
 #authentication-full-screen-body {
@@ -365,14 +376,17 @@ html, body {
 
 .delete {
     display: block;
-    float: right;
     margin-top: 7px;
     margin-right: 25px;
-    background-color: #c7c7c7;
+    background-color: #231F20;
+    color: white;
     border-radius: 4px;
     border: none;
     padding: 5px 10px;
-    color: black;
+}
+
+.social-buttons {
+    margin-left: 20%;
 }
 
 .fork {
