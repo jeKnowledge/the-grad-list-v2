@@ -12,7 +12,7 @@ Template.postSubmit.events({
                 imagesOfCompletion:[],
                 witnessedBy: [],
                 dateOfCompletion: {},
-                likes: 0,
+                likes: [],
             };
             post._id = Posts.insert(post);
             Router.go('postPage', post);
