@@ -23,7 +23,7 @@ Meteor.methods({
         },
 
     likePost: function(id) {
-    	Posts.update(Posts.findOne({_id: id}), {$inc: {likes: 1} });
+    	Posts.update(Posts.findOne({_id: id}), {$addToSet: {likes: Meteor.userId()} });
     },
 
     followId: function(id) {
