@@ -1,7 +1,7 @@
 <template name="header">
    <div class="header-style">
-         <div class="header-title">
-            <a class="title" href="{{pathFor 'home'}}">The Grad List</a>
+         <div id="header-title">
+            <a  href="{{pathFor 'home'}}">The Grad List</a>
          </div>
          <div class="submit">
             <ul>
@@ -14,7 +14,7 @@
             </ul>
         </div>
         {{#if currentUser}}
-            <h3><a href='#' class="logout">Logout</a></h3>
+            <p><a href='#' class="logout">Logout</a></p>
         {{/if}}
         </div>
 </template>
