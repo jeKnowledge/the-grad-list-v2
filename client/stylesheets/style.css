@@ -172,7 +172,7 @@ html, body {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    background: url(pic30.jpg) no-repeat center center fixed;
+    background: url(vintagePic3.jpg) no-repeat center center fixed;
     position: absolute;
 }
 
@@ -197,14 +197,14 @@ html, body {
     font-family: Montserrat;
     font-size: 2.8em;
     font-weight: 900;
-    color: #766A6B;
+    color: #231F20;
 }
 
 .title p {
     text-align: center;
     font-family: Montserrat;
     font-size: 0.8em;
-    color: #766A6B;
+    color: #231F20;
 }
 
 #form-front-page {
@@ -215,7 +215,7 @@ html, body {
 }
 
 #sign-up-btn {
-    background-color: #766A6B;
+    background-color: #231F20;
     color: white;
 }
 
@@ -223,8 +223,8 @@ html, body {
     color: white;
 }
 
-#sign-in-btn .nav-pills .nav-link.active, .nav-pills .nav-link.active:focus, .nav-pills .nav-link.active:hover {
-    background-color: #766A6B;
+#sign-in-btn .nav-pills .nav-link.active, .nav-pills .nav-link.active:focus, .nav-pills .nav-link .active:hover {
+    background-color: #231F20;
     color: white;
 }
 
