@@ -1,5 +1,11 @@
 <template name="home">
     {{> postSubmit}}
-
-    {{> postsList}}
+    <h3>Other users</h3>
+	<div>
+		{{#each user}}
+	      <a href="/user/{{username}}">{{username}}</a>
+	      <br>
+	  	{{/each}}
+  	</div>
+    {{> feed}}
 </template>
