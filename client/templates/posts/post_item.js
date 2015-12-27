@@ -1,5 +1,5 @@
 Template.postItem.helpers({
-
+	
 	isCurrentUser:function()
 	{
 		return (Meteor.userId() == this.owner)
@@ -40,8 +40,12 @@ Template.postItem.helpers({
 });
 
 
-
 Template.postItem.events({
+
+	'click .like': function() {
+		Meteor.call("likePost", this._id);
+	},
+
 	'click .delete': function() {
 		Meteor.call("deletePost", this._id);
 	},
