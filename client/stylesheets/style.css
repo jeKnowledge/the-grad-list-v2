@@ -73,8 +73,8 @@ html, body {
 }
 
 .submitPost-image {
-    max-height: 50%;
-    max-width: 50%;
+    max-height: 100%;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -325,30 +325,28 @@ html, body {
 
 .post .upvote {
     display: block;
-    float: left;
 }
 
 .post .post-content {
-    float: left;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
 }
 
 .post .post-content h3 {
     margin-top: 10px;
     line-height: 1.4;
-    font-size: 15px;
-    margin-left: 12px;
+    font-size: 1em;
 }
 
-.post .post-content h4 {
+.post .post-content p {
     margin-top: 10px;
     line-height: 1.4;
-    font-size: 10px;
-    margin-left: 16px;
+    font-size: 0.6em;
 }
 
 .post .post-content h3 a {
     display: inline-block;
-    margin-right: 5px;
 }
 
 .post .post-content h3 span {
