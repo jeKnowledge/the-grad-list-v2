@@ -9,9 +9,11 @@
 				<button class="unfollow" id="unfollow">UnFollow</button>
 			{{/unless}}
 		{{/if}}
-		<h2><a class="followers-following-book" href="/Book/{{getUsername}}">Book</a></h2>
-		<h5>Followers:{{followers}}</h5>
-		<h5>Following:{{following}}</h5>
+		<ul class="followers-following-list">
+            <h2><a href="/Book/{{getUsername}}">{{username}}'s Book</a></h2>
+            <li><p>Followers:{{followers}}</p></li>
+		    <li><p>Following:{{following}}</p></li>
+        </ul>
 	</div>
 	{{#each postsByUser}}
             {{> postItem}}

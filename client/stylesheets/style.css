@@ -64,16 +64,31 @@ html, body {
 
 
 .followers-following {
-    width: 100%;
+    width: 50%;
     height: 10%;
-    margin-left: 20%;
-    margin-bottom: 2%;
-    margin-top: 2%;
+    /* top | right | bottom | left */
+    margin: 2% auto 2% auto;
 }
 
-.followers-following-book {
+.followers-following-list {
+    display: inline;
+}
+
+.followers-following-list li {
     color: #231F20;
     font-family: Montserrat;
+    text-decoration: none;
+    list-style: none;
+}
+
+.followers-following-list li p {
+    width: 10%;
+    padding: 0;
+    margin: 0;
+}
+
+.followers-following-list a {
+    color: #0b2309;
 }
 
 #completed-posts-title {
