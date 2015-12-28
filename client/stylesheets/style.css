@@ -73,9 +73,10 @@ html, body {
 }
 
 .submitPost-image {
-    max-height: 200px;
-    max-width: 300px;
-    margin-left: 10px;
+    max-height: 50%;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
