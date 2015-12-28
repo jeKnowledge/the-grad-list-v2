@@ -92,9 +92,9 @@ html, body {
 }
 
 #completed-posts-title {
+    width: 50%;
     color: #231F20;
     font-family: Montserrat;
-    text-align: center;
     font-size: 2em;
     /* top | right | bottom | left */
     margin: 2% auto 2% auto;
@@ -231,20 +231,22 @@ html, body {
     color: white;
 }
 
-#authentication-form {
+.nav-link #facebook-login {
+    color: white;
+}
+
+#authentication-form-btns {
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
 }
 
-#authentication-form ul.nav-pills {
+#authentication-form ul .nav-pills {
     display: inline-block;
 }
 
-#authentication-form li {
+#authentication-form-btns li {
     display: inline;
-}
-
-#authentication-form a {
-    float: left;
 }
 
 #footer {
