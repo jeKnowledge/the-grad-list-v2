@@ -1,11 +1,14 @@
 <template name="home">
     {{> postSubmit}}
-    <h3>Other users</h3>
-	<div>
-		{{#each user}}
-	      <a href="/user/{{username}}">{{username}}</a>
-	      <br>
-	  	{{/each}}
-  	</div>
+    
     {{> feed}}
+    
+    <div class="suggestions">
+    <h6>Users that you can follow</h6>
+	{{#each user}}
+		<a href="/user/{{username}}">{{username}}</a>
+	<br>
+	{{/each}}
+  	</div>
+
 </template>
