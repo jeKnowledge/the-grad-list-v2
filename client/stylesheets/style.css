@@ -265,28 +265,23 @@ html, body {
   margin-right: auto;
   margin-left: auto;
   text-align: center; }
-
-.post .post-content h3 {
-  margin-top: 10px;
-  line-height: 1.4;
-  font-size: 1em; }
-
-.post .post-content p {
-  margin-top: 10px;
-  line-height: 1.4;
-  font-size: 0.6em; }
-
-.post .post-content h3 a {
-  display: inline-block; }
-
-.post .post-content h3 span {
-  font-weight: normal;
-  font-size: 14px;
-  display: inline-block;
-  color: black; }
-
-.post .post-content p {
-  margin: 0; }
+  .post .post-content h3 {
+    margin-top: 10px;
+    line-height: 1.4;
+    font-size: 1em; }
+  .post .post-content p {
+    margin-top: 10px;
+    line-height: 1.4;
+    font-size: 0.6em; }
+  .post .post-content h3 a {
+    display: inline-block; }
+  .post .post-content h3 span {
+    font-weight: normal;
+    font-size: 14px;
+    display: inline-block;
+    color: black; }
+  .post .post-content p {
+    margin: 0; }
 
 .post .discuss {
   display: block;
@@ -326,20 +321,16 @@ html, body {
 .comments {
   list-style-type: none;
   margin: 0; }
-
-.comments li h4 {
-  font-size: 16px;
-  margin: 0; }
-
-.comments li h4 .date {
-  font-size: 12px;
-  font-weight: normal; }
-
-.comments li h4 a {
-  font-size: 12px; }
-
-.comments li p:last-child {
-  margin-bottom: 0; }
+  .comments li h4 {
+    font-size: 16px;
+    margin: 0; }
+  .comments li h4 .date {
+    font-size: 12px;
+    font-weight: normal; }
+  .comments li h4 a {
+    font-size: 12px; }
+  .comments li p:last-child {
+    margin-bottom: 0; }
 
 .dropdown-menu span {
   display: block;
