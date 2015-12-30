@@ -91,7 +91,7 @@ html, body {
   }
 
   a {
-    color: #0b2309;
+    color: #629677;
   }
 }
 
@@ -124,7 +124,7 @@ html, body {
 
   a:focus, a:hover {
     text-decoration: none;
-    color: #3EFFFD;
+    color: #629677;
   }
 }
 
@@ -143,7 +143,7 @@ li .profile {
 
   .profile:hover {
     text-decoration: none;
-    color: #3efffd;
+    color: #629677;
   }
 }
 
@@ -328,6 +328,14 @@ p .logout {
 
 .comment-item-post {
 
+  h6 {
+    margin-bottom: 1%;
+    font-size: 1em;
+  }
+
+  a {
+    color: #629677;
+  }
 }
 
 .post .post-content {
@@ -347,11 +355,12 @@ p .logout {
     font-size: 0.6em;
   }
 
-  h3 a {
+  a {
     display: inline-block;
+    color: #629677;
   }
 
-  h3 span {
+  span {
     font-weight: normal;
     font-size: 14px;
     display: inline-block;

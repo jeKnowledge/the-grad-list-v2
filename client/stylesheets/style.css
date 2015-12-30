@@ -74,7 +74,7 @@ html, body {
     padding: 0;
     margin: 0; }
   .followers-following-list a {
-    color: #0b2309; }
+    color: #629677; }
 
 #completed-posts-title {
   width: 50%;
@@ -100,7 +100,7 @@ html, body {
     margin-top: 4%; }
   #header-title a:focus, #header-title a:hover {
     text-decoration: none;
-    color: #3EFFFD; }
+    color: #629677; }
 
 .submit {
   list-style: none;
@@ -115,7 +115,7 @@ li .profile {
   padding-left: 0.7%; }
   li .profile .profile:hover {
     text-decoration: none;
-    color: #3efffd; }
+    color: #629677; }
 
 p .logout {
   float: right;
@@ -262,6 +262,12 @@ p .logout {
 .post .upvote {
   display: block; }
 
+.comment-item-post h6 {
+  margin-bottom: 1%;
+  font-size: 1em; }
+.comment-item-post a {
+  color: #629677; }
+
 .post .post-content {
   margin-right: auto;
   margin-left: auto;
@@ -274,9 +280,10 @@ p .logout {
     margin-top: 10px;
     line-height: 1.4;
     font-size: 0.6em; }
-  .post .post-content h3 a {
-    display: inline-block; }
-  .post .post-content h3 span {
+  .post .post-content a {
+    display: inline-block;
+    color: #629677; }
+  .post .post-content span {
     font-weight: normal;
     font-size: 14px;
     display: inline-block;
