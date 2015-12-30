@@ -41,6 +41,10 @@ html, body {
   margin-right: auto;
   width: 50%; }
 
+.complete {
+  width: 50%;
+  margin: 2% auto 2% auto; }
+
 .comment {
   margin-top: -5px;
   display: table-row;
