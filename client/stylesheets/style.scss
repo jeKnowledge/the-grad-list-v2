@@ -90,7 +90,7 @@ html, body {
     margin: 0;
   }
 
-   a {
+  a {
     color: #0b2309;
   }
 }
@@ -134,29 +134,26 @@ html, body {
   margin-left: 9%;
 }
 
-.profile {
+li .profile {
   color: white;
   font-size: 1em;
   list-style: none;
   text-decoration: none;
   padding-left: 0.7%;
+
+  .profile:hover {
+    text-decoration: none;
+    color: #3efffd;
+  }
 }
 
-.submit .profile li a {
-  color: #3EFFFD;
-}
-
-.profile:hover {
-  text-decoration: none;
-  color: #3efffd;
-}
-
-.logout {
+p .logout {
   float: right;
   margin-right: 20%;
   font-size: 1em;
   color: white;
   margin-top: -3%;
+  text-decoration: none;
 }
 
 .grid-block, .main, .post, .comments li, .comment-form {
@@ -227,15 +224,12 @@ html, body {
 }
 
 #sign-in-btn {
+  background-color: #231F20;
   color: white;
 }
 
 #sign-in-btn .nav-pills .nav-link.active, .nav-pills .nav-link.active:focus, .nav-pills .nav-link .active:hover {
   background-color: #231F20;
-  color: white;
-}
-
-.nav-link #facebook-login {
   color: white;
 }
 
