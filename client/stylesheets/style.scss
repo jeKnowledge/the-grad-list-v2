@@ -286,11 +286,13 @@ p .logout {
   font-size: 1em;
 }
 
+/*
 .post {
   *zoom: 1;
   position: relative;
   opacity: 1;
 }
+*/
 
 .post:before, .post:after {
   content: "";
@@ -322,6 +324,10 @@ p .logout {
 
 .post .upvote {
   display: block;
+}
+
+.comment-item-post {
+
 }
 
 .post .post-content {

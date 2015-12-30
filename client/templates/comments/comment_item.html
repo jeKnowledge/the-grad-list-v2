@@ -1,9 +1,9 @@
 <template name="commentItem">
-    <div class = "post">
-		<h5>{{text}}</h5>
-		<h5>by <a href="/user/{{ownerUsername}}">{{ownerUsername}}</a></h5>
+    <div class="comment-item-post">
+		<h6>{{text}}</h6>
+		<h6>by <a href="/user/{{ownerUsername}}">{{ownerUsername}}</a></h6>
 		{{#if owner}}
-			<button class="delete2">Remove</button>
+			<button class="delete2 buttons-style">Remove</button>
 		{{/if}}
     </div>
 </template>

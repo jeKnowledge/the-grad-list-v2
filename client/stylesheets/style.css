@@ -229,11 +229,13 @@ p .logout {
   line-height: 1.4;
   font-size: 1em; }
 
+/*
 .post {
   *zoom: 1;
   position: relative;
-  opacity: 1; }
-
+  opacity: 1;
+}
+*/
 .post:before, .post:after {
   content: "";
   display: table; }
