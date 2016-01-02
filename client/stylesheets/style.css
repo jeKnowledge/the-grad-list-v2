@@ -74,11 +74,14 @@ html, body {
     padding: 0;
     margin: 0; }
   .followers-following-list a {
-    color: #7C89F3; }
+    color: #75718B; }
+  .followers-following-list h2 a {
+    text-decoration: none;
+    list-style: none; }
 
 #completed-posts-title {
   width: 50%;
-  color: #231F20;
+  color: #75718B;
   font-family: Montserrat;
   font-size: 2em;
   /* top | right | bottom | left */
@@ -299,7 +302,7 @@ p .logout {
   background-color: #c7c7c7; }
 
 .buttons-style {
-  background-color: #231F20;
+  background-color: #75718B;
   color: white;
   border-radius: 4px;
   border: none;
