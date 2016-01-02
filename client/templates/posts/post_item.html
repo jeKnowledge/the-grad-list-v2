@@ -11,6 +11,7 @@
          <p>at {{date}}</p>
           <h3>Completed: {{completed}}</h3>
          <img class="submitPost-image" src="{{imagesOfCompletion}}"/>
+          {{> social_buttons}}
       </div>
       <button class="buttons-style like">Like</button><p class="number_of_likes">{{likes.length}}</p>
       {{#if isOwner}}
@@ -19,7 +20,7 @@
             <a href="/completed/{{_id}}"><button class="buttons-style complete">complete</button></a>
          {{/if}}
       {{/if}}
-      {{> social_buttons}}
+
       {{#if isNotOwner}}
          <button class="buttons-style fork">Fork</button>
       {{/if}}
