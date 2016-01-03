@@ -323,7 +323,8 @@ p .logout {
 
 .social-buttons {
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  margin-bottom: 4%; }
 
 .social-button-group {
   text-align: center; }
