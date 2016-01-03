@@ -87,6 +87,14 @@ html, body {
   /* top | right | bottom | left */
   margin: 2% auto 2% auto; }
 
+#suggestions {
+  width: 50%;
+  color: #75718B;
+  font-family: Montserrat;
+  font-size: 2em;
+  /* top | right | bottom | left */
+  margin: 2% auto 2% auto; }
+
 .header-style {
   width: 100%;
   height: 5%;
@@ -310,7 +318,8 @@ p .logout {
   font-size: 0.8em; }
 
 .number_of_likes {
-  margin-bottom: 0; }
+  width: 10%;
+  margin: 0; }
 
 .social-buttons {
   margin-left: auto;
