@@ -3,7 +3,9 @@ Template.header.helpers({
 		return Meteor.userId();
 	},
 	getUsername: function() {
-		return Meteor.user().username || Meteor.user().profile.name;
+		console.log(Meteor.user());
+
+		return Meteor.user().username || Meteor.user().services.facebook.name;
 	}
 });
 

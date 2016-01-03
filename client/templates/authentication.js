@@ -23,6 +23,10 @@ Template.authentication.events({
 
     'click #facebook-login': function(event) {
         Meteor.loginWithFacebook({}, function(err){
+
+            // todo chamar um Meteor method que preencha fields do Meteor.user() com
+            // os fields respetivos que estão no Meteor.user().services.facebook
+
             if (err) {
                 throw new Meteor.Error("Facebook login failed");
             }

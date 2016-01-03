@@ -10,7 +10,9 @@ Meteor.publish("comments", function()
 
 Meteor.publish("usersData", function() {
   if (this.userId) {
-    return Meteor.users.find({}, {fields: {"username" :true, _id: true, follows: true, followed: true} });
+    return Meteor.users.find({}, {fields: {"username" :true, _id: true, follows: true, followed: true,
+      'services.facebook.name': true
+    }});
   } else {
     this.ready();
   }
@@ -19,7 +21,7 @@ Meteor.publish("usersData", function() {
 ServiceConfiguration.configurations.remove({
     service: 'facebook'
 });
- 
+
 ServiceConfiguration.configurations.insert({
     service: 'facebook',
     appId: '456456687891709',
