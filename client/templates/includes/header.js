@@ -1,4 +1,5 @@
 Template.header.helpers({
+
 	userID: function() {
 		return Meteor.userId();
 	},
