@@ -116,28 +116,27 @@ html, body {
     text-decoration: none;
     color: #7C89F3; }
 
-.submit {
+.submit ul {
   list-style: none;
+  margin-left: 20%;
+  padding: 0; }
+.submit li a:hover {
   text-decoration: none;
-  margin-left: 9%; }
-
-li .profile {
+  color: #7C89F3; }
+.submit li {
+  display: inline;
+  text-decoration: none; }
+.submit li .profile {
   color: white;
   font-size: 1em;
-  list-style: none;
-  text-decoration: none;
   padding-left: 0.7%; }
-  li .profile .profile:hover {
+  .submit li .profile .profile:hover {
     text-decoration: none;
     color: #629677; }
-
-p .logout {
-  float: right;
-  margin-right: 20%;
+.submit li .logout {
   font-size: 1em;
   color: white;
-  margin-top: -3.6%;
-  text-decoration: none; }
+  padding-left: 0.7%; }
 
 .grid-block, .main, .post, .comments li, .comment-form {
   width: 50%;
@@ -160,6 +159,9 @@ p .logout {
   box-sizing: border-box;
   background: url(vintagePic3.jpg) no-repeat center center fixed;
   position: absolute; }
+
+#facebook-login {
+  color: white; }
 
 .row {
   width: 40%; }

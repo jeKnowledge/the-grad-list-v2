@@ -6,21 +6,23 @@
         {{#if currentUser}}
             <div class="submit">
                 <ul>
-                    <li class="submit">
-                        <a class="profile" href="/user/{{getUsername}}"> {{getUsername}}</a>
-                        <a class="profile" href="/Book/{{getUsername}}"> my book</a>
-                    </li>
-                </ul>
-                <p><a href='#' class="logout">Logout</a></p>
-                
-                {{> EasySearch.Input index=usersIndex }}
-                <!-- {{> EasySearch.Autosuggest index=searchIndex }} -->
+                    <li><a class="profile" href="/user/{{getUsername}}"> {{getUsername}}</a></li>
+                    <li><a class="profile" href="/Book/{{getUsername}}"> my book</a></li>
+                    {{> EasySearch.Input index=usersIndex }}
+                    <!-- {{> EasySearch.Autosuggest index=searchIndex }} -->
 
-                <ul>
+
                     {{#EasySearch.Each index=usersIndex}}
                         <li><a href="/user/{{username}}">{{username}}</a></li>
                     {{/EasySearch.Each}}
+
+
+                    <li><a href='#' class="logout">Logout</a></li>
                 </ul>
+
+
+
+
 
             </div>
         {{/if}}

@@ -47,8 +47,6 @@ html, body {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-
-
 }
 
 .form {
@@ -149,31 +147,39 @@ html, body {
 }
 
 .submit {
-  list-style: none;
-  text-decoration: none;
-  margin-left: 9%;
-}
 
-li .profile {
-  color: white;
-  font-size: 1em;
-  list-style: none;
-  text-decoration: none;
-  padding-left: 0.7%;
-
-  .profile:hover {
-    text-decoration: none;
-    color: #629677;
+  ul {
+    list-style: none;
+    margin-left: 20%;
+    padding: 0;
   }
-}
 
-p .logout {
-  float: right;
-  margin-right: 20%;
-  font-size: 1em;
-  color: white;
-  margin-top: -3.6%;
-  text-decoration: none;
+  li a:hover {
+    text-decoration: none;
+    color: #7C89F3;
+  }
+
+  li {
+    display: inline;
+    text-decoration: none;
+  }
+
+  li .profile {
+    color: white;
+    font-size: 1em;
+    padding-left: 0.7%;
+
+    .profile:hover {
+      text-decoration: none;
+      color: #629677;
+    }
+  }
+
+  li .logout {
+    font-size: 1em;
+    color: white;
+    padding-left: 0.7%;
+  }
 }
 
 .grid-block, .main, .post, .comments li, .comment-form {
@@ -198,6 +204,10 @@ p .logout {
   box-sizing: border-box;
   background: url(vintagePic3.jpg) no-repeat center center fixed;
   position: absolute;
+}
+
+#facebook-login {
+  color: white;
 }
 
 .row {
