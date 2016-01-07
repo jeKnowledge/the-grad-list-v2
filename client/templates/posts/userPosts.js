@@ -19,7 +19,7 @@ Template.userPosts.helpers({
     },
   
     getUsername: function() {
-        return Meteor.users.findOne({"_id": this._id}).username || Meteor.users.findOne({"_id": this._id}).profile.name;
+        return Meteor.users.findOne({"_id": this._id}).username;
     },
 
     following: function() {

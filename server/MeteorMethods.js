@@ -19,7 +19,7 @@ Meteor.methods({
 			owner: Meteor.userId(),
 			forkedFrom: Posts.findOne({_id:id}).username,
 			date: new Date(),
-			username: Meteor.user().username || Meteor.user().profile.name,
+			username: Meteor.user().username,
 			image: Posts.findOne({_id:id}).image,
             completed: false,
             };

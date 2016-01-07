@@ -5,7 +5,7 @@ Template.postSubmit.events({
 		title: $(e.target).find('[name=title]').val(),
 		image: $(e.target).find('[name=image]').val(),
 		owner: Meteor.userId(),
-		username: Meteor.user().username || Meteor.user().profile.name,
+		username: Meteor.user().username,
 		comments: [],
 		date: new Date(),
                 completed: false,
