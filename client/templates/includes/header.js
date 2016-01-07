@@ -5,7 +5,7 @@ Template.header.helpers({
 	getUsername: function() {
 		console.log(Meteor.user());
 
-		return Meteor.user().username || Meteor.user().services.facebook.name;
+		return Meteor.user().username;
 	}
 });
 

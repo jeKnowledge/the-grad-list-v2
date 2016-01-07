@@ -1,4 +1,8 @@
 Meteor.methods({
+	loginFacebook: function() {
+		Meteor.users.update(Meteor.userId(), {$set: {username: Meteor.user().services.facebook.name}});
+	},
+
 	deletePost: function(id) {
 		if (Meteor.userId() == Posts.findOne({_id: id}).owner)
 			Posts.remove(id);			
