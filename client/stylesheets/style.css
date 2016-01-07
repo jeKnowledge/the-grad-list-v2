@@ -79,6 +79,9 @@ html, body {
     text-decoration: none;
     list-style: none; }
 
+.delete2 {
+  float: right; }
+
 #completed-posts-title {
   width: 50%;
   color: #75718B;
@@ -273,6 +276,11 @@ p .logout {
 .post .upvote {
   display: block; }
 
+.comment-item-post ul {
+  padding-left: 0;
+  list-style: none; }
+.comment-item-post ul li {
+  display: inline; }
 .comment-item-post h6 {
   margin-bottom: 1%;
   font-size: 1em; }
