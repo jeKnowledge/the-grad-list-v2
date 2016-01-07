@@ -6,7 +6,8 @@ Template.header.helpers({
 		console.log(Meteor.user());
 
 		return Meteor.user().username;
-	}
+	},
+	usersIndex: () => UsersIndex,
 });
 
 
