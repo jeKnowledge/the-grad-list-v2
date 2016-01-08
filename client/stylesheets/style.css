@@ -130,9 +130,9 @@ html, body {
   color: white;
   font-size: 1em;
   padding-left: 0.7%; }
-  .submit li .profile .profile:hover {
+  .submit li .profile .profile a:hover {
     text-decoration: none;
-    color: #629677; }
+    color: #7C89F3; }
 .submit li .logout {
   font-size: 1em;
   color: white;
@@ -157,7 +157,7 @@ html, body {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  background: url(vintagePic3.jpg) no-repeat center center fixed;
+  background: url(vintagePic7.jpg) no-repeat center center fixed;
   position: absolute; }
 
 #facebook-login {
@@ -179,12 +179,12 @@ html, body {
     font-family: Montserrat;
     font-size: 2.8em;
     font-weight: 900;
-    color: #231F20; }
+    color: #211A47; }
   .title p {
     text-align: center;
     font-family: Montserrat;
     font-size: 0.8em;
-    color: #231F20; }
+    color: #211A47; }
 
 #form-front-page {
   width: 30%;
@@ -193,26 +193,25 @@ html, body {
   margin-top: 12%; }
 
 #sign-up-btn {
-  background-color: #231F20;
+  background-color: #75718B;
   color: white; }
 
 #sign-in-btn {
-  background-color: #231F20;
-  color: white; }
-
-#sign-in-btn .nav-pills .nav-link.active, .nav-pills .nav-link.active:focus, .nav-pills .nav-link .active:hover {
-  background-color: #231F20;
-  color: white; }
-
-#authentication-form-btns {
+  background-color: #75718B;
+  color: white;
   margin-left: auto;
   margin-right: auto;
   text-align: center; }
 
-#authentication-form ul .nav-pills {
-  display: inline-block; }
+#sign-in-btn .nav-pills .nav-link.active, .nav-pills .nav-link.active:focus, .nav-pills .nav-link .active:hover {
+  background-color: #75718B;
+  color: white; }
 
-#authentication-form-btns li {
+#authentication-form-btns .nav .nav-pills ul {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
+#authentication-form-btns .nav .nav-pills li {
   display: inline; }
 
 #footer {
@@ -224,7 +223,7 @@ html, body {
 
 #footer-list {
   text-align: center;
-  color: white;
+  color: #211A47;
   font-family: Montserrat;
   font-size: 1em;
   list-style-type: none;
