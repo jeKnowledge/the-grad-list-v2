@@ -5,10 +5,13 @@
 				<button class="follow" id="follow"> Follow </button>
 			{{/if}}
 			{{#unless checkFollowing}}
-				<h3 class="following">following</h3>
 				<button class="unfollow" id="unfollow">UnFollow</button>
 			{{/unless}}
 		{{/if}}
+
+		{{#unless owner}}
+			<a href='/{{username}}/EditProfile'><button>Edit profile</button></a>
+		{{/unless}}
 		<ul class="followers-following-list">
             <h2><a href="/Book/{{getUsername}}">{{username}}'s Book</a></h2>
             <li><p>Followers:{{followers}}</p></li>
