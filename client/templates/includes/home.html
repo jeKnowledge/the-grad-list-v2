@@ -4,11 +4,18 @@
     {{> feed}}
     
     <div id="suggestions">
-    <h6>Users that you can follow</h6>
-	{{#each user}}
-		<a href="/user/{{username}}">{{username}}</a>
-	<br>
-	{{/each}}
+	    <h6>Users that you can follow</h6>
+		{{#each user}}
+			<a href="/user/{{username}}">{{username}}</a>
+		<br>
+		{{/each}}
+
+		<p>Friends of Friends</p>
+		{{#each friends_of_friends}}
+		{{username}}
+		<br>
+		{{/each}}
+
   	</div>
 
 </template>
