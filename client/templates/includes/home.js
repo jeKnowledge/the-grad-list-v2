@@ -5,7 +5,14 @@ Template.home.helpers({
       	$and:
       	[{"_id": { $nin: Meteor.user().follows}},
       	{"_id": { $ne: Meteor.userId() }}]
-      	});
+      	},
+        {"limit":3});
+  },
+
+  check_followers: function() {
+    if (Meteor.user().follows.length == 0) {
+      return true;
+    }
   },
 
   friends_of_friends: function(){
@@ -32,6 +39,6 @@ Template.home.helpers({
   		}
   	}
 
-  	return a;
+  	return a.slice(0,3);
   }
 })
