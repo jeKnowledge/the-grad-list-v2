@@ -1,26 +1,27 @@
 <template name="header">
-    <nav>
-        <div class="nav-wrapper header-style">
-            <a id="header-title" href="/" class="brand-logo">The Grad List</a>
-            {{#if currentUser}}
-                <div class="submit">
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a class="profile" href="/user/{{getUsername}}"> {{getUsername}}</a></li>
-                        <li><a class="profile" href="/Book/{{getUsername}}"> my book</a></li>
-                        <li><a href='#' class="logout">Logout</a></li>
-                        {{> EasySearch.Input index=usersIndex }}
-                        <!-- {{> EasySearch.Autosuggest index=searchIndex }} -->
-
-
-                        {{#EasySearch.Each index=usersIndex}}
-                            <li><a href="/user/{{username}}">{{username}}</a></li>
-                        {{/EasySearch.Each}}
-
-
-                    </ul>
-                </div>
-            {{/if}}
+    <div class="header-style">
+        <div id="header-title">
+            <a href="/">The Grad List</a>
         </div>
-    </nav>
+        {{#if currentUser}}
+            <div class="submit">
+                <ul>
+                    <li><a class="profile" href="/user/{{getUsername}}"> {{getUsername}}</a></li>
+                    <li><a class="profile" href="/Book/{{getUsername}}"> my book</a></li>
+                    {{> EasySearch.Input index=usersIndex }}
+                    <!-- {{> EasySearch.Autosuggest index=searchIndex }} -->
 
+
+                    {{#EasySearch.Each index=usersIndex}}
+                        <li><a href="/user/{{username}}">{{username}}</a></li>
+                    {{/EasySearch.Each}}
+
+
+                    <li><a href='#' class="logout">Logout</a></li>
+                </ul>
+
+
+            </div>
+        {{/if}}
+    </div>
 </template>
