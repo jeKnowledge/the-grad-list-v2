@@ -52,5 +52,12 @@ Meteor.methods({
 		temp.push(commentId);
 
 		Posts.update(postId, {$set: {comments: temp}});
+	},
+
+	editProfile: function(e, s_bio, s_country) {
+		Meteor.users.update(Meteor.userId(),
+        	{$set: { bio: s_bio,
+        	country: s_country }}
+		);
 	}
 });
