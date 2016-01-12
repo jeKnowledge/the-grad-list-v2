@@ -5,6 +5,7 @@ Accounts.onCreateUser(function(options, user) {
     user.bio = new String();
     user.country = new String();
     user.university = new String();
+    user.picture = new String();
 
     return user;
 });

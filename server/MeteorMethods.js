@@ -54,11 +54,12 @@ Meteor.methods({
 		Posts.update(postId, {$set: {comments: temp}});
 	},
 
-	editProfile: function(s_bio, s_country, s_university) {
+	editProfile: function(s_bio, s_country, s_university, s_pic) {
 		Meteor.users.update(Meteor.userId(),
         	{$set: { bio: s_bio,
         	country: s_country,
-        	university: s_university }}
+        	university: s_university,
+        	picture: s_pic }}
 		);
 	}
 });

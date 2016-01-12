@@ -1,27 +1,32 @@
 <template name="userPosts">
-	<div class="followers-following">
-		{{#if owner}}
-			{{#if checkFollowing}}
-				<button class="follow" id="follow"> Follow </button>
-			{{/if}}
-			{{#unless checkFollowing}}
-				<button class="unfollow" id="unfollow">UnFollow</button>
-			{{/unless}}
-		{{/if}}
 
-		{{#unless owner}}
-			<a href='/{{username}}/EditProfile'><button>Edit profile</button></a>
+	{{#if owner}}
+		{{#if checkFollowing}}
+			<button class="follow" id="follow"> Follow </button>
+		{{/if}}
+		{{#unless checkFollowing}}
+			<button class="unfollow" id="unfollow">UnFollow</button>
 		{{/unless}}
-		<ul class="followers-following-list">
-            <h2><a href="/Book/{{getUsername}}">{{username}}'s Book</a></h2>
+	{{/if}}
+
+	<div class="profile-resume">
+		<h2><a href="/Book/{{getUsername}}">{{username}}'s Profile</a></h2>
+		<ul class="profile-resume-list">
+			<li><img class="profilePic" src='{{picture}}' /></li>
             <li><p>Followers:{{followers}}</p></li>
 		    <li><p>Following:{{following}}</p></li>
 		    <li><p>Bio: {{bio}}</p></li>
 		    <li><p>Country: {{country}}</p></li>
 		    <li><p>University: {{university}}</p></li>
         </ul>
+        {{#unless owner}}
+			<a href='/{{username}}/EditProfile'><button>Edit profile</button></a>
+		{{/unless}}
 	</div>
-	{{#each postsByUser}}
-            {{> postItem}}
-	{{/each}}
+
+	<div class="user-posts">
+		{{#each postsByUser}}
+	            {{> postItem}}
+		{{/each}}
+	</div>
 </template>

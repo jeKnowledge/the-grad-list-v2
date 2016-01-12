@@ -40,6 +40,10 @@ Template.userPosts.helpers({
 
     country: function() {
         return Meteor.users.findOne({"_id": this._id}).country;
+    },
+
+    picture: function() {
+        return Meteor.users.findOne({"_id": this._id}).picture;
     }
 });
 
