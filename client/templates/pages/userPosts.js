@@ -28,6 +28,18 @@ Template.userPosts.helpers({
 
     followers: function() {
         return Meteor.users.findOne({"_id": this._id}).followed.length;
+    },
+
+    bio: function() {
+        return Meteor.users.findOne({"_id": this._id}).bio;
+    },
+
+    university: function() {
+        return Meteor.users.findOne({"_id": this._id}).university;
+    },
+
+    country: function() {
+        return Meteor.users.findOne({"_id": this._id}).country;
     }
 });
 
