@@ -1,27 +1,43 @@
 <template name="header">
-    <div class="header-style">
-        <div id="header-title">
-            <a href="/">The Grad List</a>
+
+    <nav class="navbar navbar-default header-style">
+        <div class="container-fluid">
+            {{#if currentUser}}
+                <div class=" submit ">
+
+
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="/">The Grad List</a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a class="profile" href="/user/{{getUsername}}"> {{getUsername}}</a></li>
+                            <li><a class="profile" href="/Book/{{getUsername}}"> my book</a></li>
+
+                            <!-- {{> EasySearch.Autosuggest index=searchIndex }} -->
+
+
+                            {{#EasySearch.Each index=usersIndex}}
+                                <li><a href="/user/{{username}}">{{username}}</a></li>
+                            {{/EasySearch.Each}}
+
+                            <li><a href='#' class="logout">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            {{/if}}
         </div>
-        {{#if currentUser}}
-            <div class="submit">
-                <ul>
-                    <li><a class="profile" href="/user/{{getUsername}}"> {{getUsername}}</a></li>
-                    <li><a class="profile" href="/Book/{{getUsername}}"> my book</a></li>
-                    {{> EasySearch.Input index=usersIndex }}
-                    <!-- {{> EasySearch.Autosuggest index=searchIndex }} -->
+    </nav>
 
-
-                    {{#EasySearch.Each index=usersIndex}}
-                        <li><a href="/user/{{username}}">{{username}}</a></li>
-                    {{/EasySearch.Each}}
-
-
-                    <li><a href='#' class="logout">Logout</a></li>
-                </ul>
-
-
-            </div>
-        {{/if}}
-    </div>
 </template>
+
+
+

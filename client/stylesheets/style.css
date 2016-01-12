@@ -56,27 +56,28 @@ html, body {
   margin-left: auto;
   margin-right: auto; }
 
-.profilePic {
-  height: 300px;
-  width: 300px;
-  margin-top: 0px;
-  margin-bottom: 0px; }
+.followers-following {
+  width: 50%;
+  height: 10%;
+  /* top | right | bottom | left */
+  margin: 2% auto 2% auto; }
 
-.profile-resume {
-  position: fixed;
-  float:left;
-  margin-left: 20px;}
-
-.user-posts {
-  float: right;
-  width: 80%;
-}
-
-.profile-resume-list" {
-  list-style: none;
-  font-family: Montserrat;
-  padding:0;
-  margin:0; }
+.followers-following-list {
+  display: inline; }
+  .followers-following-list li {
+    color: #231F20;
+    font-family: Montserrat;
+    text-decoration: none;
+    list-style: none; }
+  .followers-following-list li p {
+    width: 10%;
+    padding: 0;
+    margin: 0; }
+  .followers-following-list a {
+    color: #75718B; }
+  .followers-following-list h2 a {
+    text-decoration: none;
+    list-style: none; }
 
 .delete2 {
   float: right; }
@@ -99,42 +100,7 @@ html, body {
 
 .header-style {
   background-color: #211A47;
-}
-
-#header-title {
-  margin-left: 20%; }
-  #header-title a {
-    text-align: center;
-    color: white;
-    font-size: 2em;
-    font-family: Montserrat;
-    text-decoration: none;
-    margin-top: 4%; }
-  #header-title a:focus, #header-title a:hover {
-    text-decoration: none;
-    color: #7C89F3; }
-
-.submit ul {
-  list-style: none;
-  margin-left: 20%;
-  padding: 0; }
-.submit li a:hover {
-  text-decoration: none;
-  color: #7C89F3; }
-.submit li {
-  display: inline;
-  text-decoration: none; }
-.submit li .profile {
-  color: white;
-  font-size: 1em;
-  padding-left: 0.7%; }
-  .submit li .profile .profile a:hover {
-    text-decoration: none;
-    color: #7C89F3; }
-.submit li .logout {
-  font-size: 1em;
-  color: white;
-  padding-left: 0.7%; }
+  border-radius: 0; }
 
 .grid-block, .main, .post, .comments li, .comment-form {
   width: 50%;

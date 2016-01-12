@@ -124,61 +124,9 @@ html, body {
 
 .header-style {
   background-color: #211A47;
+  border-radius: 0;
 }
 
-#header-title {
-  margin-left: 20%;
-
-  a {
-    text-align: center;
-    color: white;
-    font-size: 2em;
-    font-family: Montserrat;
-    text-decoration: none;
-    margin-top: 4%;
-  }
-
-  a:focus, a:hover {
-    text-decoration: none;
-    color: #7C89F3;
-  }
-}
-
-.submit {
-
-  ul {
-    list-style: none;
-    margin-left: 20%;
-    padding: 0;
-  }
-
-  li a:hover {
-    text-decoration: none;
-    color: #7C89F3;
-  }
-
-  li {
-    display: inline;
-    text-decoration: none;
-  }
-
-  li .profile {
-    color: white;
-    font-size: 1em;
-    padding-left: 0.7%;
-
-    .profile a:hover {
-      text-decoration: none;
-      color: #7C89F3;
-    }
-  }
-
-  li .logout {
-    font-size: 1em;
-    color: white;
-    padding-left: 0.7%;
-  }
-}
 
 .grid-block, .main, .post, .comments li, .comment-form {
   width: 50%;
