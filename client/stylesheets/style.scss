@@ -127,6 +127,44 @@ html, body {
   border-radius: 0;
 }
 
+.submit {
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    color: white;
+    text-decoration: none;
+  }
+
+
+  li a:hover {
+    text-decoration: none;
+    color: #7C89F3;
+
+  }
+
+  li .profile {
+    color: white;
+    font-size: 1em;
+
+    .profile a:hover {
+      text-decoration: none;
+      color: #7C89F3;
+    }
+  }
+  li .logout {
+    font-size: 1em;
+    color: white;
+
+    .logout a:hover {
+      text-decoration: none;
+      color: #7C89F3;
+    }
+  }
+}
 
 .grid-block, .main, .post, .comments li, .comment-form {
   width: 50%;
@@ -176,14 +214,14 @@ html, body {
     font-family: Montserrat;
     font-size: 2.8em;
     font-weight: 900;
-    color:  #211A47;
+    color: #211A47;
   }
 
   p {
     text-align: center;
     font-family: Montserrat;
     font-size: 0.8em;
-    color:  #211A47;
+    color: #211A47;
   }
 }
 
@@ -222,7 +260,6 @@ html, body {
     display: inline;
   }
 }
-
 
 #footer {
   margin-left: auto;
@@ -324,7 +361,6 @@ html, body {
     color: #7C89F3;
   }
 }
-
 
 .post .post-content {
   margin-right: auto;

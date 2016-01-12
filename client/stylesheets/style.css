@@ -102,6 +102,28 @@ html, body {
   background-color: #211A47;
   border-radius: 0; }
 
+.submit ul {
+  list-style: none;
+  padding: 0; }
+.submit li {
+  color: white;
+  text-decoration: none; }
+.submit li a:hover {
+  text-decoration: none;
+  color: #7C89F3; }
+.submit li .profile {
+  color: white;
+  font-size: 1em; }
+  .submit li .profile .profile a:hover {
+    text-decoration: none;
+    color: #7C89F3; }
+.submit li .logout {
+  font-size: 1em;
+  color: white; }
+  .submit li .logout .logout a:hover {
+    text-decoration: none;
+    color: #7C89F3; }
+
 .grid-block, .main, .post, .comments li, .comment-form {
   width: 50%;
   background: #fff;
