@@ -25,16 +25,21 @@
 
                             <!-- {{> EasySearch.Autosuggest index=searchIndex }} -->
 
-
-                            {{#EasySearch.Each index=usersIndex}}
-                                <li><a class="profile" href="/user/{{username}}">{{username}}</a></li>
-                            {{/EasySearch.Each}}
-
                             <li><a href='#' class="logout">Logout</a></li>
                         </ul>
                     </div>
                 </div>
             {{/if}}
+        </div>
+
+        <div class="search">
+            {{> EasySearch.Input index=usersIndex }}
+            {{#EasySearch.IfInputEmpty index=usersIndex }}
+            {{else}}
+                {{#EasySearch.Each index=usersIndex}}
+                    <li><a class="profile" href="/user/{{username}}">{{username}}</a></li>
+                {{/EasySearch.Each}}
+            {{/EasySearch.IfInputEmpty}}
         </div>
     </nav>
 
