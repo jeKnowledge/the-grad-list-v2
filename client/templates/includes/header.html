@@ -1,48 +1,49 @@
 <template name="header">
     {{#if currentUser}}
-<div class="container-fluid">
+        <div class="container-fluid header-style">
 
-<nav class="navbar navbar-light bg-faded">
+            <nav class="navbar navbar-dark bg-faded header-style" style="margin-bottom: 0">
 
-    <!-- Toggle Button -->
-    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#nav-content">
-        ☰
-    </button>
+                <!-- Toggle Button -->
+                <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse"
+                        data-target="#nav-content">
+                    ☰
+                </button>
 
-    <!-- Nav Content -->
-    <div class="collapse navbar-toggleable-xs" id="nav-content">
-        <a class="navbar-brand" href="/">The Grad List</a>
-    <ul class="nav navbar-nav">
+                <!-- Nav Content -->
+                <div class="collapse navbar-toggleable-xs" id="nav-content">
+                    <a class="navbar-brand" href="/">The Grad List</a>
+                    <ul class="nav navbar-nav">
 
-        <li class="nav-item">
-            <a class="nav-link" href="/user/{{getUsername}}">{{getUsername}}</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/Book/{{getUsername}}">my book</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Logout</a>
-        </li>
-    </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/user/{{getUsername}}">{{getUsername}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Book/{{getUsername}}">my book</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Logout</a>
+                        </li>
+                    </ul>
 
-    </div>
+                </div>
 
-    <form class="form-inline navbar-form pull-right" role="search">
-        {{> EasySearch.Input index=usersIndex type="text" class="form-control" }}
-        {{#EasySearch.IfInputEmpty index=usersIndex }}
-        {{else}}
-            <div class="content-list" id="list">
-                <ul class="drop-list">
-                    {{#EasySearch.Each index=usersIndex}}
-                        <li><a class="profile" href="/user/{{username}}">{{username}}</a></li>
-                    {{/EasySearch.Each}}
-                </ul>
-            </div>
-        {{/EasySearch.IfInputEmpty}}
-    </form>
+                <form class="form-inline navbar-form pull-right" role="search">
+                    {{> EasySearch.Input index=usersIndex type="text" class="form-control" }}
+                    {{#EasySearch.IfInputEmpty index=usersIndex }}
+                    {{else}}
+                        <div class="content-list" id="list">
+                            <ul class="drop-list">
+                                {{#EasySearch.Each index=usersIndex}}
+                                    <li><a class="profile" href="/user/{{username}}">{{username}}</a></li>
+                                {{/EasySearch.Each}}
+                            </ul>
+                        </div>
+                    {{/EasySearch.IfInputEmpty}}
+                </form>
 
-</nav>
-</div>
+            </nav>
+        </div>
     {{/if}}
 
 </template>
