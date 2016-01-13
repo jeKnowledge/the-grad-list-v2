@@ -1,49 +1,48 @@
 <template name="header">
+    {{#if currentUser}}
+<div class="container-fluid">
 
-    <nav class="navbar navbar-default header-style">
-        <div class="container-fluid">
-            {{#if currentUser}}
-                <div class=" submit ">
+<nav class="navbar navbar-light bg-faded">
 
+    <!-- Toggle Button -->
+    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#nav-content">
+        ☰
+    </button>
 
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                                data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a id="header-title" href="/">The Grad List</a>
-                    </div>
+    <!-- Nav Content -->
+    <div class="collapse navbar-toggleable-xs" id="nav-content">
+        <a class="navbar-brand" href="/">The Grad List</a>
+    <ul class="nav navbar-nav">
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <li><a class="profile" href="/user/{{getUsername}}">{{getUsername}}</a></li>
-                            <li><a class="profile" href="/Book/{{getUsername}}"> my book</a></li>
+        <li class="nav-item">
+            <a class="nav-link" href="/user/{{getUsername}}">{{getUsername}}</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Book/{{getUsername}}">my book</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Logout</a>
+        </li>
+    </ul>
 
-                            <!-- {{> EasySearch.Autosuggest index=searchIndex }} -->
+    </div>
 
-                            <li><a href='#' class="logout">Logout</a></li>
-                        </ul>
-                    </div>
-                </div>
-            {{/if}}
-        </div>
-
-        <div class="search">
-            {{> EasySearch.Input index=usersIndex }}
-            {{#EasySearch.IfInputEmpty index=usersIndex }}
-            {{else}}
+    <form class="form-inline navbar-form pull-right" role="search">
+        {{> EasySearch.Input index=usersIndex type="text" class="form-control" }}
+        {{#EasySearch.IfInputEmpty index=usersIndex }}
+        {{else}}
+            <ul>
                 {{#EasySearch.Each index=usersIndex}}
                     <li><a class="profile" href="/user/{{username}}">{{username}}</a></li>
                 {{/EasySearch.Each}}
-            {{/EasySearch.IfInputEmpty}}
-        </div>
-    </nav>
+            </ul>
+        {{/EasySearch.IfInputEmpty}}
+        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-secondary">Search</button>
+    </form>
+
+</nav>
+</div>
+    {{/if}}
 
 </template>
-
-
-
