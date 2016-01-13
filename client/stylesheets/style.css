@@ -230,6 +230,13 @@ html, body {
 .navbar {
   margin-bottom: 30px; }
 
+.post-profile-pic {
+  height: 60px;
+  width: 60px;
+  float: left;
+  border-width: 10px;
+}
+
 #spinner {
   height: 300px; }
 

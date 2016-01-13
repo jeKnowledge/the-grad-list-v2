@@ -1,9 +1,7 @@
 Template.postItem.helpers({
 	
-	isCurrentUser:function()
-	{
-		return (Meteor.userId() == this.owner)
-			
+	isCurrentUser:function() {
+		return Meteor.userId() == this.owner;	
 	},
 
 	isOwner: function(){
@@ -35,6 +33,11 @@ Template.postItem.helpers({
 
     ownerUsername: function() {
       return Meteor.users.findOne({"_id": this.owner}).username;
+    },
+
+    profilePicture: function() {
+    	if (Meteor.users.findOne({"_id": this.owner}).picture != '')
+    		return Meteor.users.findOne({"_id": this.owner}).picture;
     }
 
 });

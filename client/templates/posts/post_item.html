@@ -2,16 +2,17 @@
    {{#if isLoggedIn}} 
    <div class="post">
       <div class="post-content">
-         <h3><a href="{{pathFor "postPage"}}">{{title}}</a></h3>
-         <img class="submitPost-image" src="{{image}}"/>
-         <h3 class="published">published by <a href="/user/{{ownerUsername}}">{{username}}</a></h3>
-         {{#if isForked}}
-            <h3 class="published">forked from <a href="/user/{{forkedFrom}}">{{forkedFrom}}</a></h3>
-         {{/if}}
-         <p>at {{date}}</p>
-          <h3>Completed: {{completed}}</h3>
-         <img class="submitPost-image" src="{{imagesOfCompletion}}"/>
-          {{> social_buttons}}
+        <img class="post-profile-pic" src="{{profilePicture}}"/>
+        <h3 class="published"><a href="/user/{{ownerUsername}}">{{username}}</a> published</h3>
+        <h3><a href="{{pathFor "postPage"}}">{{title}}</a></h3>
+        <img class="submitPost-image" src="{{image}}"/>
+        {{#if isForked}}
+          <h3 class="published">forked from <a href="/user/{{forkedFrom}}">{{forkedFrom}}</a></h3>
+       {{/if}}
+       <p>at {{date}}</p>
+        <h3>Completed: {{completed}}</h3>
+       <img class="submitPost-image" src="{{imagesOfCompletion}}"/>
+        {{> social_buttons}}
       </div>
       <button class="buttons-style like">Like</button>
 
