@@ -6,11 +6,11 @@
         <ul class="list-group">
             <li class="list-group-item">
                 <span class="label label-default label-pill pull-xs-right">{{followers}}</span>
-                Followers:
+                Followers
             </li>
             <li class="list-group-item">
                 <span class="label label-default label-pill pull-xs-right">{{following}}</span>
-                Following:
+                Following
             </li>
             <li class="list-group-item">
                 <span class="label label-default label-pill pull-xs-right">{{bio}}</span>
@@ -32,10 +32,10 @@
 
 		{{#if owner}}
 			{{#if checkFollowing}}
-				<button class="follow" id="follow"> Follow </button>
+                <button type="button" class="btn btn-primary-outline follow" id="follow">Follow</button>
 			{{/if}}
 			{{#unless checkFollowing}}
-				<button class="unfollow" id="unfollow">UnFollow</button>
+				<button type="button" class="btn btn-primary-outline unfollow" id="unfollow">UnFollow</button>
 			{{/unless}}
 		{{/if}}
 	</div>
