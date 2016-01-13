@@ -31,11 +31,13 @@
         {{> EasySearch.Input index=usersIndex type="text" class="form-control" }}
         {{#EasySearch.IfInputEmpty index=usersIndex }}
         {{else}}
-            <ul>
-                {{#EasySearch.Each index=usersIndex}}
-                    <li><a class="profile" href="/user/{{username}}">{{username}}</a></li>
-                {{/EasySearch.Each}}
-            </ul>
+            <div class="content-list" id="list">
+                <ul class="drop-list">
+                    {{#EasySearch.Each index=usersIndex}}
+                        <li><a class="profile" href="/user/{{username}}">{{username}}</a></li>
+                    {{/EasySearch.Each}}
+                </ul>
+            </div>
         {{/EasySearch.IfInputEmpty}}
         <button type="submit" class="btn btn-secondary">Search</button>
     </form>
