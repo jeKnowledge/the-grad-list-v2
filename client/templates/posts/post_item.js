@@ -36,7 +36,8 @@ Template.postItem.helpers({
     },
 
     profilePicture: function() {
-    	if (Meteor.users.findOne({"_id": this.owner}).picture != '')
+    	console.log(Meteor.users.findOne({"_id": this.owner}).picture);
+    	if (Meteor.users.findOne({"_id": this.owner}).picture != '[object Object]')
     		return Meteor.users.findOne({"_id": this.owner}).picture;
     }
 
