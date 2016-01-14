@@ -3,11 +3,11 @@ Template.header.helpers({
 	userID: function() {
 		return Meteor.userId();
 	},
+	
 	getUsername: function() {
-		console.log(Meteor.user());
-
 		return Meteor.user().username;
 	},
+
 	usersIndex: () => UsersIndex,
 });
 
