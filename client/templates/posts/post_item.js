@@ -39,7 +39,7 @@ Template.postItem.helpers({
     	console.log(Meteor.users.findOne({"_id": this.owner}).picture);
     	if (Meteor.users.findOne({"_id": this.owner}).picture != '[object Object]')
     		return Meteor.users.findOne({"_id": this.owner}).picture;
-    }
+    },
 
 });
 

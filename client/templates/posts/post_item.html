@@ -3,8 +3,14 @@
    <div class="post">
       <div class="post-content">
         <img class="post-profile-pic" src="{{profilePicture}}"/>
-        <h3 class="published"><a href="/user/{{ownerUsername}}">{{username}}</a>wants to</h3>
+        <h3 class="published"><a href="/user/{{ownerUsername}}">{{username}}</a> wants to</h3>
         <h3><a href="{{pathFor "postPage"}}">{{title}}</a></h3>
+        
+        <p>tags</p>
+        {{#each tags}}
+          {{this}}
+        {{/each}}
+
         <img class="submitPost-image" src="{{image}}"/>
         {{#if isForked}}
           <h3 class="published">forked from <a href="/user/{{forkedFrom}}">{{forkedFrom}}</a></h3>
