@@ -16,7 +16,7 @@
 
 		{{#unless check_followers}}
 			{{#each friends_of_friends}}
-			{{username}}
+				<a href="/user/{{username}}">{{username}}</a>
 			<br>
 			{{/each}}
 		{{/unless}}
