@@ -20,17 +20,17 @@
        <img class="submitPost-image" src="{{imagesOfCompletion}}"/>
         {{> social_buttons}}
       </div>
-      <button class="buttons-style like">Like</button>
+      <button class="buttons-style btn-primary like">Like</button>
 
        {{#if isOwner}}
-           <button class="buttons-style delete">Remove</button>
+           <button class="buttons-style btn-primary delete">Remove</button>
            {{#if isNotCompleted}}
-               <a href="/completed/{{_id}}"><button class="buttons-style complete">complete</button></a>
+               <a href="/completed/{{_id}}"><button class="buttons-style btn-primary complete">complete</button></a>
            {{/if}}
        {{/if}}
 
        {{#if isNotOwner}}
-           <button class="buttons-style fork">Fork</button>
+           <button class="btn buttons-style btn-primary fork">Fork</button>
        {{/if}}
 
        <p class="number_of_likes">{{likes.length}}</p>

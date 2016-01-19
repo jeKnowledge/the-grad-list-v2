@@ -151,7 +151,6 @@ html, body {
     text-decoration: none;
   }
 
-
   li a:hover {
     text-decoration: none;
     color: #7C89F3;
@@ -418,11 +417,23 @@ html, body {
 
 .buttons-style {
   background-color: #75718B;
-  color: white;
   border-radius: 4px;
   border: none;
   padding: 3px 6px;
   font-size: 0.8em;
+  color:white;
+}
+
+.btn-primary:hover {
+  background: red;
+}
+
+.buttons-style-editProfile{
+
+  background-color: #75718B;
+  border-radius: 4px;
+  border: none;
+  color:white;
 }
 
 .number_of_likes {
