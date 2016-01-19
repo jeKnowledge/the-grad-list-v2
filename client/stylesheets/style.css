@@ -312,6 +312,12 @@ html, body {
   margin-right: 18px;
   background-color: #c7c7c7; }
 
+.profile-title a {
+  color: #75718B; }
+.profile-title a:hover {
+  color: #211A47;
+  text-decoration: none; }
+
 .buttons-style {
   background-color: #75718B;
   border-radius: 4px;

@@ -415,25 +415,36 @@ html, body {
   background-color: #c7c7c7;
 }
 
+.profile-title {
+
+  a {
+    color: #75718B;
+  }
+
+  a:hover {
+    color: #211A47;
+    text-decoration: none;
+  }
+}
+
 .buttons-style {
   background-color: #75718B;
   border-radius: 4px;
   border: none;
   padding: 3px 6px;
   font-size: 0.8em;
-  color:white;
+  color: white;
 }
 
 .btn-primary:hover {
   background: #211A47;
 }
 
-.buttons-style-editProfile{
-
+.buttons-style-editProfile {
   background-color: #75718B;
   border-radius: 4px;
   border: none;
-  color:white;
+  color: white;
 }
 
 .number_of_likes {
