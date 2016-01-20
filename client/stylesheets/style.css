@@ -180,6 +180,16 @@ html, body {
     font-size: 0.8em;
     color: #211A47; }
 
+.drop-list {
+  padding: 0; }
+  .drop-list li {
+    list-style: none; }
+  .drop-list a {
+    color: white;
+    text-decoration: none; }
+  .drop-list a:hover {
+    color: red; }
+
 #form-front-page {
   width: 30%;
   margin-left: auto;

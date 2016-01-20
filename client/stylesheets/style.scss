@@ -236,6 +236,23 @@ html, body {
   }
 }
 
+.drop-list {
+ padding: 0;
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: red;
+  }
+}
+
 #form-front-page {
   width: 30%;
   margin-left: auto;
