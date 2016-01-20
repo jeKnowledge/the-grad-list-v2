@@ -206,16 +206,17 @@ html, body {
   margin-left: auto;
   margin-right: auto;
   text-align: center; }
+  #sign-in-btn li a:hover {
+    color: red; }
 
 #sign-in-btn .nav-pills .nav-link.active, .nav-pills .nav-link.active:focus, .nav-pills .nav-link .active:hover {
   background-color: #75718B;
   color: white; }
 
-#authentication-form-btns .nav .nav-pills ul {
+#authentication-form-btns .nav .nav-pills li {
   margin-left: auto;
   margin-right: auto;
-  text-align: center; }
-#authentication-form-btns .nav .nav-pills li {
+  text-align: center;
   display: inline; }
 
 #footer {
