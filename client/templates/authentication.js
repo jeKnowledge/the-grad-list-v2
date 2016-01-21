@@ -6,7 +6,7 @@ Template.authentication.events({
             Meteor.loginWithPassword($('#sign-in-tab').find('#username-input').val(),
                 $('#sign-in-tab').find('#password-input').val());
             if (err) {
-                sAlert.error('Boom! Something went wrong!', {effect: 'slide', position: 'top', timeout: 'none', onRouteClose: false, stack: false, offset: '80px'});
+                sAlert.error('Username or password incorrect', {effect: 'slide', position: 'bottom-right', timeout: 'none', onRouteClose: false, stack: false, offset: '80px'});
             }
         }
 

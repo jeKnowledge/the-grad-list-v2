@@ -3,6 +3,11 @@ html, body {
   height: 100%;
   margin: 0; }
 
+.s-alert-error.s-alert-effect-slide {
+    background: white;  /* your background color here */
+    color: black;  /* your text color here */
+}
+
 .follow {
   background-color: black;
   font-color: white;
