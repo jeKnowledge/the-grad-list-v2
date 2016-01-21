@@ -271,6 +271,10 @@ html, body {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+
+  li a:hover{
+  color:red;
+  }
 }
 
 #sign-in-btn .nav-pills .nav-link.active, .nav-pills .nav-link.active:focus, .nav-pills .nav-link .active:hover {
@@ -279,12 +283,10 @@ html, body {
 }
 
 #authentication-form-btns .nav .nav-pills {
-  ul {
+  li {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-  }
-  li {
     display: inline;
   }
 }
