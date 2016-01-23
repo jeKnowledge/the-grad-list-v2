@@ -1,4 +1,5 @@
 Meteor.methods({
+	
 	loginFacebook: function() {
 		Meteor.users.update(Meteor.userId(), {$set: {username: Meteor.user().services.facebook.name}});
 	},
