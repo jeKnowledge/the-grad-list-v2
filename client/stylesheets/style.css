@@ -204,6 +204,9 @@ html, body {
 .nav-pills .nav-item.open .nav-link, .nav-pills .nav-item.open .nav-link:focus, .nav-pills .nav-item.open .nav-link:hover {
   background: #211A47; }
 
+#facebook-login a:focus, a:hover {
+  color: #211A47; }
+
 #authentication-form-btns .nav ul {
   margin-left: auto;
   margin-right: auto;
