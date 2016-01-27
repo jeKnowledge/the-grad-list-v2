@@ -3,11 +3,6 @@ html, body {
   height: 100%;
   margin: 0; }
 
-.s-alert-error.s-alert-effect-slide {
-    background: white;  /* your background color here */
-    color: black;  /* your text color here */
-}
-
 .follow {
   background-color: black;
   font-color: white;
@@ -159,9 +154,6 @@ html, body {
   background: url(vintagePic17.jpg) no-repeat center center fixed;
   position: absolute; }
 
-#facebook-login {
-  color: white; }
-
 .row {
   width: 40%; }
 
@@ -202,23 +194,17 @@ html, body {
   margin-top: 12%; }
 
 #sign-up-btn {
-  background-color: #75718B;
   color: white; }
 
 #sign-in-btn {
-  background-color: #75718B;
-  color: white;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center; }
-  #sign-in-btn li a:hover {
-    color: red; }
-
-#sign-in-btn .nav-pills .nav-link.active, .nav-pills .nav-link.active:focus, .nav-pills .nav-link .active:hover {
-  background-color: #75718B;
   color: white; }
 
-#authentication-form-btns .nav .nav-pills li {
+.nav-pills .nav-link.active, .nav-pills .nav-pills .nav-link.active:focus
+.nav-pills .nav-link.active, .nav-pills .nav-link.active:focus, .nav-pills .nav-link.active:hover,
+.nav-pills .nav-item.open .nav-link, .nav-pills .nav-item.open .nav-link:focus, .nav-pills .nav-item.open .nav-link:hover {
+  background: #211A47; }
+
+#authentication-form-btns .nav ul {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
