@@ -274,13 +274,15 @@ html, body {
   color: #211A47;
 }
 
-#authentication-form-btns .nav {
-  ul {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    display: inline;
+#authentication-form-btns {
 
+  ul {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  li {
+    text-align: center;
   }
 }
 
@@ -416,6 +418,11 @@ html, body {
 
   p {
     margin: 0;
+  }
+
+  a:hover {
+    color: #5e3099;
+    text-decoration: none;
   }
 }
 

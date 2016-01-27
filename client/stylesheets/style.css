@@ -207,11 +207,12 @@ html, body {
 #facebook-login a:focus, a:hover {
   color: #211A47; }
 
-#authentication-form-btns .nav ul {
-  margin-left: auto;
+#authentication-form-btns ul {
   margin-right: auto;
-  text-align: center;
   display: inline; }
+  margin-left: auto; }
+#authentication-form-btns li {
+  text-align: center; }
 
 #footer {
   margin-left: auto;
@@ -309,6 +310,9 @@ html, body {
     color: black; }
   .post .post-content p {
     margin: 0; }
+  .post .post-content a:hover {
+    color: #5e3099;
+    text-decoration: none; }
 
 .post .discuss {
   display: block;

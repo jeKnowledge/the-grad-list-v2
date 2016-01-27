@@ -20,8 +20,13 @@
        <img class="submitPost-image" src="{{imagesOfCompletion}}"/>
         {{> social_buttons}}
       </div>
-      <button class="buttons-style btn-primary like">Like</button>
+       <!-- <button class="buttons-style btn-primary like">Like</button> -->
 
+       <ul class="list-group">
+           <li class="list-group-item">
+               <span class="label label-default label-pill pull-xs-right number_of_likes">{{likes.length}}</span>
+               <button class="buttons-style btn-primary like">Like</button>
+               
        {{#if isOwner}}
            <button class="buttons-style btn-primary delete">Remove</button>
            {{#if isNotCompleted}}
@@ -32,8 +37,9 @@
        {{#if isNotOwner}}
            <button class="btn buttons-style btn-primary fork">Fork</button>
        {{/if}}
-
-       <p class="number_of_likes">{{likes.length}}</p>
+           </li>
+       </ul>
+      <!-- <p class="number_of_likes">{{likes.length}}</p> -->
        <form class = "new-comment">
            <input name="comment" id="comment" type="text" value="" placeholder="Add a comment" class="form-control"/>
        </form>
