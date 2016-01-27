@@ -111,15 +111,25 @@ html, body {
   font-size: 2em;
   /* top | right | bottom | left */
   margin: 2% auto 2% auto;
+  text-align: center;
 }
 
 #suggestions {
+
   width: 50%;
-  color: #75718B;
+  color:  #211A47;
   font-family: Montserrat;
   font-size: 2em;
   /* top | right | bottom | left */
   margin: 2% auto 2% auto;
+
+  a {
+    color: #75718B;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
 }
 
 .header-style {
@@ -462,6 +472,7 @@ html, body {
 .buttons-style-editProfile {
   background-color: #75718B;
   border-radius: 4px;
+  font-size: 0.8em;
   border: none;
   color: white;
 }

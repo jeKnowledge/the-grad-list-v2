@@ -9,14 +9,14 @@
     	
     	{{#if check_followers}}
 			{{#each user}}
-				<a href="/user/{{username}}">{{username}}</a>
+				<h6><a href="/user/{{username}}">{{username}}</a></h6>
 			<br>
 			{{/each}}
 		{{/if}}
 
 		{{#unless check_followers}}
 			{{#each friends_of_friends}}
-				<a href="/user/{{username}}">{{username}}</a>
+				<h6><a href="/user/{{username}}">{{username}}</a></h6>
 			<br>
 			{{/each}}
 		{{/unless}}
