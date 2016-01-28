@@ -199,22 +199,28 @@ html, body {
   margin-top: 12%; }
 
 #sign-up-btn {
-  color: white; }
+  color: white;
+  text-align: center; }
 
 #sign-in-btn {
-  color: white; }
-
-.nav-pills .nav-link.active, .nav-pills .nav-link.active:focus {
-  background: #211A47; }
+  color: white;
+  text-align: center; }
 
 #facebook-login a:focus, a:hover {
   color: #211A47; }
 
+.nav-pills .nav-link.active, .nav-pills .nav-link.active:focus,
+.nav-pills .nav-link.active:hover, .nav-pills .nav-item.open .nav-link a:focus, a:hover {
+  background: #211A47; }
+
 #authentication-form-btns {
-  display: inline;
-  float: none;
-  margin-right: auto;
-  margin-left: auto; }
+  text-align: center; }
+  #authentication-form-btns ul.nav {
+    display: inline-block; }
+    #authentication-form-btns ul.nav li {
+      display: inline; }
+      #authentication-form-btns ul.nav li a {
+        float: left; }
 
 .label-default {
   background-color: #cdcfda; }
