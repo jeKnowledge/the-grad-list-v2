@@ -117,7 +117,7 @@ html, body {
 #suggestions {
 
   width: 50%;
-  color:  #211A47;
+  color: #211A47;
   font-family: Montserrat;
   font-size: 2em;
   /* top | right | bottom | left */
@@ -273,10 +273,15 @@ html, body {
 #sign-in-btn {
   color: white;
 }
-.nav-pills .nav-link.active, .nav-pills .nav-pills .nav-link.active:focus
-.nav-pills .nav-link.active, .nav-pills .nav-link.active:focus, .nav-pills .nav-link.active:hover,
-.nav-pills .nav-item.open .nav-link, .nav-pills .nav-item.open .nav-link:focus, .nav-pills .nav-item.open .nav-link:hover{
+
+.nav-pills .nav-link.active, .nav-pills .nav-link.active:focus,
+{
   background: #211A47;
+
+}
+
+.nav-pills .nav-link.active:hover, .nav-pills .nav-item.open .nav-link,
+.nav-pills .nav-item.open .nav-link:focus, .nav-pills .nav-item.open .nav-link:hover {
 
 }
 
@@ -285,15 +290,19 @@ html, body {
 }
 
 #authentication-form-btns {
+  display: inline;
+  float: none;
+  margin-right: auto;
+  margin-left: auto;
+}
 
-  ul {
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  li {
-    text-align: center;
-  }
+.label-default {
+   background-color: #cdcfda;
+}
+.label-pill {
+  padding-left: .6em;
+  padding-right: .6em;
+  border-radius: 0.2rem;
 }
 
 #footer {

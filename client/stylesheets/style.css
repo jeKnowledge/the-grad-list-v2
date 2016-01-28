@@ -88,15 +88,20 @@ html, body {
   font-family: Montserrat;
   font-size: 2em;
   /* top | right | bottom | left */
-  margin: 2% auto 2% auto; }
+  margin: 2% auto 2% auto;
+  text-align: center; }
 
 #suggestions {
   width: 50%;
-  color: #75718B;
+  color: #211A47;
   font-family: Montserrat;
   font-size: 2em;
   /* top | right | bottom | left */
   margin: 2% auto 2% auto; }
+  #suggestions a {
+    color: #75718B; }
+  #suggestions a:hover {
+    text-decoration: underline; }
 
 .header-style {
   background-color: #211A47;
@@ -199,9 +204,9 @@ html, body {
 #sign-in-btn {
   color: white; }
 
-.nav-pills .nav-link.active, .nav-pills .nav-pills .nav-link.active:focus
-.nav-pills .nav-link.active, .nav-pills .nav-link.active:focus, .nav-pills .nav-link.active:hover,
-.nav-pills .nav-item.open .nav-link, .nav-pills .nav-item.open .nav-link:focus, .nav-pills .nav-item.open .nav-link:hover {
+.nav-pills .nav-link.active, .nav-pills .nav-link.active:focus,
+.nav-pills .nav-link.active:hover, .nav-pills .nav-item.open .nav-link,
+.nav-pills .nav-item.open .nav-link:focus, .nav-pills .nav-item.open .nav-link:hover {
   background: #211A47; }
 
 #facebook-login a:focus, a:hover {
@@ -209,7 +214,6 @@ html, body {
 
 #authentication-form-btns ul {
   margin-right: auto;
-  display: inline; }
   margin-left: auto; }
 #authentication-form-btns li {
   text-align: center; }
@@ -335,12 +339,16 @@ html, body {
   font-size: 0.8em;
   color: white; }
 
+.btn-primary-outline:hover {
+  background: #211A47; }
+
 .btn-primary:hover {
   background: #211A47; }
 
 .buttons-style-editProfile {
   background-color: #75718B;
   border-radius: 4px;
+  font-size: 0.8em;
   border: none;
   color: white; }
 
@@ -355,17 +363,6 @@ html, body {
 
 .social-button-group {
   text-align: center; }
-
-.fork {
-  display: block;
-  float: right;
-  margin-top: 7px;
-  margin-right: 25px;
-  background-color: #c7c7c7;
-  border-radius: 4px;
-  border: none;
-  padding: 5px 10px;
-  color: black; }
 
 .comments {
   list-style-type: none;
