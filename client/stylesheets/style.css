@@ -207,7 +207,7 @@ html, body {
   text-align: center; }
 
 #facebook-login a:focus, a:hover {
-  color: #211A47; }
+  color: white; }
 
 .nav-pills .nav-link.active, .nav-pills .nav-link.active:focus,
 .nav-pills .nav-link.active:hover, .nav-pills .nav-item.open .nav-link a:focus, a:hover {
