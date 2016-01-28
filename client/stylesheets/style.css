@@ -198,19 +198,22 @@ html, body {
   margin-right: auto;
   margin-top: 12%; }
 
-#sign-up-btn {
+#sign-up-btn a:focus, a:hover {
   color: white;
-  text-align: center; }
+  background: #968EBF; }
 
-#sign-in-btn {
+#sign-in-btn a:focus, a:hover {
   color: white;
-  text-align: center; }
+  background: #968EBF; }
 
 #facebook-login a:focus, a:hover {
   color: white; }
 
-.nav-pills .nav-link.active, .nav-pills .nav-link.active:focus,
+/*.nav-pills .nav-link.active, .nav-pills .nav-link.active:focus,
 .nav-pills .nav-link.active:hover, .nav-pills .nav-item.open .nav-link a:focus, a:hover {
+  background: #75718B;
+} */
+.nav-pills .nav-link.active, .nav-pills .nav-link.active:focus, .nav-pills .nav-link.active:hover {
   background: #211A47; }
 
 #authentication-form-btns {
