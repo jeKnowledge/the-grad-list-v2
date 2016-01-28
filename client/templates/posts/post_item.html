@@ -25,7 +25,12 @@
        <ul class="list-group">
            <li class="list-group-item">
                <span class="label label-default label-pill pull-xs-right number_of_likes">{{likes.length}}</span>
-               <button class="buttons-style btn-primary like">Like</button>
+               {{#if checkLike}}
+                <button class="buttons-style btn-primary like">Like</button>
+               {{/if}}
+               {{#unless checkLike}}
+                <button class="buttons-style btn-primary dislike">Dislike</button>
+               {{/unless}}
                
        {{#if isOwner}}
            <button class="buttons-style btn-primary delete">Remove</button>

@@ -31,6 +31,17 @@ Template.postItem.helpers({
     	return this.owner !== Meteor.userId();
     },
 
+    checkLike: function () {
+        var a = this.likes;
+        var obj = Meteor.userId();
+        for (var i = 0; i < a.length; i++) {
+            if (a[i] === obj) {
+                return false;
+            }
+        }
+        return true;
+    },
+
     ownerUsername: function() {
       return Meteor.users.findOne({"_id": this.owner}).username;
     },
@@ -49,6 +60,10 @@ Template.postItem.events({
 	'click .like': function() {
 		Meteor.call("likePost", this._id);
 	},
+
+    'click .dislike': function() {
+        Meteor.call("unlikePost", this._id);
+    },
 
 	'click .delete': function() {
 		Meteor.call("deletePost", this._id);

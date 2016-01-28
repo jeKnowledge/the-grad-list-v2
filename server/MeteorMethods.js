@@ -26,9 +26,13 @@ Meteor.methods({
             };
 		post2._id = Posts.insert(post2);
         },
-
+       
     likePost: function(id) {
     	Posts.update(Posts.findOne({_id: id}), {$addToSet: {likes: Meteor.userId()} });
+    },
+
+    dislikePost: function(id) {
+    	Posts.update(Posts.findOne({_id: id}), {$pull: {likes: Meteor.userId()} });
     },
 
     followId: function(id) {
