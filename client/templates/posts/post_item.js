@@ -62,7 +62,7 @@ Template.postItem.events({
 	},
 
     'click .dislike': function() {
-        Meteor.call("unlikePost", this._id);
+        Meteor.call("dislikePost", this._id);
     },
 
 	'click .delete': function() {
