@@ -190,7 +190,7 @@ html, body {
     color: white;
     text-decoration: none; }
   .drop-list a:hover {
-    color: red; }
+    color: #75718B; }
 
 #form-front-page {
   width: 30%;
@@ -204,19 +204,25 @@ html, body {
 #sign-in-btn {
   color: white; }
 
-.nav-pills .nav-link.active, .nav-pills .nav-link.active:focus,
-.nav-pills .nav-link.active:hover, .nav-pills .nav-item.open .nav-link,
-.nav-pills .nav-item.open .nav-link:focus, .nav-pills .nav-item.open .nav-link:hover {
+.nav-pills .nav-link.active, .nav-pills .nav-link.active:focus {
   background: #211A47; }
 
 #facebook-login a:focus, a:hover {
   color: #211A47; }
 
-#authentication-form-btns ul {
+#authentication-form-btns {
+  display: inline;
+  float: none;
   margin-right: auto;
   margin-left: auto; }
-#authentication-form-btns li {
-  text-align: center; }
+
+.label-default {
+  background-color: #cdcfda; }
+
+.label-pill {
+  padding-left: .6em;
+  padding-right: .6em;
+  border-radius: 0.2rem; }
 
 #footer {
   margin-left: auto;
