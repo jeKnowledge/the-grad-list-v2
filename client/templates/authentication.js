@@ -4,12 +4,13 @@ Template.authentication.events({
     'click #sign-in-btn': function (event, err) {
         if (currentTab == 'sign_in') {
             Meteor.loginWithPassword($('#sign-in-tab').find('#username-input').val(),
-                $('#sign-in-tab').find('#password-input').val());
-            if (err) {
-                sAlert.error('Username or password incorrect', {effect: 'slide', position: 'bottom-right', timeout: 'none', onRouteClose: false, stack: false, offset: '80px'});
-            }
+            $('#sign-in-tab').find('#password-input').val(), function(err){
+                if (err) {
+                    console.log(err);
+                    sAlert.error('Username or password incorrect', {effect: 'slide', position: 'bottom-right', timeout: 'none', onRouteClose: false, stack: false, offset: '80px'});
+                }
+            });
         }
-
         currentTab = 'sign_in';
     },
 
