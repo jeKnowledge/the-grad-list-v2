@@ -86,7 +86,7 @@ html, body {
   width: 50%;
   color: #75718B;
   font-family: Montserrat;
-  font-size: 2em;
+  font-size: 1.5em;
   /* top | right | bottom | left */
   margin: 2% auto 2% auto;
   text-align: center; }
@@ -198,21 +198,17 @@ html, body {
   margin-right: auto;
   margin-top: 12%; }
 
-#sign-up-btn a:focus, a:hover {
+#sign-up-btn a a:focus, #sign-up-btn a a:hover {
   color: white;
   background: #968EBF; }
 
-#sign-in-btn a:focus, a:hover {
+#sign-in-btn a a:focus, #sign-in-btn a a:hover {
   color: white;
   background: #968EBF; }
 
 #facebook-login a:focus, a:hover {
   color: white; }
 
-/*.nav-pills .nav-link.active, .nav-pills .nav-link.active:focus,
-.nav-pills .nav-link.active:hover, .nav-pills .nav-item.open .nav-link a:focus, a:hover {
-  background: #75718B;
-} */
 .nav-pills .nav-link.active, .nav-pills .nav-link.active:focus, .nav-pills .nav-link.active:hover {
   background: #211A47; }
 
@@ -368,7 +364,7 @@ html, body {
   color: white; }
 
 .number_of_likes {
-  width: 7%;
+  width: 6%;
   margin: 0; }
 
 .social-buttons {
@@ -466,5 +462,12 @@ html, body {
   clear: both;
   margin-bottom: 5px;
   pointer-events: auto; }
+
+@media (max-width: 800px) {
+  #completed-posts-title {
+    font-size: 1em; }
+
+  .number_of_likes {
+    width: 5%; } }
 
 /*# sourceMappingURL=style.css.map */
