@@ -699,8 +699,12 @@ html, body {
     font-size: 0.6em;
   }
 
-  .post {
+  .main .post {
     width: 80%;
+  }
+
+  .navbar-search {
+    width: 100%  !important;
   }
 
 }
@@ -710,4 +714,9 @@ html, body {
     font-size: 0.6rem;
   }
 
+}
+
+.navbar-search {
+  width: 30%;
+  float: right;
 }

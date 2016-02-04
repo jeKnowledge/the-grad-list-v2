@@ -511,10 +511,16 @@ html, body {
   .buttons-style {
     font-size: 0.6em; }
 
-  .post {
-    width: 80%; } }
+  .main .post {
+    width: 80%; }
+
+  .navbar-search {
+    width: 100%  !important; } }
 @media (max-width: 400px) {
   .navbar-toggleable-xs {
     font-size: 0.6rem; } }
+.navbar-search {
+  width: 30%;
+  float: right; }
 
 /*# sourceMappingURL=style.css.map */
