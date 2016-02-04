@@ -114,7 +114,7 @@ html, body {
   font-family: Montserrat;
   font-size: 1.5em;
   /* top | right | bottom | left */
-  margin: 2% auto 2% auto;
+  margin: 0% auto 2% auto;
   text-align: left;
 }
 
@@ -227,13 +227,13 @@ html, body {
   margin-top: 2%;
 }
 
-.title {
+.title-homePage {
   margin-top: 7%;
 
   h3 {
     text-align: center;
     font-family: Montserrat;
-    font-size: 2.8em;
+    font-size: 4em;
     font-weight: 900;
     color: #211A47;
   }
@@ -241,7 +241,7 @@ html, body {
   p {
     text-align: center;
     font-family: Montserrat;
-    font-size: 0.8em;
+    font-size: 1.5em;
     color: #211A47;
   }
 }
@@ -632,6 +632,10 @@ html, body {
   pointer-events: auto;
 }
 
+.navbar-toggler {
+  color: white;
+}
+
 @media (max-width: 768px) {
   #completed-posts-title {
     font-size: 1.3em;
@@ -675,17 +679,20 @@ html, body {
   }
 
   .number_of_likes {
-    width: 19%;
+    width: 18%;
   }
 
   .buttons-style {
     font-size: 0.6em;
   }
 
-}
-
-@media (max-width: 600px) {
   .post {
     width: 80%;
   }
+}
+
+.title {
+  color: #8e1cdd;
+  text-align: left;
+
 }
