@@ -104,6 +104,13 @@ html, body {
   }
 }
 
+.title-Pages {
+  color: #75718B;
+  text-align: left;
+  font-size: 1.5em;
+  font-family: Montserrat;
+}
+
 .delete2 {
   float: right;
 }
@@ -465,6 +472,8 @@ html, body {
 
 .profile-title {
 
+  font-family: Montserrat;
+
   a {
     color: #75718B;
   }
@@ -641,6 +650,10 @@ html, body {
     font-size: 1.3em;
   }
 
+  #title-Pages {
+    font-size: 1.3em;
+  }
+
   .profile-title {
 
     h4 {
@@ -689,10 +702,4 @@ html, body {
   .post {
     width: 80%;
   }
-}
-
-.title {
-  color: #8e1cdd;
-  text-align: left;
-
 }

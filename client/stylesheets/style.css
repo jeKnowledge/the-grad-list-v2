@@ -82,6 +82,12 @@ html, body {
     text-decoration: none;
     list-style: none; }
 
+.title-Pages {
+  color: #75718B;
+  text-align: left;
+  font-size: 1.5em;
+  font-family: Montserrat; }
+
 .delete2 {
   float: right; }
 
@@ -339,11 +345,13 @@ html, body {
   margin-right: 18px;
   background-color: #c7c7c7; }
 
-.profile-title a {
-  color: #75718B; }
-.profile-title a:hover {
-  color: #211A47;
-  text-decoration: none; }
+.profile-title {
+  font-family: Montserrat; }
+  .profile-title a {
+    color: #75718B; }
+  .profile-title a:hover {
+    color: #211A47;
+    text-decoration: none; }
 
 .buttons-style {
   background-color: #75718B;
@@ -473,6 +481,9 @@ html, body {
   #completed-posts-title {
     font-size: 1.3em; }
 
+  #title-Pages {
+    font-size: 1.3em; }
+
   .profile-title h4 {
     font-size: 1.3em; }
 
@@ -502,8 +513,5 @@ html, body {
 
   .post {
     width: 80%; } }
-.title {
-  color: #8e1cdd;
-  text-align: left; }
 
 /*# sourceMappingURL=style.css.map */
