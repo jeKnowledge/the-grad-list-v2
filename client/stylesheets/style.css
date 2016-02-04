@@ -480,9 +480,18 @@ html, body {
     margin-top: 15%; } }
 @media (max-width: 992px) {
   #main {
-    margin-top: 10%; } }
+    margin-top: 10%; }
+
+  .number_of_likes {
+    width: 16%; } }
 @media (max-width: 600px) {
   #main {
-    margin-top: 18%; } }
+    margin-top: 18%; }
+
+  .number_of_likes {
+    width: 19%; }
+
+  .buttons-style {
+    font-size: 0.6em; } }
 
 /*# sourceMappingURL=style.css.map */
