@@ -54,6 +54,10 @@ html, body {
   margin: 2% auto 2% auto;
 }
 
+#main {
+  margin-top: 10%;
+}
+
 .comment {
   margin-top: -5px;
   display: table-row;
@@ -111,7 +115,7 @@ html, body {
   font-size: 1.5em;
   /* top | right | bottom | left */
   margin: 2% auto 2% auto;
-  text-align: center;
+  text-align: left;
 }
 
 #suggestions {
@@ -630,7 +634,15 @@ html, body {
 
 @media (max-width: 800px) {
   #completed-posts-title {
-    font-size: 1em;
+    font-size: 1.3em;
+  }
+
+  .profile-title {
+
+    h4 {
+      font-size: 1.3em;
+    }
+
   }
 
   .number_of_likes {
