@@ -163,7 +163,7 @@ html, body {
   position: absolute; }
 
 .row {
-  width: 75%; }
+  width: 40%; }
 
 .input-field label {
   color: white; }
@@ -477,7 +477,10 @@ html, body {
     width: 5%; }
 
   #main {
-    margin-top: 15%; } }
+    margin-top: 15%; }
+
+  .post {
+    width: 75%; } }
 @media (max-width: 992px) {
   #main {
     margin-top: 10%; }
@@ -493,5 +496,8 @@ html, body {
 
   .buttons-style {
     font-size: 0.6em; } }
+@media (max-width: 600px) {
+  .post {
+    width: 80%; } }
 
 /*# sourceMappingURL=style.css.map */

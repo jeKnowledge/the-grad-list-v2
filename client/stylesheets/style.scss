@@ -216,7 +216,7 @@ html, body {
 }
 
 .row {
-  width: 75%;
+  width: 40%;
 }
 
 .input-field label {
@@ -653,6 +653,9 @@ html, body {
     margin-top: 15%;
   }
 
+  .post {
+    width: 75%;
+  }
 }
 
 @media (max-width: 992px) {
@@ -677,5 +680,12 @@ html, body {
 
   .buttons-style {
     font-size: 0.6em;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .post {
+    width: 80%;
   }
 }
