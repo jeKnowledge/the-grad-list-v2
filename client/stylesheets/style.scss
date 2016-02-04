@@ -55,7 +55,7 @@ html, body {
 }
 
 #main {
-  margin-top: 10%;
+  margin-top: 7%;
 }
 
 .comment {
@@ -216,7 +216,7 @@ html, body {
 }
 
 .row {
-  width: 40%;
+  width: 75%;
 }
 
 .input-field label {
@@ -632,7 +632,7 @@ html, body {
   pointer-events: auto;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   #completed-posts-title {
     font-size: 1.3em;
   }
@@ -649,4 +649,17 @@ html, body {
     width: 5%;
   }
 
+  #main {
+    margin-top: 15%;
+  }
+
 }
+
+@media (max-width: 992px) {
+
+  #main {
+    margin-top: 10%;
+  }
+}
+
+

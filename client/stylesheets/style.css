@@ -46,7 +46,7 @@ html, body {
   margin: 2% auto 2% auto; }
 
 #main {
-  margin-top: 10%; }
+  margin-top: 7%; }
 
 .comment {
   margin-top: -5px;
@@ -163,7 +163,7 @@ html, body {
   position: absolute; }
 
 .row {
-  width: 40%; }
+  width: 75%; }
 
 .input-field label {
   color: white; }
@@ -466,7 +466,7 @@ html, body {
   margin-bottom: 5px;
   pointer-events: auto; }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   #completed-posts-title {
     font-size: 1.3em; }
 
@@ -474,6 +474,12 @@ html, body {
     font-size: 1.3em; }
 
   .number_of_likes {
-    width: 5%; } }
+    width: 5%; }
+
+  #main {
+    margin-top: 15%; } }
+@media (max-width: 992px) {
+  #main {
+    margin-top: 10%; } }
 
 /*# sourceMappingURL=style.css.map */
