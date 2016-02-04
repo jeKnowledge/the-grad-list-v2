@@ -24,26 +24,29 @@
                         <li class="nav-item">
                             <a class="nav-link" id="logout" href="#">Logout</a>
                         </li>
+
+                       <li> <form class="form-control navbar-search pull-right" role="search">
+                            {{> EasySearch.Input index=usersIndex type="text" style="100%" }}
+                            {{#EasySearch.IfInputEmpty index=usersIndex }}
+                            {{else}}
+                                <div class="content-list" id="list">
+                                    <ul class="drop-list">
+                                        {{#EasySearch.Each index=usersIndex}}
+                                            <li>
+                                                <a class="profile" href="/user/{{username}}">{{username}}</a>
+                                                <img src="{{picture}}" class="post-profile-pic"/>
+                                            </li>
+                                        {{/EasySearch.Each}}
+                                    </ul>
+                                </div>
+                            {{/EasySearch.IfInputEmpty}}
+                        </form>
+                       </li>
                     </ul>
 
                 </div>
 
-                <form class="form-inline navbar-form pull-right" role="search">
-                    {{> EasySearch.Input index=usersIndex type="text" class="form-control" }}
-                    {{#EasySearch.IfInputEmpty index=usersIndex }}
-                    {{else}}
-                        <div class="content-list" id="list">
-                            <ul class="drop-list">
-                                {{#EasySearch.Each index=usersIndex}}
-                                    <li>
-                                        <a class="profile" href="/user/{{username}}">{{username}}</a>
-                                        <img src="{{picture}}" class="post-profile-pic"/>
-                                    </li>
-                                {{/EasySearch.Each}}
-                            </ul>
-                        </div>
-                    {{/EasySearch.IfInputEmpty}}
-                </form>
+
 
             </nav>
         </div>

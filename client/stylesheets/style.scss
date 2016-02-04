@@ -670,7 +670,7 @@ html, body {
     margin-top: 15%;
   }
 
-  .post {
+  .main .post {
     width: 75%;
   }
 }
@@ -702,4 +702,12 @@ html, body {
   .post {
     width: 80%;
   }
+
+}
+
+@media (max-width: 400px) {
+  .navbar-toggleable-xs {
+    font-size: 0.6rem;
+  }
+
 }
