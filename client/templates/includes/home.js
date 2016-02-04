@@ -10,7 +10,7 @@ Template.home.helpers({
   },
 
   check_followers: function() {
-    if (Meteor.user().follows.length == 0) {
+    if (Meteor.user().follows.length === 0) {
       return true;
     }
   },
@@ -29,16 +29,16 @@ Template.home.helpers({
     }
     return true;
 	}
-	
+
   	var a = [];
-  	for (var i = 0; i < friends_of_friends.length; i++) { 
-  		for (var j = 0; j < friends_of_friends[i].length; j++) {
-  			if (friends_of_friends[i][j] != Meteor.userId() && notcontains(Meteor.user().follows, friends_of_friends[i][j]) ) {
-  				a.push(Meteor.users.findOne({"_id":friends_of_friends[i][j]}));
+  	for (var p = 0; p < friends_of_friends.length; p++) {
+  		for (var j = 0; j < friends_of_friends[p].length; j++) {
+  			if (friends_of_friends[p][j] != Meteor.userId() && notcontains(Meteor.user().follows, friends_of_friends[p][j]) ) {
+  				a.push(Meteor.users.findOne({"_id":friends_of_friends[p][j]}));
   			}
   		}
   	}
 
   	return a.slice(0,3);
   }
-})
+});

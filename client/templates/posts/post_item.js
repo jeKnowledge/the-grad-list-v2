@@ -1,7 +1,7 @@
 Template.postItem.helpers({
-	
+
 	isCurrentUser:function() {
-		return Meteor.userId() == this.owner;	
+		return Meteor.userId() == this.owner;
 	},
 
 	isOwner: function(){
@@ -19,14 +19,14 @@ Template.postItem.helpers({
     forkedFrom: function() {
     	return this.forkedFrom;
     },
-    
+
     isLoggedIn: function() {
-    	var user = Meteor.user()
+    	var user = Meteor.user();
     	if(user) {
     		return true;
     	}
     },
-    
+
     isNotOwner: function() {
     	return this.owner !== Meteor.userId();
     },
@@ -84,7 +84,7 @@ Template.postItem.events({
 		});
 
 		Meteor.call("addCommentToPost", this._id, commentId);
-		
+
 		event.target.comment.value = "";
 	}
 });

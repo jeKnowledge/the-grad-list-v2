@@ -6,7 +6,7 @@ Template.commentItem.helpers({
     owner: function() {
     	return Meteor.userId() === this.owner;
     }
-}); 
+});
 
 Template.commentItem.events({
 	'click .delete2': function() {

@@ -3,7 +3,7 @@ Template.header.helpers({
 	userID: function() {
 		return Meteor.userId();
 	},
-	
+
 	getUsername: function() {
 		return Meteor.user().username;
 	},
@@ -18,4 +18,4 @@ Template.header.events({
         Meteor.logout();
         Router.go('/');
     }
-})
+});

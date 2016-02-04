@@ -17,7 +17,7 @@ Template.userPosts.helpers({
     postsByUser: function() {
         return Posts.find({owner: this._id}, {sort: {date: -1}});
     },
-  
+
     getUsername: function() {
         return Meteor.users.findOne({"_id": this._id}).username;
     },
@@ -41,21 +41,21 @@ Template.userPosts.helpers({
         if (Meteor.users.findOne({"_id": this._id}).university != '[object Object]')
             return Meteor.users.findOne({"_id": this._id}).university;
         else
-            return ''
+            return '';
     },
 
     country: function() {
         if (Meteor.users.findOne({"_id": this._id}).country != '[object Object]')
             return Meteor.users.findOne({"_id": this._id}).country;
         else
-            return ''
+            return '';
     },
 
     picture: function() {
         if (Meteor.users.findOne({"_id": this._id}).picture != '[object Object]')
             return Meteor.users.findOne({"_id": this._id}).picture;
         else
-            return ''
+            return '';
     }
 });
 

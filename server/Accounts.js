@@ -1,5 +1,5 @@
 Accounts.onCreateUser(function(options, user) {
-    
+
     user.follows = new Array();
     user.followed = new Array();
     user.bio = new String();

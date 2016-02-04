@@ -3,4 +3,4 @@ Template.userPosts.helpers({
     	console.log(this.tags);
         return Posts.find({ tags: this.tags }, {sort: {date: -1}});
     },
-})
+});

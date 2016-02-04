@@ -20,4 +20,3 @@ Template.postSubmit.events({
             Router.go('postPage', post);
         }
 });
-

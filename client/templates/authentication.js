@@ -25,7 +25,7 @@ Template.authentication.events({
                 username: $('#sign-up-tab').find('#username-input').val(),
                 password: $('#sign-up-tab').find('#password-input').val()
             });
-            Meteor.call("defaultPicture", Meteor.userId())
+            Meteor.call("defaultPicture", Meteor.userId());
         }
 
         currentTab = 'sign_up';
@@ -33,7 +33,7 @@ Template.authentication.events({
 
     'click #facebook-login': function(event) {
         Meteor.loginWithFacebook({}, function(err){
-        Meteor.call("loginFacebook", Meteor.userId())
+        Meteor.call("loginFacebook", Meteor.userId());
             if (err) {
                 throw new Meteor.Error("Facebook login failed");
             }

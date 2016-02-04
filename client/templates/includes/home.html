@@ -1,12 +1,12 @@
 <template name="home">
     {{> postSubmit}}
-    
+
     {{> feed}}
-    
+
     <div id="suggestions">
 
     	<h6>Users that you can follow</h6>
-    	
+
     	{{#if check_followers}}
 			{{#each user}}
 				<h6><a href="/user/{{username}}">{{username}}</a></h6>
