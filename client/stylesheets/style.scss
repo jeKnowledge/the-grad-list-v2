@@ -662,4 +662,8 @@ html, body {
   }
 }
 
-
+@media (max-width: 600px) {
+  #main {
+    margin-top: 18%;
+  }
+}

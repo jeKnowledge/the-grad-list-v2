@@ -481,5 +481,8 @@ html, body {
 @media (max-width: 992px) {
   #main {
     margin-top: 10%; } }
+@media (max-width: 600px) {
+  #main {
+    margin-top: 18%; } }
 
 /*# sourceMappingURL=style.css.map */
