@@ -523,4 +523,7 @@ html, body {
   width: 30%;
   float: right; }
 
+.navbar-search input {
+  width: 100%; }
+
 /*# sourceMappingURL=style.css.map */
