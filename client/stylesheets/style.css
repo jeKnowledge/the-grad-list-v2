@@ -196,10 +196,19 @@ html, body {
   .drop-list li {
     list-style: none; }
   .drop-list a {
-    color: white;
+    color: #211A47;
     text-decoration: none; }
   .drop-list a:hover {
-    color: #75718B; }
+    color: #7C89F3; }
+
+.navbar-search {
+  width: 30%;
+  float: right; }
+
+.navbar-search input {
+  width: 100%;
+  color: #211A47;
+  border: 0px solid transparent; }
 
 #form-front-page {
   width: 30%;
@@ -515,15 +524,9 @@ html, body {
     width: 80%; }
 
   .navbar-search {
-    width: 100%  !important; } }
+    width: 100% !important; } }
 @media (max-width: 400px) {
   .navbar-toggleable-xs {
     font-size: 0.6rem; } }
-.navbar-search {
-  width: 30%;
-  float: right; }
-
-.navbar-search input {
-  width: 100%; }
 
 /*# sourceMappingURL=style.css.map */

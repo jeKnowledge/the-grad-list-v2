@@ -261,13 +261,24 @@ html, body {
   }
 
   a {
-    color: white;
+    color: #211A47;
     text-decoration: none;
   }
 
   a:hover {
-    color: #75718B;
+    color:  #7C89F3;
   }
+}
+
+.navbar-search {
+  width: 30%;
+  float: right;
+}
+
+.navbar-search input {
+  width: 100%;
+  color: #211A47;
+  border: 0px solid transparent;
 }
 
 #form-front-page {
@@ -704,7 +715,7 @@ html, body {
   }
 
   .navbar-search {
-    width: 100%  !important;
+    width: 100% !important;
   }
 
 }
@@ -716,11 +727,3 @@ html, body {
 
 }
 
-.navbar-search {
-  width: 30%;
-  float: right;
-}
-
-.navbar-search input {
-  width: 100%;
-}
