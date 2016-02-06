@@ -155,6 +155,7 @@ html, body {
 .grid-block, .main, .post, .comments li, .comment-form {
   width: 50%;
   background: #fff;
+  border-radius: 5px;
   border: 0.4px solid rgba(0, 0, 0, 0.15);
   padding: 25px;
   /* top | right | bottom | left */
@@ -209,8 +210,6 @@ html, body {
   width: 100%;
   color: #211A47;
   border: 0px solid transparent; }
-  .navbar-search input a:hover {
-    border: 0px solid transparent; }
 
 #form-front-page {
   width: 30%;

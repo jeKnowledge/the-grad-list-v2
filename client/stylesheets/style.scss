@@ -208,6 +208,7 @@ html, body {
 .grid-block, .main, .post, .comments li, .comment-form {
   width: 50%;
   background: #fff;
+  border-radius: 5px;
   border: 0.4px solid rgba(0, 0, 0, 0.15);
   padding: 25px;
   /* top | right | bottom | left */
@@ -266,7 +267,7 @@ html, body {
   }
 
   a:hover {
-    color:  #7C89F3;
+    color: #7C89F3;
   }
 }
 
@@ -281,9 +282,6 @@ html, body {
   color: #211A47;
   border: 0px solid transparent;
 
-  a:hover {
-    border: 0px solid transparent;
-  }
 }
 
 #form-front-page {
