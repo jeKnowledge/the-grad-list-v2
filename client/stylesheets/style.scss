@@ -28,6 +28,13 @@ html, body {
   font-size: 20px;
 }
 
+.Done {
+  color: #75718B;
+  text-align: left;
+  font-size: 1.5em;
+  font-family: Montserrat;
+}
+
 .done {
   font-size: 2rem;
 }
@@ -201,15 +208,8 @@ html, body {
 .grid-block, .main, .post, .comments li, .comment-form {
   width: 50%;
   background: #fff;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  border-radius: 3px;
-  padding: 10px;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  border: 0.4px solid rgba(0, 0, 0, 0.15);
+  padding: 25px;
   /* top | right | bottom | left */
   margin: 2% auto 2% auto;
 }
@@ -271,14 +271,19 @@ html, body {
 }
 
 .navbar-search {
-  width: 30%;
+  width: 15%;
   float: right;
+  border: 0px solid transparent;
 }
 
 .navbar-search input {
   width: 100%;
   color: #211A47;
   border: 0px solid transparent;
+
+  a:hover {
+    border: 0px solid transparent;
+  }
 }
 
 #form-front-page {
@@ -681,7 +686,7 @@ html, body {
     margin-top: 15%;
   }
 
-  .main .post {
+  .grid-block, .main, .post, .comments li, .comment-form {
     width: 75%;
   }
 }
@@ -710,7 +715,7 @@ html, body {
     font-size: 0.6em;
   }
 
-  .main .post {
+  .grid-block, .main, .post, .comments li, .comment-form {
     width: 80%;
   }
 
