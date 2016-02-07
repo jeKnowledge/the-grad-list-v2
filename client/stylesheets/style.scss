@@ -54,6 +54,10 @@ html, body {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+
+  input[type="text"]{
+    outline: 0;
+  }
 }
 
 .form {
@@ -281,8 +285,10 @@ html, body {
   width: 100%;
   color: #211A47;
   border: 0px solid transparent;
+}
 
-
+input[type="text"] {
+  outline: 0;
 }
 
 #form-front-page {
@@ -359,7 +365,6 @@ html, body {
 
   li img {
     margin-left: 2%;
-
   }
 }
 
@@ -441,7 +446,7 @@ html, body {
 .post .post-content {
   margin-right: auto;
   margin-left: auto;
-  text-align: center;
+  text-align: left;
 
   h3 {
     margin-top: 10px;
@@ -506,9 +511,6 @@ html, body {
   padding: 3px 6px;
   font-size: 0.8em;
   color: white;
-}
-
-input[type="text"] {
   outline: 0;
 }
 
@@ -526,6 +528,7 @@ input[type="text"] {
   font-size: 0.8em;
   border: none;
   color: white;
+  outline: 0;
 }
 
 .number_of_likes {

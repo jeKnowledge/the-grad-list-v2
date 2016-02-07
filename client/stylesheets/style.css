@@ -46,6 +46,8 @@ html, body {
   margin-left: auto;
   margin-right: auto;
   width: 100%; }
+  .new-comment input[type="text"] {
+    outline: 0; }
 
 .form {
   width: 50%;
@@ -211,6 +213,9 @@ html, body {
   color: #211A47;
   border: 0px solid transparent; }
 
+input[type="text"] {
+  outline: 0; }
+
 #form-front-page {
   width: 32%;
   margin-left: auto;
@@ -325,7 +330,7 @@ html, body {
 .post .post-content {
   margin-right: auto;
   margin-left: auto;
-  text-align: center; }
+  text-align: left; }
   .post .post-content h3 {
     margin-top: 10px;
     line-height: 1.4;
@@ -369,9 +374,7 @@ html, body {
   border: none;
   padding: 3px 6px;
   font-size: 0.8em;
-  color: white; }
-
-input[type="text"] {
+  color: white;
   outline: 0; }
 
 .btn-primary-outline:hover {
@@ -385,7 +388,8 @@ input[type="text"] {
   border-radius: 4px;
   font-size: 0.8em;
   border: none;
-  color: white; }
+  color: white;
+  outline: 0; }
 
 .number_of_likes {
   width: 6%;
