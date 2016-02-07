@@ -241,7 +241,7 @@ html, body {
   h3 {
     text-align: center;
     font-family: Montserrat;
-    font-size: 4em;
+    font-size: 3.5em;
     font-weight: 900;
     color: #211A47;
   }
@@ -249,7 +249,7 @@ html, body {
   p {
     text-align: center;
     font-family: Montserrat;
-    font-size: 1.5em;
+    font-size: 1.4em;
     color: #211A47;
   }
 }
@@ -281,6 +281,7 @@ html, body {
   width: 100%;
   color: #211A47;
   border: 0px solid transparent;
+
 
 }
 
@@ -507,6 +508,10 @@ html, body {
   color: white;
 }
 
+input[type="text"] {
+  outline: 0;
+}
+
 .btn-primary-outline:hover {
   background: #211A47;
 }
@@ -664,6 +669,10 @@ html, body {
     font-size: 1.3em;
   }
 
+  #form-front-page {
+    width: 57%;
+  }
+
   #title-Pages {
     font-size: 1.3em;
   }
@@ -688,8 +697,16 @@ html, body {
     width: 75%;
   }
 
-  #form-front-page {
-    width: 57%;
+  .title-homePage {
+    margin-top: 20%;
+
+    h3 {
+      font-size: 3em;
+    }
+
+    p {
+      font-size: 1.2em;
+    }
   }
 }
 
@@ -705,6 +722,18 @@ html, body {
 
   #form-front-page {
     width: 42%;
+  }
+
+  .title-homePage {
+    margin-top: 20%;
+
+    h3 {
+      font-size: 3em;
+    }
+
+    p {
+      font-size: 1.2em;
+    }
   }
 }
 

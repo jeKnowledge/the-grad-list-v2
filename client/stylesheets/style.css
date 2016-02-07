@@ -182,13 +182,13 @@ html, body {
   .title-homePage h3 {
     text-align: center;
     font-family: Montserrat;
-    font-size: 4em;
+    font-size: 3.5em;
     font-weight: 900;
     color: #211A47; }
   .title-homePage p {
     text-align: center;
     font-family: Montserrat;
-    font-size: 1.5em;
+    font-size: 1.4em;
     color: #211A47; }
 
 .drop-list {
@@ -371,6 +371,9 @@ html, body {
   font-size: 0.8em;
   color: white; }
 
+input[type="text"] {
+  outline: 0; }
+
 .btn-primary-outline:hover {
   background: #211A47; }
 
@@ -491,6 +494,9 @@ html, body {
   #completed-posts-title {
     font-size: 1.3em; }
 
+  #form-front-page {
+    width: 57%; }
+
   #title-Pages {
     font-size: 1.3em; }
 
@@ -506,8 +512,12 @@ html, body {
   .grid-block, .main, .post, .comments li, .comment-form {
     width: 75%; }
 
-  #form-front-page {
-    width: 57%; } }
+  .title-homePage {
+    margin-top: 20%; }
+    .title-homePage h3 {
+      font-size: 3em; }
+    .title-homePage p {
+      font-size: 1.2em; } }
 @media (max-width: 992px) {
   #main {
     margin-top: 10%; }
@@ -516,7 +526,14 @@ html, body {
     width: 10%; }
 
   #form-front-page {
-    width: 42%; } }
+    width: 42%; }
+
+  .title-homePage {
+    margin-top: 20%; }
+    .title-homePage h3 {
+      font-size: 3em; }
+    .title-homePage p {
+      font-size: 1.2em; } }
 @media (max-width: 600px) {
   #main {
     margin-top: 18%; }
