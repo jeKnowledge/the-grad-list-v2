@@ -212,7 +212,7 @@ html, body {
   border: 0px solid transparent; }
 
 #form-front-page {
-  width: 30%;
+  width: 32%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 12%; }
@@ -504,19 +504,25 @@ html, body {
     margin-top: 15%; }
 
   .grid-block, .main, .post, .comments li, .comment-form {
-    width: 75%; } }
+    width: 75%; }
+
+  #form-front-page {
+    width: 57%; } }
 @media (max-width: 992px) {
   #main {
     margin-top: 10%; }
 
   .number_of_likes {
-    width: 16%; } }
+    width: 10%; }
+
+  #form-front-page {
+    width: 42%; } }
 @media (max-width: 600px) {
   #main {
     margin-top: 18%; }
 
   .number_of_likes {
-    width: 18%; }
+    width: 16%; }
 
   .buttons-style {
     font-size: 0.6em; }
@@ -525,9 +531,22 @@ html, body {
     width: 80%; }
 
   .navbar-search {
-    width: 100% !important; } }
+    width: 100% !important; }
+
+  #form-front-page {
+    width: 60%; }
+
+  .title-homePage {
+    margin-top: 20%; }
+    .title-homePage h3 {
+      font-size: 2em; }
+    .title-homePage p {
+      font-size: 1em; } }
 @media (max-width: 400px) {
   .navbar-toggleable-xs {
-    font-size: 0.6rem; } }
+    font-size: 0.6rem; }
+
+  #form-front-page {
+    width: 80%; } }
 
 /*# sourceMappingURL=style.css.map */

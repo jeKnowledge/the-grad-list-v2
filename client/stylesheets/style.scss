@@ -285,7 +285,7 @@ html, body {
 }
 
 #form-front-page {
-  width: 30%;
+  width: 32%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 12%;
@@ -687,6 +687,10 @@ html, body {
   .grid-block, .main, .post, .comments li, .comment-form {
     width: 75%;
   }
+
+  #form-front-page {
+    width: 57%;
+  }
 }
 
 @media (max-width: 992px) {
@@ -696,7 +700,11 @@ html, body {
   }
 
   .number_of_likes {
-    width: 16%;
+    width: 10%;
+  }
+
+  #form-front-page {
+    width: 42%;
   }
 }
 
@@ -706,7 +714,7 @@ html, body {
   }
 
   .number_of_likes {
-    width: 18%;
+    width: 16%;
   }
 
   .buttons-style {
@@ -721,6 +729,21 @@ html, body {
     width: 100% !important;
   }
 
+  #form-front-page {
+    width: 60%;
+  }
+
+  .title-homePage {
+    margin-top: 20%;
+
+    h3 {
+      font-size: 2em;
+    }
+
+    p {
+      font-size: 1em;
+    }
+  }
 }
 
 @media (max-width: 400px) {
@@ -728,5 +751,8 @@ html, body {
     font-size: 0.6rem;
   }
 
+  #form-front-page {
+    width: 80%;
+  }
 }
 
