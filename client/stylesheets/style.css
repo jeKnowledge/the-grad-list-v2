@@ -554,6 +554,9 @@ input[type="text"] {
   .navbar-search {
     width: 100% !important; }
 
+  .form-control {
+    font-size: 1em; }
+
   #form-front-page {
     width: 60%; }
 
