@@ -376,11 +376,6 @@ input[type="text"] {
   height: 300px;
 }
 
-.post .post-content .published {
-  margin-top: 10px;
-  line-height: 1.4;
-  font-size: 1em;
-}
 
 /*
 .post {
@@ -443,15 +438,29 @@ input[type="text"] {
   }
 }
 
+.post .post-content .published {
+  margin-top: 10px;
+  line-height: 1;
+  font-size: 1em;
+}
+
+
 .post .post-content {
   margin-right: auto;
   margin-left: auto;
   text-align: left;
 
-  h3 {
+  #post-completed {
     margin-top: 10px;
     line-height: 1.4;
     font-size: 1em;
+  }
+
+
+  h3 {
+    margin-top: 10px;
+    line-height: 1.4;
+    font-size: 2em;
   }
 
   p {
@@ -478,7 +487,8 @@ input[type="text"] {
 
   a:hover {
     color: #5e3099;
-    text-decoration: none;
+    text-decoration: underline;
+    background: #D5D8F4;
   }
 }
 

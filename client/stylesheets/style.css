@@ -278,11 +278,6 @@ input[type="text"] {
 #spinner {
   height: 300px; }
 
-.post .post-content .published {
-  margin-top: 10px;
-  line-height: 1.4;
-  font-size: 1em; }
-
 /*
 .post {
   *zoom: 1;
@@ -327,14 +322,23 @@ input[type="text"] {
 .comment-item-post a {
   color: #7C89F3; }
 
+.post .post-content .published {
+  margin-top: 10px;
+  line-height: 1;
+  font-size: 1em; }
+
 .post .post-content {
   margin-right: auto;
   margin-left: auto;
   text-align: left; }
-  .post .post-content h3 {
+  .post .post-content #post-completed {
     margin-top: 10px;
     line-height: 1.4;
     font-size: 1em; }
+  .post .post-content h3 {
+    margin-top: 10px;
+    line-height: 1.4;
+    font-size: 2em; }
   .post .post-content p {
     margin-top: 10px;
     line-height: 1.4;
@@ -351,7 +355,8 @@ input[type="text"] {
     margin: 0; }
   .post .post-content a:hover {
     color: #5e3099;
-    text-decoration: none; }
+    text-decoration: underline;
+    background: #D5D8F4; }
 
 .post .discuss {
   display: block;
