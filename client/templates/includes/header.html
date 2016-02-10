@@ -27,9 +27,13 @@
 
                        <li> <form class="form-control navbar-search pull-right" role="search" placeholder="Search">
                             {{> EasySearch.Input index=usersIndex type="text" }}
+
                             {{#EasySearch.IfInputEmpty index=usersIndex  }}
+                            <p>Search</p>
                             {{else}}
+
                                 <div class="content-list" id="list">
+
                                     <ul class="drop-list">
                                         {{#EasySearch.Each index=usersIndex}}
                                             <li>
