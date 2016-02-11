@@ -51,11 +51,8 @@ Template.userPosts.helpers({
             return '';
     },
 
-    picture: function() {
-        if (Meteor.users.findOne({"_id": this._id}).picture != '[object Object]')
-            return Meteor.users.findOne({"_id": this._id}).picture;
-        else
-            return '';
+    image: function() {
+      return Meteor.users.findOne({"_id": this._id}).image;
     }
 });
 

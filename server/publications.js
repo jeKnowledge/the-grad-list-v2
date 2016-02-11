@@ -11,12 +11,14 @@ Meteor.publish("comments", function()
 Meteor.publish("usersData", function() {
   if (this.userId) {
     return Meteor.users.find({}, {fields: {"username" :true, _id: true, follows: true, followed: true,
-      'services.facebook.name': true, 'bio':true, 'country': true, 'university': true, 'picture': true
+      'services.facebook.name': true, 'bio':true, 'country': true, 'university': true, 'picture': true, 'image': true
     }});
   } else {
     this.ready();
   }
 });
+
+Meteor.publish("images", function(){ return Images.find(); });
 
 ServiceConfiguration.configurations.remove({
     service: 'facebook'
