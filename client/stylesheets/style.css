@@ -57,7 +57,7 @@ html, body {
   margin: 2% auto 2% auto; }
 
 #main {
-  margin-top: 8%; }
+  margin-top: 7%; }
 
 .profilePic {
   width: 100%; }
@@ -177,7 +177,7 @@ html, body {
   position: absolute; }
 
 .row {
-  width: 40%; }
+  width: 30%; }
 
 .input-field label {
   color: white; }
