@@ -361,8 +361,8 @@ input[type="text"] {
     margin: 0; }
   .post .post-content a:hover {
     color: #5e3099;
-    text-decoration: underline;
-    background: #D5D8F4; }
+    background: #D5D8F4;
+    text-decoration: none; }
 
 .post .discuss {
   display: block;
@@ -507,7 +507,8 @@ input[type="text"] {
 
 @media (max-width: 768px) {
   #completed-posts-title {
-    font-size: 1.3em; }
+    font-size: 1.3em;
+    margin: 0% 10% 2% 10%; }
 
   #form-front-page {
     width: 57%; }
@@ -517,6 +518,10 @@ input[type="text"] {
 
   .profile-title h4 {
     font-size: 1.3em; }
+
+  .profilePic {
+    width: 30%;
+    margin-bottom: 3%; }
 
   .number_of_likes {
     width: 5%; }
@@ -582,6 +587,10 @@ input[type="text"] {
     font-size: 0.6rem; }
 
   #form-front-page {
-    width: 80%; } }
+    width: 80%; }
+
+  .profilePic {
+    width: 45%;
+    margin-bottom: 3%; } }
 
 /*# sourceMappingURL=style.css.map */

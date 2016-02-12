@@ -59,7 +59,7 @@ html, body {
   margin-right: auto;
   width: 100%;
 
-  input[type="text"]{
+  input[type="text"] {
     outline: 0;
   }
 }
@@ -383,7 +383,6 @@ input[type="text"] {
   height: 300px;
 }
 
-
 /*
 .post {
   *zoom: 1;
@@ -451,7 +450,6 @@ input[type="text"] {
   font-size: 1em;
 }
 
-
 .post .post-content {
   margin-right: auto;
   margin-left: auto;
@@ -462,7 +460,6 @@ input[type="text"] {
     line-height: 1.4;
     font-size: 1em;
   }
-
 
   h3 {
     margin-top: 10px;
@@ -494,8 +491,8 @@ input[type="text"] {
 
   a:hover {
     color: #5e3099;
-    text-decoration: underline;
     background: #D5D8F4;
+    text-decoration: none;
   }
 }
 
@@ -687,6 +684,7 @@ input[type="text"] {
 @media (max-width: 768px) {
   #completed-posts-title {
     font-size: 1.3em;
+    margin: 0% 10% 2% 10%;
   }
 
   #form-front-page {
@@ -703,6 +701,11 @@ input[type="text"] {
       font-size: 1.3em;
     }
 
+  }
+
+  .profilePic {
+    width: 30%;
+    margin-bottom: 3%;
   }
 
   .number_of_likes {
@@ -806,6 +809,11 @@ input[type="text"] {
 
   #form-front-page {
     width: 80%;
+  }
+
+  .profilePic {
+    width: 45%;
+    margin-bottom: 3%;
   }
 }
 
