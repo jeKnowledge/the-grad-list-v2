@@ -70,7 +70,11 @@ html, body {
 }
 
 #main {
-  margin-top: 7%;
+  margin-top: 8%;
+}
+
+.profilePic {
+  width: 100%;
 }
 
 .comment {
@@ -730,7 +734,7 @@ input[type="text"] {
 @media (max-width: 992px) {
 
   #main {
-    margin-top: 10%;
+    margin-top: 12%;
   }
 
   .number_of_likes {

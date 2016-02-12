@@ -1,54 +1,61 @@
 <template name="postItem">
-   {{#if isLoggedIn}} 
-   <div class="post">
-      <div class="post-content">
-        <img class="post-profile-pic" src="{{profilePicture}}"/>
-        <h3 class="published"><a href="/user/{{ownerUsername}}">{{username}}</a> wants to</h3>
-        <h3><a href="{{pathFor "postPage"}}">{{title}}</a></h3>
-          <img class="submitPost-image" src="{{image}}"/>
-        <p>tags</p>
-        {{#each tags}}
-          <a href="/{{this}}">{{this}}</a>
-        {{/each}}
+    {{#if isLoggedIn}}
+
+        <div class="post">
+            <div class="post-content">
+
+                <!--  <img class="post-profile-pic" src="{{profilePicture}}"/> -->
+                <h3 class="published"><a href="/user/{{ownerUsername}}">{{username}}</a> wants to</h3>
+                <h3><a href="{{pathFor "postPage"}}">{{title}}</a></h3>
+                <img class="submitPost-image" src="{{image}}"/>
+                <p>tags</p>
+                {{#each tags}}
+                    <a href="/{{this}}">{{this}}</a>
+                {{/each}}
 
 
-        {{#if isForked}}
-          <h3 class="published">forked from <a href="/user/{{forkedFrom}}">{{forkedFrom}}</a></h3>
-       {{/if}}
-       <p>at {{date2}}</p>
-        <h3 id="post-completed">Completed: {{completed}}</h3>
-       <img class="submitPost-image" src="{{imagesOfCompletion}}"/>
-        {{> social_buttons}}
-      </div>
-       <!-- <button class="buttons-style btn-primary like">Like</button> -->
+                {{#if isForked}}
+                    <h3 class="published">forked from <a href="/user/{{forkedFrom}}">{{forkedFrom}}</a></h3>
+                {{/if}}
+                <p>at {{date2}}</p>
+                <h3 id="post-completed">Completed: {{completed}}</h3>
+                <img class="submitPost-image" src="{{imagesOfCompletion}}"/>
+                {{> social_buttons}}
+            </div>
+            <!-- <button class="buttons-style btn-primary like">Like</button> -->
 
-       <ul class="list-group">
-           <li class="list-group-item">
-              <span class="label label-default label-pill pull-xs-right number_of_likes"><abbr title="number of likes">{{likes.length}}</abbr></span>
-               {{#if checkLike}}
-                <button class="buttons-style btn-primary like">Like</button>
-               {{/if}}
-               {{#unless checkLike}}
-                <button class="buttons-style btn-primary dislike">Dislike</button>
-               {{/unless}}
-               
-       {{#if isOwner}}
-           <button class="buttons-style btn-primary delete">Remove</button>
-           {{#if isNotCompleted}}
-               <a href="/completed/{{_id}}"><button class="buttons-style btn-primary complete">complete</button></a>
-           {{/if}}
-       {{/if}}
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span class="label label-default label-pill pull-xs-right number_of_likes"><abbr
+                            title="number of likes">{{likes.length}}</abbr></span>
+                    {{#if checkLike}}
+                        <button class="buttons-style btn-primary like">Like</button>
+                    {{/if}}
+                    {{#unless checkLike}}
+                        <button class="buttons-style btn-primary dislike">Dislike</button>
+                    {{/unless}}
 
-       {{#if isNotOwner}}
-           <button class="buttons-style btn btn-primary fork">Fork</button>
-       {{/if}}
-           </li>
-       </ul>
-      <!-- <p class="number_of_likes">{{likes.length}}</p> -->
-       <form class = "new-comment">
-           <input name="comment" id="comment" type="text" value="" placeholder="Add a comment" class="form-control"/>
-       </form>
-   </div>
-   {{/if}}
+                    {{#if isOwner}}
+                        <button class="buttons-style btn-primary delete">Remove</button>
+                        {{#if isNotCompleted}}
+                            <a href="/completed/{{_id}}">
+                                <button class="buttons-style btn-primary complete">complete</button>
+                            </a>
+                        {{/if}}
+                    {{/if}}
+
+                    {{#if isNotOwner}}
+                        <button class="buttons-style btn btn-primary fork">Fork</button>
+                    {{/if}}
+                </li>
+            </ul>
+            <!-- <p class="number_of_likes">{{likes.length}}</p> -->
+            <form class="new-comment">
+                <input name="comment" id="comment" type="text" value="" placeholder="Add a comment"
+                       class="form-control"/>
+            </form>
+        </div>
+    {{/if}}
+
 
 </template>

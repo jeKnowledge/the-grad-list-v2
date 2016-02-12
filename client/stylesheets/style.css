@@ -57,7 +57,10 @@ html, body {
   margin: 2% auto 2% auto; }
 
 #main {
-  margin-top: 7%; }
+  margin-top: 8%; }
+
+.profilePic {
+  width: 100%; }
 
 .comment {
   margin-top: -5px;
@@ -532,7 +535,7 @@ input[type="text"] {
       font-size: 1.2em; } }
 @media (max-width: 992px) {
   #main {
-    margin-top: 10%; }
+    margin-top: 12%; }
 
   .number_of_likes {
     width: 10%; }
