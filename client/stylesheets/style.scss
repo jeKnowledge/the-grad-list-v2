@@ -77,6 +77,10 @@ html, body {
   width: 100%;
 }
 
+.post-profile-pic {
+  width: 20%;
+}
+
 .comment {
   margin-top: -5px;
   display: table-row;
@@ -731,6 +735,11 @@ input[type="text"] {
       font-size: 1.2em;
     }
   }
+
+  .post-profile-pic {
+    width: 10%;
+  }
+
 }
 
 @media (max-width: 992px) {
@@ -758,6 +767,15 @@ input[type="text"] {
       font-size: 1.2em;
     }
   }
+
+  .post-profile-pic {
+    width: 10%;
+  }
+
+  .navbar-search {
+    width: 20%;
+  }
+
 }
 
 @media (max-width: 600px) {

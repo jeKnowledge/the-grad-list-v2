@@ -62,6 +62,9 @@ html, body {
 .profilePic {
   width: 100%; }
 
+.post-profile-pic {
+  width: 20%; }
+
 .comment {
   margin-top: -5px;
   display: table-row;
@@ -537,7 +540,10 @@ input[type="text"] {
     .title-homePage h3 {
       font-size: 3em; }
     .title-homePage p {
-      font-size: 1.2em; } }
+      font-size: 1.2em; }
+
+  .post-profile-pic {
+    width: 10%; } }
 @media (max-width: 992px) {
   #main {
     margin-top: 12%; }
@@ -553,7 +559,13 @@ input[type="text"] {
     .title-homePage h3 {
       font-size: 3em; }
     .title-homePage p {
-      font-size: 1.2em; } }
+      font-size: 1.2em; }
+
+  .post-profile-pic {
+    width: 10%; }
+
+  .navbar-search {
+    width: 20%; } }
 @media (max-width: 600px) {
   #main {
     margin-top: 18%; }
