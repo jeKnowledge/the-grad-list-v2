@@ -3,6 +3,9 @@ html, body {
   height: 100%;
   margin: 0; }
 
+#search {
+  margin: 0; }
+
 .follow {
   background-color: black;
   font-color: white;

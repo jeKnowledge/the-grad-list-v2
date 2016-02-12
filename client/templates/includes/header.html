@@ -26,10 +26,10 @@
                         </li>
 
                        <li> <form class="form-control navbar-search pull-right" role="search" placeholder="Search">
-                            {{> EasySearch.Input index=usersIndex type="text" }}
+                            {{> EasySearch.Input index=usersIndex  }}
 
                             {{#EasySearch.IfInputEmpty index=usersIndex  }}
-                            <p>Search</p>
+                            <p id="search">Search</p>
                             {{else}}
 
                                 <div class="content-list" id="list">
