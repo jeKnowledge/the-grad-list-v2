@@ -3,9 +3,10 @@
 
         <div class="post">
             <div class="post-content">
-
-                <!--  <img class="post-profile-pic" src="{{profilePicture}}"/> -->
-                <h3 class="published"><a href="/user/{{ownerUsername}}">{{username}}</a> wants to</h3>
+                <div class="col-md-3">
+                <img class="post-profile-pic" src="{{profilePicture}}"/></div>
+                <div class="col-md-9">
+                    <h3 class="published"><a href="/user/{{ownerUsername}}">{{username}}</a> wants to</h3>
                 <h3><a href="{{pathFor "postPage"}}">{{title}}</a></h3>
                 <img class="submitPost-image" src="{{image}}"/>
                 <p>tags</p>
@@ -21,7 +22,7 @@
                 <h3 id="post-completed">Completed: {{completed}}</h3>
                 <img class="submitPost-image" src="{{imagesOfCompletion}}"/>
                 {{> social_buttons}}
-            </div>
+
             <!-- <button class="buttons-style btn-primary like">Like</button> -->
 
             <ul class="list-group">
@@ -54,7 +55,10 @@
                 <input name="comment" id="comment" type="text" value="" placeholder="Add a comment"
                        class="form-control"/>
             </form>
+                </div>
+            </div>
         </div>
+
     {{/if}}
 
 
