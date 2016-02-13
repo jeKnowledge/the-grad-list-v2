@@ -11,7 +11,7 @@ Template.header.helpers({
         usersIndex: () => UsersIndex,
 
     inputAttributes: function() {
-    return {placeholder: "Search clients, orders and suppliers...", class: 'form-control'};
+    return {placeholder: "Search users", class: 'form-control'};
 }
 });
 
