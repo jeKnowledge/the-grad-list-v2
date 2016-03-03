@@ -68,5 +68,9 @@ Meteor.methods({
 
 	add_image: function(id) {
     Meteor.users.update(Meteor.userId(), {$set: {image: "/cfs/files/images/" + id}});
-  }
+  },
+
+	medals: function() {
+		Meteor.users.update({"_id": Meteor.userId()}, {$inc: {medals: 1}});
+	}
 });

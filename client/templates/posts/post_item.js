@@ -65,9 +65,9 @@ Template.postItem.events({
 		Meteor.call("likePost", this._id);
 	},
 
-    'click .dislike': function() {
-        Meteor.call("dislikePost", this._id);
-    },
+  'click .dislike': function() {
+      Meteor.call("dislikePost", this._id);
+  },
 
 	'click .delete': function() {
 		Meteor.call("deletePost", this._id);
@@ -76,6 +76,7 @@ Template.postItem.events({
 	'click .fork': function() {
 		Meteor.call("forkPost", this._id);
 	},
+
 	'submit .new-comment' : function(event) {
 		event.preventDefault();
 
