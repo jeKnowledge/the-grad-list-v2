@@ -3,10 +3,6 @@ html, body {
   height: 100%;
   margin: 0; }
 
-.medals {
-  max-width: 20px;
-}
-
 #search {
   margin: 0; }
 
@@ -214,7 +210,8 @@ html, body {
     color: #211A47;
     text-decoration: none; }
   .drop-list a:hover {
-    color: #7C89F3; }
+    color: #7C89F3;
+    text-decoration: line-through; }
 
 .navbar-search {
   width: 15%;
@@ -224,7 +221,8 @@ html, body {
 .navbar-search input {
   width: 100%;
   color: #211A47;
-  border: 0px solid transparent; }
+  border: 0px solid transparent;
+  padding: 0; }
 
 input[type="text"] {
   outline: 0; }
@@ -367,9 +365,7 @@ input[type="text"] {
   .post .post-content p {
     margin: 0; }
   .post .post-content a:hover {
-    color: #5e3099;
-    background: #D5D8F4;
-    text-decoration: none; }
+    text-decoration: line-through; }
 
 .post .discuss {
   display: block;
@@ -384,7 +380,7 @@ input[type="text"] {
     color: #75718B; }
   .profile-title a:hover {
     color: #211A47;
-    text-decoration: none; }
+    text-decoration: underline; }
 
 .buttons-style {
   background-color: #75718B;
