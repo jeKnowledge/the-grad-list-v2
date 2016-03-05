@@ -22,8 +22,10 @@
                         <h3 class="published">forked from <a href="/user/{{forkedFrom}}">{{forkedFrom}}</a></h3>
                     {{/if}}
                     <p>at {{date2}}</p>
-                    <h3 id="post-completed">Completed: {{completed}}</h3>
-                    <img class="submitPost-image" src="{{imagesOfCompletion}}"/>
+                    {{#if checkCompleted}}
+                      <h3 id="post-completed">Completed <img src="medalha.png" class="medals"></h3>
+                      <img class="submitPost-image" src="{{imagesOfCompletion}}"/>
+                    {{/if}}
                     {{> social_buttons}}
 
                     <!-- <button class="buttons-style btn-primary like">Like</button> -->

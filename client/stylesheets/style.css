@@ -3,6 +3,10 @@ html, body {
   height: 100%;
   margin: 0; }
 
+.medals {
+  max-width: 20px;
+}
+
 #search {
   margin: 0; }
 

@@ -54,6 +54,10 @@ Template.postItem.helpers({
 		var a = Router.current().route.path(this);
 		console.log(a);
 		return a === '/';
+	},
+
+	checkCompleted: function() {
+		return this.completed === true;
 	}
 
 });
