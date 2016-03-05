@@ -161,7 +161,7 @@ html, body {
   }
 
   a:hover {
-    text-decoration: underline;
+    text-decoration: line-through;
   }
 }
 
@@ -282,7 +282,7 @@ html, body {
   }
 
   a:hover {
-    color: #7C89F3;
+    color: #75718B;
     text-decoration: line-through;
   }
 }
@@ -308,7 +308,7 @@ input[type="text"] {
   width: 32%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 12%;
+  margin-top: 10%;
 }
 
 #sign-up-btn a {

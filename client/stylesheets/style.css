@@ -127,7 +127,7 @@ html, body {
   #suggestions a {
     color: #75718B; }
   #suggestions a:hover {
-    text-decoration: underline; }
+    text-decoration: line-through; }
 
 .header-style {
   background-color: #211A47;
@@ -210,7 +210,7 @@ html, body {
     color: #211A47;
     text-decoration: none; }
   .drop-list a:hover {
-    color: #7C89F3;
+    color: #75718B;
     text-decoration: line-through; }
 
 .navbar-search {
@@ -231,7 +231,7 @@ input[type="text"] {
   width: 32%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 12%; }
+  margin-top: 10%; }
 
 #sign-up-btn a a:focus, #sign-up-btn a a:hover {
   color: white;
