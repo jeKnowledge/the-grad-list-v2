@@ -1,9 +1,8 @@
 <template name="tags">
 	<p>Tags</p>
 	<div class="user-posts">
-		{{oi}}
-		{{#each postsByUser}}
-	        {{> postItem}}
+		{{#each postsByTags}}
+	  	{{> postItem}}
 		{{/each}}
 	</div>
 </template>

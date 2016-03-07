@@ -1,11 +1,7 @@
-Template.userPosts.helpers({
-    postsByUser: function() {
-      console.log("ajksncaçkn");
+Template.tags.helpers({
+    postsByTags: function() {
+      console.log("hljbjlhlj");
     	console.log(this.tags);
-      return Posts.find({ tags: this.tags }, {sort: {date: -1}});
+      return Posts.find({tags: { $regex: this.tags }});
     },
-
-    oi: function() {
-      return("jbzxlb");
-    }
 });
