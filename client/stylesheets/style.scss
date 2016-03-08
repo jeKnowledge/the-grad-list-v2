@@ -290,7 +290,8 @@ html, body {
 .navbar-search {
   width: 15%;
   float: right;
-  border: 0px solid transparent;
+  /*border: 0px solid transparent;*/
+  border: 0.5px solid #211A47;
 }
 
 .navbar-search input {
@@ -389,7 +390,7 @@ input[type="text"] {
 }
 
 .navbar {
-  margin-bottom: 30px;
+
 }
 
 #spinner {

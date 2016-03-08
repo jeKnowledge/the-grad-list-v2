@@ -216,7 +216,8 @@ html, body {
 .navbar-search {
   width: 15%;
   float: right;
-  border: 0px solid transparent; }
+  /*border: 0px solid transparent;*/
+  border: 0.5px solid #211A47; }
 
 .navbar-search input {
   width: 100%;
@@ -289,9 +290,6 @@ input[type="text"] {
     display: inline; }
   #footer-list li img {
     margin-left: 2%; }
-
-.navbar {
-  margin-bottom: 30px; }
 
 #spinner {
   height: 300px; }
