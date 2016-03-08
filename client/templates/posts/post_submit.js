@@ -12,9 +12,8 @@ Template.postSubmit.events({
       witnessedBy: [],
       dateOfCompletion: {},
       likes: [],
-      tags: (($(e.target).find('[name=tags]').val()).replace(/\s/g, '')).split('#'),
+      tags: (($(e.target).find('[name=tags]').val())).replace(/ /g,'').substr(1).split('#'),
 			image: Session.get("picture"),
-
     };
     post._id = Posts.insert(post);
     Router.go('postPage', post);
