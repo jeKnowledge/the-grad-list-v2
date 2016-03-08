@@ -348,7 +348,10 @@ input[type="text"] {
 .post .post-content {
   margin-right: auto;
   margin-left: auto;
-  text-align: left; }
+  text-align: left;
+  /*h3 a{
+   color: #75718B;
+  }*/ }
   .post .post-content #post-completed {
     margin-top: 10px;
     line-height: 1.4;
