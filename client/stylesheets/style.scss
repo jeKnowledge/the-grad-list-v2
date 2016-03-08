@@ -357,18 +357,20 @@ input[type="text"] {
 }
 
 #footer {
-  margin-left: auto;
-  margin-right: auto;
-  width: 30%;
   height: 2%;
+  position: static;
+  bottom: 5px;
+  width: 100%;
+  text-align: center;
+  margin-top: 4%;
 }
 
-html #footer {
+/*html #footer {
   margin-top: -2px; /* prevents infinite scroll if #footer have a border of 2px*/
-  position: absolute;
+  /*position: absolute;
   top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.clientHeight));
 }
-
+*/
 #footer-list {
   text-align: center;
   color: #211A47;
