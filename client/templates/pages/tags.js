@@ -1,5 +1,6 @@
 Template.tags.helpers({
     postsByTags: function() {
-      return Posts.find({tags: this.tags });
+      var url = Router.current().location.get().path.slice(6);
+      return Posts.find({tags: url });
     },
 });
