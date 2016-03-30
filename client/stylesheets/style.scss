@@ -230,13 +230,52 @@ html, body {
   margin: 2% auto 2% auto;
 }
 
+/*
 #authentication-full-screen-body {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
   background: url(vintagePic17.jpg) no-repeat center center fixed;
   position: absolute;
+} */
+
+
+.fullscreen {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
 }
+
+.fullscreen__video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 767px) {
+  .fullscreen {
+    background: url(1.jpg) center center / cover no-repeat;
+  }
+
+  .fullscreen__video {
+    display: none;
+  }
+}
+
+
+
 
 .row {
   width: 30%;
