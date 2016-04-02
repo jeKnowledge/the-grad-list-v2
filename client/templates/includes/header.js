@@ -1,18 +1,22 @@
 Template.header.helpers({
-
-        userID: function() {
-            return Meteor.userId();
-        },
-
-        getUsername: function() {
-            return Meteor.user().username;
-        },
-
-        usersIndex: () => UsersIndex,
-
-    inputAttributes: function() {
-    return {placeholder: "Search users", class: 'form-control'};
-}
+  userID: function() {
+    return Meteor.userId();
+  },
+  getUsername: function() {
+    return Meteor.user().username;
+  },
+  indexes: function() {
+    return [UsersIndex, PostsIndex];
+  },
+  usersIndex: function () {
+    return UsersIndex;
+  },
+  postsIndex: function () {
+    return PostsIndex;
+  },
+  inputAttributes: function() {
+    return {placeholder: "Search", class: 'form-control'};
+  }
 });
 
 
