@@ -16,6 +16,13 @@ Template.postSubmit.events({
       image: Session.get("picture"),
     };
     post._id = Posts.insert(post);
+    var tags = (($(e.target).find('[name=tags]').val())).replace(/ /g, '').replace(/,/g, '#').substr(1).split('#');
+    for (i = 0; i < tags.length; i++) {
+      var tag = {
+        title: tags[i],
+      };
+      tag._id = Tags.insert(tag);
+    }
     Router.go('postPage', post);
   },
 

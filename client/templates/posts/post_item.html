@@ -28,18 +28,16 @@
                     {{/if}}
                     {{> social_buttons}}
 
-                    <!-- <button class="buttons-style btn-primary like">Like</button> -->
-
                     <ul class="list-group">
                         <li class="list-group-item">
                     <span class="label label-default label-pill pull-xs-right number_of_likes"><abbr
                             title="number of likes">{{likes.length}}</abbr></span>
-                            {{#if checkLike}}
+                            <!--{{#if checkLike}}-->
                                 <button class="buttons-style btn-primary like">Like</button>
-                            {{/if}}
-                            {{#unless checkLike}}
+                            <!--{{/if}}-->
+                            <!--{{#unless checkLike}} -->
                                 <button class="buttons-style btn-primary dislike">Dislike</button>
-                            {{/unless}}
+                            <!--{{/unless}} -->
 
                             {{#if isOwner}}
                                 <button class="buttons-style btn-primary delete">Remove</button>

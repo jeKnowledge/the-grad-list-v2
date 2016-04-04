@@ -6,13 +6,13 @@ Template.header.helpers({
     return Meteor.user().username;
   },
   indexes: function() {
-    return [UsersIndex, PostsIndex];
+    return [UsersIndex, TagsIndex];
   },
   usersIndex: function () {
     return UsersIndex;
   },
-  postsIndex: function () {
-    return PostsIndex;
+  tagsIndex: function () {
+    return TagsIndex;
   },
   inputAttributes: function() {
     return {placeholder: "Search", class: 'form-control'};

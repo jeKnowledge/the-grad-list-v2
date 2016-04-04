@@ -31,6 +31,19 @@ Template.postItem.helpers({
   	return this.owner !== Meteor.userId();
   },
 
+	ownerUsername: function() {
+		return Meteor.users.findOne({"_id": this.owner}).username;
+	},
+
+	profilePicture: function() {
+		return Meteor.users.findOne({"_id": this.owner}).image;
+	},
+
+	checkCompleted: function() {
+		return this.completed === true;
+	}
+
+	/*
   checkLike: function () {
       var a = this.likes;
       var obj = Meteor.userId();
@@ -41,24 +54,7 @@ Template.postItem.helpers({
       }
       return true;
   },
-
-  ownerUsername: function() {
-    return Meteor.users.findOne({"_id": this.owner}).username;
-  },
-
-  profilePicture: function() {
-  	return Meteor.users.findOne({"_id": this.owner}).image;
-  },
-
-	route: function() {
-		var a = Router.current().route.path(this);
-		console.log(a);
-		return a === '/';
-	},
-
-	checkCompleted: function() {
-		return this.completed === true;
-	}
+	*/
 
 });
 
