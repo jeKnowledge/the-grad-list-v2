@@ -71,6 +71,10 @@ Template.postItem.events({
 
 	'click .delete': function() {
 		Meteor.call("deletePost", this._id);
+		var tags = this.tags;
+		for (var i = 0; i < tags.length; i++) {
+			Meteor.call("deleteTag",tags[i]);
+		}
 	},
 
 	'click .fork': function() {

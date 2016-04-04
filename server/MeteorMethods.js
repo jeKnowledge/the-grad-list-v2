@@ -12,6 +12,10 @@ Meteor.methods({
 			Posts.remove(id);
 	},
 
+	deleteTag: function(id) {
+		Tags.remove(id);
+	},
+
 	deleteComment: function(id) {
 		if (Meteor.userId() == Comments.findOne({_id: id}).owner)
 			Comments.remove(id);
