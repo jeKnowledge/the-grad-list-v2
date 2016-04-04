@@ -8,6 +8,11 @@ Meteor.publish("comments", function()
 	return Comments.find({}, {sort: {date: -1}});
 });
 
+Meteor.publish("tags", function()
+{
+	return Tags.find({}, {sort: {date: -1}});
+});
+
 Meteor.publish("usersData", function() {
   if (this.userId) {
     return Meteor.users.find({}, {fields: {"username" :true, _id: true, follows: true, followed: true,
