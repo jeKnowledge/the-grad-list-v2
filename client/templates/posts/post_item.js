@@ -45,20 +45,18 @@ Template.postItem.helpers({
 
   checkCompleted: function() {
     return this.completed === true;
-  }
-
-  /*
-  checkLike: function () {
-      var a = this.likes;
-      var obj = Meteor.userId();
-      for (var i = 0; i < a.length; i++) {
-          if (a[i] === obj) {
-              return false;
-          }
-      }
-      return true;
   },
-	*/
+
+  checkLike: function() {
+    var a = this.likes;
+    var obj = Meteor.userId();
+    for (var i = 0; i < a.length; i++) {
+      if (a[i] === obj) {
+        return false;
+      }
+    }
+    return true;
+  },
 
 });
 
