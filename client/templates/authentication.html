@@ -1,66 +1,71 @@
 <template name="authentication">
-    <div id="authentication-full-screen-body" style="overflow:hidden;">
+  <div id="authentication-full-screen-body" style="overflow:hidden;">
 
-        <div class="fullscreen">
-            <video loop muted autoplay poster="/public/1.jpg" class="fullscreen__video" style="opacity: 0.6;">
-                <source src="IMG_0905.mp4" type="video/mp4">
-            </video>
-        </div>
-
-        <div class="title-homePage">
-            <h3>The Grad List</h3>
-
-            <p>A partilha de histórias começa aqui.</p>
-        </div>
-
-        <div class="container">
-            <div id="form-front-page">
-
-                <form id="authentication-form">
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="sign-up-tab">
-                            <p><input class="text-input form-control" placeholder="Username" type="text"
-                                      id="username-input"></p>
-
-                            <p><input class="text-input form-control" placeholder="Password" type="password"
-                                      id="password-input"></p>
-
-                            <p><input class="text-input form-control" placeholder="Confirm Password" type="password"
-                                      id="password-confirm-input"></p>
-                        </div>
-
-                        <div role="tabpanel" class="tab-pane" id="sign-in-tab">
-                            <p><input class="text-input form-control" placeholder="Username" type="text" id="username-input"></p>
-
-                            <p><input class="text-input form-control" placeholder="Password" type="password" id="password-input"></p>
-                        </div>
-
-
-                    <div id="authentication-form-btns">
-                    <ul  class="nav nav-pills" role="tablist">
-                        <li class="nav-item">
-                            <a id="sign-up-btn" role="tab" data-toggle="tab" class="buttons-style nav-link active"
-                               href="#sign-up-tab">Sign
-                                Up</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a id="sign-in-btn" role="tab" data-toggle="tab" class="buttons-style nav-link" href="#sign-in-tab">Sign
-                                In</a>
-                            {{> sAlert}}
-                        </li>
-
-                        <li class="nav-item">
-                            <a id="facebook-login" role="tab" data-toggle="tab" class="buttons-style nav-link"> Login with Facebook</a>
-                        </li>
-                    </ul>
-                    </div>
-
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        {{>footer}}
+    <div class="fullscreen">
+      <video loop muted autoplay poster="/public/1.jpg" class="fullscreen__video" style="opacity: 0.6;">
+        <source src="IMG_0905.mp4" type="video/mp4">
+      </video>
     </div>
+
+    <div class="title-homePage">
+      <h3>The Grad List</h3>
+
+      <p>A partilha de histórias começa aqui.</p>
+    </div>
+
+    <div class="container">
+      <div id="form-front-page">
+
+        <form id="authentication-form">
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="sign-up-tab">
+              <p>
+                <input class="text-input form-control" placeholder="Username" type="text" id="username-input">
+              </p>
+
+              <p>
+                <input class="text-input form-control" placeholder="Password" type="password" id="password-input">
+              </p>
+
+              <p>
+                <input class="text-input form-control" placeholder="Confirm Password" type="password" id="password-confirm-input">
+              </p>
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="sign-in-tab">
+              <p>
+                <input class="text-input form-control" placeholder="Username" type="text" id="username-input">
+              </p>
+
+              <p>
+                <input class="text-input form-control" placeholder="Password" type="password" id="password-input">
+              </p>
+            </div>
+
+
+            <div id="authentication-form-btns">
+              <ul class="nav nav-pills" role="tablist">
+                <li class="nav-item">
+                  <a id="sign-up-btn" role="tab" data-toggle="tab" class="buttons-style nav-link active" href="#sign-up-tab">Sign
+                                Up</a>
+                </li>
+
+                <li class="nav-item">
+                  <a id="sign-in-btn" role="tab" data-toggle="tab" class="buttons-style nav-link" href="#sign-in-tab">Sign
+                                In</a> {{> sAlert}}
+                </li>
+
+                <li class="nav-item">
+                  <a id="facebook-login" role="tab" data-toggle="tab" class="buttons-style nav-link"> Login with Facebook</a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+
+    {{>footer}}
+  </div>
 </template>

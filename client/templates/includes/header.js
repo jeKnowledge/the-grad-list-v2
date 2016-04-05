@@ -8,22 +8,25 @@ Template.header.helpers({
   indexes: function() {
     return [UsersIndex, TagsIndex];
   },
-  usersIndex: function () {
+  usersIndex: function() {
     return UsersIndex;
   },
-  tagsIndex: function () {
+  tagsIndex: function() {
     return TagsIndex;
   },
   inputAttributes: function() {
-    return {placeholder: "Search", class: 'form-control'};
+    return {
+      placeholder: "Search",
+      class: 'form-control'
+    };
   }
 });
 
 
 Template.header.events({
-    'click #logout': function(event){
-        event.preventDefault();
-        Meteor.logout();
-        Router.go('/');
-    }
+  'click #logout': function(event) {
+    event.preventDefault();
+    Meteor.logout();
+    Router.go('/');
+  }
 });

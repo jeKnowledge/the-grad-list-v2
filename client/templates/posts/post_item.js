@@ -1,49 +1,53 @@
 Template.postItem.helpers({
 
-	isCurrentUser:function() {
-		return Meteor.userId() == this.owner;
-	},
+  isCurrentUser: function() {
+    return Meteor.userId() == this.owner;
+  },
 
-	isOwner: function(){
+  isOwner: function() {
     return this.owner === Meteor.userId();
   },
 
   isNotCompleted: function() {
-  	return this.completed === false;
+    return this.completed === false;
   },
 
   isForked: function() {
-  	return this.hasOwnProperty("forkedFrom");
+    return this.hasOwnProperty("forkedFrom");
   },
 
   forkedFrom: function() {
-  	return this.forkedFrom;
+    return this.forkedFrom;
   },
 
   isLoggedIn: function() {
-  	var user = Meteor.user();
-  	if(user) {
-  		return true;
-  	}
+    var user = Meteor.user();
+    if (user) {
+      return true;
+    }
   },
 
   isNotOwner: function() {
-  	return this.owner !== Meteor.userId();
+    return this.owner !== Meteor.userId();
   },
 
-	ownerUsername: function() {
-		return Meteor.users.findOne({"_id": this.owner}).username;
-	},
+  ownerUsername: function() {
+    return Meteor.users.findOne({
+      "_id": this.owner
+    }).username;
+  },
 
-	profilePicture: function() {
-		return Meteor.users.findOne({"_id": this.owner}).image;
-	},
+  profilePicture: function() {
+    return Meteor.users.findOne({
+      "_id": this.owner
+    }).image;
+  },
 
-	checkCompleted: function() {
-		return this.completed === true;
-	}
+  checkCompleted: function() {
+    return this.completed === true;
+  }
 
-	/*
+  /*
   checkLike: function () {
       var a = this.likes;
       var obj = Meteor.userId();
@@ -61,39 +65,39 @@ Template.postItem.helpers({
 
 Template.postItem.events({
 
-	'click .like': function() {
-		Meteor.call("likePost", this._id);
-	},
-
-  'click .dislike': function() {
-      Meteor.call("dislikePost", this._id);
+  'click .like': function() {
+    Meteor.call("likePost", this._id);
   },
 
-	'click .delete': function() {
-		Meteor.call("deletePost", this._id);
-		var tags = this.tags;
-		for (var i = 0; i < tags.length; i++) {
-			Meteor.call("deleteTag",tags[i]);
-		}
-	},
+  'click .dislike': function() {
+    Meteor.call("dislikePost", this._id);
+  },
 
-	'click .fork': function() {
-		Meteor.call("forkPost", this._id);
-	},
+  'click .delete': function() {
+    Meteor.call("deletePost", this._id);
+    var tags = this.tags;
+    for (var i = 0; i < tags.length; i++) {
+      Meteor.call("deleteTag", tags[i]);
+    }
+  },
 
-	'submit .new-comment' : function(event) {
-		event.preventDefault();
+  'click .fork': function() {
+    Meteor.call("forkPost", this._id);
+  },
 
-		var text = event.target.comment.value;
+  'submit .new-comment': function(event) {
+    event.preventDefault();
 
-		var commentId = Comments.insert( {
-			text: text,
-			createdAt: new Date(),
-			owner: Meteor.userId()
-		});
+    var text = event.target.comment.value;
 
-		Meteor.call("addCommentToPost", this._id, commentId);
+    var commentId = Comments.insert({
+      text: text,
+      createdAt: new Date(),
+      owner: Meteor.userId()
+    });
 
-		event.target.comment.value = "";
-	}
+    Meteor.call("addCommentToPost", this._id, commentId);
+
+    event.target.comment.value = "";
+  }
 });

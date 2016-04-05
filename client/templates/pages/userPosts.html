@@ -1,62 +1,58 @@
 <template name="userPosts">
 
-    <div class="post profile-resume">
+  <div class="post profile-resume">
 
-        <div class="col-md-3"><img class="profilePic" src='{{image}}'/></div>
-            <div class="col-md-9">
-                <h4 class="profile-title"><a href="/Book/{{getUsername}}">{{username}}'s Profile</a></h4>
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        Followers
-                        <span class="label label-default label-pill pull-xs-right">{{followers}}</span>
+    <div class="col-md-3"><img class="profilePic" src='{{image}}' /></div>
+    <div class="col-md-9">
+      <h4 class="profile-title"><a href="/Book/{{getUsername}}">{{username}}'s Profile</a></h4>
+      <ul class="list-group">
+        <li class="list-group-item">
+          Followers
+          <span class="label label-default label-pill pull-xs-right">{{followers}}</span>
 
-                    </li>
-                    <li class="list-group-item">
-                        Following
-                        <span class="label label-default label-pill pull-xs-right">{{following}}</span>
+        </li>
+        <li class="list-group-item">
+          Following
+          <span class="label label-default label-pill pull-xs-right">{{following}}</span>
 
-                    </li>
-                    <li class="list-group-item">
-                        Bio
-                        <span class="label label-default label-pill pull-xs-right">{{bio}}</span>
+        </li>
+        <li class="list-group-item">
+          Bio
+          <span class="label label-default label-pill pull-xs-right">{{bio}}</span>
 
-                    </li>
-                    <li class="list-group-item">
-                        Country <p class="label label-default label-pill pull-xs-right">{{country}}</p>
+        </li>
+        <li class="list-group-item">
+          Country
+          <p class="label label-default label-pill pull-xs-right">{{country}}</p>
 
-                    </li>
-                    <li class="list-group-item">
-                        University <p class="label label-default label-pill pull-xs-right">{{university}}</p>
-                    </li>
-                    <li class="list-group-item">
-                        Medals <p class="label label-default label-pill pull-xs-right">{{medals}}</p>
-                    </li>
-                </ul>
+        </li>
+        <li class="list-group-item">
+          University
+          <p class="label label-default label-pill pull-xs-right">{{university}}</p>
+        </li>
+        <li class="list-group-item">
+          Medals
+          <p class="label label-default label-pill pull-xs-right">{{medals}}</p>
+        </li>
+      </ul>
 
-                {{#unless owner}}
-                    <a href='/{{username}}/EditProfile'>
-                        <button type="button" class="btn btn-primary buttons-style-editProfile" style="margin-top:1%;">Edit profile</button>
-                    </a>
-                {{/unless}}
-
-                {{#if owner}}
-                    {{#if checkFollowing}}
-                        <button type="button" class="buttons-style btn btn-primary-outline follow" id="follow" style="margin-top:1%;">Follow
-                        </button>
-                    {{/if}}
-                    {{#unless checkFollowing}}
-                        <button type="button" class="buttons-style btn btn-primary-outline unfollow" id="unfollow" style="margin-top:1%;">
-                            UnFollow
-                        </button>
-                    {{/unless}}
-                {{/if}}
-            </div>
+      {{#unless owner}}
+      <a href='/{{username}}/EditProfile'>
+        <button type="button" class="btn btn-primary buttons-style-editProfile" style="margin-top:1%;">Edit profile</button>
+      </a>
+      {{/unless}} {{#if owner}} {{#if checkFollowing}}
+      <button type="button" class="buttons-style btn btn-primary-outline follow" id="follow" style="margin-top:1%;">Follow
+      </button>
+      {{/if}} {{#unless checkFollowing}}
+      <button type="button" class="buttons-style btn btn-primary-outline unfollow" id="unfollow" style="margin-top:1%;">
+        UnFollow
+      </button>
+      {{/unless}} {{/if}}
     </div>
-            <div class="user-posts">
-                {{#each postsByUser}}
-                    {{> postItem}}
-                {{/each}}
-            </div>
+  </div>
+  <div class="user-posts">
+    {{#each postsByUser}} {{> postItem}} {{/each}}
+  </div>
 
 
 </template>

@@ -1,15 +1,10 @@
 <head>
-    <title>The Grad List</title>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-    <link href="TGLLogo-03.png" rel="shortcut icon"  />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Grad List</title>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <link href="TGLLogo-03.png" rel="shortcut icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <template name="main">
-	{{> sAlert}}
-    {{#if currentUser}}
-        {{> home}}
-    {{else}}
-        {{> authentication}}
-    {{/if}}
+  {{> sAlert}} {{#if currentUser}} {{> home}} {{else}} {{> authentication}} {{/if}}
 </template>

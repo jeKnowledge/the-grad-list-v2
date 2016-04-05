@@ -32,8 +32,7 @@
                     <img src="{{image}}" class="post-profile-pic" />
                     <a class="profile" href="/user/{{username}}">{{username}}</a>
                   </li>
-                  {{/EasySearch.Each}}
-                  {{#EasySearch.Each index=tagsIndex}}
+                  {{/EasySearch.Each}} {{#EasySearch.Each index=tagsIndex}}
                   <li>
                     <a class="profilePicture" href="/tags/{{title}}">
                       #{{title}}
