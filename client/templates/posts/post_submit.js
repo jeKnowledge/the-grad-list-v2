@@ -18,10 +18,18 @@ Template.postSubmit.events({
     post._id = Posts.insert(post);
     var tags = (($(e.target).find('[name=tags]').val())).replace(/ /g, '').replace(/,/g, '#').substr(1).split('#');
     for (i = 0; i < tags.length; i++) {
-      var tag = {
-        title: tags[i],
-      };
-      tag._id = Tags.insert(tag);
+      var TagExist = Tags.find({title: tags[i]}, {limit: 1}).count() > 0;
+      if (TagExist === false) {
+        var tag = {
+          title: tags[i],
+          number: 0
+        };
+        tag._id = Tags.insert(tag);
+      }
+      else {
+        var tag_name = tags[i];
+        Meteor.call("increment_tag",tag_name );
+      }
     }
     Router.go('postPage', post);
   },
