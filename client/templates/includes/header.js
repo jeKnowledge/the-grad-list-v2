@@ -19,6 +19,9 @@ Template.header.helpers({
       placeholder: "Search",
       class: 'form-control'
     };
+  },
+  hashtag: function() {
+    //
   }
 });
 
