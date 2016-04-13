@@ -1,10 +1,13 @@
 Meteor.methods({
     loginFacebook: function() {
+      if (Meteor.user().facebook_image !== 0) {
         Meteor.users.update(Meteor.userId(), {
             $set: {
-                username: Meteor.user().services.facebook.name
+                username: Meteor.user().services.facebook.name,
+                image: "http://graph.facebook.com/" + Meteor.user().services.facebook.id + "/picture/?type=large",
             }
         });
+      }
     },
 
     defaultPicture: function() {
@@ -114,7 +117,7 @@ Meteor.methods({
             $set: {
                 bio: s_bio,
                 country: s_country,
-                university: s_university
+                university: s_university,
             }
         });
     },
@@ -122,7 +125,8 @@ Meteor.methods({
     add_image: function(id) {
         Meteor.users.update(Meteor.userId(), {
             $set: {
-                image: "/cfs/files/images/" + id
+                image: "/cfs/files/images/" + id,
+                facebook_image: 0,
             }
         });
     },

@@ -30,11 +30,10 @@ Template.authentication.events({
     if (currentTab == 'sign_up') {
       Accounts.createUser({
         username: $('#sign-up-tab').find('#username-input').val(),
-        password: $('#sign-up-tab').find('#password-input').val()
+        password: $('#sign-up-tab').find('#password-input').val(),
       });
       Meteor.call("defaultPicture", Meteor.userId());
     }
-
     currentTab = 'sign_up';
   },
 
