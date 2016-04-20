@@ -52,6 +52,12 @@ Template.postItem.helpers({
             }
         }
         return true;
+    },
+
+    has_tags: function() {
+      if (this.tags !== '') {
+        return true;
+      }
     }
 });
 

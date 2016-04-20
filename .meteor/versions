@@ -88,6 +88,8 @@ matteodem:easy-search@2.0.0
 mdg:validation-error@0.2.0
 meteor@1.1.13
 meteor-base@1.0.3
+meteorhacks:async@1.0.0
+meteorhacks:npm@1.5.0
 minifier-css@1.1.10
 minifier-js@1.1.10
 minimongo@1.0.13
@@ -99,6 +101,7 @@ mongo@1.1.6
 mongo-id@1.0.3
 mongo-livedata@1.0.11
 npm-bcrypt@0.7.8_2
+npm-container@1.2.0
 npm-mongo@1.4.42
 oauth@1.1.9
 oauth2@1.1.8

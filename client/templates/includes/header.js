@@ -20,9 +20,6 @@ Template.header.helpers({
       class: 'form-control'
     };
   },
-  hashtag: function() {
-    //
-  }
 });
 
 

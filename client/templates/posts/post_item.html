@@ -10,7 +10,9 @@
         <h3 class="published"><a href="/user/{{ownerUsername}}" >{{username}}</a> wants to</h3>
         <h3><a href="{{pathFor "postPage"}}">{{title}}</a></h3>
         <img class="submitPost-image" src="{{image}}" />
-        <p>tags</p>
+        {{#if has_tags}}
+          <p>tags</p>
+        {{/if}}
         {{#each tags}}
           <a href="/tags/{{this}}">#{{this}}</a>
         {{/each}}

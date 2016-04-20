@@ -1,5 +1,12 @@
 Template.postSubmit.events({
   'submit form': function(e) {
+    var tags_2;
+    if ($(e.target).find('[name=tags]').val() !== '') {
+      tags_2 = (($(e.target).find('[name=tags]').val())).replace(/ /g, '').replace(/,/g, '#').substr(1).split('#');
+    }
+    else {
+      tags_2 = '';
+    }
     var post = {
       title: $(e.target).find('[name=title]').val(),
       owner: Meteor.userId(),
@@ -12,11 +19,12 @@ Template.postSubmit.events({
       witnessedBy: [],
       dateOfCompletion: {},
       likes: [],
-      tags: (($(e.target).find('[name=tags]').val())).replace(/ /g, '').replace(/,/g, '#').substr(1).split('#'),
+      tags: tags_2,
       image: Session.get("picture"),
     };
     post._id = Posts.insert(post);
     var tags = (($(e.target).find('[name=tags]').val())).replace(/ /g, '').replace(/,/g, '#').substr(1).split('#');
+
     for (i = 0; i < tags.length; i++) {
       var TagExist = Tags.find({title: tags[i]}, {limit: 1}).count() > 0;
       if (TagExist === false) {
@@ -32,6 +40,7 @@ Template.postSubmit.events({
       }
     }
     Router.go('postPage', post);
+    console.log(tags);
   },
 
   'change .myFileInput': function(event, template) {
