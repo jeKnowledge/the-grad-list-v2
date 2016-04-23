@@ -15,10 +15,21 @@ Template.postComplete.events({
         date: new Date()
       },
       $push: {
-        imagesOfCompletion: $(e.target).find('[name=image1]').val()
+        imagesOfCompletion: Session.get("picture")
       }
     });
     Meteor.call("medals");
     Router.go("/");
+  },
+
+  'change .myFileInput': function(event, template) {
+    var fsFile = new FS.File(event.target.files[0]);
+    fsFile.owner = Meteor.userId();
+    Images.insert(fsFile, function(err) {
+      if (err) throw err;
+      var url = "/cfs/files/images/" + fsFile._id;
+      Session.set("picture", url);
+    });
   }
+
 });
