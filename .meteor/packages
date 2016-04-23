@@ -20,10 +20,6 @@ iron:router
 sacha:spin
 accounts-password
 accounts-facebook
-liberation:shareit
-shmck:meteor-social-buttons
-socialize:likeable
-socialize:user-profile
 chuikoff:bootstrap-4
 service-configuration
 fourseven:scss
@@ -36,6 +32,6 @@ cfs:filesystem
 standard-minifier-css
 standard-minifier-js
 meteorhacks:npm
-
-
 npm-container
+socialize:user-profile
+aldeed:simple-schema
