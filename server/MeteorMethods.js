@@ -1,13 +1,13 @@
 Meteor.methods({
     loginFacebook: function() {
-      if (Meteor.user().facebook_image !== 0) {
-        Meteor.users.update(Meteor.userId(), {
-            $set: {
-                username: Meteor.user().services.facebook.name,
-                image: "http://graph.facebook.com/" + Meteor.user().services.facebook.id + "/picture/?type=large",
-            }
-        });
-      }
+        if (Meteor.user().facebook_image !== 0) {
+            Meteor.users.update(Meteor.userId(), {
+                $set: {
+                    username: Meteor.user().services.facebook.name,
+                    image: "http://graph.facebook.com/" + Meteor.user().services.facebook.id + "/picture/?type=large"
+                }
+            });
+        }
     },
 
     defaultPicture: function() {
@@ -41,8 +41,9 @@ Meteor.methods({
     },
 
     deleteComment: function(id) {
-        if (Meteor.userId() == Comments.findOne({_id: id}).owner)
+        if (Meteor.userId() == Comments.findOne({_id: id}).owner) {
             Comments.remove(id);
+        }
     },
 
     forkPost: function(id) {
@@ -80,13 +81,11 @@ Meteor.methods({
                 follows: id
             }
         });
-        Meteor.users.update(Meteor.users.findOne({"_id": id}), {
+        Meteor.users.update(Meteor.users.findOne({"_id": id})._id, {
             $addToSet: {
                 followed: Meteor.userId()
             }
         });
-        /*Meteor.users.findOne({_id: Meteor.userId() }).follows.push(id);
-        console.log(id +" " + Meteor.userId());*/
     },
 
     unfollowId: function(id) {
@@ -95,7 +94,7 @@ Meteor.methods({
                 follows: id
             }
         });
-        Meteor.users.update(Meteor.users.findOne({"_id": id}), {
+        Meteor.users.update(Meteor.users.findOne({"_id": id})._id, {
             $pull: {
                 followed: Meteor.userId()
             }
@@ -117,7 +116,7 @@ Meteor.methods({
             $set: {
                 bio: s_bio,
                 country: s_country,
-                university: s_university,
+                university: s_university
             }
         });
     },
@@ -126,7 +125,7 @@ Meteor.methods({
         Meteor.users.update(Meteor.userId(), {
             $set: {
                 image: "/cfs/files/images/" + id,
-                facebook_image: 0,
+                facebook_image: 0
             }
         });
     },
