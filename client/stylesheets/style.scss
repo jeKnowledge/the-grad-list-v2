@@ -279,9 +279,6 @@ html, body {
   }
 }
 
-
-
-
 .row {
   width: 30%;
 }
@@ -423,15 +420,15 @@ input[type="text"] {
   top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.clientHeight));
 }
 */
-#footer-list a {
-  text-align: center;
-  color: #211A47;
-  font-family: Montserrat;
-  font-size: 1em;
+#footer-list {
   list-style-type: none;
   padding: 0;
 
-  li {
+  li a {
+    text-align: center;
+    color: #211A47;
+    font-family: Montserrat;
+    font-size: 1em;
     display: inline;
   }
 
