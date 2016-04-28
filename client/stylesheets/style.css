@@ -316,16 +316,16 @@ input[type="text"] {
   top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.clientHeight));
 }
 */
-#footer-list a {
-  text-align: center;
-  color: #211A47;
-  font-family: Montserrat;
-  font-size: 1em;
+#footer-list {
   list-style-type: none;
   padding: 0; }
-  #footer-list a li {
+  #footer-list li a {
+    text-align: center;
+    color: #211A47;
+    font-family: Montserrat;
+    font-size: 1em;
     display: inline; }
-  #footer-list a li img {
+  #footer-list li img {
     margin-left: 3%; }
 
 #spinner {
