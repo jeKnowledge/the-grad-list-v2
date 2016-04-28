@@ -1,0 +1,6 @@
+<template name="following">
+  {{username}}'s Following:
+  {{#each following}}
+    <br> <a href="/user/{{username}}">{{username}}</a>
+  {{/each}}
+</template>
