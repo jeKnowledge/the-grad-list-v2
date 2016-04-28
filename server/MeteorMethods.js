@@ -54,7 +54,8 @@ Meteor.methods({
             date: new Date(),
             username: Meteor.user().username,
             image: Posts.findOne({_id: id}).image,
-            completed: false
+            completed: false,
+            likes: [],
         };
         post2._id = Posts.insert(post2);
     },

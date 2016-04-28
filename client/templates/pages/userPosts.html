@@ -3,7 +3,10 @@
     <div class="post profile-resume">
         <div class="col-md-3"><img class="profilePic" src='{{image}}' /></div>
         <div class="col-md-9">
-            <h4 class="profile-title"><a href="/Book/{{getUsername}}">{{username}}'s Profile</a></h4>
+            <h4 class="profile-title">{{username}}'s Profile</h4>
+            {{#if owner}}
+              <a href="/Book/{{getUsername}}"><button class="buttons-style btn btn-primary-outline follow">Book</button></a>
+            {{/if}}
             <ul class="list-group">
                 <li class="list-group-item"><a href="/user/{{getUsername}}/followers">
           Followers
