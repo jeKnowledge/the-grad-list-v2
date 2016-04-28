@@ -6,7 +6,6 @@ html, body {
 
 
 .list-group-item {
-
    padding: 0.75rem 0.25rem;
 }
 
@@ -424,13 +423,14 @@ input[type="text"] {
   top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.clientHeight));
 }
 */
-#footer-list {
+#footer-list a {
   text-align: center;
   color: #211A47;
   font-family: Montserrat;
   font-size: 1em;
   list-style-type: none;
   padding: 0;
+
 
   li {
     display: inline;
