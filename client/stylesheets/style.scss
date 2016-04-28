@@ -4,6 +4,11 @@ html, body {
   margin: 0;
 }
 
+
+.list-group-item {
+   padding: 0.75rem 0.25rem;
+}
+
 #search {
   margin: 0;
 }
@@ -418,7 +423,7 @@ input[type="text"] {
   top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.clientHeight));
 }
 */
-#footer-list {
+#footer-list a {
   text-align: center;
   color: #211A47;
   font-family: Montserrat;
@@ -431,7 +436,7 @@ input[type="text"] {
   }
 
   li img {
-    margin-left: 2%;
+    margin-left: 3%;
   }
 }
 
