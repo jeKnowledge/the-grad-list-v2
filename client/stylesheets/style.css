@@ -3,6 +3,9 @@ html, body {
   height: 100%;
   margin: 0; }
 
+.list-group-item {
+  padding: 0.75rem 0.25rem; }
+
 #search {
   margin: 0; }
 
