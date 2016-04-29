@@ -449,6 +449,11 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
     font-size: 1em;
     display: inline;
   }
+
+  li a:hover {
+    text-decoration: none;
+    color: #968EBF;
+  }
 }
 
 .navbar {

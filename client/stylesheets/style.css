@@ -340,6 +340,9 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
     font-family: Montserrat;
     font-size: 1em;
     display: inline; }
+  #footer-list li a:hover {
+    text-decoration: none;
+    color: #968EBF; }
 
 #spinner {
   height: 300px; }

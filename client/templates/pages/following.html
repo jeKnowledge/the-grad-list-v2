@@ -1,5 +1,5 @@
 <template name="following">
-  {{username}}'s Following:
+    <h4 id="completed-posts-title"> {{username}}'s Following: </h4>
   {{#each following}}
     <br> <a href="/user/{{username}}">{{username}}</a>
   {{/each}}
