@@ -11,13 +11,10 @@ html, body {
   border: none;
 }
 
-.list-group-item a {
+.list-group-item  {
   //padding: 0.75rem 0.25rem;
   color: #75718B;
-
-  a:focus, a:hover {
-    color: #75718B;
-  }
+  padding: 0.5rem 0.5rem;
 }
 
 #search {

@@ -9,10 +9,9 @@ html, body {
   border-radius: 4px;
   border: none; }
 
-.list-group-item a {
-  color: #75718B; }
-  .list-group-item a a:focus, .list-group-item a a:hover {
-    color: #75718B; }
+.list-group-item {
+  color: #75718B;
+  padding: 0.5rem 0.5rem; }
 
 #search {
   margin: 0; }
