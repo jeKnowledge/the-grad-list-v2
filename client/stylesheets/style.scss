@@ -11,13 +11,6 @@ html, body {
   border: none;
 }
 
-.smallLink {
-  color: red;
-  font-size: 1em;
-  font-family: Helvetica;
-  margin-top: 0;
-}
-
 .list-group-item a {
   //padding: 0.75rem 0.25rem;
   color: #75718B;
@@ -592,7 +585,7 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
 .profile-title {
 
   font-family: Montserrat;
-  margin-bottom: 0;
+  margin-bottom: 3%;
 
   a {
     color: #75718B;
@@ -607,15 +600,16 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
 .smallLink {
 
   a {
-    color: blue;
-    font-size: 0.8em;
+    color: #373a3c;
+    font-size: 1em;
     font-family: Helvetica;
     margin-top: 0;
     margin-bottom: 10px;
   }
 
   a:hover {
-    color: green !important;
+    color: #75718B !important;
+    text-decoration: none;
   }
 }
 
