@@ -46,7 +46,6 @@ Meteor.methods({
                 });
                 if (Tags.findOne({title: tags[i]}).number == -1) {
                     var tags_id = Tags.findOne({title: tags[i]})._id;
-                    console.log(tags_id);
                     Tags.remove(Tags.findOne({"_id": tags_id}));
                 }
 
@@ -74,6 +73,16 @@ Meteor.methods({
             likes: [],
             tags: Posts.findOne({_id: id}).tags
         };
+        var tags = Posts.findOne({_id: id}).tags;
+        for (var i = 0; i < tags.length; i++) {
+          Tags.update({
+              title: tags[i]
+          }, {
+              $inc: {
+                  number: 1
+              }
+          });
+        }
         post2._id = Posts.insert(post2);
     },
 
