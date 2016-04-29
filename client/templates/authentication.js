@@ -29,7 +29,6 @@ Template.authentication.events({
             var name = $('#sign-up-tab').find('#username-input').val();
             Meteor.call('doesUserExist', name, function(error, result) {
                 if (result === true) {
-                    console.log("Username already exists.");
                     sAlert.error('Username already exists', {
                         effect: 'slide',
                         position: 'bottom-right',

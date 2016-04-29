@@ -11,7 +11,18 @@ Meteor.methods({
     },
 
     doesUserExist: function(name) {
-        return Meteor.users.findOne({username: name}).username !== null;
+        var user_exists = Meteor.users.findOne({
+            username: name
+        }, {
+            fields: {
+                "_id": 1
+            }
+        });
+        if (user_exists) {
+            return true;
+        } else {
+            return false;
+        }
     },
 
     defaultPicture: function() {
@@ -61,7 +72,7 @@ Meteor.methods({
             image: Posts.findOne({_id: id}).image,
             completed: false,
             likes: [],
-            tags: Posts.findOne({_id: id}).tags,
+            tags: Posts.findOne({_id: id}).tags
         };
         post2._id = Posts.insert(post2);
     },
