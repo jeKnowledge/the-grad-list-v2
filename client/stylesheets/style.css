@@ -1,7 +1,6 @@
 html, body {
   width: 100%;
-  height: 100%;
-  margin: 0; }
+  height: 100%; }
 
 .smallLink {
   color: red;
@@ -311,12 +310,19 @@ input[type="text"] {
    position: fixed;
    left: 50%;
    bottom: 0%; */
-  height: 2%;
-  position: static;
-  bottom: 5px;
-  width: 100%;
-  text-align: center;
-  margin-top: 4%; }
+  /* height: 2%;
+   position: static;
+   bottom: 5px;
+   width: 100%;
+   text-align: center;
+   margin-top: 4%; */
+  position: fixed;
+  height: 30px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 3px;
+  text-align: center; }
 
 /*html #footer {
   margin-top: -2px; /* prevents infinite scroll if #footer have a border of 2px*/
