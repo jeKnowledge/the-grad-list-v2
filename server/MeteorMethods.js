@@ -11,7 +11,7 @@ Meteor.methods({
     },
 
     doesUserExist: function(name) {
-      return Meteor.users.findOne({username: name}).username !== null;
+        return Meteor.users.findOne({username: name}).username !== null;
     },
 
     defaultPicture: function() {
