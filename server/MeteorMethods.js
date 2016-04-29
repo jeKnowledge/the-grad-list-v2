@@ -10,6 +10,10 @@ Meteor.methods({
         }
     },
 
+    doesUserExist: function(name) {
+      return Meteor.users.findOne({username: name}).username !== null;
+    },
+
     defaultPicture: function() {
         Meteor.users.update(Meteor.userId(), {
             $set: {
@@ -55,7 +59,7 @@ Meteor.methods({
             username: Meteor.user().username,
             image: Posts.findOne({_id: id}).image,
             completed: false,
-            likes: [],
+            likes: []
         };
         post2._id = Posts.insert(post2);
     },

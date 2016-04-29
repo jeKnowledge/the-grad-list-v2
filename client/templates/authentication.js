@@ -28,6 +28,20 @@ Template.authentication.events({
 
   'click #sign-up-btn': function(event) {
     if (currentTab == 'sign_up') {
+      var name = $('#sign-up-tab').find('#username-input').val();
+      Meteor.call('doesUserExist', name, function(error, result) {
+        if (result === true) {
+          console.log("Username already exists.");
+          sAlert.error('Username already exists', {
+            effect: 'slide',
+            position: 'bottom-right',
+            timeout: 'none',
+            onRouteClose: false,
+            stack: false,
+            offset: '80px'
+          });
+        }
+      });
       Accounts.createUser({
         username: $('#sign-up-tab').find('#username-input').val(),
         password: $('#sign-up-tab').find('#password-input').val(),
