@@ -5,8 +5,13 @@ html, body {
 }
 
 
-.list-group-item {
-   padding: 0.75rem 0.25rem;
+.list-group-item a {
+   //padding: 0.75rem 0.25rem;
+  color: #75718B;
+
+  a:focus, a:hover{
+   color: #75718B;
+  }
 }
 
 #search {
@@ -154,6 +159,23 @@ html, body {
 }
 
 #suggestions {
+  width: 50%;
+  color: #211A47;
+  font-family: Montserrat;
+  font-size: 2em;
+  /* top | right | bottom | left */
+  margin: 2% auto 2% auto;
+
+  a {
+    color: #75718B;
+  }
+
+  a:hover {
+    text-decoration: line-through;
+  }
+}
+
+.link {
   width: 50%;
   color: #211A47;
   font-family: Montserrat;

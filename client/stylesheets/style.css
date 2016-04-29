@@ -3,8 +3,10 @@ html, body {
   height: 100%;
   margin: 0; }
 
-.list-group-item {
-  padding: 0.75rem 0.25rem; }
+.list-group-item a {
+  color: #75718B; }
+  .list-group-item a a:focus, .list-group-item a a:hover {
+    color: #75718B; }
 
 #search {
   margin: 0; }
@@ -130,6 +132,18 @@ html, body {
   #suggestions a {
     color: #75718B; }
   #suggestions a:hover {
+    text-decoration: line-through; }
+
+.link {
+  width: 50%;
+  color: #211A47;
+  font-family: Montserrat;
+  font-size: 2em;
+  /* top | right | bottom | left */
+  margin: 2% auto 2% auto; }
+  .link a {
+    color: #75718B; }
+  .link a:hover {
     text-decoration: line-through; }
 
 .header-style {
