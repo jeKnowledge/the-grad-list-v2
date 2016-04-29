@@ -3,6 +3,14 @@ html, body {
   height: 100%;
   margin: 0; }
 
+.s-alert-error.s-alert-effect-slide {
+    background: #7C89F3;  /* your background color here */
+    color: #fff  /* your text color here */
+    border-radius: 4px;
+    border: none;
+    font-size: 1em;
+}
+
 .list-group-item a {
   color: #75718B; }
   .list-group-item a a:focus, .list-group-item a a:hover {

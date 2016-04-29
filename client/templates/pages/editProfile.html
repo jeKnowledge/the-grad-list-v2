@@ -1,14 +1,16 @@
 <template name='editProfile'>
-  <form class="main form">
-    <div class="form-group">
-      <input name="bio" type="text" value="" placeholder="Bio" class="form-control" />
-      <input name="country" type="text" value="" placeholder="Country" class="form-control" />
-      <input name="university" type="text" value="" placeholder="University" class="form-control" />
-      <input type="submit" value="Submit" class="buttons-style btn btn-primary" />
-      <span class="btn btn-default btn-file">
+    <form class="main form">
+        <div class="form-group">
+            <input name="bio" type="text" value="" placeholder="Bio" class="form-control" />
+            <input name="country" type="text" value="" placeholder="Country" class="form-control" />
+            <input name="university" type="text" value="" placeholder="University" class="form-control" />
+            <p class="form-control">Profile photo
+                <span class="btn btn-default btn-file">
 				<input type="file" multiple class="myFileInput"/>
 			</span>
-    </div>
-  </form>
+            </p>
+            <input type="submit" value="Submit" class="buttons-style btn btn-primary" />
+        </div>
+    </form>
 
 </template>
