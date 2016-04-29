@@ -55,11 +55,13 @@ Meteor.methods({
             title: Posts.findOne({_id: id}).title,
             owner: Meteor.userId(),
             forkedFrom: Posts.findOne({_id: id}).username,
+            date2: new Date().toDateString(),
             date: new Date(),
             username: Meteor.user().username,
             image: Posts.findOne({_id: id}).image,
             completed: false,
-            likes: []
+            likes: [],
+            tags: Posts.findOne({_id: id}).tags,
         };
         post2._id = Posts.insert(post2);
     },
