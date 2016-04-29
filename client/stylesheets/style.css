@@ -445,13 +445,12 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
     text-decoration: underline; }
 
 .smallLink a {
-  color: #373a3c;
+  color: #8E8BA1;
   font-size: 1em;
   font-family: Helvetica;
-  margin-top: 0;
-  margin-bottom: 10px; }
+  margin-top: 0; }
 .smallLink a:hover {
-  color: #75718B !important;
+  color: #211A47 !important;
   text-decoration: none; }
 
 .buttons-style {
