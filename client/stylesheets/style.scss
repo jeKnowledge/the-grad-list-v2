@@ -4,13 +4,19 @@ html, body {
   margin: 0;
 }
 
+.smallLink {
+  color: red;
+  font-size: 1em;
+  font-family: Helvetica;
+  margin-top: 0;
+}
 
 .list-group-item a {
-   //padding: 0.75rem 0.25rem;
+  //padding: 0.75rem 0.25rem;
   color: #75718B;
 
-  a:focus, a:hover{
-   color: #75718B;
+  a:focus, a:hover {
+    color: #75718B;
   }
 }
 
@@ -175,7 +181,6 @@ html, body {
   }
 }
 
-
 .header-style {
   background-color: #211A47;
   border-radius: 0;
@@ -249,7 +254,6 @@ html, body {
   background: url(vintagePic17.jpg) no-repeat center center fixed;
   position: absolute;
 } */
-
 
 .fullscreen {
   position: fixed;
@@ -406,11 +410,11 @@ input[type="text"] {
 
 #footer {
 
- /* width: 640px;
-  margin: 0% -320px;
-  position: fixed;
-  left: 50%;
-  bottom: 0%; */
+  /* width: 640px;
+   margin: 0% -320px;
+   position: fixed;
+   left: 50%;
+   bottom: 0%; */
 
   height: 2%;
   position: static;
@@ -422,8 +426,8 @@ input[type="text"] {
 
 /*html #footer {
   margin-top: -2px; /* prevents infinite scroll if #footer have a border of 2px*/
-  /*position: absolute;
-  top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.clientHeight));
+/*position: absolute;
+top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.clientHeight));
 }
 */
 #footer-list {
@@ -573,6 +577,7 @@ input[type="text"] {
 .profile-title {
 
   font-family: Montserrat;
+  margin-bottom: 0;
 
   a {
     color: #75718B;
@@ -581,6 +586,21 @@ input[type="text"] {
   a:hover {
     color: #211A47;
     text-decoration: underline;
+  }
+}
+
+.smallLink {
+
+  a {
+    color: blue;
+    font-size: 0.8em;
+    font-family: Helvetica;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  a:hover {
+    color: green !important;
   }
 }
 

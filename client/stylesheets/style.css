@@ -3,13 +3,11 @@ html, body {
   height: 100%;
   margin: 0; }
 
-.s-alert-error.s-alert-effect-slide {
-    background: #7C89F3;  /* your background color here */
-    color: #fff  /* your text color here */
-    border-radius: 4px;
-    border: none;
-    font-size: 1em;
-}
+.smallLink {
+  color: red;
+  font-size: 1em;
+  font-family: Helvetica;
+  margin-top: 0; }
 
 .list-group-item a {
   color: #75718B; }
@@ -322,8 +320,8 @@ input[type="text"] {
 
 /*html #footer {
   margin-top: -2px; /* prevents infinite scroll if #footer have a border of 2px*/
-  /*position: absolute;
-  top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.clientHeight));
+/*position: absolute;
+top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.clientHeight));
 }
 */
 #footer-list {
@@ -428,12 +426,22 @@ input[type="text"] {
   background-color: #c7c7c7; }
 
 .profile-title {
-  font-family: Montserrat; }
+  font-family: Montserrat;
+  margin-bottom: 0; }
   .profile-title a {
     color: #75718B; }
   .profile-title a:hover {
     color: #211A47;
     text-decoration: underline; }
+
+.smallLink a {
+  color: blue;
+  font-size: 0.8em;
+  font-family: Helvetica;
+  margin-top: 0;
+  margin-bottom: 10px; }
+.smallLink a:hover {
+  color: green !important; }
 
 .buttons-style {
   background-color: #75718B;
