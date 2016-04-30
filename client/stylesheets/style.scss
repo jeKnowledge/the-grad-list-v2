@@ -304,7 +304,7 @@ html, body {
   h3 {
     text-align: center;
     font-family: Montserrat;
-    font-size: 3.5em;
+    font-size: 4em;
     font-weight: 900;
     color: #211A47;
   }
@@ -436,10 +436,10 @@ input[type="text"] {
 
   position:fixed;
   height:30px;
-  bottom:0px;
-  left:0px;
-  right:0px;
-  margin-bottom:3px;
+  bottom:0;
+  left:0;
+  right:0;
+  margin-bottom:20px;
   text-align: center;
 }
 
@@ -452,6 +452,7 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
 #footer-list {
   list-style-type: none;
   padding: 0;
+  position:static;
 
   li a {
     text-align: center;

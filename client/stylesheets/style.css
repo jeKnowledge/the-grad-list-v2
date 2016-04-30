@@ -232,7 +232,7 @@ html, body {
   .title-homePage h3 {
     text-align: center;
     font-family: Montserrat;
-    font-size: 3.5em;
+    font-size: 4em;
     font-weight: 900;
     color: #211A47; }
   .title-homePage p {
@@ -240,6 +240,21 @@ html, body {
     font-family: Montserrat;
     font-size: 1.4em;
     color: #211A47; }
+
+.content-list {
+  background: #FFF;
+  float: left;
+  border: 1px solid #E1E1E1;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  -moz-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.25);
+  display: block;
+  position: absolute;
+  margin-left: 0; }
 
 .drop-list {
   padding: 0; }
@@ -318,10 +333,10 @@ input[type="text"] {
    margin-top: 4%; */
   position: fixed;
   height: 30px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  margin-bottom: 3px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 20px;
   text-align: center; }
 
 /*html #footer {
@@ -332,7 +347,8 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
 */
 #footer-list {
   list-style-type: none;
-  padding: 0; }
+  padding: 0;
+  position: static; }
   #footer-list li a {
     text-align: center;
     color: #211A47;
