@@ -13,6 +13,9 @@ html, body {
   color: #75718B;
   padding: 0.5rem 0.5rem; }
 
+.noBorder {
+  border: 0rem solid #ddd; }
+
 #search {
   margin: 0; }
 

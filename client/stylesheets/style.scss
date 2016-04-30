@@ -17,6 +17,10 @@ html, body {
   padding: 0.5rem 0.5rem;
 }
 
+.noBorder {
+  border: 0rem solid #ddd;
+}
+
 #search {
   margin: 0;
 }
@@ -603,6 +607,7 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
 
   font-family: Montserrat;
   margin-bottom: 3%;
+
 
   a {
     color: #75718B;
