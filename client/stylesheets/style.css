@@ -463,7 +463,7 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
     text-decoration: underline; }
 
 .smallLink a {
-  color: #8E8BA1;
+  color: #7C89F3;
   font-size: 1em;
   font-family: Helvetica;
   margin-top: 0; }
