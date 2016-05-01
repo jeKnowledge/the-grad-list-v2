@@ -7,8 +7,7 @@
         <img class="profilePic" src="{{profilePicture}}" />
       </div>
       <div class="col-md-9">
-        <h5 class="published"><a href="/user/{{ownerUsername}}" >{{username}}</a> wants to</h5>
-        <h5><a href="{{pathFor "postPage"}}">{{title}}</a></h5>
+        <h6 class="published"><a href="/user/{{ownerUsername}}" >{{username}}</a> wants to <a href="{{pathFor "postPage"}}">{{title}}</a></h6>
         <img class="submitPost-image" src="{{image}}" />
         {{#if has_tags}}
           <p>tags</p>
