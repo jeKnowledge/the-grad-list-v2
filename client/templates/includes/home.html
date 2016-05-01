@@ -3,16 +3,16 @@
 
   <div id="suggestions">
     {{#unless suggestion}}
-      <h6>Users that you can follow</h6>
+      <h5>Users that you can follow</h5>
     {{/unless}}
     {{#if check_followers}}
       {{#each user}}
-        <h6><a href="/user/{{username}}">{{username}}</a></h6>
+        <h5><a href="/user/{{username}}">{{username}}</a></h5>
       {{/each}}
     {{/if}}
     {{#unless check_followers}}
       {{#each friends_of_friends}}
-        <h6><a href="/user/{{username}}">{{username}}</a></h6>
+        <h5><a href="/user/{{username}}">{{username}}</a></h5>
       {{/each}}
     {{/unless}}
   </div>

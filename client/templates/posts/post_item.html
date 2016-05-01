@@ -7,8 +7,8 @@
         <img class="profilePic" src="{{profilePicture}}" />
       </div>
       <div class="col-md-9">
-        <h3 class="published"><a href="/user/{{ownerUsername}}" >{{username}}</a> wants to</h3>
-        <h3><a href="{{pathFor "postPage"}}">{{title}}</a></h3>
+        <h5 class="published"><a href="/user/{{ownerUsername}}" >{{username}}</a> wants to</h5>
+        <h5><a href="{{pathFor "postPage"}}">{{title}}</a></h5>
         <img class="submitPost-image" src="{{image}}" />
         {{#if has_tags}}
           <p>tags</p>
@@ -40,7 +40,7 @@
               <button class="buttons-style btn-primary delete">Remove</button>
               {{#if isNotCompleted}}
               <a href="/completed/{{_id}}">
-                <button class="buttons-style btn-primary complete">complete</button>
+                <button class="buttons-style btn-primary complete">Complete</button>
               </a>
               {{/if}}
             {{/if}}

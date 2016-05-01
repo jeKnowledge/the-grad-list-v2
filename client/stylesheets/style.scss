@@ -8,11 +8,13 @@ html, body {
 }
 
 .s-alert-error.s-alert-effect-slide {
-  background: #7C89F3;
+  background: #75718B;
   color: #fff;
   font-size: 1em;
   border-radius: 4px;
   border: none;
+  font-family: Montserrat;
+  text-align: center;
 }
 
 .list-group-item  {
@@ -51,17 +53,6 @@ html, body {
   margin-top: 20px;
   color: black;
   font-size: 20px;
-}
-
-.Done {
-  color: #75718B;
-  text-align: left;
-  font-size: 1.5em;
-  font-family: Montserrat;
-}
-
-.done {
-  font-size: 2rem;
 }
 
 .dropdown {
@@ -149,7 +140,7 @@ html, body {
 }
 
 .title-Pages {
-  color: #75718B;
+  color: #59556A;
   text-align: left;
   font-size: 1.5em;
   font-family: Montserrat;
@@ -161,21 +152,30 @@ html, body {
 
 #completed-posts-title {
   width: 50%;
-  color: #75718B;
-  font-family: Montserrat;
-  font-size: 1.5em;
+  color: #59556A;
+  //font-family: Montserrat;
+  font-size: 1.67em;
   /* top | right | bottom | left */
   margin: 0% auto 2% auto;
   text-align: left;
 }
 
+.Done {
+    color: #59556A;
+    font-size: 1.67em;
+    text-align: left;
+}
+
 #suggestions {
-  width: 50%;
+  width: 40%;
   color: #211A47;
   font-family: Montserrat;
-  font-size: 2em;
   /* top | right | bottom | left */
   margin: 2% auto 2% auto;
+
+  h6 {
+    font-size: 0.8em;
+  }
 
   a {
     color: #75718B;
@@ -242,13 +242,14 @@ html, body {
 }
 
 .grid-block, .main, .post, .comments li, .comment-form {
-  width: 50%;
+  width: 40%;
   background: #fff;
   border-radius: 5px;
-  border: 0.4px solid rgba(0, 0, 0, 0.15);
+  border: 0.1px solid rgba(0, 0, 0, 0.15);
   padding: 25px;
   /* top | right | bottom | left */
   margin: 2% auto 2% auto;
+  color: #59556A;
 }
 
 /*
@@ -284,60 +285,23 @@ html, body {
   transform: translate(-50%, -50%);
 }
 
-@media (max-width: 767px) {
-  .fullscreen {
-    background: url(1.jpg) center center / cover no-repeat;
-  }
 
-  .fullscreen__video {
-    display: none;
-  }
-}
-
-.row {
-  width: 30%;
-}
-
-.input-field label {
-  color: white;
-}
-
-.container {
-  margin-top: 2%;
-}
-
-.title-homePage {
-  margin-top: 7%;
-
-  h3 {
-    text-align: center;
-    font-family: Montserrat;
-    font-size: 4em;
-    font-weight: 900;
-    color: #211A47;
-  }
-
-  p {
-    text-align: center;
-    font-family: Montserrat;
-    font-size: 1.4em;
-    color: #211A47;
-  }
-}
 .content-list {
-   background: #FFF;
-   float: left;
-   border: 1px solid #E1E1E1;
-   border-color: rgba(0, 0, 0, 0.2);
-   border-left: 0;
-   border-right: 0;
-   border-top: 0;
-   -moz-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.25);
-   -webkit-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.25);
-   box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.25);
-   display: block;
-   position:absolute;
-   margin-left: 0;
+  background: #FFF;
+  float: left;
+  border: 0px solid rgba(0, 0, 0, 0.2);
+  //border-color: rgba(0, 0, 0, 0.2);
+
+  -moz-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.25);
+  display: block;
+  position:absolute;
+  //margin-left: 0;
+
+  margin-left: -0.7%;
+  width: 14.6%;
+  height: 90%;
 }
 .drop-list {
   padding: 0;
@@ -367,7 +331,7 @@ html, body {
 .navbar-search input {
   width: 100%;
   color: #211A47;
-  border: 0px solid transparent;
+  border: 0 solid transparent;
   padding: 0;
 }
 
@@ -435,12 +399,12 @@ input[type="text"] {
    left: 50%;
    bottom: 0%; */
 
- /* height: 2%;
-  position: static;
-  bottom: 5px;
-  width: 100%;
-  text-align: center;
-  margin-top: 4%; */
+  /* height: 2%;
+   position: static;
+   bottom: 5px;
+   width: 100%;
+   text-align: center;
+   margin-top: 4%; */
 
   position:fixed;
   height:30px;
@@ -476,21 +440,9 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   }
 }
 
-.navbar {
-
-}
-
 #spinner {
   height: 300px;
 }
-
-/*
-.post {
-  *zoom: 1;
-  position: relative;
-  opacity: 1;
-}
-*/
 
 .post:before, .post:after {
   content: "";
@@ -541,14 +493,13 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   }
 
   a {
-    color: #7C89F3;
+    color: #9FA6E2;
   }
 }
 
 .post .post-content .published {
-  margin-top: 10px;
   line-height: 1;
-  font-size: 1em;
+
 }
 
 .post .post-content {
@@ -562,16 +513,6 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
     font-size: 1em;
   }
 
-  h3 {
-    margin-top: 10px;
-    line-height: 1.4;
-    font-size: 2em;
-  }
-
-  /*h3 a{
-   color: #75718B;
-  }*/
-
   p {
     margin-top: 10px;
     line-height: 1.4;
@@ -580,7 +521,7 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
 
   a {
     display: inline-block;
-    color: #7C89F3;
+    color: #9FA6E2;
   }
 
   span {
@@ -607,26 +548,9 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   background-color: #c7c7c7;
 }
 
-.profile-title {
-
-  font-family: Montserrat;
-  margin-bottom: 3%;
-
-
-  a {
-    color: #75718B;
-  }
-
-  a:hover {
-    color: #211A47;
-    text-decoration: underline;
-  }
-}
-
 .smallLink {
-
   a {
-    color: #7C89F3;
+    color: #9FA6E2;
     //color: #373a3c;
     font-size: 1em;
     font-family: Helvetica;
@@ -644,7 +568,7 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   border-radius: 4px;
   border: none;
   padding: 3px 6px;
-  font-size: 0.8em;
+  font-size: 0.89em;
   color: white;
   outline: 0;
   height: 17%;
@@ -661,10 +585,11 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
 .buttons-style-editProfile {
   background-color: #75718B;
   border-radius: 4px;
-  font-size: 0.8em;
+  font-size: 0.89em;
   border: none;
   color: white;
   outline: 0;
+  height: 17%;
 }
 
 .number_of_likes {
@@ -803,6 +728,49 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   color: white;
 }
 
+
+@media (max-width: 767px) {
+  .fullscreen {
+    background: url(1.jpg) center center / cover no-repeat;
+  }
+
+  .fullscreen__video {
+    display: none;
+  }
+}
+
+.row {
+  width: 30%;
+}
+
+.input-field label {
+  color: white;
+}
+
+.container {
+  margin-top: 2%;
+}
+
+.title-homePage {
+  margin-top: 7%;
+
+  h3 {
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 4em;
+    font-weight: 900;
+    color: #211A47;
+  }
+
+  p {
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 1.4em;
+    color: #211A47;
+  }
+}
+
+
 @media (max-width: 768px) {
   #completed-posts-title {
     font-size: 1.3em;
@@ -819,7 +787,10 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
 
   .profile-title {
 
+    color: #575368;
+
     h4 {
+      font-family: Montserrat;
       font-size: 1.3em;
       margin-bottom: 1em;
     }
@@ -920,8 +891,6 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
 
   .form-control {
     font-size: 1em;
-
-    background-color: rgba(255, 255, 255, 0.3);
   }
 
   #form-front-page {
