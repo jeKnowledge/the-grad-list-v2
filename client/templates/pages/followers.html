@@ -1,6 +1,6 @@
 <template name="followers">
- <h4 id="completed-posts-title"> {{username}}'s Followers: </h4>
-  {{#each followers}}
-    <br> <a href="/user/{{username}}">{{username}}</a> <br>
-  {{/each}}
+    <h4 id="completed-posts-title"> {{username}}'s Followers: </h4> {{#each followers}}
+    <br> <a href="/user/{{username}}">{{username}}</a>
+    <img src={{image}} />
+    <br> {{/each}}
 </template>
