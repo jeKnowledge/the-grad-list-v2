@@ -390,7 +390,8 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   .post .post-content p {
     margin: 0; }
   .post .post-content a:hover {
-    text-decoration: line-through; }
+    color: #867CD3;
+    text-decoration: none; }
 
 .post .discuss {
   display: block;
@@ -405,7 +406,7 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   font-family: Helvetica;
   margin-top: 0; }
 .smallLink a:hover {
-  color: #211A47 !important;
+  color: #867CD3 !important;
   text-decoration: none; }
 
 .buttons-style {
