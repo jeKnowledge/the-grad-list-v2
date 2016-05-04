@@ -15,7 +15,7 @@ Template.postComplete.events({
         date: new Date()
       },
       $push: {
-        imagesOfCompletion: Session.get("picture")
+        imagesOfCompletion: Session.get("picture") || 0
       }
     });
     Meteor.call("medals");

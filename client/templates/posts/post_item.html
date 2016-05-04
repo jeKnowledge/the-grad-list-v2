@@ -21,7 +21,9 @@
         <p>at {{date2}}</p>
         {{#if checkCompleted}}
           <h3 id="post-completed">Completed [ 🏆 ]</h3>
-          <img class="submitPost-image" src="{{imagesOfCompletion}}" />
+          {{#if images_of_completion_different_from_zero}}
+            <img class="submitPost-image" src="{{imagesOfCompletion}}" />
+          {{/if}}
         {{/if}}
 
         <ul class="list-group">

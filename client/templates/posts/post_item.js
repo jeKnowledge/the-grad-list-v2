@@ -12,6 +12,12 @@ Template.postItem.helpers({
         return this.completed === false;
     },
 
+    images_of_completion_different_from_zero: function() {
+      if (parseInt(this.imagesOfCompletion) !== 0) {
+        return true;
+      }
+    },
+
     isForked: function() {
         return this.hasOwnProperty("forkedFrom");
     },
