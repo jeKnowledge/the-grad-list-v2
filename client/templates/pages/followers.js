@@ -5,6 +5,12 @@ Template.followers.helpers({
     }).username;
   },
 
+  image: function() {
+    return Meteor.users.findOne({
+      "_id": this._id
+    }).image;
+  },
+
   followers: function() {
     var a = [];
     var followers = Meteor.users.findOne({"_id": this._id}).followed;
