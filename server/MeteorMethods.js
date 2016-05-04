@@ -52,6 +52,11 @@ Meteor.methods({
             }
             Posts.remove(id);
         }
+        Meteor.users.update(Meteor.userId(), {
+          $inc: {
+            medals: -1
+          }
+        });
     },
 
     deleteComment: function(id) {
