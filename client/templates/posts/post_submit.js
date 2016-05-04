@@ -4,7 +4,9 @@ Template.postSubmit.events({
     if (/\S/.test(string)) {
       var tags_2;
       if ($(e.target).find('[name=tags]').val() !== '') {
-        tags_2 = (($(e.target).find('[name=tags]').val())).replace(/ /g, '').replace(/,/g, '#').substr(1).split('#');
+        var raw = ($(e.target).find('[name=tags]').val());
+        matches = raw.match(/[^\s#,;]+/gi);
+        tags_2 = matches;
       }
       else {
         tags_2 = '';
@@ -25,8 +27,7 @@ Template.postSubmit.events({
         image: Session.get("picture"),
       };
       post._id = Posts.insert(post);
-      var tags = (($(e.target).find('[name=tags]').val())).replace(/ /g, '').replace(/,/g, '#').substr(1).split('#');
-
+      var tags = matches;
       for (i = 0; i < tags.length; i++) {
         var TagExist = Tags.find({title: tags[i]}, {limit: 1}).count() > 0;
         if (TagExist === false) {
