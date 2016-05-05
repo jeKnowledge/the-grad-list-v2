@@ -390,7 +390,7 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   .post .post-content p {
     margin: 0; }
   .post .post-content a:hover {
-    color: #867CD3d;
+    color: #867CD3;
     text-decoration: none; }
 
 .post .discuss {
