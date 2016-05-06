@@ -328,6 +328,9 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
     text-decoration: none;
     color: #968EBF; }
 
+#footerPhoto {
+  width: 2%; }
+
 #spinner {
   height: 300px; }
 
@@ -641,9 +644,6 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   .number_of_likes {
     width: 16%; }
 
-  .buttons-style {
-    font-size: 0.6em; }
-
   .grid-block, .main, .post, .comments li, .comment-form {
     width: 80%; }
 
@@ -663,6 +663,12 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
     .title-homePage p {
       font-size: 1em; } }
 @media (max-width: 400px) {
+  .fullscreen {
+    background: url(1.jpg) center center/cover no-repeat; }
+
+  .fullscreen__video {
+    display: none; }
+
   .navbar-toggleable-xs {
     font-size: 0.6rem; }
 
@@ -671,6 +677,9 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
 
   .profilePic {
     width: 45%;
-    margin-bottom: 3%; } }
+    margin-bottom: 3%; }
+
+  #footerPhoto {
+    width: 4%; } }
 
 /*# sourceMappingURL=style.css.map */

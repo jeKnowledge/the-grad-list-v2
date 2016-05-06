@@ -436,6 +436,10 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   }
 }
 
+#footerPhoto {
+  width: 2%;
+}
+
 #spinner {
   height: 300px;
 }
@@ -876,7 +880,7 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   }
 
   .buttons-style {
-    font-size: 0.6em;
+    //font-size: 0.6em;
   }
 
   .grid-block, .main, .post, .comments li, .comment-form {
@@ -909,6 +913,14 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
 }
 
 @media (max-width: 400px) {
+  .fullscreen {
+    background: url(1.jpg) center center / cover no-repeat;
+  }
+
+  .fullscreen__video {
+    display: none;
+  }
+
   .navbar-toggleable-xs {
     font-size: 0.6rem;
   }
@@ -920,5 +932,9 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   .profilePic {
     width: 45%;
     margin-bottom: 3%;
+  }
+
+  #footerPhoto {
+    width: 4%;
   }
 }
