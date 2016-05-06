@@ -2,6 +2,12 @@ html, body {
   width: 100%;
   min-height: 100vh; }
 
+#followPage {
+  padding: 0;
+  border: 0 solid white; }
+  #followPage a {
+    font-size: 1.2em; }
+
 .formStyle {
   background-color: rgba(255, 255, 255, 0.6); }
 
