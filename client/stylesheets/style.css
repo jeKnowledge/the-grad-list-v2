@@ -376,7 +376,7 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   font-size: 1.1em;
   margin-bottom: 3%; }
 
-.post .post-content {
+/*.post .post-content {
   margin-right: auto;
   margin-left: auto;
   text-align: left; }
@@ -639,10 +639,7 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
     width: 20%; } }
 @media (max-width: 600px) {
   #main {
-    margin-top: 18%; }
-
-  .number_of_likes {
-    width: 16%; }
+    margin-top: 14%; }
 
   .grid-block, .main, .post, .comments li, .comment-form {
     width: 80%; }
@@ -657,11 +654,14 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
     width: 60%; }
 
   .title-homePage {
-    margin-top: 20%; }
+    margin-top: 18%; }
     .title-homePage h3 {
       font-size: 2em; }
     .title-homePage p {
-      font-size: 1em; } }
+      font-size: 1em; }
+
+  #footerPhoto {
+    width: 6%; } }
 @media (max-width: 400px) {
   .fullscreen {
     background: url(1.jpg) center center/cover no-repeat; }
