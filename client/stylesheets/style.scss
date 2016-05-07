@@ -386,13 +386,9 @@ input[type="text"] {
 }
 
 #footer {
-
-  /* width: 640px;
-   margin: 0% -320px;
-   position: fixed;
-   left: 50%;
-   bottom: 0%; */
-
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   height: 2%;
   position: static;
   bottom: 5px;
@@ -408,13 +404,6 @@ input[type="text"] {
   margin-bottom:20px;
   text-align: center; */
 }
-
-/*html #footer {
-  margin-top: -2px; /* prevents infinite scroll if #footer have a border of 2px*/
-/*position: absolute;
-top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.clientHeight));
-}
-*/
 
 #footer-list {
   list-style-type: none;
@@ -811,6 +800,10 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
     }
   }
 
+  #suggestions {
+    width: 70%;
+  }
+
   .grid-block, .main, .post, .comments li, .comment-form {
     width: 70%;
   }
@@ -868,6 +861,14 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
 
   #suggestions {
     width: 87%;
+
+    h5 {
+      font-size: 1.17em;
+    }
+
+    a {
+      font-size: 0.87em;
+    }
   }
 
   .number_of_likes {
