@@ -26,7 +26,7 @@ html, body {
   text-align: center;
 }
 
-.list-group-item  {
+.list-group-item {
   //padding: 0.75rem 0.25rem;
   color: #59556A;
   padding: 0.5rem 0.5rem;
@@ -159,9 +159,9 @@ abbr[title], abbr[data-original-title] {
 }
 
 .Done {
-    color: #59556A;
-    font-size: 1.67em;
-    text-align: left;
+  color: #59556A;
+  font-size: 1.67em;
+  text-align: left;
 }
 
 #suggestions {
@@ -287,7 +287,7 @@ abbr[title], abbr[data-original-title] {
   background: #FFF;
   float: left;
   display: block;
-  position:absolute;
+  position: absolute;
   //margin-left: 0;
   margin-left: -0.76%;
   width: 14.6%;
@@ -308,7 +308,7 @@ abbr[title], abbr[data-original-title] {
 
   a:hover {
     color: #75718B;
-    text-decoration: line-through;
+    text-decoration: none;
   }
 }
 
@@ -393,12 +393,12 @@ input[type="text"] {
    left: 50%;
    bottom: 0%; */
 
-   height: 2%;
-   position: static;
-   bottom: 5px;
-   width: 100%;
-   text-align: center;
-   margin-top: 4%;
+  height: 2%;
+  position: static;
+  bottom: 5px;
+  width: 100%;
+  text-align: center;
+  margin-top: 4%;
 
   /*position:fixed;
   height:30px;
@@ -416,11 +416,10 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
 }
 */
 
-
 #footer-list {
   list-style-type: none;
   padding: 0;
-  position:static;
+  position: static;
 
   li a {
     text-align: center;
@@ -497,6 +496,10 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   }
 }
 
+#followImage {
+  width: 100%;
+}
+
 .post .post-content .published {
   line-height: 1;
   font-size: 1.1em;
@@ -560,7 +563,7 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   }
 
   a:hover {
-    color:  #867CD3 !important;
+    color: #867CD3 !important;
     text-decoration: none;
   }
 }
@@ -730,7 +733,7 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   color: white;
 }
 
-
+/*
 @media (max-width: 767px) {
   .fullscreen {
     background: url(1.jpg) center center / cover no-repeat;
@@ -771,12 +774,13 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
     color: #211A47;
   }
 }
-
+*/
 
 @media (max-width: 768px) {
   #completed-posts-title {
     font-size: 1.3em;
     margin: 0% 10% 2% 10%;
+    width: 70%;
   }
 
   #form-front-page {
@@ -798,6 +802,10 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
     }
   }
 
+  .grid-block, .main, .post, .comments li, .comment-form {
+    width: 70%;
+  }
+
   .profilePic {
     width: 30%;
     margin-bottom: 3%;
@@ -811,8 +819,8 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
     margin-top: 15%;
   }
 
-  .grid-block, .main, .post, .comments li, .comment-form {
-    width: 65%;
+ .main {
+    width: 70%;
   }
 
   .title-homePage {
@@ -842,10 +850,10 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
     width: 10%;
   }
 
-  #form-front-page {
-    width: 42%;
-  }
 
+ #form-front-page {
+   width: 70%;
+ }
   .title-homePage {
     margin-top: 20%;
 
@@ -868,9 +876,20 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
 
 }
 
+
+
 @media (max-width: 600px) {
   #main {
     margin-top: 14%;
+  }
+
+  .content-list {
+    margin-left: -3%;
+    width: 91.57%;
+  }
+
+  #suggestions {
+    width: 87%;
   }
 
   .number_of_likes {
@@ -882,7 +901,11 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   }
 
   .grid-block, .main, .post, .comments li, .comment-form {
-    width: 80%;
+    width: 87%;
+  }
+
+  .form {
+    width: 87%;
   }
 
   .navbar-search {
@@ -894,7 +917,7 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   }
 
   #form-front-page {
-    width: 60%;
+    width: 80%;
   }
 
   .title-homePage {
@@ -912,15 +935,28 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   #footerPhoto {
     width: 6%;
   }
-}
 
-@media (max-width: 400px) {
-  .fullscreen {
-    background: url(1.jpg) center center / cover no-repeat;
+  #completed-posts-title {
+    font-size: 1.2em;
+    width: 70%;
+    margin-bottom: 4%;
   }
 
-  .fullscreen__video {
-    display: none;
+  .profilePic {
+    width: 37%;
+    margin-bottom: 3%;
+  }
+
+  .authentication-form {
+        font-size: 0.77em;
+  }
+
+}
+
+@media (max-width: 437px) {
+
+  #main {
+    margin-top: 20%;
   }
 
   .navbar-toggleable-xs {
@@ -928,15 +964,73 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   }
 
   #form-front-page {
-    width: 80%;
+    width: 70%;
   }
 
   .profilePic {
-    width: 45%;
+    width: 37%;
     margin-bottom: 3%;
   }
 
-  #footerPhoto {
-    width: 4%;
+   .nav .nav-pills {
+     font-size: 0.50em;
+   }
+
+   .buttons-style {
+         font-size: 0.5em;
+   }
+}
+
+@media (max-width: 340px) {
+
+  .buttons-style {
+    font-size: 0.7em;
+  }
+
+  #form-front-page {
+    width: 70%;
+  }
+
+  #main {
+    margin-top: 20%;
+  }
+
+  .profile-title {
+    font-size: 1.4em;
+  }
+
+  .post .post-content .published {
+    font-size: 0.9em;
+    margin-bottom: 3.8%;
+  }
+  #completed-posts-title {
+    font-size: 1.2em;
+    width: 70%;
+    margin-bottom: 4%;
+  }
+
+  #suggestions {
+    h5 {
+      font-size: 1em;
+    }
   }
 }
+
+ @media (max-width: 300px) {
+   .fullscreen {
+     background: url(1.jpg) center center / cover no-repeat;
+   }
+
+   .fullscreen__video {
+     display: none;
+   }
+
+    #form-front-page {
+      width: 70%;
+    }
+
+    .buttons-style {
+          font-size: 0.7em;
+    }
+
+ }
