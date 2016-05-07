@@ -2,13 +2,13 @@ html, body {
   width: 100%;
   min-height: 100vh; }
 
-#followPage {
+#follow-page {
   padding: 0;
   border: 0 solid white; }
-  #followPage a {
+  #follow-page a {
     font-size: 1.2em; }
 
-.formStyle {
+.form-style {
   background-color: rgba(255, 255, 255, 0.6); }
 
 .s-alert-error.s-alert-effect-slide {
@@ -28,7 +28,7 @@ abbr[title], abbr[data-original-title] {
   cursor: default;
   color: #5B576C; }
 
-.noBorder {
+.no-border {
   border: 0rem solid #ddd; }
 
 #search {
@@ -64,7 +64,7 @@ abbr[title], abbr[data-original-title] {
 #main {
   margin-top: 7%; }
 
-.profilePic {
+.profile-pic {
   width: 100%; }
 
 .post-profile-pic {
@@ -613,7 +613,7 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   .grid-block, .main, .post, .comments li, .comment-form {
     width: 70%; }
 
-  .profilePic {
+  .profile-pic {
     width: 30%;
     margin-bottom: 3%; }
 
@@ -698,7 +698,7 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
     width: 70%;
     margin-bottom: 4%; }
 
-  .profilePic {
+  .profile-pic {
     width: 37%;
     margin-bottom: 3%; }
 
@@ -714,7 +714,7 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   #form-front-page {
     width: 70%; }
 
-  .profilePic {
+  .profile-pic {
     width: 37%;
     margin-bottom: 3%; }
 

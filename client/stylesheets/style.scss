@@ -3,7 +3,7 @@ html, body {
   min-height: 100vh;
 }
 
-#followPage {
+#follow-page {
   padding: 0;
   border: 0 solid rgb(255, 255, 255);
 
@@ -12,7 +12,7 @@ html, body {
   }
 }
 
-.formStyle {
+.form-style {
   background-color: rgba(255, 255, 255, 0.6);
 }
 
@@ -37,7 +37,7 @@ abbr[title], abbr[data-original-title] {
   color: #5B576C;
 }
 
-.noBorder {
+.no-border {
   border: 0rem solid #ddd;
 }
 
@@ -83,7 +83,7 @@ abbr[title], abbr[data-original-title] {
   margin-top: 7%;
 }
 
-.profilePic {
+.profile-pic {
   width: 100%;
 }
 
@@ -806,7 +806,7 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
     width: 70%;
   }
 
-  .profilePic {
+  .profile-pic {
     width: 30%;
     margin-bottom: 3%;
   }
@@ -942,7 +942,7 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
     margin-bottom: 4%;
   }
 
-  .profilePic {
+  .profile-pic {
     width: 37%;
     margin-bottom: 3%;
   }
@@ -967,7 +967,7 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
     width: 70%;
   }
 
-  .profilePic {
+  .profile-pic {
     width: 37%;
     margin-bottom: 3%;
   }
