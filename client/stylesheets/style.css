@@ -121,7 +121,7 @@ abbr[title], abbr[data-original-title] {
   margin: 0% auto 2% auto;
   text-align: left; }
 
-.Done {
+.done {
   color: #59556A;
   font-size: 1.67em;
   text-align: left; }
@@ -252,7 +252,7 @@ input[type="text"] {
   width: 32%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10%; }
+  margin-top: 7%; }
 
 #sign-up-btn a a:focus, #sign-up-btn a a:hover {
   color: white;
@@ -549,6 +549,15 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
 .navbar-toggler {
   color: white; }
 
+.title-home-page {
+  text-align: center;
+  color: #211A47;
+  margin-top: 7.7%; }
+  .title-home-page h3 {
+    font-size: 4.67em; }
+  .title-home-page p {
+    font-size: 1.47em; }
+
 /*
 @media (max-width: 767px) {
   .fullscreen {
@@ -572,7 +581,7 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   margin-top: 2%;
 }
 
-.title-homePage {
+.title-home-page {
   margin-top: 7%;
 
   h3 {
@@ -626,13 +635,6 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   .main {
     width: 70%; }
 
-  .title-homePage {
-    margin-top: 20%; }
-    .title-homePage h3 {
-      font-size: 3em; }
-    .title-homePage p {
-      font-size: 1.2em; }
-
   .post-profile-pic {
     width: 10%; } }
 @media (max-width: 992px) {
@@ -644,13 +646,6 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
 
   #form-front-page {
     width: 70%; }
-
-  .title-homePage {
-    margin-top: 20%; }
-    .title-homePage h3 {
-      font-size: 3em; }
-    .title-homePage p {
-      font-size: 1.2em; }
 
   .post-profile-pic {
     width: 10%; }
@@ -682,13 +677,6 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
 
   #form-front-page {
     width: 80%; }
-
-  .title-homePage {
-    margin-top: 18%; }
-    .title-homePage h3 {
-      font-size: 2em; }
-    .title-homePage p {
-      font-size: 1em; }
 
   #footerPhoto {
     width: 6%; }

@@ -158,7 +158,7 @@ abbr[title], abbr[data-original-title] {
   text-align: left;
 }
 
-.Done {
+.done {
   color: #59556A;
   font-size: 1.67em;
   text-align: left;
@@ -334,7 +334,7 @@ input[type="text"] {
   width: 32%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10%;
+  margin-top: 7%;
 }
 
 #sign-up-btn a {
@@ -733,6 +733,20 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   color: white;
 }
 
+.title-home-page {
+  text-align: center;
+  color: #211A47;
+  margin-top: 7.7%;
+
+  h3 {
+    font-size: 4.67em;
+  }
+
+  p {
+    font-size: 1.47em;
+  }
+}
+
 /*
 @media (max-width: 767px) {
   .fullscreen {
@@ -756,7 +770,7 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   margin-top: 2%;
 }
 
-.title-homePage {
+.title-home-page {
   margin-top: 7%;
 
   h3 {
@@ -823,18 +837,6 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
     width: 70%;
   }
 
-  .title-homePage {
-    margin-top: 20%;
-
-    h3 {
-      font-size: 3em;
-    }
-
-    p {
-      font-size: 1.2em;
-    }
-  }
-
   .post-profile-pic {
     width: 10%;
   }
@@ -850,20 +852,8 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
     width: 10%;
   }
 
-
- #form-front-page {
-   width: 70%;
- }
-  .title-homePage {
-    margin-top: 20%;
-
-    h3 {
-      font-size: 3em;
-    }
-
-    p {
-      font-size: 1.2em;
-    }
+  #form-front-page {
+    width: 70%;
   }
 
   .post-profile-pic {
@@ -875,8 +865,6 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   }
 
 }
-
-
 
 @media (max-width: 600px) {
   #main {
@@ -920,18 +908,6 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
     width: 80%;
   }
 
-  .title-homePage {
-    margin-top: 18%;
-
-    h3 {
-      font-size: 2em;
-    }
-
-    p {
-      font-size: 1em;
-    }
-  }
-
   #footerPhoto {
     width: 6%;
   }
@@ -948,7 +924,7 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   }
 
   .authentication-form {
-        font-size: 0.77em;
+    font-size: 0.77em;
   }
 
 }
@@ -972,13 +948,13 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
     margin-bottom: 3%;
   }
 
-   .nav .nav-pills {
-     font-size: 0.50em;
-   }
+  .nav .nav-pills {
+    font-size: 0.50em;
+  }
 
-   .buttons-style {
-         font-size: 0.5em;
-   }
+  .buttons-style {
+    font-size: 0.5em;
+  }
 }
 
 @media (max-width: 340px) {
@@ -1016,21 +992,21 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   }
 }
 
- @media (max-width: 300px) {
-   .fullscreen {
-     background: url(1.jpg) center center / cover no-repeat;
-   }
+@media (max-width: 300px) {
+  .fullscreen {
+    background: url(1.jpg) center center / cover no-repeat;
+  }
 
-   .fullscreen__video {
-     display: none;
-   }
+  .fullscreen__video {
+    display: none;
+  }
 
-    #form-front-page {
-      width: 70%;
-    }
+  #form-front-page {
+    width: 70%;
+  }
 
-    .buttons-style {
-          font-size: 0.7em;
-    }
+  .buttons-style {
+    font-size: 0.7em;
+  }
 
- }
+}
