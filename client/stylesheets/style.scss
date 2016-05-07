@@ -435,8 +435,8 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   }
 }
 
-#footerPhoto {
-  width: 2%;
+#footer-photo {
+  width: 3%;
 }
 
 #spinner {
@@ -495,11 +495,6 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
     color: #9FA6E2;
   }
 }
-
-#followImage {
-  width: 100%;
-}
-
 .post .post-content .published {
   line-height: 1;
   font-size: 1.1em;
@@ -820,11 +815,6 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
     width: 70%;
   }
 
-  .profile-pic {
-    width: 30%;
-    margin-bottom: 3%;
-  }
-
   .number_of_likes {
     width: 5%;
   }
@@ -908,10 +898,6 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
     width: 80%;
   }
 
-  #footerPhoto {
-    width: 6%;
-  }
-
   #completed-posts-title {
     font-size: 1.2em;
     width: 70%;
@@ -927,6 +913,21 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
     font-size: 0.77em;
   }
 
+  .title-home-page {
+    margin-top: 7.7%;
+
+    h3 {
+      font-size: 2.7em;
+    }
+
+    p {
+      font-size: 1em;
+    }
+  }
+
+  #footer-photo {
+    width: 5%;
+  }
 }
 
 @media (max-width: 437px) {
@@ -944,7 +945,7 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   }
 
   .profile-pic {
-    width: 37%;
+    width: 28%;
     margin-bottom: 3%;
   }
 
@@ -964,7 +965,7 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   }
 
   #form-front-page {
-    width: 70%;
+    width: 90%;
   }
 
   #main {
@@ -1008,5 +1009,4 @@ top: expression(documentElement.scrollTop+(documentElement.clientHeight-this.cli
   .buttons-style {
     font-size: 0.7em;
   }
-
 }
