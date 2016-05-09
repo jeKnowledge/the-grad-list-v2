@@ -16,7 +16,6 @@ Template.postSubmit.events({
         owner: Meteor.userId(),
         username: Meteor.user().username,
         comments: [],
-        date2: new Date().toDateString(),
         date: new Date(),
         completed: false,
         imagesOfCompletion: [],

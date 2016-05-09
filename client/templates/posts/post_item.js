@@ -64,6 +64,10 @@ Template.postItem.helpers({
       if (this.tags !== '') {
         return true;
       }
+    },
+
+    date_from_now: function() {
+      return moment(this.date).fromNow();
     }
 });
 
