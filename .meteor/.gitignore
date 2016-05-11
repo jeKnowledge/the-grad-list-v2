@@ -1,4 +1,1 @@
 local
-# Ignore CSS & Map File
-*.css
-*.map
