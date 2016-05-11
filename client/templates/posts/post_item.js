@@ -1,5 +1,4 @@
 Template.postItem.helpers({
-
     isCurrentUser: function() {
         return Meteor.userId() == this.owner;
     },
@@ -12,10 +11,10 @@ Template.postItem.helpers({
         return this.completed === false;
     },
 
-    images_of_completion_different_from_zero: function() {
-      if (parseInt(this.imagesOfCompletion) !== 0) {
-        return true;
-      }
+    imagesOfCompletionNotZero: function() {
+        if (parseInt(this.imagesOfCompletion) !== 0) {
+            return true;
+        }
     },
 
     isForked: function() {
@@ -60,19 +59,18 @@ Template.postItem.helpers({
         return true;
     },
 
-    has_tags: function() {
-      if (this.tags !== '') {
-        return true;
-      }
+    hasTags: function() {
+        if (this.tags !== '') {
+            return true;
+        }
     },
 
-    date_from_now: function() {
-      return moment(this.date).fromNow();
+    dateFromNow: function() {
+        return moment(this.date).fromNow();
     }
 });
 
 Template.postItem.events({
-
     'click .like': function() {
         Meteor.call("likePost", this._id);
     },
@@ -89,15 +87,11 @@ Template.postItem.events({
         Meteor.call("forkPost", this._id);
     },
 
-    'submit .new-comment': function(event) {
+    'submit .newComment': function(event) {
         event.preventDefault();
-
         var text = event.target.comment.value;
-
         var commentId = Comments.insert({text: text, createdAt: new Date(), owner: Meteor.userId()});
-
         Meteor.call("addCommentToPost", this._id, commentId);
-
         event.target.comment.value = "";
     }
 });

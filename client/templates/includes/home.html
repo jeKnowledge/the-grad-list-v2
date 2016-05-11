@@ -1,20 +1,18 @@
 <template name="home">
   {{> postSubmit}} {{> feed}}
-
   <div id="suggestions">
     {{#unless suggestion}}
       <h5>Users that you can follow</h5>
     {{/unless}}
-    {{#if check_followers}}
+    {{#if checkFollowers}}
       {{#each user}}
         <h5><a href="/user/{{username}}">{{username}}</a></h5>
       {{/each}}
     {{/if}}
-    {{#unless check_followers}}
-      {{#each friends_of_friends}}
+    {{#unless checkFollowers}}
+      {{#each friendsOfFriends}}
         <h5><a href="/user/{{username}}">{{username}}</a></h5>
       {{/each}}
     {{/unless}}
   </div>
-
 </template>

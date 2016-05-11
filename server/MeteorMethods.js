@@ -53,9 +53,9 @@ Meteor.methods({
             Posts.remove(id);
         }
         Meteor.users.update(Meteor.userId(), {
-          $inc: {
-            medals: -1
-          }
+            $inc: {
+                medals: -1
+            }
         });
     },
 
@@ -80,13 +80,13 @@ Meteor.methods({
         };
         var tags = Posts.findOne({_id: id}).tags;
         for (var i = 0; i < tags.length; i++) {
-          Tags.update({
-              title: tags[i]
-          }, {
-              $inc: {
-                  number: 1
-              }
-          });
+            Tags.update({
+                title: tags[i]
+            }, {
+                $inc: {
+                    number: 1
+                }
+            });
         }
         post2._id = Posts.insert(post2);
     },

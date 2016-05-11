@@ -35,3 +35,4 @@ meteorhacks:npm
 npm-container
 socialize:user-profile
 aldeed:simple-schema
+momentjs:moment

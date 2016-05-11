@@ -6,5 +6,10 @@
 </head>
 
 <template name="main">
-  {{> sAlert}} {{#if currentUser}} {{> home}} {{else}} {{> authentication}} {{/if}}
+  {{> sAlert}}
+  {{#if currentUser}}
+    {{> home}}
+  {{else}}
+    {{> authentication}}
+  {{/if}}
 </template>

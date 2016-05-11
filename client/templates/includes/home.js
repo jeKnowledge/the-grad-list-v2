@@ -1,6 +1,5 @@
 Template.home.helpers({
     user: function() {
-
         return Meteor.users.find({
             $and: [
                 {
@@ -16,19 +15,18 @@ Template.home.helpers({
         }, {"limit": 3});
     },
 
-    check_followers: function() {
+    checkFollowers: function() {
         if (Meteor.user().follows.length === 0) {
             return true;
         }
     },
 
-    friends_of_friends: function() {
+    friendsOfFriends: function() {
         var friends = Meteor.user().follows;
-        var friends_of_friends = [];
+        var friendsOfFriends = [];
         for (var i = 0; i < friends.length; i++) {
-            friends_of_friends.push(Meteor.users.findOne({"_id": friends[i]}).follows);
+            friendsOfFriends.push(Meteor.users.findOne({"_id": friends[i]}).follows);
         }
-
         function notcontains(a, obj) {
             for (var i = 0; i < a.length; i++) {
                 if (a[i] === obj) {
@@ -37,17 +35,15 @@ Template.home.helpers({
             }
             return true;
         }
-
         var a = [];
-        for (var p = 0; p < friends_of_friends.length; p++) {
-            for (var j = 0; j < friends_of_friends[p].length; j++) {
-                if (friends_of_friends[p][j] != Meteor.userId() && notcontains(Meteor.user().follows, friends_of_friends[p][j])) {
-                    a.push(Meteor.users.findOne({"_id": friends_of_friends[p][j]
+        for (var p = 0; p < friendsOfFriends.length; p++) {
+            for (var j = 0; j < friendsOfFriends[p].length; j++) {
+                if (friendsOfFriends[p][j] != Meteor.userId() && notcontains(Meteor.user().follows, friendsOfFriends[p][j])) {
+                    a.push(Meteor.users.findOne({"_id": friendsOfFriends[p][j]
                     }));
                 }
             }
         }
-
         return a.slice(0, 3);
     }
 });

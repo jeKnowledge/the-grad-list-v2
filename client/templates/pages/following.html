@@ -1,16 +1,15 @@
 <template name="following">
-    <h4 id="completed-posts-title"> {{username}}'s Following: </h4> {{#each following}}
-    <div class="post" id="follow-page" >
-        <div class="post-content">
-            <div class="col-md-2">
-                <img class="profile-pic" src={{image}}/>
-            </div>
-            <div class="col-md-10">
-                <a href="/user/{{username}}">{{username}}</a>
-
-            </div>
-
+  <h4 id="completed-posts-title"> {{username}}'s Following: </h4>
+  {{#each following}}
+    <div class="post" id="follow-page">
+      <div class="post-content">
+        <div class="col-md-2">
+          <img class="profile-pic" src={{image}}/>
         </div>
+        <div class="col-md-10">
+          <a href="/user/{{username}}">{{username}}</a>
+        </div>
+      </div>
     </div>
-{{/each}}
+  {{/each}}
 </template>

@@ -1,6 +1,8 @@
 <template name="tags">
   <h4 id="completed-posts-title">[Posts with the tag] {{tag}}</h4>
   <div class="user-posts">
-    {{#each postsByTags}} {{> postItem}} {{/each}}
+    {{#each postsByTags}}
+      {{> postItem}}
+    {{/each}}
   </div>
 </template>

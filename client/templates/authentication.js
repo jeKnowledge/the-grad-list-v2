@@ -69,7 +69,6 @@ Template.authentication.events({
 
     'submit form': function(event) {
         event.preventDefault();
-
         console.log(currentTab);
     }
 });
