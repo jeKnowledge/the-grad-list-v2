@@ -7,7 +7,7 @@
         </div>
         <div class="col-md-9">
           <h6 class="published"><a href="/user/{{ownerUsername}}" >{{username}}</a> wants to <a href="{{pathFor "postPage"}}">{{title}}</a></h6>
-          <img class="submitPost-image" src="{{image}}" />
+          <img class="post-image" src="{{image}}" />
           {{#if hasTags}}
           {{/if}}
           {{#each tags}}
@@ -18,7 +18,7 @@
             <p>{{dateFromNow}}</p>
             {{#if checkCompleted}}
               <h3 id="post-completed">Completed [ 🏆 ]</h3> {{#if imagesOfCompletionNotZero}}
-              <img class="submitPost-image" src="{{imagesOfCompletion}}" />
+              <img class="post-image" src="{{imagesOfCompletion}}" />
             {{/if}}
           {{/if}}
           <ul class="list-group">
