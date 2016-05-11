@@ -419,13 +419,12 @@ input[type="text"] {
   }
 
   li a:hover {
-    text-decoration: none;
-    color: #968EBF;
+    text-decoration: underline;
   }
 }
 
 #footer-photo {
-  width: 3%;
+  width: 2.3%;
 }
 
 #spinner {
@@ -719,7 +718,8 @@ input[type="text"] {
 
 .title-home-page {
   text-align: center;
-  color: #211A47;
+  //color: #211A47;
+  color: #1A1539;
   margin-top: 7.7%;
 
   h3 {
