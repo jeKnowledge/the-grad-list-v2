@@ -75,7 +75,7 @@ abbr[title], abbr[data-original-title] {
   display: table-row;
   border-color: black; }
 
-.submitPost-image {
+.post-image {
   max-height: 100%;
   max-width: 100%;
   margin-left: auto;
@@ -434,10 +434,6 @@ input[type="text"] {
   outline: 0;
   height: 17%; }
 
-.number_of_likes {
-  width: 6%;
-  margin: 0; }
-
 .social-buttons {
   margin-left: auto;
   margin-right: auto;
@@ -608,9 +604,6 @@ input[type="text"] {
   .grid-block, .main, .post, .comments li, .comment-form {
     width: 70%; }
 
-  .number_of_likes {
-    width: 5%; }
-
   #main {
     margin-top: 15%; }
 
@@ -622,9 +615,6 @@ input[type="text"] {
 @media (max-width: 992px) {
   #main {
     margin-top: 12%; }
-
-  .number_of_likes {
-    width: 10%; }
 
   #form-front-page {
     width: 70%; }
