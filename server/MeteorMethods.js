@@ -77,6 +77,7 @@ Meteor.methods({
             username: Meteor.user().username,
             image: Posts.findOne({_id: id}).image,
             completed: false,
+            comments: [],
             likes: [],
             tags: Posts.findOne({_id: id}).tags
         };
