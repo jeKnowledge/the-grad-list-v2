@@ -1,6 +1,7 @@
 Template.postSubmit.events({
     'submit form': function(e) {
         var string = $(e.target).find('[name=title]').val();
+        var matches = "";
         if (/\S/.test(string)) {
             var tags_2;
             if ($(e.target).find('[name=tags]').val() !== '') {

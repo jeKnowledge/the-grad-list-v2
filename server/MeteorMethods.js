@@ -34,7 +34,7 @@ Meteor.methods({
     },
 
     deletePost: function(id) {
-        if (Meteor.userId() == Posts.findOne({_id: id}).owner) {
+        if (Meteor.userId() == Posts.findOne({"_id": id}).owner) {
             tags = Posts.findOne({"_id": id}).tags;
             for (var i = 0; i < tags.length; i++) {
                 Tags.update({
@@ -50,13 +50,15 @@ Meteor.methods({
                 }
 
             }
+            if (Posts.findOne({"_id": id}).completed === true) {
+                Meteor.users.update(Meteor.userId(), {
+                    $inc: {
+                        medals: -1
+                    }
+                });
+            }
             Posts.remove(id);
         }
-        Meteor.users.update(Meteor.userId(), {
-            $inc: {
-                medals: -1
-            }
-        });
     },
 
     deleteComment: function(id) {
@@ -75,6 +77,7 @@ Meteor.methods({
             username: Meteor.user().username,
             image: Posts.findOne({_id: id}).image,
             completed: false,
+            comments: [],
             likes: [],
             tags: Posts.findOne({_id: id}).tags
         };
