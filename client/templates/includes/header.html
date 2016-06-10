@@ -29,7 +29,7 @@
                 <ul class="drop-list">
                   {{#EasySearch.Each index=usersIndex}}
                   <li>
-                    <img src="{{image}}" class="post-profile-pic" />
+                    <img src="{{fileURL image}}" alt="{{image.name}}" class="profile-pic" />
                     <a class="profile" href="/user/{{username}}">{{username}}</a>
                   </li>
                   {{/EasySearch.Each}} {{#EasySearch.Each index=tagsIndex}}

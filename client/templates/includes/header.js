@@ -16,6 +16,10 @@ Template.header.helpers({
     },
     inputAttributes: function() {
         return {placeholder: "Search", class: 'form-control'};
+    },
+    image: function() {
+        var image_id = Meteor.users.findOne({"_id": this._id}).image;
+        return Images.collection.findOne({"_id": image_id});
     }
 });
 
