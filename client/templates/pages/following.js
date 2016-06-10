@@ -4,7 +4,8 @@ Template.following.helpers({
     },
 
     image: function() {
-        return Meteor.users.findOne({"_id": this._id}).image;
+        var image_id = Meteor.users.findOne({"_id": this._id}).image;
+        return Images.collection.findOne({"_id": image_id});
     },
 
     following: function() {
