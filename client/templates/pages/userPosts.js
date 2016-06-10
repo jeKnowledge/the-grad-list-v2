@@ -24,6 +24,11 @@ Template.userPosts.helpers({
         });
     },
 
+    image: function() {
+        var image_id = Meteor.users.findOne({"_id": this._id}).image;
+        return Images.collection.findOne({"_id": image_id});
+    },
+
     getUsername: function() {
         return Meteor.users.findOne({"_id": this._id}).username;
     },
@@ -39,29 +44,25 @@ Template.userPosts.helpers({
     bio: function() {
         if (Meteor.users.findOne({"_id": this._id}).bio != '[object Object]')
             return Meteor.users.findOne({"_id": this._id}).bio;
-        else
+        else {
             return '';
         }
-    ,
+    },
 
     university: function() {
         if (Meteor.users.findOne({"_id": this._id}).university != '[object Object]')
             return Meteor.users.findOne({"_id": this._id}).university;
-        else
+        else {
             return '';
         }
-    ,
+    },
 
     country: function() {
         if (Meteor.users.findOne({"_id": this._id}).country != '[object Object]')
             return Meteor.users.findOne({"_id": this._id}).country;
-        else
+        else {
             return '';
         }
-    ,
-
-    image: function() {
-        return Meteor.users.findOne({"_id": this._id}).image;
     }
 });
 

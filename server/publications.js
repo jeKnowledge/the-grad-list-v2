@@ -44,8 +44,8 @@ Meteor.publish("usersData", function() {
     }
 });
 
-Meteor.publish("images", function() {
-    return Images.find();
+Meteor.publish("files.images.all", function() {
+    return Images.collection.find({});
 });
 
 ServiceConfiguration.configurations.remove({service: 'facebook'});

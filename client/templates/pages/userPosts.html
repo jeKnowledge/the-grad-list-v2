@@ -1,6 +1,8 @@
 <template name="userPosts">
   <div class="post profile-resume">
-    <div class="col-md-3"><img class="profile-pic" src='{{image}}' /></div>
+    <div class="col-md-3">
+      <img src="{{fileURL image}}" alt="{{image.name}}" class="profile-pic" />
+    </div>
     <div class="col-md-9">
       <h4 class="profile-title">{{username}}'s Profile</h4>
       {{#if owner}}

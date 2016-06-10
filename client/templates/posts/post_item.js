@@ -11,6 +11,11 @@ Template.postItem.helpers({
         return this.completed === false;
     },
 
+    image: function() {
+        var image_id = Meteor.users.findOne({"_id": this.owner}).image;
+        return Images.collection.findOne({"_id": image_id});
+    },
+
     imagesOfCompletionNotZero: function() {
         if (parseInt(this.imagesOfCompletion) !== 0) {
             return true;
@@ -38,6 +43,14 @@ Template.postItem.helpers({
 
     ownerUsername: function() {
         return Meteor.users.findOne({"_id": this.owner}).username;
+    },
+
+    imageFile: function() {
+        return Images.collection.findOne({"_id": this.image});
+    },
+
+    imageCompletionFile: function() {
+        return Images.collection.findOne({"_id": this.imagesOfCompletion[0]});
     },
 
     profilePicture: function() {

@@ -36,3 +36,6 @@ npm-container
 socialize:user-profile
 aldeed:simple-schema
 momentjs:moment
+cfs:gridfs
+vsivsi:file-collection
+ostrio:files

@@ -1,7 +1,20 @@
+import {Template} from 'meteor/templating';
+import {ReactiveVar} from 'meteor/reactive-var';
+
+import './post_complete.html';
+
 Template.postComplete.helpers({
     getTitle: function() {
         return this.title;
+    },
+
+    currentUpload: function() {
+        return Template.instance().currentUpload.get();
     }
+});
+
+Template.postComplete.onCreated(function() {
+    this.currentUpload = new ReactiveVar(false);
 });
 
 Template.postComplete.events({
@@ -22,15 +35,30 @@ Template.postComplete.events({
         Router.go("/");
     },
 
-    'change .myFileInput': function(event, template) {
-        var fsFile = new FS.File(event.target.files[0]);
-        fsFile.owner = Meteor.userId();
-        Images.insert(fsFile, function(err) {
-            if (err)
-                throw err;
-            var url = "/cfs/files/images/" + fsFile._id;
-            Session.set("picture", url);
-        });
+    'change .myFileInput': function(e, template) {
+        if (e.currentTarget.files && e.currentTarget.files[0]) {
+            // We upload only one file, in case
+            // multiple files were selected
+            var upload = Images.insert({
+                file: e.currentTarget.files[0],
+                streams: 'dynamic',
+                chunkSize: 'dynamic'
+            }, false);
+
+            upload.on('start', function() {
+                template.currentUpload.set(this);
+            });
+
+            upload.on('end', function(error, fileObj) {
+                if (error) {
+                    alert('Error during upload: ' + error);
+                } else {
+                    Session.set("picture", fileObj._id);
+                }
+                template.currentUpload.set(false);
+            });
+            upload.start();
+        }
     }
 
 });

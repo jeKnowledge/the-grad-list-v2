@@ -3,11 +3,11 @@
     <div class="post">
       <div class="post-content">
         <div class="col-md-3">
-          <img class="profile-pic" src="{{profilePicture}}" />
+          <img src="{{fileURL image}}" alt="{{image.name}}" class="profile-pic" />
         </div>
         <div class="col-md-9">
           <h6 class="published"><a href="/user/{{ownerUsername}}" >{{username}}</a> wants to <a href="{{pathFor "postPage"}}">{{title}}</a></h6>
-          <img class="post-image" src="{{image}}" />
+          <img src="{{fileURL imageFile}}" alt="{{imageFile.name}}" class="post-image" />
           {{#if hasTags}}
           {{/if}}
           {{#each tags}}
@@ -18,7 +18,7 @@
             <p>{{dateFromNow}}</p>
             {{#if checkCompleted}}
               <h3 id="post-completed">Completed [ 🏆 ]</h3> {{#if imagesOfCompletionNotZero}}
-              <img class="post-image" src="{{imagesOfCompletion}}" />
+              <img src="{{fileURL imageCompletionFile}}" alt="{{imageCompletionFile.name}}" class="post-image" />
             {{/if}}
           {{/if}}
           <ul class="list-group">
