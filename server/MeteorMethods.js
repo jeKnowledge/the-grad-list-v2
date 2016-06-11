@@ -1,6 +1,6 @@
 Meteor.methods({
     loginFacebook: function(id) {
-        user = Meteor.users.findOne({"_id": id});
+        user = Meteor.users.findOne({"_id": id})._id;
         console.log(user.services.facebook.name);
         if (user.facebook_image !== 0) {
             Images.load("http://graph.facebook.com/" + user.services.facebook.id + "/picture/?type=large", {
