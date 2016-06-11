@@ -1,16 +1,16 @@
 Meteor.methods({
-    loginFacebook: function(id) {
+    loginFacebook: function() {
+        console.log(Meteor.user().services.facebook.name);
         if (Meteor.user().facebook_image !== 0) {
-            Images.load("http://graph.facebook.com/" + Meteor.users.findOne({"_id": id}).services.facebook.id + "/picture/?type=large", {
-                fileName: Meteor.users.findOne({"_id": id}).services.facebook.name,
+            Images.load("http://graph.facebook.com/" + Meteor.user().services.facebook.id + "/picture/?type=large", {
+                fileName: Meteor.user().services.facebook.name,
                 meta: {}
             });
-            var a = Images.collection.findOne({
-                name: Meteor.users.findOne({"_id": id}).services.facebook.name
-            })._id;
-            Meteor.users.update(Meteor.users.findOne({"_id": id}), {
+            var a = Images.collection.findOne({name: Meteor.user().services.facebook.name})._id;
+            console.log(Meteor.user().services.facebook.name);
+            Meteor.users.update(Meteor.userId(), {
                 $set: {
-                    username: Meteor.users.findOne({"_id": id}).services.facebook.name,
+                    username: Meteor.user().services.facebook.name,
                     image: a
                 }
             });
