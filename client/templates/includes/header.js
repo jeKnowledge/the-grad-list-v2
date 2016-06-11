@@ -3,7 +3,7 @@ Template.header.helpers({
         return Meteor.userId();
     },
     getUsername: function() {
-        return Meteor.user().username;
+        return Meteor.user().username || Meteor.user().services.facebook.name;
     },
     indexes: function() {
         return [UsersIndex, TagsIndex];
