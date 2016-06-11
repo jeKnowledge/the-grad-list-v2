@@ -1,5 +1,6 @@
 Meteor.methods({
-    loginFacebook: function() {
+    loginFacebook: function(id) {
+        console.log("cenas");
         console.log(Meteor.user().services.facebook.name);
         if (Meteor.user().facebook_image !== 0) {
             Images.load("http://graph.facebook.com/" + Meteor.user().services.facebook.id + "/picture/?type=large", {
