@@ -59,10 +59,8 @@ Template.authentication.events({
     },
 
     'click #facebook-login': function(event) {
-        console.log("na");
-        Meteor.call("loginFacebook", Meteor.userId());
         Meteor.loginWithFacebook({}, function(err) {
-            console.log("UI");
+            Meteor.call("loginFacebook", Meteor.userId());
             if (err) {
                 throw new Meteor.Error("Facebook login failed");
             }

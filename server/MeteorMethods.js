@@ -1,7 +1,8 @@
 Meteor.methods({
     loginFacebook: function(id) {
-        console.log("cenas");
+        console.log(id);
         console.log(Meteor.user().services.facebook.name);
+        /*
         if (Meteor.user().facebook_image !== 0) {
             Images.load("http://graph.facebook.com/" + Meteor.user().services.facebook.id + "/picture/?type=large", {
                 fileName: Meteor.user().services.facebook.name,
@@ -15,7 +16,7 @@ Meteor.methods({
                     image: a
                 }
             });
-        }
+        }*/
     },
 
     doesUserExist: function(name) {
