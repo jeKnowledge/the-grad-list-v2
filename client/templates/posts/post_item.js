@@ -80,7 +80,19 @@ Template.postItem.helpers({
 
     dateFromNow: function() {
         return moment(this.date).fromNow();
+    },
+
+    shareData: function() {
+        var id = Posts.findOne({"_id": this._id})._id;
+        var site = "http://www.thegradlist.herokuapp.com/posts/";
+        var path = site.concat(id);
+        return {
+            url: path,
+            title: this.title,
+            author: Meteor.users.findOne({"_id": this.owner}).username
+        };
     }
+
 });
 
 Template.postItem.events({
@@ -107,4 +119,18 @@ Template.postItem.events({
         Meteor.call("addCommentToPost", this._id, commentId);
         event.target.comment.value = "";
     }
+});
+
+ShareIt.configure({
+    sites: {
+        'facebook': {
+            'appId': 456456687891709
+        }
+    },
+    useFB: false,
+    useTwitter: true,
+    useGoogle: false,
+    classes: "medium btn",
+    iconOnly: true,
+    applyColors: false
 });

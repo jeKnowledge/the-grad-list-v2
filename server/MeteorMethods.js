@@ -1,16 +1,14 @@
 Meteor.methods({
-    loginFacebook: function(id) {
-        user = Meteor.users.findOne({"_id": id})._id;
-        console.log(user.services.facebook.name);
-        if (user.facebook_image !== 0) {
-            Images.load("http://graph.facebook.com/" + user.services.facebook.id + "/picture/?type=large", {
-                fileName: user.services.facebook.name,
+    loginFacebook: function() {
+        if (Meteor.user().facebook_image !== 0) {
+            Images.load("http://graph.facebook.com/" + Meteor.user().services.facebook.id + "/picture/?type=large", {
+                fileName: Meteor.user().services.facebook.name,
                 meta: {}
             });
-            var a = Images.collection.findOne({name: user.services.facebook.name})._id;
-            Meteor.users.update(user, {
+            var a = Images.collection.findOne({name: Meteor.user().services.facebook.name})._id;
+            Meteor.users.update(Meteor.userId(), {
                 $set: {
-                    username: user.services.facebook.name,
+                    username: Meteor.user().services.facebook.name,
                     image: a
                 }
             });
@@ -33,10 +31,6 @@ Meteor.methods({
     },
 
     defaultPicture: function() {
-        Images.load('https://camo.githubusercontent.com/d818d23678800c7755a49d7f5b26ad0d6cb0aea7/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f343932303733362f3733363937342f65323534356335322d653332352d313165322d383030302d3864646163393762653831352e706e67', {
-            fileName: 'logo.png',
-            meta: {}
-        });
         var a = Images.collection.findOne({name: 'logo.png'})._id;
         Meteor.users.update(Meteor.userId(), {
             $set: {

@@ -32,7 +32,6 @@ Template.editProfile.events({
                     alert('Error during upload: ' + error);
                 } else {
                     Meteor.call("add_image", fileObj._id);
-                    console.log(fileObj._id);
                 }
                 template.currentUpload.set(false);
             });
