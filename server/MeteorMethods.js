@@ -30,15 +30,6 @@ Meteor.methods({
         }
     },
 
-    defaultPicture: function() {
-        var a = Images.collection.findOne({name: 'logo.png'})._id;
-        Meteor.users.update(Meteor.userId(), {
-            $set: {
-                image: a
-            }
-        });
-    },
-
     deletePost: function(id) {
         if (Meteor.userId() == Posts.findOne({"_id": id}).owner) {
             tags = Posts.findOne({"_id": id}).tags;
@@ -157,6 +148,15 @@ Meteor.methods({
                 bio: s_bio,
                 country: s_country,
                 university: s_university
+            }
+        });
+    },
+
+    defaultPicture: function() {
+        var a = Images.collection.findOne({name: 'logo.png'})._id;
+        Meteor.users.update(Meteor.userId(), {
+            $set: {
+                image: a
             }
         });
     },
