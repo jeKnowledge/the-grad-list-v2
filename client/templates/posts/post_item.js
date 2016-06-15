@@ -84,7 +84,7 @@ Template.postItem.helpers({
 
     shareData: function() {
         var id = Posts.findOne({"_id": this._id})._id;
-        var site = "http://www.thegradlist.herokuapp.com/posts/";
+        var site = "thegradlist.herokuapp.com/posts/";
         var path = site.concat(id);
         return {
             url: path,
