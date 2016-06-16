@@ -5,14 +5,14 @@ Meteor.methods({
                 fileName: Meteor.user().services.facebook.name,
                 meta: {}
             });
-            var a = Images.collection.findOne({name: Meteor.user().services.facebook.name})._id;
-            Meteor.users.update(Meteor.userId(), {
-                $set: {
-                    username: Meteor.user().services.facebook.name,
-                    image: a
-                }
-            });
         }
+        var a = Images.collection.findOne({name: Meteor.user().services.facebook.name})._id;
+        Meteor.users.update(Meteor.userId(), {
+            $set: {
+                username: Meteor.user().services.facebook.name,
+                image: a
+            }
+        });
     },
 
     doesUserExist: function(name) {
