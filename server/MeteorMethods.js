@@ -1,11 +1,9 @@
 Meteor.methods({
     loginFacebook: function() {
-        if (Meteor.user().facebook_image !== 0) {
-            Images.load("http://graph.facebook.com/" + Meteor.user().services.facebook.id + "/picture/?type=large", {
-                fileName: Meteor.user().services.facebook.name,
-                meta: {}
-            });
-        }
+        Images.load("http://graph.facebook.com/" + Meteor.user().services.facebook.id + "/picture/?type=large", {
+            fileName: Meteor.user().services.facebook.name,
+            meta: {}
+        });
         var a = Images.collection.findOne({name: Meteor.user().services.facebook.name})._id;
         Meteor.users.update(Meteor.userId(), {
             $set: {
