@@ -5,7 +5,8 @@ Template.followers.helpers({
 
     image: function() {
         var image_id = Meteor.users.findOne({"_id": this._id}).image;
-        return Images.collection.findOne({"_id": image_id});
+        var raw = "cdn/storage/Images/" + image_id + "/original/" + image_id + ".png";
+        return "/../" + raw;
     },
 
     followers: function() {
