@@ -1,14 +1,24 @@
 Meteor.methods({
     loginFacebook: function() {
-        /*
         Images.load("http://graph.facebook.com/" + Meteor.user().services.facebook.id + "/picture/?type=large", {
             fileName: Meteor.user().services.facebook.name,
             meta: {}
-        }); */
+        });
+        console.log("http://graph.facebook.com/" + Meteor.user().services.facebook.id + "/picture/?type=large");
+        console.log(Images.collection.findOne({name: Meteor.user().services.facebook.name})._id);
         var a = Images.collection.findOne({name: Meteor.user().services.facebook.name})._id;
         Meteor.users.update(Meteor.userId(), {
             $set: {
                 username: Meteor.user().services.facebook.name,
+                image: a
+            }
+        });
+    },
+
+    defaultPicture: function() {
+        var a = Images.collection.findOne({name: 'logo.png'})._id;
+        Meteor.users.update(Meteor.userId(), {
+            $set: {
                 image: a
             }
         });
@@ -147,15 +157,6 @@ Meteor.methods({
                 bio: s_bio,
                 country: s_country,
                 university: s_university
-            }
-        });
-    },
-
-    defaultPicture: function() {
-        var a = Images.collection.findOne({name: 'logo.png'})._id;
-        Meteor.users.update(Meteor.userId(), {
-            $set: {
-                image: a
             }
         });
     },
