@@ -82,12 +82,23 @@ Template.postItem.helpers({
         return moment(this.date).fromNow();
     },
 
+    shareData: function() {
+        var id = Posts.findOne({"_id": this._id})._id;
+        var site = "http://thegradlist.herokuapp.com/posts/";
+        var path = site.concat(id);
+        return {
+            url: path,
+            title: this.title,
+            author: Meteor.users.findOne({"_id": this.owner}).username
+        };
+    },
+
     title: function() {
-      return "The Grad List " + this.title;
+        return this.title;
     },
 
     shareUrl: function() {
-      return "http://thegradlist.herokuapp.com/posts/" + this._id; 
+        return "http://thegradlist.herokuapp.com/posts/" + this._id;
     }
 });
 
@@ -117,6 +128,4 @@ Template.postItem.events({
     }
 });
 
-SocialButtons.config({
-  via: '@thegradlist'
-});
+SocialButtons.config({via: '@thegradlist'});
