@@ -82,17 +82,13 @@ Template.postItem.helpers({
         return moment(this.date).fromNow();
     },
 
-    shareData: function() {
-        var id = Posts.findOne({"_id": this._id})._id;
-        var site = "http://thegradlist.herokuapp.com/posts/";
-        var path = site.concat(id);
-        return {
-            url: path,
-            title: this.title,
-            author: Meteor.users.findOne({"_id": this.owner}).username
-        };
-    }
+    title: function() {
+      return "The Grad List " + this.title;
+    },
 
+    shareUrl: function() {
+      return "http://thegradlist.herokuapp.com/posts/" + this._id; 
+    }
 });
 
 Template.postItem.events({
@@ -121,18 +117,6 @@ Template.postItem.events({
     }
 });
 
-ShareIt.configure({
-    sites: {
-        'facebook': {
-            'appId': 456456687891709
-        },
-        'twitter': {},
-        'googleplus': {},
-        'pinterest': {}
-    },
-    classes: "medium btn",
-    iconOnly: true,
-    applyColors: false,
-    faSize: '', // font awesome size
-    faClass: '' // font awesome classes like square
+SocialButtons.config({
+  via: '@thegradlist'
 });

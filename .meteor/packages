@@ -31,12 +31,10 @@ cfs:standard-packages
 cfs:filesystem
 standard-minifier-css
 standard-minifier-js
-meteorhacks:npm
-npm-container
 socialize:user-profile
 aldeed:simple-schema
 momentjs:moment
 cfs:gridfs
 vsivsi:file-collection
 ostrio:files
-joshowens:shareit
+shmck:meteor-social-buttons
