@@ -43,7 +43,6 @@ Template.authentication.events({
     },
 
     'submit #forgotPasswordForm': function(e, t) {
-        e.preventDefault();
         var forgotPasswordForm = $(e.currentTarget),
             email = trimInput(forgotPasswordForm.find('#forgotPasswordEmail').val().toLowerCase());
         if (isNotEmpty(email) && isEmail(email)) {
@@ -61,7 +60,33 @@ Template.authentication.events({
                 }
             });
         }
+        e.preventDefault();
         return false;
+    },
+
+    'submit #resetPasswordForm': function(e, t) {
+        var resetPasswordForm = $(e.currentTarget),
+            password = resetPasswordForm.find('#resetPasswordPassword').val(),
+            passwordConfirm = resetPasswordForm.find('#resetPasswordPasswordConfirm').val();
+
+        if (isNotEmpty(password) && areValidPasswords(password, passwordConfirm)) {
+            Accounts.resetPassword(Session.get('resetPassword'), password, function(err) {
+                if (err) {
+                    console.log('We are sorry but something went wrong.');
+                } else {
+                    console.log('Your password has been changed. Welcome back!');
+                    Session.set('resetPassword', null);
+                }
+            });
+        }
+        e.preventDefault();
+        return false;
+    }
+});
+
+Template.authentication.events({
+    resetPassword: function() {
+        return Session.get('resetPassword');
     }
 });
 
@@ -111,3 +136,7 @@ var callback_signup = function() {
         });
     }
 };
+
+if (Accounts._resetPasswordToken) {
+    Session.set('resetPassword', Accounts._resetPasswordToken);
+}
