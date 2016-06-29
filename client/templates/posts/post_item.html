@@ -38,7 +38,7 @@
                     <button class="buttons-style btn-primary complete">Complete</button>
                   </a>
                 {{/if}}
-                {{>shareit shareData}}
+                {{> social_buttons url=shareUrl text=title}}
               {{/if}}
               {{#if isNotOwner}}
                 <button class="buttons-style btn btn-primary fork">Fork</button>
