@@ -1,4 +1,12 @@
 Meteor.startup(function() {
+    smtp = {
+        username: 'your_username', // eg: server@gentlenode.com
+        password: 'your_password', // eg: 3eeP1gtizk5eziohfervU
+        server: 'smtp.gmail.com', // eg: mail.gandi.net
+        port: 25
+    };
+    process.env.MAIL_URL = 'smtp://' + encodeURIComponent(smtp.username) + ':' + encodeURIComponent(smtp.password) + '@' + encodeURIComponent(smtp.server) + ':' + smtp.port;
+
     Images.load('https://image.freepik.com/free-icon/graduation-student-black-cap_318-56675.jpg', {
         fileName: 'logo.png',
         meta: {}
@@ -34,6 +42,7 @@ Meteor.publish("usersData", function() {
         return Meteor.users.find({}, {
             fields: {
                 "username": true,
+                "email": true,
                 _id: true,
                 follows: true,
                 followed: true,

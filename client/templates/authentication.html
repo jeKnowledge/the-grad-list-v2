@@ -18,6 +18,9 @@
                 <input class="text-input form-control form-style" placeholder="Username" type="text" id="username-input" style="border: none;">
               </p>
               <p>
+                <input class="text-input form-control form-style" placeholder="Email" type="text" id="email-input" style="border: none;">
+              </p>
+              <p>
                 <input class="text-input form-control form-style" placeholder="Password" type="password" id="password-input" style="border: none;">
               </p>
               <p>
@@ -32,7 +35,10 @@
                 <input class="text-input form-control form-style" placeholder="Password" type="password" id="password-input" style="border: none;">
               </p>
               <p>
-                <a id="sign-in-btn" role="tab" data-toggle="tab" class="buttons-style nav-link" href="#sign-in-tab">Forgot password?</a>
+                <form action="/forgot" id="forgotPasswordForm" method="post">
+                  <input id="forgotPasswordEmail" type="text" name="email" placeholder="Email Address">
+                  <input class="btn-submit" type="submit" value="Send">
+                </form>
               </p>
             </div>
             <div id="authentication-form-btns">
@@ -41,8 +47,7 @@
                   <a id="sign-up-btn" role="tab" data-toggle="tab" class="buttons-style nav-link active" href="#sign-up-tab">Sign Up</a>
                 </li>
                 <li class="nav-item">
-                  <a id="sign-in-btn" role="tab" data-toggle="tab" class="buttons-style nav-link" href="#sign-in-tab">Sign In</a>
-                  {{> sAlert}}
+                  <a id="sign-in-btn" role="tab" data-toggle="tab" class="buttons-style nav-link" href="#sign-in-tab">Sign In</a> {{> sAlert}}
                 </li>
                 <li class="nav-item">
                   <a id="facebook-login" role="tab" data-toggle="tab" class="buttons-style nav-link"> Login with Facebook</a>
