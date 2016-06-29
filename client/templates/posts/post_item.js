@@ -84,7 +84,7 @@ Template.postItem.helpers({
 
     shareData: function() {
         var id = Posts.findOne({"_id": this._id})._id;
-        var site = "thegradlist.herokuapp.com/posts/";
+        var site = "http://thegradlist.herokuapp.com/posts/";
         var path = site.concat(id);
         return {
             url: path,
@@ -125,12 +125,14 @@ ShareIt.configure({
     sites: {
         'facebook': {
             'appId': 456456687891709
-        }
+        },
+        'twitter': {},
+        'googleplus': {},
+        'pinterest': {}
     },
-    useFB: false,
-    useTwitter: true,
-    useGoogle: false,
     classes: "medium btn",
     iconOnly: true,
-    applyColors: false
+    applyColors: false,
+    faSize: '', // font awesome size
+    faClass: '' // font awesome classes like square
 });
