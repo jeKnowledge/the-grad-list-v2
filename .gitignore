@@ -1,1 +1,8 @@
 .idea/
+
+*.swp
+*.swo
+
+node_modeules/
+
+.DS_Store
