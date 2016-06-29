@@ -1,10 +1,7 @@
 Accounts.onCreateUser(function(options, user) {
-    
     user.follows = new Array();
     user.followed = new Array();
-    user.bio = new String();
-    user.country = new String();
-    user.university = new String();
-
+    user.medals = Number(0);
+    user.facebook_image = Number(1);
     return user;
 });

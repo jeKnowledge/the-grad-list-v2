@@ -1,44 +1,49 @@
 Template.home.helpers({
-  user: function(){
+    user: function() {
+        return Meteor.users.find({
+            $and: [
+                {
+                    "_id": {
+                        $nin: Meteor.user().follows
+                    }
+                }, {
+                    "_id": {
+                        $ne: Meteor.userId()
+                    }
+                }
+            ]
+        }, {"limit": 3});
+    },
 
-      return Meteor.users.find({
-      	$and:
-      	[{"_id": { $nin: Meteor.user().follows}},
-      	{"_id": { $ne: Meteor.userId() }}]
-      	},
-        {"limit":3});
-  },
-
-  check_followers: function() {
-    if (Meteor.user().follows.length == 0) {
-      return true;
-    }
-  },
-
-  friends_of_friends: function(){
-  	var friends = Meteor.user().follows;
-  	var friends_of_friends = [];
-  	for (var i = 0; i < friends.length; i++) {
-  		friends_of_friends.push(Meteor.users.findOne({"_id": friends[i]}).follows);
-  	}
-  	function notcontains(a, obj) {
-    for (var i = 0; i < a.length; i++) {
-        if (a[i] === obj) {
-            return false;
+    checkFollowers: function() {
+        if (Meteor.user().follows.length === 0) {
+            return true;
         }
-    }
-    return true;
-	}
-	
-  	var a = [];
-  	for (var i = 0; i < friends_of_friends.length; i++) { 
-  		for (var j = 0; j < friends_of_friends[i].length; j++) {
-  			if (friends_of_friends[i][j] != Meteor.userId() && notcontains(Meteor.user().follows, friends_of_friends[i][j]) ) {
-  				a.push(Meteor.users.findOne({"_id":friends_of_friends[i][j]}));
-  			}
-  		}
-  	}
+    },
 
-  	return a.slice(0,3);
-  }
-})
+    friendsOfFriends: function() {
+        var friends = Meteor.user().follows;
+        var friendsOfFriends = [];
+        for (var i = 0; i < friends.length; i++) {
+            friendsOfFriends.push(Meteor.users.findOne({"_id": friends[i]}).follows);
+        }
+        function notcontains(a, obj) {
+            for (var i = 0; i < a.length; i++) {
+                if (a[i] === obj) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        var a = [];
+        for (var p = 0; p < friendsOfFriends.length; p++) {
+            for (var j = 0; j < friendsOfFriends[p].length; j++) {
+                if (friendsOfFriends[p][j] != Meteor.userId() && notcontains(Meteor.user().follows, friendsOfFriends[p][j])) {
+                    a.push(Meteor.users.findOne({"_id": friendsOfFriends[p][j]
+                    }));
+                }
+            }
+        }
+        return a.slice(0, 3);
+    }
+});

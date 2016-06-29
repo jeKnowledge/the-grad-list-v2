@@ -1,30 +1,18 @@
 <template name="home">
-    {{> postSubmit}}
-    
-    {{> feed}}
-    
-    <div id="suggestions">
-
-    	{{#if check_followers}}
-
-		    <h6>Users that you can follow</h6>
-			{{#each user}}
-				<a href="/user/{{username}}">{{username}}</a>
-			<br>
-			{{/each}}
-
-		{{/if}}
-
-		{{#unless check_followers}}
-
-			<p>Friends of Friends</p>
-			{{#each friends_of_friends}}
-			{{username}}
-			<br>
-			{{/each}}
-
-		{{/unless}}
-
-  	</div>
-
+  {{> postSubmit}} {{> feed}}
+  <div id="suggestions">
+    {{#unless suggestion}}
+      <h5>Users that you can follow</h5>
+    {{/unless}}
+    {{#if checkFollowers}}
+      {{#each user}}
+        <h5><a href="/user/{{username}}">{{username}}</a></h5>
+      {{/each}}
+    {{/if}}
+    {{#unless checkFollowers}}
+      {{#each friendsOfFriends}}
+        <h5><a href="/user/{{username}}">{{username}}</a></h5>
+      {{/each}}
+    {{/unless}}
+  </div>
 </template>

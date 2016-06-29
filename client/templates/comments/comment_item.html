@@ -1,11 +1,13 @@
 <template name="commentItem">
-    <div class="comment-item-post">
-        <ul>
-		<li>{{text}}</li>
-		<li>by <a href="/user/{{ownerUsername}}">{{ownerUsername}}</a></li>
-		{{#if owner}}
-			<li><button class="delete2 buttons-style">Remove</button></li>
-		{{/if}}
-        </ul>
-    </div>
+  <div class="comment-item-post">
+    <ul>
+        {{#if owner}}
+            <li>
+                <button class="delete2 btn-primary buttons-style">Remove</button>
+            </li>
+        {{/if}}
+      <li>{{text}}</li>
+      <li style="font-size: 0.83em;"><br>by <a href="/user/{{ownerUsername}}">{{ownerUsername}}</a></li>
+    </ul>
+  </div>
 </template>

@@ -1,36 +1,55 @@
 <template name="postItem">
-   {{#if isLoggedIn}} 
-   <div class="post">
+  {{#if isLoggedIn}}
+    <div class="post">
       <div class="post-content">
-         <h3><a href="{{pathFor "postPage"}}">{{title}}</a></h3>
-         <img class="submitPost-image" src="{{image}}"/>
-         <h3 class="published">published by <a href="/user/{{ownerUsername}}">{{username}}</a></h3>
-         {{#if isForked}}
-            <h3 class="published">forked from <a href="/user/{{forkedFrom}}">{{forkedFrom}}</a></h3>
-         {{/if}}
-         <p>at {{date}}</p>
-          <h3>Completed: {{completed}}</h3>
-         <img class="submitPost-image" src="{{imagesOfCompletion}}"/>
-          {{> social_buttons}}
+        <div class="col-md-3">
+          <img src="{{fileURL image}}" alt="{{image.name}}" class="profile-pic" />
+        </div>
+        <div class="col-md-9">
+          <h6 class="published"><a href="/user/{{ownerUsername}}" >{{username}}</a> wants to <a href="{{pathFor "postPage"}}">{{title}}</a></h6>
+          <img src="{{fileURL imageFile}}" alt="{{imageFile.name}}" class="post-image" />
+          {{#if hasTags}}
+          {{/if}}
+          {{#each tags}}
+            <a href="/tags/{{this}}">#{{this}}</a>
+          {{/each}}
+          {{#if isForked}}
+            <h3 class="published">forked from <a href="/user/{{forkedFrom}}">{{forkedFrom}}</a></h3> {{/if}}
+            <p>{{dateFromNow}}</p>
+            {{#if checkCompleted}}
+              <h3 id="post-completed">Completed [ 🏆 ]</h3> {{#if imagesOfCompletionNotZero}}
+              <img src="{{fileURL imageCompletionFile}}" alt="{{imageCompletionFile.name}}" class="post-image" />
+            {{/if}}
+          {{/if}}
+          <ul class="list-group">
+            <li class="list-group-item no-border" style=" padding-left: 0px;">
+              <span class="label label-default label-pill pull-xs-right number_of_likes" style="height: 24px;"><abbr
+                        title="number of likes">{{likes.length}}</abbr></span>
+              {{#if checkLike}}
+                <button class="buttons-style btn-primary like">Like</button>
+              {{/if}}
+              {{#unless checkLike}}
+                <button class="buttons-style btn-primary dislike">Dislike</button>
+              {{/unless}}
+              {{#if isOwner}}
+                <button class="buttons-style btn-primary delete">Remove</button>
+                {{#if isNotCompleted}}
+                  <a href="/completed/{{_id}}">
+                    <button class="buttons-style btn-primary complete">Complete</button>
+                  </a>
+                {{/if}}
+                {{>shareit shareData}}
+              {{/if}}
+              {{#if isNotOwner}}
+                <button class="buttons-style btn btn-primary fork">Fork</button>
+              {{/if}}
+            </li>
+          </ul>
+          <form class="newComment">
+            <input name="comment" id="comment" type="text" value="" placeholder="Add a comment" class="form-control" />
+          </form>
+        </div>
       </div>
-      <button class="buttons-style like">Like</button>
-
-       {{#if isOwner}}
-           <button class="buttons-style delete">Remove</button>
-           {{#if isNotCompleted}}
-               <a href="/completed/{{_id}}"><button class="buttons-style complete">complete</button></a>
-           {{/if}}
-       {{/if}}
-
-       {{#if isNotOwner}}
-           <button class="buttons-style fork">Fork</button>
-       {{/if}}
-
-       <p class="number_of_likes">{{likes.length}}</p>
-       <form class = "new-comment">
-           <input name="comment" id="comment" type="text" value="" placeholder="Add a comment" class="form-control"/>
-       </form>
-   </div>
-   {{/if}}
-
+    </div>
+  {{/if}}
 </template>

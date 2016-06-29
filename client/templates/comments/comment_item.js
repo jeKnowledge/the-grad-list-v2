@@ -4,13 +4,12 @@ Template.commentItem.helpers({
     },
 
     owner: function() {
-    	return Meteor.userId() === this.owner;
+        return Meteor.userId() === this.owner;
     }
-}); 
+});
 
 Template.commentItem.events({
-	'click .delete2': function() {
-		Meteor.call("deleteComment", this._id);
-	},
-
+    'click .delete2': function() {
+        Meteor.call("deleteComment", this._id);
+    }
 });
