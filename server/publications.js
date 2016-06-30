@@ -47,6 +47,7 @@ Meteor.publish("usersData", function() {
                 follows: true,
                 followed: true,
                 'services.facebook.name': true,
+                'services.facebook.id': true,
                 'bio': true,
                 'country': true,
                 'university': true,

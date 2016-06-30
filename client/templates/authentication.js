@@ -43,6 +43,8 @@ Template.authentication.events({
     },
 
     'submit #forgotPasswordForm': function(e, t) {
+        Meteor.call('sendEmail', 'teresa.sal13@gmail.com', 'teresa.sal13@gmail.com', 'Hello from Meteor!', 'This is a test of Email.send.');
+        currentTab = 'sign_up';/*
         var forgotPasswordForm = $(e.currentTarget),
             email = trimInput(forgotPasswordForm.find('#forgotPasswordEmail').val().toLowerCase());
         if (isNotEmpty(email) && isEmail(email)) {
@@ -61,14 +63,14 @@ Template.authentication.events({
             });
         }
         e.preventDefault();
-        return false;
+        return false;*/
+
     },
 
     'submit #resetPasswordForm': function(e, t) {
         var resetPasswordForm = $(e.currentTarget),
             password = resetPasswordForm.find('#resetPasswordPassword').val(),
             passwordConfirm = resetPasswordForm.find('#resetPasswordPasswordConfirm').val();
-
         if (isNotEmpty(password) && areValidPasswords(password, passwordConfirm)) {
             Accounts.resetPassword(Session.get('resetPassword'), password, function(err) {
                 if (err) {

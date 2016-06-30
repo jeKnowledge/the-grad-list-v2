@@ -35,14 +35,16 @@
                 <input class="text-input form-control form-style" placeholder="Password" type="password" id="password-input" style="border: none;">
               </p>
               <p>Reset password</p>
+              {{#if resetPassword}}
               <form action="/reset-password" id="resetPasswordForm" method="post">
                 <input id="resetPasswordPassword" name="password" placeholder="New Password" type="password">
                 <input id="resetPasswordPasswordConfirm" name="password-confirm" placeholder="Confirm" type="password">
                 <input class="btn-submit" type="submit" value="Reset">
               </form>
+              {{/if}}
               <p>forgot password</p>
               <p>
-                <form action="/forgot" id="forgotPasswordForm" method="post">
+                <form id="forgotPasswordForm" method="post">
                   <input id="forgotPasswordEmail" type="text" name="email" placeholder="Email Address">
                   <input class="btn-submit" type="submit" value="Send">
                 </form>
