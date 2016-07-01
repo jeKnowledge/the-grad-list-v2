@@ -107,6 +107,8 @@ var callback_signin = function() {
 };
 
 var callback_signup = function() {
+    var check_user = 1;
+    var check_email = 1;
     var name = $('#sign-up-tab').find('#username-input').val();
     Meteor.call('doesUserExist', name, function(error, result) {
         if (result === true) {
@@ -118,9 +120,11 @@ var callback_signup = function() {
                 stack: false,
                 offset: '80px'
             });
+            check_user = 0;
         }
     });
     var email = $('#sign-up-tab').find('#email-input').val();
+    console.log(check_email);
     Meteor.call("validateEmail", email, function(error, result) {
         if (result === false) {
             sAlert.error('Invalid email adress', {
@@ -131,11 +135,15 @@ var callback_signup = function() {
                 stack: false,
                 offset: '80px'
             });
+            check_email = 0;
+            console.log(check_email);
         }
     });
+    console.log(check_email);
     var pass = $('#sign-up-tab').find('#password-input').val();
     var confirm_pass = $('#sign-up-tab').find('#password-confirm-input').val();
-    if (pass === confirm_pass) {
+    console.log(check_email);
+    if (pass === confirm_pass && check_user === 1 && check_email === 1) {
         Accounts.createUser({username: $('#sign-up-tab').find('#username-input').val(), email: $('#sign-up-tab').find('#email-input').val(), password: $('#sign-up-tab').find('#password-input').val()});
         Meteor.call("defaultPicture", Meteor.userId());
     } else {
