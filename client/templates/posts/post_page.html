@@ -1,8 +1,13 @@
 <template name="postPage">
+  {{#if postExists}}
   {{> postItem}}
   <div class="post">
     {{#each comments}}
-      {{>commentItem}} 
+      {{>commentItem}}
     {{/each}}
   </div>
+  {{/if}}
+  {{#unless postExists}}
+    {{> notFound}}
+  {{/unless}}
 </template>

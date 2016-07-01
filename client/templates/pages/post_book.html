@@ -1,6 +1,11 @@
 <template name="postBook">
+  {{#if userExists}}
   <h4 id="completed-posts-title">{{title}} {{username}}!</h4>
   {{#each postsCompleted}}
     {{>postItem}}
   {{/each}}
+  {{/if}}
+  {{#unless userExists}}
+    {{> notFound}}
+  {{/unless}}
 </template>

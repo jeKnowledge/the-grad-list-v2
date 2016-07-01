@@ -143,7 +143,7 @@ var callback_signup = function() {
     var pass = $('#sign-up-tab').find('#password-input').val();
     var confirm_pass = $('#sign-up-tab').find('#password-confirm-input').val();
     console.log(check_email);
-    if (pass === confirm_pass && check_user === 1 && check_email === 1) {
+    if (pass == confirm_pass && check_user == 1 && check_email == 1) {
         Accounts.createUser({username: $('#sign-up-tab').find('#username-input').val(), email: $('#sign-up-tab').find('#email-input').val(), password: $('#sign-up-tab').find('#password-input').val()});
         Meteor.call("defaultPicture", Meteor.userId());
     } else {

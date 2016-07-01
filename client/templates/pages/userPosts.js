@@ -1,4 +1,20 @@
 Template.userPosts.helpers({
+
+    userExists: function() {
+        var result = Meteor.users.findOne({
+            username: this.username
+        }, {
+            fields: {
+                "_id": 1
+            }
+        });
+        if (result) {
+            return true;
+        } else {
+            return false;
+        }
+    },
+
     owner: function() {
         return Meteor.users.findOne({"_id": this._id})._id !== Meteor.userId();
     },

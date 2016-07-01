@@ -1,4 +1,19 @@
 Template.postBook.helpers({
+    userExists: function() {
+        var result = Meteor.users.findOne({
+            username: this.username
+        }, {
+            fields: {
+                "_id": 1
+            }
+        });
+        if (result) {
+            return true;
+        } else {
+            return false;
+        }
+    },
+
     title: function() {
         if (Posts.find({
             $and: [
