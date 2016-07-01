@@ -26,7 +26,6 @@ Template.authentication.events({
 
     'submit form': function(event) {
         event.preventDefault();
-        console.log(currentTab);
     },
 
     'keypress input#password-input': function(evt, template) { //to do -> password input algo exists in sign up and enter shouldn't work there
@@ -103,7 +102,6 @@ var callback_signin = function() {
                 stack: false,
                 offset: '80px'
             });
-            console.log(err);
         }
     });
 };
@@ -113,6 +111,19 @@ var callback_signup = function() {
     Meteor.call('doesUserExist', name, function(error, result) {
         if (result === true) {
             sAlert.error('Username already exists', {
+                effect: 'slide',
+                position: 'bottom-right',
+                timeout: 'none',
+                onRouteClose: false,
+                stack: false,
+                offset: '80px'
+            });
+        }
+    });
+    var email = $('#sign-up-tab').find('#email-input').val();
+    Meteor.call("validateEmail", email, function(error, result) {
+        if (result === false) {
+            sAlert.error('Invalid email adress', {
                 effect: 'slide',
                 position: 'bottom-right',
                 timeout: 'none',
