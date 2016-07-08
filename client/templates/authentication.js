@@ -107,9 +107,22 @@ var callback_signin = function() {
 };
 
 var callback_signup = function() {
-    var check_user = 1;
-    var check_email = 1;
+    var email = $('#sign-up-tab').find('#email-input').val();
+    var pass = $('#sign-up-tab').find('#password-input').val();
+    var confirm_pass = $('#sign-up-tab').find('#password-confirm-input').val();
     var name = $('#sign-up-tab').find('#username-input').val();
+    var check_user = 1;
+    var check_email = validateEmail(email);
+    if (check_email === false) {
+        sAlert.error('Invalid email', {
+            effect: 'slide',
+            position: 'bottom-right',
+            timeout: 'none',
+            onRouteClose: false,
+            stack: false,
+            offset: '80px'
+        });
+    }
     Meteor.call('doesUserExist', name, function(error, result) {
         if (result === true) {
             sAlert.error('Username already exists', {
@@ -123,30 +136,7 @@ var callback_signup = function() {
             check_user = 0;
         }
     });
-    var email = $('#sign-up-tab').find('#email-input').val();
-    console.log(check_email);
-    Meteor.call("validateEmail", email, function(error, result) {
-        if (result === false) {
-            sAlert.error('Invalid email adress', {
-                effect: 'slide',
-                position: 'bottom-right',
-                timeout: 'none',
-                onRouteClose: false,
-                stack: false,
-                offset: '80px'
-            });
-            check_email = 0;
-            console.log(check_email);
-        }
-    });
-    console.log(check_email);
-    var pass = $('#sign-up-tab').find('#password-input').val();
-    var confirm_pass = $('#sign-up-tab').find('#password-confirm-input').val();
-    console.log(check_email);
-    if (pass == confirm_pass && check_user == 1 && check_email == 1) {
-        Accounts.createUser({username: $('#sign-up-tab').find('#username-input').val(), email: $('#sign-up-tab').find('#email-input').val(), password: $('#sign-up-tab').find('#password-input').val()});
-        Meteor.call("defaultPicture", Meteor.userId());
-    } else {
+    if (pass != confirm_pass) {
         sAlert.error('Passwords do not match', {
             effect: 'slide',
             position: 'bottom-right',
@@ -156,8 +146,17 @@ var callback_signup = function() {
             offset: '80px'
         });
     }
+    if (pass == confirm_pass && check_user == 1 && check_email === true) {
+        Accounts.createUser({username: $('#sign-up-tab').find('#username-input').val(), email: $('#sign-up-tab').find('#email-input').val(), password: $('#sign-up-tab').find('#password-input').val()});
+        Meteor.call("defaultPicture", Meteor.userId());
+    }
 };
 
 if (Accounts._resetPasswordToken) {
     Session.set('resetPassword', Accounts._resetPasswordToken);
 }
+
+validateEmail = function(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+};
