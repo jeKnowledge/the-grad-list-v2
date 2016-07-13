@@ -19,7 +19,14 @@ Template.authentication.events({
         Meteor.loginWithFacebook({}, function(err) {
             Meteor.call("loginFacebook", Meteor.userId());
             if (err) {
-                throw new Meteor.Error("Facebook login failed");
+                sAlert.error('Facebook login failed', {
+                    effect: 'slide',
+                    position: 'bottom-right',
+                    timeout: 'none',
+                    onRouteClose: false,
+                    stack: false,
+                    offset: '80px'
+                });
             }
         });
     },
@@ -28,7 +35,7 @@ Template.authentication.events({
         event.preventDefault();
     },
 
-    'keypress input#password-input': function(evt, template) { //to do -> password input algo exists in sign up and enter shouldn't work there
+    'keypress input#password-input': function(evt, template) {
         if (evt.which === 13) {
             callback_signin();
         }
@@ -42,8 +49,8 @@ Template.authentication.events({
     },
 
     'submit #forgotPasswordForm': function(e, t) {
-        Meteor.call('sendEmail', 'teresa.sal13@gmail.com', 'teresa.sal13@gmail.com', 'Hello from Meteor!', 'This is a test of Email.send.');
         currentTab = 'sign_up';/*
+        Meteor.call('sendEmail', 'teresa.sal13@gmail.com', 'teresa.sal13@gmail.com', 'Hello from Meteor!', 'This is a test of Email.send.');
         var forgotPasswordForm = $(e.currentTarget),
             email = trimInput(forgotPasswordForm.find('#forgotPasswordEmail').val().toLowerCase());
         if (isNotEmpty(email) && isEmail(email)) {
@@ -63,11 +70,10 @@ Template.authentication.events({
         }
         e.preventDefault();
         return false;*/
-
     },
 
     'submit #resetPasswordForm': function(e, t) {
-        var resetPasswordForm = $(e.currentTarget),
+        /*var resetPasswordForm = $(e.currentTarget),
             password = resetPasswordForm.find('#resetPasswordPassword').val(),
             passwordConfirm = resetPasswordForm.find('#resetPasswordPasswordConfirm').val();
         if (isNotEmpty(password) && areValidPasswords(password, passwordConfirm)) {
@@ -81,7 +87,7 @@ Template.authentication.events({
             });
         }
         e.preventDefault();
-        return false;
+        return false;*/
     }
 });
 
@@ -107,12 +113,12 @@ var callback_signin = function() {
 };
 
 var callback_signup = function() {
-    var email = $('#sign-up-tab').find('#email-input').val();
-    var pass = $('#sign-up-tab').find('#password-input').val();
-    var confirm_pass = $('#sign-up-tab').find('#password-confirm-input').val();
-    var name = $('#sign-up-tab').find('#username-input').val();
-    var check_user = 1;
-    var check_email = validateEmail(email);
+    const email = $('#sign-up-tab').find('#email-input').val();
+    const pass = $('#sign-up-tab').find('#password-input').val();
+    const confirm_pass = $('#sign-up-tab').find('#password-confirm-input').val();
+    const name = $('#sign-up-tab').find('#username-input').val();
+    let check_user = 1;
+    let check_email = validateEmail(email);
     if (check_email === false) {
         sAlert.error('Invalid email', {
             effect: 'slide',
@@ -157,6 +163,6 @@ if (Accounts._resetPasswordToken) {
 }
 
 validateEmail = function(email) {
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
 };

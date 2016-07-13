@@ -5,6 +5,8 @@ Meteor.startup(function() {
         server: 'smtp.gmail.com', // eg: mail.gandi.net //sandbox26cc34aaebf44b779aafa30daccd7ec7.mailgun.org
         port: 25
     };
+    //const facebook_id = process.env.FACEBOOK_ID;
+    //const facebook_secret = process.env.FACEBOOK_SECRET;
     process.env.MAIL_URL = 'smtp://' + encodeURIComponent(smtp.username) + ':' + encodeURIComponent(smtp.password) + '@' + encodeURIComponent(smtp.server) + ':' + smtp.port;
     if (Images.collection.findOne({name: 'logo.png'}) === undefined) {
         Images.load('https://image.freepik.com/free-icon/graduation-student-black-cap_318-56675.jpg', {
