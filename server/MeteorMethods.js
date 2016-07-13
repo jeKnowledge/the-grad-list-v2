@@ -1,5 +1,4 @@
 Meteor.methods({
-
     loginFacebook: function() {
         Images.load("http://graph.facebook.com/" + Meteor.user().services.facebook.id + "/picture/?type=large", {
             fileName: Meteor.user().services.facebook.id,
