@@ -1,6 +1,6 @@
 Template.postPage.helpers({
     postExists: function() {
-        var result = Posts.findOne({
+        const result = Posts.findOne({
             "_id": this._id
         }, {
             fields: {

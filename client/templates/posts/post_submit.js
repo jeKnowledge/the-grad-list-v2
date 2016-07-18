@@ -5,18 +5,16 @@ import './post_submit.html';
 
 Template.postSubmit.events({
     'submit form': function(e) {
-        var string = $(e.target).find('[name=title]').val();
-        var matches = "";
+        const string = $(e.target).find('[name=title]').val();
+        let matches = "";
         if (/\S/.test(string)) {
-            var tags_2;
             if ($(e.target).find('[name=tags]').val() !== '') {
-                var raw = ($(e.target).find('[name=tags]').val());
+                const raw = ($(e.target).find('[name=tags]').val());
                 matches = raw.match(/[^\s#,;]+/gi);
-                tags_2 = matches;
             } else {
-                tags_2 = '';
+                matches = '';
             }
-            var post = {
+            const post = {
                 title: $(e.target).find('[name=title]').val(),
                 owner: Meteor.userId(),
                 username: Meteor.user().username,
@@ -27,23 +25,23 @@ Template.postSubmit.events({
                 witnessedBy: [],
                 dateOfCompletion: {},
                 likes: [],
-                tags: tags_2,
+                tags: matches,
                 image: Session.get("picture")
             };
             post._id = Posts.insert(post);
-            var tags = matches;
+            const tags = matches;
             for (i = 0; i < tags.length; i++) {
-                var TagExist = Tags.find({
+                const TagExist = Tags.find({
                     title: tags[i]
                 }, {limit: 1}).count() > 0;
                 if (TagExist === false) {
-                    var tag = {
+                    const tag = {
                         title: tags[i],
                         number: 0
                     };
                     tag._id = Tags.insert(tag);
                 } else {
-                    var tag_name = tags[i];
+                    const tag_name = tags[i];
                     Meteor.call("increment_tag", tag_name);
                 }
             }
@@ -65,7 +63,7 @@ Template.postSubmit.events({
         if (e.currentTarget.files && e.currentTarget.files[0]) {
             // We upload only one file, in case
             // multiple files were selected
-            var upload = Images.insert({
+            const upload = Images.insert({
                 file: e.currentTarget.files[0],
                 streams: 'dynamic',
                 chunkSize: 'dynamic'

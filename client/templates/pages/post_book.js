@@ -1,6 +1,6 @@
 Template.postBook.helpers({
     userExists: function() {
-        var result = Meteor.users.findOne({
+        const result = Meteor.users.findOne({
             username: this.username
         }, {
             fields: {

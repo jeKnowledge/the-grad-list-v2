@@ -6,9 +6,9 @@ import './editProfile.html';
 Template.editProfile.events({
     'submit form': function(e) {
         e.preventDefault();
-        var s_bio = $(e.target).find('[name=bio]').val();
-        var s_country = $(e.target).find('[name=country]').val();
-        var s_university = $(e.target).find('[name=university]').val();
+        const s_bio = $(e.target).find('[name=bio]').val();
+        const s_country = $(e.target).find('[name=country]').val();
+        const s_university = $(e.target).find('[name=university]').val();
         Meteor.call("editProfile", s_bio, s_country, s_university);
         Router.go("/");
     },
@@ -17,7 +17,7 @@ Template.editProfile.events({
         if (e.currentTarget.files && e.currentTarget.files[0]) {
             // We upload only one file, in case
             // multiple files were selected
-            var upload = Images.insert({
+            const upload = Images.insert({
                 file: e.currentTarget.files[0],
                 streams: 'dynamic',
                 chunkSize: 'dynamic'

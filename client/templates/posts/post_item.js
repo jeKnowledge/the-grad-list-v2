@@ -12,7 +12,7 @@ Template.postItem.helpers({
     },
 
     image: function() {
-        var image_id = Meteor.users.findOne({"_id": this.owner}).image;
+        const image_id = Meteor.users.findOne({"_id": this.owner}).image;
         return Images.collection.findOne({"_id": image_id});
     },
 
@@ -31,8 +31,7 @@ Template.postItem.helpers({
     },
 
     isLoggedIn: function() {
-        var user = Meteor.user();
-        if (user) {
+        if (Meteor.user()) {
             return true;
         }
     },
@@ -62,10 +61,10 @@ Template.postItem.helpers({
     },
 
     checkLike: function() {
-        var a = this.likes;
-        var obj = Meteor.userId();
+        const a = this.likes;
+        const user = Meteor.userId();
         for (var i = 0; i < a.length; i++) {
-            if (a[i] === obj) {
+            if (a[i] === user) {
                 return false;
             }
         }
@@ -83,9 +82,9 @@ Template.postItem.helpers({
     },
 
     shareData: function() {
-        var id = Posts.findOne({"_id": this._id})._id;
-        var site = "http://thegradlist.herokuapp.com/posts/";
-        var path = site.concat(id);
+        const id = Posts.findOne({"_id": this._id})._id;
+        const site = "http://thegradlist.herokuapp.com/posts/";
+        const path = site.concat(id);
         return {
             url: path,
             title: this.title,
@@ -121,8 +120,8 @@ Template.postItem.events({
 
     'submit .newComment': function(event) {
         event.preventDefault();
-        var text = event.target.comment.value;
-        var commentId = Comments.insert({text: text, createdAt: new Date(), owner: Meteor.userId()});
+        const text = event.target.comment.value;
+        const commentId = Comments.insert({text: text, createdAt: new Date(), owner: Meteor.userId()});
         Meteor.call("addCommentToPost", this._id, commentId);
         event.target.comment.value = "";
     }

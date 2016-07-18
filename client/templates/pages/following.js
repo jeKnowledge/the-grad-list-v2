@@ -4,14 +4,14 @@ Template.following.helpers({
     },
 
     image: function() {
-        var image_id = Meteor.users.findOne({"_id": this._id}).image;
-        var raw = "cdn/storage/Images/" + image_id + "/original/" + image_id + ".png";
+        const image_id = Meteor.users.findOne({"_id": this._id}).image;
+        const raw = "cdn/storage/Images/" + image_id + "/original/" + image_id + ".png";
         return "/../" + raw;
     },
 
     following: function() {
-        var a = [];
-        var following = Meteor.users.findOne({"_id": this._id}).follows;
+        let a = [];
+        const following = Meteor.users.findOne({"_id": this._id}).follows;
         for (var i = 0; i < following.length; i++) {
             a.push(Meteor.users.findOne({"_id": following[i]}));
         }
