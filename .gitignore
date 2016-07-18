@@ -3,6 +3,6 @@
 *.swp
 *.swo
 
-node_modeules/
+node_modules/
 
 .DS_Store
