@@ -70,4 +70,4 @@ Meteor.publish("files.images.all", function() {
 
 ServiceConfiguration.configurations.remove({service: 'facebook'});
 
-ServiceConfiguration.configurations.insert({service: 'facebook', appId: '456456687891709', secret: 'a44659b9325db81c25af3a15ef74da60'});
+ServiceConfiguration.configurations.insert({service: 'facebook', appId: process.env.FACEBOOK_APP_ID, secret: process.env.FACEBOOK_SECRET});
