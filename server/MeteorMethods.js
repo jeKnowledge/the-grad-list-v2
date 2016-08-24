@@ -1,5 +1,7 @@
 Meteor.methods({
-    loginFacebook: function() {
+    loginFacebook: function(id) {
+        console.log(id);
+        console.log("teste");
         Images.load("http://graph.facebook.com/" + Meteor.user().services.facebook.id + "/picture/?type=large", {
             fileName: Meteor.user().services.facebook.id,
             meta: {}
@@ -12,7 +14,6 @@ Meteor.methods({
             }
         });
     },
-
     defaultPicture: function() {
         var a = Images.collection.findOne({name: 'logo.png'})._id;
         Meteor.users.update(Meteor.userId(), {
@@ -21,7 +22,6 @@ Meteor.methods({
             }
         });
     },
-
     doesUserExist: function(name) {
         var user_exists = Meteor.users.findOne({
             username: name
@@ -36,7 +36,6 @@ Meteor.methods({
             return false;
         }
     },
-
     deletePost: function(id) {
         if (Meteor.userId() == Posts.findOne({"_id": id}).owner) {
             tags = Posts.findOne({"_id": id}).tags;
@@ -64,13 +63,11 @@ Meteor.methods({
             Posts.remove(id);
         }
     },
-
     deleteComment: function(id) {
         if (Meteor.userId() == Comments.findOne({_id: id}).owner) {
             Comments.remove(id);
         }
     },
-
     forkPost: function(id) {
         var post2 = {
             title: Posts.findOne({_id: id}).title,
@@ -96,7 +93,6 @@ Meteor.methods({
         }
         post2._id = Posts.insert(post2);
     },
-
     likePost: function(id) {
         Posts.update(Posts.findOne({_id: id}), {
             $addToSet: {
@@ -104,7 +100,6 @@ Meteor.methods({
             }
         });
     },
-
     dislikePost: function(id) {
         Posts.update(Posts.findOne({_id: id}), {
             $pull: {
@@ -112,7 +107,6 @@ Meteor.methods({
             }
         });
     },
-
     followId: function(id) {
         Meteor.users.update(Meteor.userId(), {
             $addToSet: {
@@ -125,7 +119,6 @@ Meteor.methods({
             }
         });
     },
-
     unfollowId: function(id) {
         Meteor.users.update(Meteor.userId(), {
             $pull: {
@@ -138,7 +131,6 @@ Meteor.methods({
             }
         });
     },
-
     addCommentToPost: function(postId, commentId) {
         var temp = Posts.findOne({_id: postId}).comments;
         temp.push(commentId);
@@ -148,7 +140,6 @@ Meteor.methods({
             }
         });
     },
-
     editProfile: function(s_bio, s_country, s_university, s_pic) {
         Meteor.users.update(Meteor.userId(), {
             $set: {
@@ -158,7 +149,6 @@ Meteor.methods({
             }
         });
     },
-
     add_image: function(id) {
         Meteor.users.update(Meteor.userId(), {
             $set: {
@@ -167,7 +157,6 @@ Meteor.methods({
             }
         });
     },
-
     medals: function() {
         Meteor.users.update({
             "_id": Meteor.userId()
@@ -177,7 +166,6 @@ Meteor.methods({
             }
         });
     },
-
     increment_tag: function(tag_name) {
         Tags.update({
             title: tag_name
@@ -187,7 +175,6 @@ Meteor.methods({
             }
         });
     },
-
     sendEmail: function(to, from, subject, text) {
         check([
             to, from, subject, text

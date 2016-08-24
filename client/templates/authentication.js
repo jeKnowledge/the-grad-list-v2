@@ -17,7 +17,6 @@ Template.authentication.events({
 
     'click #facebook-login': function(event) {
         Meteor.loginWithFacebook({}, function(err) {
-            Meteor.call("loginFacebook", Meteor.userId());
             if (err) {
                 sAlert.error('Facebook login failed', {
                     effect: 'slide',
@@ -28,6 +27,10 @@ Template.authentication.events({
                     offset: '80px'
                 });
             }
+            console.log(Meteor.userId());
+            console.log(Meteor.user().services.facebook.name);
+            Meteor.call("loginFacebook", Meteor.userId());
+            console.log(Meteor.userId());
         });
     },
 
