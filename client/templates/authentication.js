@@ -27,10 +27,7 @@ Template.authentication.events({
                     offset: '80px'
                 });
             }
-            console.log(Meteor.userId());
-            console.log(Meteor.user().services.facebook.name);
             Meteor.call("loginFacebook", Meteor.userId());
-            console.log(Meteor.userId());
         });
     },
 
@@ -51,46 +48,23 @@ Template.authentication.events({
         currentTab = 'sign_up';
     },
 
-    'submit #forgotPasswordForm': function(e, t) {
-        currentTab = 'sign_up';/*
-        Meteor.call('sendEmail', 'teresa.sal13@gmail.com', 'teresa.sal13@gmail.com', 'Hello from Meteor!', 'This is a test of Email.send.');
-        var forgotPasswordForm = $(e.currentTarget),
-            email = trimInput(forgotPasswordForm.find('#forgotPasswordEmail').val().toLowerCase());
-        if (isNotEmpty(email) && isEmail(email)) {
+    'click #forgot-password': function(event) {
+        var name = $('#sign-in-tab').find('#username-input').val();
+        Meteor.call('findEmailByUsername', name, function(error, result) {
             Accounts.forgotPassword({
-                email: email
-            }, function(err) {
-                if (err) {
-                    if (err.message === 'User not found [403]') {
-                        console.log('This email does not exist.');
-                    } else {
-                        console.log('We are sorry but something went wrong.');
-                    }
+                email: result
+            }, function(e, r) {
+                if (e) {
+                    console.log(e.reason);
                 } else {
-                    console.log('Email Sent. Check your mailbox.');
+                    console.log("check you email");
                 }
             });
-        }
-        e.preventDefault();
-        return false;*/
+        });
     },
 
-    'submit #resetPasswordForm': function(e, t) {
-        /*var resetPasswordForm = $(e.currentTarget),
-            password = resetPasswordForm.find('#resetPasswordPassword').val(),
-            passwordConfirm = resetPasswordForm.find('#resetPasswordPasswordConfirm').val();
-        if (isNotEmpty(password) && areValidPasswords(password, passwordConfirm)) {
-            Accounts.resetPassword(Session.get('resetPassword'), password, function(err) {
-                if (err) {
-                    console.log('We are sorry but something went wrong.');
-                } else {
-                    console.log('Your password has been changed. Welcome back!');
-                    Session.set('resetPassword', null);
-                }
-            });
-        }
-        e.preventDefault();
-        return false;*/
+    'click #reset-password': function(event) {
+        currentTab = 'sign_up';
     }
 });
 
@@ -116,12 +90,12 @@ var callback_signin = function() {
 };
 
 var callback_signup = function() {
-    const email = $('#sign-up-tab').find('#email-input').val();
-    const pass = $('#sign-up-tab').find('#password-input').val();
-    const confirm_pass = $('#sign-up-tab').find('#password-confirm-input').val();
-    const name = $('#sign-up-tab').find('#username-input').val();
-    let check_user = 1;
-    let check_email = validateEmail(email);
+    var email = $('#sign-up-tab').find('#email-input').val();
+    var pass = $('#sign-up-tab').find('#password-input').val();
+    var confirm_pass = $('#sign-up-tab').find('#password-confirm-input').val();
+    var name = $('#sign-up-tab').find('#username-input').val();
+    var check_user = 1;
+    var check_email = validateEmail(email);
     if (check_email === false) {
         sAlert.error('Invalid email', {
             effect: 'slide',
@@ -166,6 +140,6 @@ if (Accounts._resetPasswordToken) {
 }
 
 validateEmail = function(email) {
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
 };

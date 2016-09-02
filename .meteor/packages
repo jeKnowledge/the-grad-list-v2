@@ -40,3 +40,5 @@ ostrio:files
 email
 shmck:meteor-social-buttons
 pauldowman:dotenv
+check
+ejson

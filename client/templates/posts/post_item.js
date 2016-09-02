@@ -1,8 +1,4 @@
 Template.postItem.helpers({
-    isCurrentUser: function() {
-        return Meteor.userId() == this.owner;
-    },
-
     isOwner: function() {
         return this.owner === Meteor.userId();
     },
