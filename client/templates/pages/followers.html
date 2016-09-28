@@ -4,7 +4,12 @@
     <div class="post" id="follow-page">
       <div class="post-content">
         <div class="col-md-2">
-          <img src="{{image}}" alt="{{imageFile.name}}" class="post-image" />
+          {{#if hasProfilePicture}}
+            <img src="{{fileURL image}}" alt="{{image.name}}" class="post-image" />
+          {{/if}}
+          {{#unless hasProfilePicture}}
+            <img src="/grad.png" alt="" class="post-image"/>
+          {{/unless}}
         </div>
         <div class="col-md-10">
           <a href="/user/{{username}}">{{username}}</a>
