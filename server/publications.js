@@ -6,12 +6,6 @@ Meteor.startup(function() {
         port: 587
     };
     process.env.MAIL_URL = 'smtp://' + encodeURIComponent(smtp.username) + ':' + encodeURIComponent(smtp.password) + '@' + encodeURIComponent(smtp.server) + ':' + smtp.port;
-    if (Images.collection.findOne({name: 'logo.png'}) === undefined) {
-        Images.load('https://image.freepik.com/free-icon/graduation-student-black-cap_318-56675.jpg', {
-            fileName: 'logo.png',
-            meta: {}
-        });
-    }
 });
 
 Meteor.publish("posts", function() {

@@ -8,7 +8,7 @@ Meteor.methods({
         Meteor.users.update(Meteor.userId(), {
             $set: {
                 username: Meteor.user().services.facebook.name,
-                image: facebook_image
+                image: 'grad.png'
             }
         });
     },
@@ -18,7 +18,7 @@ Meteor.methods({
     },
 
     defaultPicture: function() {
-        var defaultPicture = Images.collection.findOne({name: 'logo.png'})._id;
+        var defaultPicture = 'grad.png';
         Meteor.users.update(Meteor.userId(), {
             $set: {
                 image: defaultPicture
