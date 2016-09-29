@@ -4,14 +4,21 @@ Template.following.helpers({
     },
 
     image: function() {
-        const image_id = Meteor.users.findOne({"_id": this._id}).image;
-        const raw = "cdn/storage/Images/" + image_id + "/original/" + image_id + ".png";
-        return "/../" + raw;
+        var image_id = Meteor.users.findOne({"_id": this._id}).image;
+        return Images.collection.findOne({"_id": image_id});
+    },
+
+    hasProfilePicture: function() {
+        if (Meteor.users.findOne({"_id": this._id}).image == 'grad.png') {
+            return false;
+        } else {
+            return true;
+        }
     },
 
     following: function() {
-        let a = [];
-        const following = Meteor.users.findOne({"_id": this._id}).follows;
+        var a = [];
+        var following = Meteor.users.findOne({"_id": this._id}).follows;
         for (var i = 0; i < following.length; i++) {
             a.push(Meteor.users.findOne({"_id": following[i]}));
         }

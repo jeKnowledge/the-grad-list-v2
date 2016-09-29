@@ -2,7 +2,12 @@
   {{#if userExists}}
     <div class="post profile-resume">
       <div class="col-md-3">
-        <img src="{{fileURL image}}" alt="{{image.name}}" class="profile-pic" />
+        {{#if hasProfilePicture}}
+          <img src="{{fileURL image}}" alt="{{image.name}}" class="profile-pic" />
+        {{/if}}
+        {{#unless hasProfilePicture}}
+          <img src="/grad.png" alt="" class="profile-pic"/>
+        {{/unless}}
       </div>
       <div class="col-md-9">
         <h4 class="profile-title">{{username}}'s Profile</h4>

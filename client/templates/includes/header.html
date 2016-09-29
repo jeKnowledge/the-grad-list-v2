@@ -29,7 +29,12 @@
                 <ul class="drop-list">
                   {{#EasySearch.Each index=usersIndex}}
                   <li>
-                    <img src="{{fileURL image}}" alt="{{image.name}}" class="profile-pic" />
+                    {{#if hasProfilePicture}}
+                      <img src="{{fileURL image}}" alt="{{image.name}}" class="profile-pic" />
+                    {{/if}}
+                    {{#unless hasProfilePicture}}
+                      <img src="/grad.png" alt="" class="profile-pic"/>
+                    {{/unless}}
                     <a class="profile" href="/user/{{username}}">{{username}}</a>
                   </li>
                   {{/EasySearch.Each}} {{#EasySearch.Each index=tagsIndex}}

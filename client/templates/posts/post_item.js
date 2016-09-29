@@ -12,6 +12,14 @@ Template.postItem.helpers({
         return Images.collection.findOne({"_id": image_id});
     },
 
+    hasProfilePicture: function() {
+        if (Meteor.users.findOne({"_id": this.owner}).image == 'grad.png') {
+            return false;
+        } else {
+            return true;
+        }
+    },
+
     imagesOfCompletionNotZero: function() {
         if (parseInt(this.imagesOfCompletion) !== 0) {
             return true;
