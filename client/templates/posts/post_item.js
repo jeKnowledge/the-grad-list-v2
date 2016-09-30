@@ -20,6 +20,14 @@ Template.postItem.helpers({
         }
     },
 
+    srcProfilePicture: function() {
+        if (Meteor.users.findOne({"_id": this.owner}).facebook_image === false) {
+            return "/grad.png";
+        } else {
+            return "http://graph.facebook.com/" + Meteor.users.findOne({"_id": this.owner}).services.facebook.id + "/picture/?type=large";
+        }
+    },
+
     imagesOfCompletionNotZero: function() {
         if (parseInt(this.imagesOfCompletion) !== 0) {
             return true;

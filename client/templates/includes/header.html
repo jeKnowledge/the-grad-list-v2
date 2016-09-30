@@ -33,7 +33,7 @@
                       <img src="{{fileURL image}}" alt="{{image.name}}" class="profile-pic" />
                     {{/if}}
                     {{#unless hasProfilePicture}}
-                      <img src="/grad.png" alt="" class="profile-pic"/>
+                      <img src="{{srcProfilePicture}}" alt="" class="profile-pic"/>
                     {{/unless}}
                     <a class="profile" href="/user/{{username}}">{{username}}</a>
                   </li>

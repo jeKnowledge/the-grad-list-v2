@@ -34,6 +34,14 @@ Template.header.helpers({
         } else {
             return true;
         }
+    },
+
+    srcProfilePicture: function() {
+        if (Meteor.users.findOne({"_id": this._id}).facebook_image === false) {
+            return "/grad.png";
+        } else {
+            return "http://graph.facebook.com/" + Meteor.users.findOne({"_id": this._id}).services.facebook.id + "/picture/?type=large";
+        }
     }
 });
 
