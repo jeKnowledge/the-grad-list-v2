@@ -4,7 +4,7 @@ Meteor.methods({
             $set: {
                 username: Meteor.user().services.facebook.name,
                 image: 'grad.png',
-                facebook_image: true
+                facebook_login: true
             }
         });
     },
@@ -163,7 +163,7 @@ Meteor.methods({
         Meteor.users.update(Meteor.userId(), {
             $set: {
                 image: id,
-                facebook_image: false
+                facebook_login: false
             }
         });
     },

@@ -46,7 +46,7 @@ Template.editProfile.helpers({
     },
 
     notFacebookLogin: function() {
-        if (Meteor.user().facebook_image === false) {
+        if (Meteor.user().facebook_login === false) {
             return true;
         } else {
             return false;

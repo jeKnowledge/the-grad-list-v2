@@ -21,7 +21,7 @@ Template.postItem.helpers({
     },
 
     srcProfilePicture: function() {
-        if (Meteor.users.findOne({"_id": this.owner}).facebook_image === false) {
+        if (Meteor.users.findOne({"_id": this.owner}).facebook_login === false) {
             return "/grad.png";
         } else {
             return "http://graph.facebook.com/" + Meteor.users.findOne({"_id": this.owner}).services.facebook.id + "/picture/?type=large";
