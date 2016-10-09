@@ -43,6 +43,14 @@ Template.editProfile.events({
 Template.editProfile.helpers({
     currentUpload: function() {
         return Template.instance().currentUpload.get();
+    },
+
+    notFacebookLogin: function() {
+        if (Meteor.user().facebook_login === false) {
+            return true;
+        } else {
+            return false;
+        }
     }
 });
 

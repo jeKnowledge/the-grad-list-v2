@@ -48,6 +48,7 @@ Meteor.publish("usersData", function() {
                 'university': true,
                 'picture': true,
                 'image': true,
+                'facebook_login': true,
                 'medals': true
             }
         });

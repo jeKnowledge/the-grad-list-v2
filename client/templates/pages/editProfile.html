@@ -5,11 +5,13 @@
       <input name="country" type="text" value="" placeholder="Country" class="form-control" />
       <input name="university" type="text" value="" placeholder="University" class="form-control" />
     </div>
-    <p class="" style="margin-left: 2.3%; color: #8F8E8E;">Profile photo
-      <span class="btn btn-default btn-file">
-				<input type="file" multiple class="myFileInput" style="line-height: 1.0; font-size: 0.8em;"/>
-			</span>
-    </p>
+    {{#if notFacebookLogin}}
+      <p class="" style="margin-left: 2.3%; color: #8F8E8E;">Profile photo
+        <span class="btn btn-default btn-file">
+  				<input type="file" multiple class="myFileInput" style="line-height: 1.0; font-size: 0.8em;"/>
+  			</span>
+      </p>
+    {{/if}}
     <input type="submit" value="Submit" class="buttons-style-editProfile btn btn-primary" />
   </form>
 </template>

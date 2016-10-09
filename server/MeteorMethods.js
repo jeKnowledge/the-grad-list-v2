@@ -1,15 +1,10 @@
 Meteor.methods({
     loginFacebook: function(id) {
-        /* to do - >facebook profile picture
-        Images.load("http://graph.facebook.com/" + Meteor.user().services.facebook.id + "/picture/?type=large", {
-            fileName: Meteor.user().services.facebook.id,
-            meta: {}
-        });
-        var facebook_image = Images.collection.findOne({name: Meteor.user().services.facebook.id})._id; */
         Meteor.users.update(Meteor.userId(), {
             $set: {
                 username: Meteor.user().services.facebook.name,
-                image: 'grad.png'
+                image: 'grad.png',
+                facebook_login: true
             }
         });
     },
@@ -168,7 +163,7 @@ Meteor.methods({
         Meteor.users.update(Meteor.userId(), {
             $set: {
                 image: id,
-                facebook_image: 0
+                facebook_login: false
             }
         });
     },
