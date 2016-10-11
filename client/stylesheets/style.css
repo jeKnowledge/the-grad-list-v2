@@ -67,6 +67,10 @@ abbr[title], abbr[data-original-title] {
 .profile-pic {
   width: 100%; }
 
+.profile-pic-search {
+  width: 30%;
+}
+
 .post-profile-pic {
   width: 20%; }
 
@@ -629,9 +633,13 @@ input[type="text"] {
   #main {
     margin-top: 14%; }
 
+    .profile-pic-search {
+      width: 10%;
+    }
+
   .content-list {
-    margin-left: -3%;
-    width: 91.57%; }
+    margin-left: -2%;
+    width: 100%; }
 
   #suggestions {
     width: 87%; }

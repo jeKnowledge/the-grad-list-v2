@@ -30,10 +30,10 @@
                   {{#EasySearch.Each index=usersIndex}}
                   <li>
                     {{#if hasProfilePicture}}
-                      <img src="{{fileURL image}}" alt="{{image.name}}" class="profile-pic" />
+                      <img src="{{fileURL image}}" alt="{{image.name}}" class="profile-pic-search" />
                     {{/if}}
                     {{#unless hasProfilePicture}}
-                      <img src="{{srcProfilePicture}}" alt="" class="profile-pic"/>
+                      <img src="{{srcProfilePicture}}" alt="" class="profile-pic-search"/>
                     {{/unless}}
                     <a class="profile" href="/user/{{username}}">{{username}}</a>
                   </li>
