@@ -38,7 +38,7 @@ Template.home.helpers({
         var a = [];
         for (var p = 0; p < friendsOfFriends.length; p++) {
             for (var j = 0; j < friendsOfFriends[p].length; j++) {
-                if (friendsOfFriends[p][j] != Meteor.userId() && notcontains(Meteor.user().follows, friendsOfFriends[p][j])) {
+                if (friendsOfFriends[p][j] != Meteor.userId() && notcontains(friendsOsFriends, friendsOfFriends[p][j]) && notcontains(Meteor.user().follows, friendsOfFriends[p][j])) {
                     a.push(Meteor.users.findOne({"_id": friendsOfFriends[p][j]
                     }));
                 }
