@@ -2,8 +2,16 @@
   {{> postSubmit}} {{> feed}}
   <div id="suggestions">
     {{#unless suggestion}}
-    <h5>Users that you can follow</h5> {{/unless}} {{#if checkFollowers}} {{#each user}}
-    <h5><a href="/user/{{username}}">{{username}}</a></h5> {{/each}} {{/if}} {{#unless checkFollowers}} {{#each friendsOfFriends}}
-    <h5><a href="/user/{{username}}">{{username}}</a></h5> {{/each}} {{/unless}}
+      <h5>Users that you can follow</h5>
+    {{/unless}} {{#if checkFollowers}}
+    {{#each user}}
+      <h5><a href="/user/{{username}}">{{username}}</a></h5>
+    {{/each}}
+    {{/if}}
+    {{#unless checkFollowers}}
+      {{#each friendsOfFriends}}
+        <h5><a href="/user/{{username}}">{{username}}</a></h5>
+      {{/each}}
+    {{/unless}}
   </div>
 </template>
