@@ -34,12 +34,6 @@ Template.home.helpers({
                 var friendOfFriend = Meteor.users.findOne({
                     "_id": friendFollowing[j]
                 });
-                console.log("friends of friends");
-                console.log(friendsOfFriendsRes);
-                console.log("friends");
-                console.log(friends);
-                console.log("verificar com");
-                console.log(friendOfFriend);
                 if (notContains(friendsOfFriendsRes, friendOfFriend) && notContainsArray(friends, friendOfFriend) && friendOfFriend._id != Meteor.user()._id) {
                     friendsOfFriendsRes.push(friendOfFriend);
                 }
