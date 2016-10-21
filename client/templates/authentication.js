@@ -21,7 +21,7 @@ Template.authentication.events({
                 sAlert.error('Facebook login failed', {
                     effect: 'slide',
                     position: 'bottom-right',
-                    timeout: 'none',
+                    timeout: '3000',
                     onRouteClose: false,
                     stack: false,
                     offset: '80px'
@@ -80,13 +80,14 @@ var callback_signin = function() {
             sAlert.error('Username or password incorrect', {
                 effect: 'slide',
                 position: 'bottom-right',
-                timeout: 'none',
+                timeout: '3000',
                 onRouteClose: false,
                 stack: false,
-                offset: '80px'
+                offset: '80px',
             });
         }
     });
+    sAlert.closeAll();
 };
 
 var callback_signup = function() {
@@ -100,7 +101,7 @@ var callback_signup = function() {
         sAlert.error('Invalid email', {
             effect: 'slide',
             position: 'bottom-right',
-            timeout: 'none',
+            timeout: '3000',
             onRouteClose: false,
             stack: false,
             offset: '80px'
@@ -111,7 +112,7 @@ var callback_signup = function() {
             sAlert.error('Username already exists', {
                 effect: 'slide',
                 position: 'bottom-right',
-                timeout: 'none',
+                timeout: '3000',
                 onRouteClose: false,
                 stack: false,
                 offset: '80px'
@@ -123,15 +124,20 @@ var callback_signup = function() {
         sAlert.error('Passwords do not match', {
             effect: 'slide',
             position: 'bottom-right',
-            timeout: 'none',
+            timeout: '3000',
             onRouteClose: false,
             stack: false,
             offset: '80px'
         });
     }
     if (pass == confirm_pass && check_user == 1 && check_email === true) {
-        Accounts.createUser({username: $('#sign-up-tab').find('#username-input').val(), email: $('#sign-up-tab').find('#email-input').val(), password: $('#sign-up-tab').find('#password-input').val()});
+        Accounts.createUser({
+            username: $('#sign-up-tab').find('#username-input').val(),
+            email: $('#sign-up-tab').find('#email-input').val(),
+            password: $('#sign-up-tab').find('#password-input').val()
+        });
         Meteor.call("defaultPicture", Meteor.userId());
+        sAlert.closeAll();
     }
 };
 
