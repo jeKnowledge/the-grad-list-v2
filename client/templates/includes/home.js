@@ -1,49 +1,62 @@
 Template.home.helpers({
-    user: function() {
-        return Meteor.users.find({
-            $and: [
-                {
-                    "_id": {
-                        $nin: Meteor.user().follows
-                    }
-                }, {
-                    "_id": {
-                        $ne: Meteor.userId()
-                    }
-                }
-            ]
-        }, {"limit": 3});
-    },
 
-    checkFollowers: function() {
+    userHasNoFollowers: function() {
         if (Meteor.user().follows.length === 0) {
             return true;
         }
     },
 
+    randomUsers: function() {
+        return Meteor.users.find({
+            $and: [{
+                "_id": {
+                    $nin: Meteor.user().follows
+                }
+            }, {
+                "_id": {
+                    $ne: Meteor.userId()
+                }
+            }]
+        }, {
+            "limit": 3
+        });
+    },
+
     friendsOfFriends: function() {
         var friends = Meteor.user().follows;
-        var friendsOfFriends = [];
+        var friendsOfFriendsRes = [];
         for (var i = 0; i < friends.length; i++) {
-            friendsOfFriends.push(Meteor.users.findOne({"_id": friends[i]}).follows);
-        }
-        function notcontains(a, obj) {
-            for (var i = 0; i < a.length; i++) {
-                if (a[i] === obj) {
-                    return false;
-                }
-            }
-            return true;
-        }
-        var a = [];
-        for (var p = 0; p < friendsOfFriends.length; p++) {
-            for (var j = 0; j < friendsOfFriends[p].length; j++) {
-                if (friendsOfFriends[p][j] != Meteor.userId() && notcontains(a, friendsOfFriends[p][j]) && notcontains(Meteor.user().follows, friendsOfFriends[p][j])) {
-                    a.push(Meteor.users.findOne({"_id": friendsOfFriends[p][j]
-                    }));
+            var friend = Meteor.users.findOne({
+                "_id": friends[i]
+            });
+            var friendFollowing = friend.follows;
+            for (var j = 0; j < friendFollowing.length; j++) {
+                var friendOfFriend = Meteor.users.findOne({
+                    "_id": friendFollowing[j]
+                });
+                if (notContains(friendsOfFriendsRes, friendOfFriend) && notContainsArray(friends, friendOfFriend) && friendOfFriend._id != Meteor.user()._id) {
+                    friendsOfFriendsRes.push(friendOfFriend);
                 }
             }
         }
-        return a.slice(0, 3);
+        return friendsOfFriendsRes;
     }
 });
+
+function notContains(a, obj) {
+    for (var i = 0; i < a.length; i++) {
+        if (obj._id == a[i]._id) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function notContainsArray(a, obj) {
+    for (var i = 0; i < a.length; i++) {
+        if (obj._id == a[i]) {
+            return false;
+        }
+    }
+    return true;
+}
