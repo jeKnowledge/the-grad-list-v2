@@ -23,15 +23,15 @@ Template.home.helpers({
     },
 
     friendsOfFriends: function() {
-        var friends = Meteor.user().follows;
-        var friendsOfFriendsRes = [];
-        for (var i = 0; i < friends.length; i++) {
-            var friend = Meteor.users.findOne({
+        const friends = Meteor.user().follows;
+        const friendsOfFriendsRes = [];
+        for (let i = 0; i < friends.length; i++) {
+            const friend = Meteor.users.findOne({
                 "_id": friends[i]
             });
-            var friendFollowing = friend.follows;
-            for (var j = 0; j < friendFollowing.length; j++) {
-                var friendOfFriend = Meteor.users.findOne({
+            const friendFollowing = friend.follows;
+            for (let j = 0; j < friendFollowing.length; j++) {
+                const friendOfFriend = Meteor.users.findOne({
                     "_id": friendFollowing[j]
                 });
                 if (notContains(friendsOfFriendsRes, friendOfFriend) && notContainsArray(friends, friendOfFriend) && friendOfFriend._id != Meteor.user()._id) {
@@ -44,7 +44,7 @@ Template.home.helpers({
 });
 
 function notContains(a, obj) {
-    for (var i = 0; i < a.length; i++) {
+    for (let i = 0; i < a.length; i++) {
         if (obj._id == a[i]._id) {
             return false;
         }
@@ -53,7 +53,7 @@ function notContains(a, obj) {
 }
 
 function notContainsArray(a, obj) {
-    for (var i = 0; i < a.length; i++) {
+    for (let i = 0; i < a.length; i++) {
         if (obj._id == a[i]) {
             return false;
         }
