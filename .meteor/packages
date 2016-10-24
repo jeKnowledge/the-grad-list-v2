@@ -4,24 +4,24 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-meteor-base             # Packages every Meteor app needs to have
-mobile-experience       # Packages for a great mobile UX
-mongo                   # The database Meteor supports right now
-blaze-html-templates    # Compile .html files into Meteor Blaze views
-session                 # Client-side reactive dictionary for your app
-jquery                  # Helpful client-side library
-tracker                 # Meteor's client-side reactive programming library
+meteor-base@1.0.4             # Packages every Meteor app needs to have
+mobile-experience@1.0.4       # Packages for a great mobile UX
+mongo@1.1.13                   # The database Meteor supports right now
+blaze-html-templates@1.0.4    # Compile .html files into Meteor Blaze views
+session@1.1.6                 # Client-side reactive dictionary for your app
+jquery@1.11.9                  # Helpful client-side library
+tracker@1.1.0                 # Meteor's client-side reactive programming library
 
-es5-shim                # ECMAScript 5 compatibility for older browsers.
-ecmascript              # Enable ECMAScript2015+ syntax in app code
+es5-shim@4.6.14_1                # ECMAScript 5 compatibility for older browsers.
+ecmascript@0.5.8_1              # Enable ECMAScript2015+ syntax in app code
 
-underscore
+underscore@1.0.9
 iron:router
 sacha:spin
-accounts-password
-accounts-facebook
+accounts-password@1.3.0
+accounts-facebook@1.0.10
 chuikoff:bootstrap-4
-service-configuration
+service-configuration@1.0.10
 fourseven:scss
 matteodem:easy-search
 easysearch:autosuggest
@@ -29,16 +29,18 @@ juliancwirko:s-alert
 juliancwirko:s-alert-slide
 cfs:standard-packages
 cfs:filesystem
-standard-minifier-css
-standard-minifier-js
+standard-minifier-css@1.2.0_1
+standard-minifier-js@1.2.0_1
 socialize:user-profile
 aldeed:simple-schema
 momentjs:moment
 cfs:gridfs
 vsivsi:file-collection
 ostrio:files
-email
+email@1.1.17_1
 shmck:meteor-social-buttons
 pauldowman:dotenv
-check
-ejson
+check@1.2.3
+ejson@1.0.12
+shell-server
+simple:imgur
