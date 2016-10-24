@@ -8,12 +8,18 @@ Template.postItem.helpers({
     },
 
     image: function() {
-        const image_id = Meteor.users.findOne({"_id": this.owner}).image;
-        return Images.collection.findOne({"_id": image_id});
+        const image_id = Meteor.users.findOne({
+            "_id": this.owner
+        }).image;
+        return Images.collection.findOne({
+            "_id": image_id
+        });
     },
 
     hasProfilePicture: function() {
-        if (Meteor.users.findOne({"_id": this.owner}).image == 'grad.png') {
+        if (Meteor.users.findOne({
+                "_id": this.owner
+            }).image == 'grad.png') {
             return false;
         } else {
             return true;
@@ -21,10 +27,14 @@ Template.postItem.helpers({
     },
 
     srcProfilePicture: function() {
-        if (Meteor.users.findOne({"_id": this.owner}).facebook_login === false) {
+        if (Meteor.users.findOne({
+                "_id": this.owner
+            }).facebook_login === false) {
             return "/grad.png";
         } else {
-            return "http://graph.facebook.com/" + Meteor.users.findOne({"_id": this.owner}).services.facebook.id + "/picture/?type=large";
+            return "http://graph.facebook.com/" + Meteor.users.findOne({
+                "_id": this.owner
+            }).services.facebook.id + "/picture/?type=large";
         }
     },
 
@@ -53,19 +63,27 @@ Template.postItem.helpers({
     },
 
     ownerUsername: function() {
-        return Meteor.users.findOne({"_id": this.owner}).username;
+        return Meteor.users.findOne({
+            "_id": this.owner
+        }).username;
     },
 
     imageFile: function() {
-        return Images.collection.findOne({"_id": this.image});
+        return Images.collection.findOne({
+            "_id": this.image
+        });
     },
 
     imageCompletionFile: function() {
-        return Images.collection.findOne({"_id": this.imagesOfCompletion[0]});
+        return Images.collection.findOne({
+            "_id": this.imagesOfCompletion[0]
+        });
     },
 
     profilePicture: function() {
-        return Meteor.users.findOne({"_id": this.owner}).image;
+        return Meteor.users.findOne({
+            "_id": this.owner
+        }).image;
     },
 
     checkCompleted: function() {
@@ -94,13 +112,17 @@ Template.postItem.helpers({
     },
 
     shareData: function() {
-        const id = Posts.findOne({"_id": this._id})._id;
+        const id = Posts.findOne({
+            "_id": this._id
+        })._id;
         const site = "http://thegradlist.herokuapp.com/posts/";
         const path = site.concat(id);
         return {
             url: path,
             title: this.title,
-            author: Meteor.users.findOne({"_id": this.owner}).username
+            author: Meteor.users.findOne({
+                "_id": this.owner
+            }).username
         };
     },
 
@@ -127,16 +149,30 @@ Template.postItem.events({
     },
 
     'click .fork': function() {
+        sAlert.error('Fork Success', {
+            effect: 'slide',
+            position: 'bottom-right',
+            timeout: '3000',
+            onRouteClose: false,
+            stack: false,
+            offset: '80px',
+        });
         Meteor.call("forkPost", this._id);
     },
 
     'submit .newComment': function(event) {
         event.preventDefault();
         const text = event.target.comment.value;
-        const commentId = Comments.insert({text: text, createdAt: new Date(), owner: Meteor.userId()});
+        const commentId = Comments.insert({
+            text: text,
+            createdAt: new Date(),
+            owner: Meteor.userId()
+        });
         Meteor.call("addCommentToPost", this._id, commentId);
         event.target.comment.value = "";
     }
 });
 
-SocialButtons.config({via: '@thegradlist'});
+SocialButtons.config({
+    via: '@thegradlist'
+});
