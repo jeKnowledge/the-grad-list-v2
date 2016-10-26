@@ -24,7 +24,9 @@
 
           <li>
             <form class="form-control navbar-search pull-right" role="search">
-              {{> EasySearch.Input indexes=indexes attributes=inputAttributes }} {{#EasySearch.IfInputEmpty indexes=indexes }} {{else}}
+              {{> EasySearch.Input indexes=indexes attributes=inputAttributes }}
+              {{#EasySearch.IfInputEmpty indexes=indexes }}
+              {{else}}
               <div class="content-list" id="list">
                 <ul class="drop-list">
                   {{#EasySearch.Each index=usersIndex}}
@@ -45,6 +47,16 @@
                   </li>
                   {{/EasySearch.Each}}
                 </ul>
+                {{#EasySearch.IfNoResults index=usersIndex}}
+                  <p>
+                    No Users found
+                  </p>
+                {{/EasySearch.IfNoResults}}
+                {{#EasySearch.IfNoResults index=tagsIndex}}
+                  <p>
+                    No Tags found
+                  </p>
+                {{/EasySearch.IfNoResults}}
               </div>
               {{/EasySearch.IfInputEmpty}}
             </form>
