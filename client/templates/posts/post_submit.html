@@ -9,6 +9,10 @@
           <input name="image" multiple class="myFileInput" type="file" style="line-height: 1.0; font-size: 0.8em;"/>
         </span>
       </div>
+
+      {{#if fileIsUploaded}}
+        <img src="{{fileURL fileSrc}}" alt="" style="max-width: 20%" />
+      {{/if}}
     </div>
     <input type="submit" value="Submit" class="buttons-style-editProfile btn btn-primary" />
   </form>

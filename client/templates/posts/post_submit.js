@@ -1,5 +1,9 @@
-import {Template} from 'meteor/templating';
-import {ReactiveVar} from 'meteor/reactive-var';
+import {
+    Template
+} from 'meteor/templating';
+import {
+    ReactiveVar
+} from 'meteor/reactive-var';
 
 import './post_submit.html';
 
@@ -33,7 +37,9 @@ Template.postSubmit.events({
             for (i = 0; i < tags.length; i++) {
                 const TagExist = Tags.find({
                     title: tags[i]
-                }, {limit: 1}).count() > 0;
+                }, {
+                    limit: 1
+                }).count() > 0;
                 if (TagExist === false) {
                     const tag = {
                         title: tags[i],
@@ -83,12 +89,26 @@ Template.postSubmit.events({
             });
             upload.start();
         }
+        Session.set("uploadStatus", "uploaded");
     }
 });
 
 Template.postSubmit.helpers({
     currentUpload: function() {
         return Template.instance().currentUpload.get();
+    },
+
+    fileIsUploaded: function() {
+        if (Session.get("uploadStatus") == "uploaded") {
+            return true;
+        }
+        return false;
+    },
+
+    fileSrc: function() {
+        return Images.collection.findOne({
+            "_id": Session.get("picture")
+        });
     }
 });
 
