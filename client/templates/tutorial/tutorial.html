@@ -1,0 +1,28 @@
+<template name="tutorial">
+  {{#unless step1}} {{#unless step2}} {{#unless step3}}
+    <h1>Welcome to The Grad List</h1>
+    <p>
+      This is where you share your goals before you graduate. You can check other people's goals and get inspired!
+      Let's get started.
+    </p>
+    <button type="button" name="button" id="step1" class="buttons-style btn-primary">
+      Next
+    </button>
+  {{/unless}} {{/unless}} {{/unless}}
+  {{#if step1}}
+    <p>It's time to submit a post!</p>
+    {{> postSubmit}}
+    <button type="button" name="button" id="step2" class="buttons-style btn-primary">
+      Next
+    </button>
+  {{/if}}
+  {{#if step2}}
+    <p>Now share it on Facebook!</p>
+    {{#each posts}} {{> postItem}} {{/each}}
+    <button type="button" name="button" id="step3" class="buttons-style btn-primary">Complete tutorial</button>
+  {{/if}}
+  {{#if step3}}
+    <p>It's time to visit you profile</p>
+    <button type="button" name="button" id="complete-tutorial" class="buttons-style btn-primary">Complete tutorial</button>
+  {{/if}}
+</template>

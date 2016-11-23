@@ -1,12 +1,11 @@
 <template name="layout">
-  <div style="
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; ">
+  {{#if checkFirstTimeLoggingIn}}
     {{> header}}
-    <div id="main">
-      {{> yield}}
-    </div>
-    {{> footer}}
+  {{else}}
+    {{> headerTutorial}}
+  {{/if}}
+  <div id="main">
+    {{> yield}}
   </div>
+  {{> footer}}
 </template>

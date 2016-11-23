@@ -58,10 +58,6 @@ Template.postItem.helpers({
         }
     },
 
-    isNotOwner: function() {
-        return this.owner !== Meteor.userId();
-    },
-
     ownerUsername: function() {
         return Meteor.users.findOne({
             "_id": this.owner
@@ -174,5 +170,5 @@ Template.postItem.events({
 });
 
 SocialButtons.config({
-    via: '@thegradlist'
+    via: '@thegradlist',
 });
