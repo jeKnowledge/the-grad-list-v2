@@ -51,7 +51,20 @@ Template.postSubmit.events({
                     Meteor.call("increment_tag", tag_name);
                 }
             }
-            Router.go('postPage', post);
+            if (Meteor.userId().tutorial === true) {
+                Router.go('postPage', post);
+            }
+            else { // In case user is in the Tutorial
+                event.preventDefault();
+                sAlert.error('Nice! Go on', {
+                    effect: 'slide',
+                    position: 'bottom-right',
+                    timeout: 'none',
+                    onRouteClose: false,
+                    stack: false,
+                    offset: '80px'
+                });
+            }
         } else {
             event.preventDefault();
             sAlert.error('Post title must contain at least one alphanumeric character', {

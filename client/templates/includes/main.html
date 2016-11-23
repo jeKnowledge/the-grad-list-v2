@@ -10,7 +10,11 @@
 <template name="main">
   {{> sAlert}}
   {{#if currentUser}}
-    {{> home}}
+    {{#if checkFirstTimeLoggingIn}}
+      {{> home}}
+    {{else}}
+      {{> tutorial}}
+    {{/if}}
   {{else}}
     {{> authentication}}
   {{/if}}

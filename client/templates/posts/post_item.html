@@ -45,9 +45,9 @@
                 {{/if}}
                 {{> social_buttons url=shareUrl text=title}}
               {{/if}}
-              {{#if isNotOwner}}
+              {{#unless isOwner}}
                 <button class="buttons-style btn btn-primary fork">Fork</button>
-              {{/if}}
+              {{/unless}}
             </li>
           </ul>
           <form class="newComment">
