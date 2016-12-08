@@ -135,8 +135,8 @@ Template.userPosts.helpers({
         if (Meteor.users.findOne({
                 "_id": Meteor.userId()
             }).tutorial === false) {
-            Session.set("step4", true);
-            Session.set("step3", false);
+            Session.setPersistent("step4", true);
+            Session.setPersistent("step3", false);
             sAlert.error('This is your profile. Here you can see your posts and edit your profile. Go to My Book now', {
                 effect: 'slide',
                 position: 'bottom-right',
