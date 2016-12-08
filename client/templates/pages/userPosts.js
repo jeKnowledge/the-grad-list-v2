@@ -1,3 +1,6 @@
+let step3 = false;
+let step4 = false;
+
 Template.userPosts.helpers({
     userExists: function() {
         var result = Meteor.users.findOne({
@@ -15,11 +18,15 @@ Template.userPosts.helpers({
     },
 
     owner: function() {
-        return Meteor.users.findOne({"_id": this._id})._id !== Meteor.userId();
+        return Meteor.users.findOne({
+            "_id": this._id
+        })._id !== Meteor.userId();
     },
 
     checkFollowing: function() {
-        var a = Meteor.users.findOne({"_id": this._id}).followed;
+        var a = Meteor.users.findOne({
+            "_id": this._id
+        }).followed;
         var obj = Meteor.userId();
         for (var i = 0; i < a.length; i++) {
             if (a[i] === obj) {
@@ -40,12 +47,18 @@ Template.userPosts.helpers({
     },
 
     image: function() {
-        var image_id = Meteor.users.findOne({"_id": this._id}).image;
-        return Images.collection.findOne({"_id": image_id});
+        var image_id = Meteor.users.findOne({
+            "_id": this._id
+        }).image;
+        return Images.collection.findOne({
+            "_id": image_id
+        });
     },
 
     hasProfilePicture: function() {
-        if (Meteor.users.findOne({"_id": this._id}).image == 'grad.png') {
+        if (Meteor.users.findOne({
+                "_id": this._id
+            }).image == 'grad.png') {
             return false;
         } else {
             return true;
@@ -53,48 +66,87 @@ Template.userPosts.helpers({
     },
 
     srcProfilePicture: function() {
-        if (Meteor.users.findOne({"_id": this._id}).facebook_login === false) {
+        if (Meteor.users.findOne({
+                "_id": this._id
+            }).facebook_login === false) {
             return "/grad.png";
         } else {
-            return "http://graph.facebook.com/" + Meteor.users.findOne({"_id": this._id}).services.facebook.id + "/picture/?type=large";
+            return "http://graph.facebook.com/" + Meteor.users.findOne({
+                "_id": this._id
+            }).services.facebook.id + "/picture/?type=large";
         }
     },
 
     getUsername: function() {
-        return Meteor.users.findOne({"_id": this._id}).username;
+        return Meteor.users.findOne({
+            "_id": this._id
+        }).username;
     },
 
     following: function() {
-        return Meteor.users.findOne({"_id": this._id}).follows.length;
+        return Meteor.users.findOne({
+            "_id": this._id
+        }).follows.length;
     },
 
     followers: function() {
-        return Meteor.users.findOne({"_id": this._id}).followed.length;
+        return Meteor.users.findOne({
+            "_id": this._id
+        }).followed.length;
     },
 
     bio: function() {
-        if (Meteor.users.findOne({"_id": this._id}).bio != '[object Object]')
-            return Meteor.users.findOne({"_id": this._id}).bio;
+        if (Meteor.users.findOne({
+                "_id": this._id
+            }).bio != '[object Object]')
+            return Meteor.users.findOne({
+                "_id": this._id
+            }).bio;
         else {
             return '';
         }
     },
 
     university: function() {
-        if (Meteor.users.findOne({"_id": this._id}).university != '[object Object]')
-            return Meteor.users.findOne({"_id": this._id}).university;
+        if (Meteor.users.findOne({
+                "_id": this._id
+            }).university != '[object Object]')
+            return Meteor.users.findOne({
+                "_id": this._id
+            }).university;
         else {
             return '';
         }
     },
 
     country: function() {
-        if (Meteor.users.findOne({"_id": this._id}).country != '[object Object]')
-            return Meteor.users.findOne({"_id": this._id}).country;
+        if (Meteor.users.findOne({
+                "_id": this._id
+            }).country != '[object Object]')
+            return Meteor.users.findOne({
+                "_id": this._id
+            }).country;
         else {
             return '';
         }
-    }
+    },
+
+    checkFirstTimeLoggingIn: function() {
+        if (Meteor.users.findOne({
+                "_id": Meteor.userId()
+            }).tutorial === false) {
+            Session.set("step4", true);
+            Session.set("step3", false);
+            sAlert.error('This is your profile. Here you can see your posts and edit your profile. Go to My Book now', {
+                effect: 'slide',
+                position: 'bottom-right',
+                timeout: '10000',
+                onRouteClose: false,
+                stack: false,
+                offset: '80px',
+            });
+        }
+    },
 });
 
 Template.userPosts.events({

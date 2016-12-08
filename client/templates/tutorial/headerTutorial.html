@@ -1,33 +1,36 @@
 <template name="headerTutorial">
+  {{> sAlert}}
   {{#if currentUser}}
   <div class="container-fluid header-style">
-
     <nav class="navbar navbar-fixed-top navbar-dark bg-faded header-style" style="margin-bottom: 0;">
-
       <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#nav-content">
         &#9776;
       </button>
-
       <div class="collapse navbar-toggleable-xs" id="nav-content">
         <a class="navbar-brand" href="/">The Grad List</a>
         <ul class="nav navbar-nav">
-
           <li class="nav-item">
-            <a class="nav-link" id="ignore">{{getUsername}}</a>
+            {{#if step3}}
+              <a class="nav-link blink" href="/user/{{getUsername}}" id="profile-alert">{{getUsername}}</a>
+            {{else}}
+              <a class="nav-link" id="ignore">{{getUsername}}</a>
+            {{/if}}
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="ignore">my book</a>
+            {{#if step4}}
+              <a class="nav-link blink" href="/Book/{{getUsername}}" id="my-book-alert">My Book</a>
+            {{else}}
+              <a class="nav-link" id="ignore">My Book</a>
+            {{/if}}
           </li>
           <li class="nav-item">
             <a class="nav-link" id="logout">Logout</a>
           </li>
-
           <li>
             <form class="form-control navbar-search pull-right" role="search">
-              
+              {{> EasySearch.Input indexes=indexes attributes=inputAttributes }}
             </form>
           </li>
-
         </ul>
       </div>
     </nav>

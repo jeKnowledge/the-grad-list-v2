@@ -63,6 +63,7 @@
     <div class="user-posts">
       {{#each postsByUser}} {{> postItem}} {{/each}}
     </div>
+    {{checkFirstTimeLoggingIn}}
   {{/if}}
   {{#unless userExists}}
     {{> notFound}}

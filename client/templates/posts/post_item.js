@@ -141,7 +141,19 @@ Template.postItem.events({
     },
 
     'click .delete': function() {
-        Meteor.call("deletePost", this._id);
+        if (Meteor.userId().tutorial === true) {
+            Meteor.call("deletePost", this._id);
+        }
+        else {
+            sAlert.error('You are not allowed to do this yet!', {
+                effect: 'slide',
+                position: 'bottom-right',
+                timeout: '3000',
+                onRouteClose: false,
+                stack: false,
+                offset: '80px',
+            });
+        }
     },
 
     'click .fork': function() {
@@ -154,6 +166,23 @@ Template.postItem.events({
             offset: '80px',
         });
         Meteor.call("forkPost", this._id);
+    },
+
+    'click .complete': function() {
+        if (Meteor.userId().tutorial) {
+            let url = "/completed/";
+            Router.go(url.concat(this._id));
+        }
+        else {
+            sAlert.error('You are not allowed to do this yet!', {
+                effect: 'slide',
+                position: 'bottom-right',
+                timeout: '3000',
+                onRouteClose: false,
+                stack: false,
+                offset: '80px',
+            });
+        }
     },
 
     'submit .newComment': function(event) {
