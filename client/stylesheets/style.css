@@ -122,7 +122,8 @@ abbr[title], abbr[data-original-title] {
   max-height: 100%;
   max-width: 100%;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  border-radius: 7px; }
 
 .followers-following {
   width: 43%;
@@ -180,7 +181,11 @@ abbr[title], abbr[data-original-title] {
   #suggestions a {
     color: #75718B; }
   #suggestions a:hover {
-    text-decoration: line-through; }
+    text-decoration: underline; }
+
+.profile-pic-search {
+  max-width: 40px;
+  max-height: 40px; }
 
 .header-style {
   background-color: #211A47;
@@ -667,6 +672,9 @@ input[type="text"] {
 
   .navbar-search {
     width: 20%; } }
+.profile-pic {
+  border-radius: 4px; }
+
 @media (max-width: 600px) {
   #main {
     margin-top: 14%; }

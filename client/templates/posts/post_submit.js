@@ -51,7 +51,7 @@ Template.postSubmit.events({
                     Meteor.call("increment_tag", tag_name);
                 }
             }
-            if (Meteor.userId().tutorial === true) {
+            if (Meteor.user().tutorial === true) {
                 Router.go('postPage', post);
             }
             else { // In case user is in the Tutorial

@@ -1,3 +1,5 @@
+// sass --watch client/stylesheets
+
 html, body {
   width: 100%;
   min-height: 100vh;
@@ -156,6 +158,7 @@ abbr[title], abbr[data-original-title] {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 7px;
 }
 
 .followers-following {
@@ -234,8 +237,13 @@ abbr[title], abbr[data-original-title] {
   }
 
   a:hover {
-    text-decoration: line-through;
+    text-decoration: underline;;
   }
+}
+
+.profile-pic-search {
+  max-width: 40px;
+  max-height: 40px;
 }
 
 .header-style {
@@ -882,6 +890,10 @@ input[type="text"] {
     width: 20%;
   }
 
+}
+
+.profile-pic {
+  border-radius: 4px;
 }
 
 @media (max-width: 600px) {
