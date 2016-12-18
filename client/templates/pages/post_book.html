@@ -8,4 +8,7 @@
   {{#unless userExists}}
     {{> notFound}}
   {{/unless}}
+  {{#unless checkFirstTimeLoggingIn}}
+    <button type="button" name="button" id="complete-tutorial" class="btn btn-primary btn-lg" style="background-color: #75718B; margin-left: 40%">Complete tutorial</button>
+  {{/unless}}
 </template>

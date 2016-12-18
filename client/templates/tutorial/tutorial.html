@@ -1,28 +1,52 @@
 <template name="tutorial">
   {{#unless step1}} {{#unless step2}} {{#unless step3}}
-    <h1>Welcome to The Grad List</h1>
-    <p>
-      This is where you share your goals before you graduate. You can check other people's goals and get inspired!
-      Let's get started.
-    </p>
-    <button type="button" name="button" id="step1" class="buttons-style btn-primary">
-      Next
-    </button>
+  <div class="tutorial-intro">
+    <h1 class="tutorial-intro-title">Welcome to The Grad List</h1>
+    <div class="tutorial-intro-div-text">
+      <p class="tutorial-intro-text">
+        This is where you share your goals before you graduate. You can check other people's goals and get inspired!
+        Let's get started.
+      </p>
+  </div>
+  </div>
+  <i class="fa fa-chevron-right fa-5x tutorial-arrow-right"  id="step1" aria-hidden="true"></i>
+  {{#each examplePosts}}
+    {{> postItem}}
+  {{/each}}
   {{/unless}} {{/unless}} {{/unless}}
   {{#if step1}}
-    <p>It's time to submit a post!</p>
-    {{> postSubmit}}
-    <button type="button" name="button" id="step2" class="buttons-style btn-primary">
-      Next
-    </button>
+  <div class="tutorial-intro">
+    <h1 class="tutorial-intro-title">Welcome to The Grad List</h1>
+    <div class="tutorial-intro-div-text">
+      <p class="tutorial-intro-text">It's time to submit a post!<br>Share something that you would like to do before you graduate</p>
+    </div>
+  </div>
+  <i class="fa fa-chevron-right fa-5x tutorial-arrow-right" id="step2" aria-hidden="true"></i>
+  <i class="fa fa-chevron-left fa-5x tutorial-arrow-left" id="step2-left" aria-hidden="true"></i>
+  {{> postSubmit}}
   {{/if}}
   {{#if step2}}
-    <p>Now share it on Facebook!</p>
-    {{#each posts}} {{> postItem}} {{/each}}
-    <button type="button" name="button" id="step3" class="buttons-style btn-primary">Complete tutorial</button>
+  <div class="tutorial-intro">
+    <h1 class="tutorial-intro-title">Welcome to The Grad List</h1>
+    <div class="tutorial-intro-div-text">
+      <p class="tutorial-intro-text">Now share it on Facebook!<br><br></p>
+    </div>
+  </div>
+  <i class="fa fa-chevron-right fa-5x tutorial-arrow-right" id="step3" aria-hidden="true"></i>
+  <i class="fa fa-chevron-left fa-5x tutorial-arrow-left" id="step3-left" aria-hidden="true"></i>
+  {{#each posts}} {{> postItem}} {{/each}}
   {{/if}}
   {{#if step3}}
-    <p>It's time to visit you profile</p>
-    <button type="button" name="button" id="complete-tutorial" class="buttons-style btn-primary">Complete tutorial</button>
+  <div class="tutorial-intro">
+    <h1 class="tutorial-intro-title">Welcome to The Grad List</h1>
+    <div class="tutorial-intro-div-text">
+      <p class="tutorial-intro-text">It's time to visit you profile<br><br></p>
+    </div>
+  </div>
+    {{#if hasMadePost}}
+      <i class="fa fa-chevron-left fa-5x tutorial-arrow-left" id="step4-left" aria-hidden="true"></i>
+    {{else}}
+      <i class="fa fa-chevron-left fa-5x tutorial-arrow-left" id="step4-left-special" aria-hidden="true"></i>
+    {{/if}}
   {{/if}}
 </template>

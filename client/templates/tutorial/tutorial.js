@@ -1,32 +1,65 @@
 let step1 = false;
 let step2 = false;
 let step3 = false;
+let step4 = false;
 
 Template.tutorial.events({
-    'click #complete-tutorial': function(event) {
-        console.log("io");
-        Meteor.call("completeTutorial");
-    },
-
     'click #step1': function(event) {
-        Session.set("step1", true);
+        Session.setPersistent("step1", true);
     },
 
     'click #step2': function(event) {
         let check = userHasPosts();
         if (check === true) {
-            Session.set("step2", true);
-            Session.set("step1", false);
+            Session.setPersistent("step2", true);
+            Session.setPersistent("step1", false);
         }
         else {
             // If user doesn't submit post, automatically skips 'share' step
-            Session.set("step3", true);
-            Session.set("step1", false);
+            Session.setPersistent("step3", true);
+            Session.setPersistent("step1", false);
         }
+    },
+
+    'click #step2-left': function(event) {
+        Session.setPersistent("step2", false);
+        Session.setPersistent("step1", false);
+    },
+
+    'click #step3': function(event) {
+        Session.setPersistent("step3", true);
+        Session.setPersistent("step2", false);
+    },
+
+    'click #step3-left': function(event) {
+        Session.setPersistent("step1", true);
+        Session.setPersistent("step2", false);
+    },
+
+    'click #step4': function(event) {
+        Session.setPersistent("step4", true);
+        Session.setPersistent("step3", false);
+    },
+
+    'click #step4-left': function(event) {
+        Session.setPersistent("step2", true);
+        Session.setPersistent("step3", false);
+    },
+
+    'click #step4-left-special': function(event) {
+        Session.setPersistent("step1", true);
+        Session.setPersistent("step2", false);
+        Session.setPersistent("step3", false);
     },
 });
 
 Template.tutorial.helpers({
+    examplePosts: function() {
+        return Posts.find({}, {
+            limit: 3
+        });
+    },
+
     step1: function() {
         return Session.get("step1");
     },
@@ -39,12 +72,19 @@ Template.tutorial.helpers({
         return Session.get("step3");
     },
 
+    step4: function() {
+        return Session.get("step4");
+    },
+
     posts: function() {
         return Posts.find({
             owner: Meteor.userId()
         });
     },
 
+    hasMadePost: function() {
+        return userHasPosts();
+    },
 });
 
 function userHasPosts() {
@@ -57,6 +97,5 @@ function userHasPosts() {
             check = true;
         }
     });
-    console.log(check);
     return check;
 }
