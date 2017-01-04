@@ -1,5 +1,9 @@
-import {Template} from 'meteor/templating';
-import {ReactiveVar} from 'meteor/reactive-var';
+import {
+    Template
+} from 'meteor/templating';
+import {
+    ReactiveVar
+} from 'meteor/reactive-var';
 
 import './post_complete.html';
 
@@ -23,10 +27,6 @@ Template.postComplete.events({
         Posts.update({
             _id: this._id
         }, {
-            $set: {
-                completed: true,
-                date: new Date()
-            },
             $push: {
                 imagesOfCompletion: Session.get("picture") || 0
             }

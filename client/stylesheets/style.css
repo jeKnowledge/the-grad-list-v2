@@ -67,10 +67,6 @@ abbr[title], abbr[data-original-title] {
 .profile-pic {
   width: 100%; }
 
-.profile-pic-search {
-  width: 20%;
-}
-
 .post-profile-pic {
   width: 20%; }
 
@@ -128,6 +124,12 @@ abbr[title], abbr[data-original-title] {
 .done {
   color: #59556A;
   font-size: 1.67em;
+  text-align: left; }
+
+.done-subtitle {
+  color: #59556A;
+  font-size: 1em;
+  margin-top: 2%;
   text-align: left; }
 
 #suggestions {
@@ -302,7 +304,6 @@ input[type="text"] {
   width: 100%;
   text-align: center;
   margin-top: 4%;
-  align-self: flex-end;
   /*position:fixed;
   height:30px;
   bottom:0;
@@ -633,13 +634,9 @@ input[type="text"] {
   #main {
     margin-top: 14%; }
 
-    .profile-pic-search {
-      width: 10%;
-    }
-
   .content-list {
-    margin-left: -2%;
-    width: 100%; }
+    margin-left: -3%;
+    width: 91.57%; }
 
   #suggestions {
     width: 87%; }

@@ -1,3 +1,5 @@
+// sass --watch client/stylesheets
+
 html, body {
   width: 100%;
   min-height: 100vh;
@@ -161,6 +163,13 @@ abbr[title], abbr[data-original-title] {
 .done {
   color: #59556A;
   font-size: 1.67em;
+  text-align: left;
+}
+
+.done-subtitle {
+  color: #59556A;
+  font-size: 1em;
+  margin-top: 2%;
   text-align: left;
 }
 

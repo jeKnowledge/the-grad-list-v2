@@ -48,10 +48,6 @@ Template.postItem.helpers({
         return this.hasOwnProperty("forkedFrom");
     },
 
-    forkedFrom: function() {
-        return this.forkedFrom;
-    },
-
     isLoggedIn: function() {
         if (Meteor.user()) {
             return true;
@@ -126,10 +122,6 @@ Template.postItem.helpers({
         };
     },
 
-    title: function() {
-        return this.title;
-    },
-
     shareUrl: function() {
         return "http://thegradlist.herokuapp.com/posts/" + this._id;
     }
@@ -146,6 +138,10 @@ Template.postItem.events({
 
     'click .delete': function() {
         Meteor.call("deletePost", this._id);
+    },
+
+    'click .complete': function() {
+        Meteor.call("completePost", this._id);
     },
 
     'click .fork': function() {
