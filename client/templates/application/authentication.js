@@ -65,10 +65,8 @@ Template.authentication.events({
 
     'click #reset-password': function(event) {
         currentTab = 'sign_up';
-    }
-});
+    },
 
-Template.authentication.events({
     resetPassword: function() {
         return Session.get('resetPassword');
     }

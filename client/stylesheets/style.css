@@ -2,6 +2,49 @@ html, body {
   width: 100%;
   min-height: 100vh; }
 
+.tutorial-intro {
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  height: 100%; }
+
+.tutorial-intro-title {
+  text-align: center;
+  font-family: Montserrat; }
+
+.tutorial-intro-div-text {
+  margin-top: 5%; }
+
+.tutorial-intro-text {
+  font-family: Helvetica;
+  font-size: 1em; }
+
+.tutorial-arrows {
+  width: 100%; }
+
+.tutorial-arrow-right {
+  float: right;
+  margin-right: 10%;
+  transition: transform .2s ease-out; }
+
+.tutorial-arrow-right:hover {
+  transform: translate(25px); }
+
+.tutorial-arrow-left {
+  float: left;
+  margin-left: 10%;
+  transition: transform .2s ease-out; }
+
+.tutorial-arrow-left:hover {
+  transform: translate(-25px); }
+
+.blink {
+  animation: blinker 1s linear infinite; }
+
+@keyframes blinker {
+  50% {
+    opacity: 0; } }
 #follow-page {
   padding: 0;
   border: 0 solid white; }

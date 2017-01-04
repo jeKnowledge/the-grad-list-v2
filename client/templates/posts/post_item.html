@@ -1,4 +1,5 @@
 <template name="postItem">
+  {{> sAlert}}
   {{#if isLoggedIn}}
     <div class="post">
       <div class="post-content">
@@ -39,15 +40,13 @@
               {{#if isOwner}}
                 <button class="buttons-style btn-primary delete">Delete</button>
                 {{#if isNotCompleted}}
-                  <a href="/completed/{{_id}}">
-                    <button class="buttons-style btn-primary complete">Complete</button>
-                  </a>
+                  <button class="buttons-style btn-primary complete">Complete</button>
                 {{/if}}
                 {{> social_buttons url=shareUrl text=title}}
               {{/if}}
-              {{#if isNotOwner}}
+              {{#unless isOwner}}
                 <button class="buttons-style btn btn-primary fork">Fork</button>
-              {{/if}}
+              {{/unless}}
             </li>
           </ul>
           <form class="newComment">

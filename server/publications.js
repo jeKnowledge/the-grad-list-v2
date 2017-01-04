@@ -49,7 +49,8 @@ Meteor.publish("usersData", function() {
                 'picture': true,
                 'image': true,
                 'facebook_login': true,
-                'medals': true
+                'medals': true,
+                'tutorial': true
             }
         });
     } else {
@@ -61,6 +62,12 @@ Meteor.publish("files.images.all", function() {
     return Images.collection.find({});
 });
 
-ServiceConfiguration.configurations.remove({service: 'facebook'});
+ServiceConfiguration.configurations.remove({
+    service: 'facebook'
+});
 
-ServiceConfiguration.configurations.insert({service: 'facebook', appId: process.env.FACEBOOK_APP_ID, secret: process.env.FACEBOOK_SECRET});
+ServiceConfiguration.configurations.insert({
+    service: 'facebook',
+    appId: process.env.FACEBOOK_APP_ID,
+    secret: process.env.FACEBOOK_SECRET
+});

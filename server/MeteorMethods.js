@@ -9,6 +9,14 @@ Meteor.methods({
         });
     },
 
+    completeTutorial: function() {
+        Meteor.users.update(Meteor.userId(), {
+            $set: {
+                tutorial: true
+            }
+        });
+    },
+
     findEmailByUsername: function(username) {
         return Meteor.users.findOne({
             "username": username
@@ -232,7 +240,8 @@ Meteor.methods({
             $inc: {
                 number: 1
             }
-        });
+        }); <<
+        << << < HEAD
     },
 
     sendEmail: function(to, from, subject, text) {
@@ -247,6 +256,8 @@ Meteor.methods({
             from: from,
             subject: subject,
             text: text
-        });
+        }); ===
+        === = >>>
+        >>> > master
     }
 });

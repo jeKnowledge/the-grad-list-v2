@@ -1,5 +1,4 @@
 Template.home.helpers({
-
     userHasNoFollowers: function() {
         if (Meteor.user().follows.length === 0) {
             return true;
