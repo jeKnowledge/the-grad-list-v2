@@ -240,8 +240,7 @@ Meteor.methods({
             $inc: {
                 number: 1
             }
-        }); <<
-        << << < HEAD
+        });
     },
 
     sendEmail: function(to, from, subject, text) {
@@ -256,8 +255,6 @@ Meteor.methods({
             from: from,
             subject: subject,
             text: text
-        }); ===
-        === = >>>
-        >>> > master
+        });
     }
 });
