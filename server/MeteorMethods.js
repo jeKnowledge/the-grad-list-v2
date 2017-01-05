@@ -23,6 +23,17 @@ Meteor.methods({
         }).emails[0].address;
     },
 
+    completePost: function(id) {
+        Posts.update({
+            _id: id
+        }, {
+            $set: {
+                completed: true,
+                date: new Date()
+            }
+        });
+    },
+
     defaultPicture: function() {
         var defaultPicture = 'grad.png';
         Meteor.users.update(Meteor.userId(), {
@@ -229,6 +240,21 @@ Meteor.methods({
             $inc: {
                 number: 1
             }
+        });
+    },
+
+    sendEmail: function(to, from, subject, text) {
+        check([
+            to, from, subject, text
+        ], [String]);
+        // Let other method calls from the same client start running,
+        // without waiting for the email sending to complete.
+        this.unblock();
+        Email.send({
+            to: to,
+            from: from,
+            subject: subject,
+            text: text
         });
     }
 });

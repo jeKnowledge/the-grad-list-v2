@@ -169,6 +169,12 @@ abbr[title], abbr[data-original-title] {
   font-size: 1.67em;
   text-align: left; }
 
+.done-subtitle {
+  color: #59556A;
+  font-size: 1em;
+  margin-top: 2%;
+  text-align: left; }
+
 #suggestions {
   width: 43%;
   color: #211A47;
