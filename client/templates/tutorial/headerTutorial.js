@@ -22,7 +22,6 @@ Template.headerTutorial.events({
     },
 
     'click #my-book-alert': function(event) {
-        console.log("oi");
         sAlert.error('Welcome to My Book! This is where you can view your completed goals.', {
             effect: 'slide',
             position: 'bottom-right',

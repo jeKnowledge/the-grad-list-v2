@@ -58,6 +58,21 @@ Meteor.methods({
         }
     },
 
+    doesEmailExist: function(name) {
+      var email_exists = Meteor.users.findOne({
+          "emails.address": name
+      }, {
+          fields: {
+              "_id": 1
+          }
+      });
+      if (email_exists) {
+          return true;
+      } else {
+          return false;
+      }
+    },
+
     deletePost: function(id) {
         if (Meteor.userId() == Posts.findOne({
                 "_id": id
@@ -204,14 +219,17 @@ Meteor.methods({
         });
     },
 
-    editProfile: function(s_bio, s_country, s_university, s_pic) {
+    editProfile: function(s_bio, s_country, s_university, s_email, s_username, id, pass) {
         Meteor.users.update(Meteor.userId(), {
             $set: {
                 bio: s_bio,
                 country: s_country,
-                university: s_university
+                university: s_university,
+                'emails.0.address': s_email,
+                username: s_username
             }
         });
+        Accounts.setPassword(id, pass, {logout: false});
     },
 
     add_image: function(id) {

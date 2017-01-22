@@ -1,17 +1,78 @@
 <template name='editProfile'>
-  <form class="main form">
-    <div class="form-group">
-      <input name="bio" type="text" value="" placeholder="Bio" class="form-control" />
-      <input name="country" type="text" value="" placeholder="Country" class="form-control" />
-      <input name="university" type="text" value="" placeholder="University" class="form-control" />
-    </div>
-    {{#if notFacebookLogin}}
-      <p class="" style="margin-left: 2.3%; color: #8F8E8E;">Profile photo
-        <span class="btn btn-default btn-file">
-  				<input type="file" multiple class="myFileInput" style="line-height: 1.0; font-size: 0.8em;"/>
-  			</span>
-      </p>
-    {{/if}}
-    <input type="submit" value="Submit" class="buttons-style-editProfile btn btn-primary" />
-  </form>
+  {{>sAlert}}
+  <div class="container">
+    <h1 style="font-family: Helvetica; color: #59556A">Edit Profile</h1>
+  	<hr>
+	   <div class="row">
+      <div class="col-md-3">
+        <div class="text-center">
+          {{#if hasProfilePicture}}
+            <img src="{{fileURL image}}" alt="{{image.name}}" class="profile-pic img-rounded" style="max-width: 200px;"/>
+          {{/if}}
+          {{#unless hasProfilePicture}}
+            <img src="{{srcProfilePicture}}" alt="" class="profile-pic img-rounded" style="max-width: 200px;"/>
+          {{/unless}}
+          {{#if notFacebookLogin}}
+            <h6 style="margin-top: 10px; font-family: Helvetica;">Upload a new photo</h6>
+            <input type="file" multiple class="myFileInput" style="line-height: 1.0; font-size: 0.8em; margin-bottom: 20px;"/>
+          {{/if}}
+        </div>
+      </div>
+
+      <div class="col-md-9 personal-info">
+        <h3 style="margin-left: 13px; font-family: Helvetica;">Personal info</h3>
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Bio</label>
+            <div class="col-lg-8">
+              <input name="bio" type="text" value={{bio}} class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Country</label>
+            <div class="col-lg-8">
+              <input name="country" type="text" value={{country}} class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">University</label>
+            <div class="col-lg-8">
+              <input name="university" type="text" value={{university}} class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Email</label>
+            <div class="col-lg-8">
+              <input name="email" class="form-control" type="text" value="{{email}}">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Username</label>
+            <div class="col-md-8">
+              <input name="username" class="form-control" type="text" value="{{username}}">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Password</label>
+            <div class="col-md-8">
+              <input name="password" class="form-control" type="password" value="11111122333">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Confirm password</label>
+            <div class="col-md-8">
+              <input name="confirm-password" class="form-control" type="password" value="11111122333">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <input type="submit" class="buttons-style-editProfile btn btn-primary" value="Save Changes" style="margin-top: 15px;">
+              <span></span>
+            </div>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>
 </template>

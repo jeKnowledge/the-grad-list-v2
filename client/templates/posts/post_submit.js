@@ -51,10 +51,7 @@ Template.postSubmit.events({
                     Meteor.call("increment_tag", tag_name);
                 }
             }
-            if (Meteor.userId().tutorial === true) {
-                Router.go('postPage', post);
-            }
-            else { // In case user is in the Tutorial
+            if (Meteor.user().tutorial !== true) { // In case user is in the Tutorial
                 event.preventDefault();
                 sAlert.error('Nice! Go on', {
                     effect: 'slide',

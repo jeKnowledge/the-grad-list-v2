@@ -37,7 +37,7 @@ momentjs:moment
 cfs:gridfs
 vsivsi:file-collection
 ostrio:files
-email@1.1.17_1
+email
 shmck:meteor-social-buttons
 pauldowman:dotenv
 check@1.2.3
@@ -45,3 +45,5 @@ ejson@1.0.12
 shell-server
 simple:imgur
 u2622:persistent-session
+miro:mailchimp
+http

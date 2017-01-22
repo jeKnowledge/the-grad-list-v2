@@ -133,7 +133,7 @@ Template.postItem.events({
     },
 
     'click .delete': function() {
-        if (Meteor.userId().tutorial === true) {
+        if (Meteor.user().tutorial === true) {
             Meteor.call("deletePost", this._id);
         }
         else {
@@ -146,10 +146,6 @@ Template.postItem.events({
                 offset: '80px',
             });
         }
-    },
-
-    'click .complete': function() {
-        Meteor.call("completePost", this._id);
     },
 
     'click .fork': function() {
@@ -165,7 +161,8 @@ Template.postItem.events({
     },
 
     'click .complete': function() {
-        if (Meteor.userId().tutorial) {
+        if (Meteor.user().tutorial) {
+            Meteor.call("completePost", this._id);
             let url = "/completed/";
             Router.go(url.concat(this._id));
         }

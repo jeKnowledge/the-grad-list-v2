@@ -115,6 +115,11 @@ abbr[title], abbr[data-original-title] {
   margin-left: auto;
 }
 
+.edit-profile-div {
+  background-color: #75718B;
+  min-height: 35px;
+}
+
 .new-comment-feed {
   margin-bottom: 15px;
   margin-top: -10px;
@@ -250,6 +255,11 @@ abbr[title], abbr[data-original-title] {
 .header-style {
   background-color: #211A47;
   border-radius: 0;
+}
+
+.profile-pic-search {
+  max-width: 50px;
+  max-height: 50px;
 }
 
 .submit {
