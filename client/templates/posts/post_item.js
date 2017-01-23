@@ -120,6 +120,33 @@ Template.postItem.helpers({
 
     shareUrl: function() {
         return "http://thegradlist.herokuapp.com/posts/" + this._id;
+    },
+
+    showComments: function() {
+      return Session.get(this._id);
+    },
+
+    postPage: function() {
+      var url = decodeURIComponent(Router.current().location.get().path.split("/")[1]);
+      if (url == "posts") { // if is in postPage
+        return true;
+      }
+      return false;
+    },
+
+    comments: function() {
+        return Comments.find({
+            _id: {
+                $in: this.comments
+            }
+        });
+    },
+
+    ownerComment: function() {
+      if (this.owner == Meteor.userId()) {
+        return true;
+      }
+      return false;
     }
 });
 
@@ -176,6 +203,18 @@ Template.postItem.events({
                 offset: '80px',
             });
         }
+    },
+
+    'click .delete-comment': function() {
+        Meteor.call("deleteComment", this._id);
+    },
+
+    'click #show-comments': function() {
+      Session.set(this._id, true);
+    },
+
+    'click #hide-comments': function() {
+      Session.set(this._id, false);
     },
 
     'submit .newComment': function(event) {
