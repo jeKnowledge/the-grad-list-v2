@@ -2,15 +2,14 @@
   {{> postSubmit}} {{> feed}}
   <div id="suggestions">
     <h5>Users that you can follow</h5>
-    {{#if userHasNoFollowers}}
-      {{#each randomUsers}}
+      {{#each suggestions}}
+        {{#if hasProfilePicture}}
+          <img src="{{fileURL image}}" alt="{{image.name}}" class="profile-pic-search" />
+        {{/if}}
+        {{#unless hasProfilePicture}}
+          <img src="{{srcProfilePicture}}" alt="" class="profile-pic-search"/>
+        {{/unless}}
         <h5><a href="/user/{{username}}">{{username}}</a></h5>
       {{/each}}
-    {{/if}}
-    {{#unless userHasNoFollowers}}
-      {{#each friendsOfFriends}}
-        <h5><a href="/user/{{username}}">{{username}}</a></h5>
-      {{/each}}
-    {{/unless}}
   </div>
 </template>

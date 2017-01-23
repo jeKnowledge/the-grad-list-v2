@@ -8,6 +8,9 @@ Template.commentItem.helpers({
     },
 
     hasProfilePicture: function() {
+        console.log(Meteor.users.findOne({
+                "_id": this.owner
+            }).image);
         if (Meteor.users.findOne({
                 "_id": this.owner
             }).image == 'grad.png') {
@@ -27,6 +30,15 @@ Template.commentItem.helpers({
                 "_id": this.owner
             }).services.facebook.id + "/picture/?type=large";
         }
+    },
+
+    image: function() {
+        const image_id = Meteor.users.findOne({
+            "_id": this.owner
+        }).image;
+        return Images.collection.findOne({
+            "_id": image_id
+        });
     },
 });
 

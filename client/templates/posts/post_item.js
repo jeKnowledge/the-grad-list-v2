@@ -38,6 +38,15 @@ Template.postItem.helpers({
         }
     },
 
+    imageComment: function() {
+        const image_id = Meteor.users.findOne({
+            "_id": this.owner
+        }).image;
+        return Images.collection.findOne({
+            "_id": image_id
+        });
+    },
+
     imagesOfCompletionNotZero: function() {
         if (parseInt(this.imagesOfCompletion) !== 0) {
             return true;
