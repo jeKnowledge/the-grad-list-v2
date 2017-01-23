@@ -1,14 +1,28 @@
 <template name="commentItem">
   <div class="comment-item-post">
     <ul>
-      {{#if owner}}
-      <li>
-        <button class="delete2 btn-primary buttons-style">Remove</button>
-      </li>
-      {{/if}}
-      <li>{{text}}</li>
-      <li style="font-size: 0.83em;">
-        <br>by <a href="/user/{{ownerUsername}}">{{ownerUsername}}</a></li>
+      <div class="row">
+        {{#if owner}}
+        <li>
+          <button class="delete2 btn-primary buttons-style">Remove</button>
+        </li>
+        {{/if}}
+        <div class="col-md-2">
+          {{#if hasProfilePicture}}
+            <img src="{{fileURL image}}" alt="{{image.name}}" style="max-width:50px; max-height:50px; margin-left: 10px;" />
+          {{/if}}
+          {{#unless hasProfilePicture}}
+            <img src="{{srcProfilePicture}}" alt="" class="profile-pic" style="max-width:50px; max-height:50px; margin-left: 10px;"/>
+          {{/unless}}
+        </div>
+        <div class=".col-md-10">
+          <li style="font-size: 2em;">
+            <a href="/user/{{ownerUsername}}">{{ownerUsername}}</a>
+          </li>
+          <br>
+          <li style="font-size: 1.2em; margin-top:10%">{{text}}</li>
+        </div>
+      </div>
     </ul>
   </div>
 </template>

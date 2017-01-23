@@ -49,9 +49,31 @@
               {{/unless}}
             </li>
           </ul>
-          <form class="newComment">
-            <input name="comment" id="comment" type="text" value="" placeholder="Add a comment" class="form-control" />
-          </form>
+          {{#unless postPage}}
+            {{#unless showComments}}
+              <a href="#comments" role="tab" data-toggle="tab" class="show-comments-p" id="show-comments">Show comments</a>
+            {{/unless}}
+            {{#if showComments}}
+              <a href="#hide-comments" role="tab" data-toggle="tab" class="show-comments-p" id="hide-comments">Hide comments</a>
+              <div style="margin-top:5%">
+                {{#each comments}}
+                <div class="row" style="margin-top: 5%">
+                  <div class="col-md-10">
+                    <h5 class="comment-on-post"><a href="/user/{{ownerUsername}}">{{ownerUsername}}</a> said {{text}}</h5>
+                  </div>
+                  {{#if ownerComment}}
+                    <div class="col-md-2">
+                      <a href="" class="delete-comment" style="">&times;</a>
+                    </div>
+                  {{/if}}
+                </div>
+                {{/each}}
+                <form class="newComment">
+                  <input name="comment" id="comment" type="text" value="" placeholder="Add a comment" class="form-control" />
+                </form>
+              </div>
+            {{/if}}
+          {{/unless}}
         </div>
       </div>
     </div>

@@ -52,6 +52,7 @@ Template.postBook.events({
     'click #complete-tutorial': function(event) {
         Meteor.call("completeTutorial");
         Session.clear();
+        sAlert.closeAll();
         Router.go('/');
     },
 });

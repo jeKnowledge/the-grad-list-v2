@@ -89,6 +89,10 @@ abbr[title], abbr[data-original-title] {
   margin-right: auto;
   margin-left: auto; }
 
+.edit-profile-div {
+  background-color: #75718B;
+  min-height: 35px; }
+
 .new-comment-feed {
   margin-bottom: 15px;
   margin-top: -10px; }
@@ -99,6 +103,10 @@ abbr[title], abbr[data-original-title] {
   width: 100%; }
   .new-comment input[type="text"] {
     outline: 0; }
+
+.comment-on-post {
+  font-size: 0.8em;
+  font-weight: normal; }
 
 .form {
   width: 50%;
@@ -191,6 +199,10 @@ abbr[title], abbr[data-original-title] {
 .header-style {
   background-color: #211A47;
   border-radius: 0; }
+
+.profile-pic-search {
+  max-width: 50px;
+  max-height: 50px; }
 
 .submit a {
   color: white;
@@ -373,6 +385,15 @@ input[type="text"] {
 
 #spinner {
   height: 300px; }
+
+.show-comments-p {
+  font-size: 0.8em;
+  font-family: Helvetica;
+  float: right;
+  font-decoration: none; }
+
+.show-comments-p:hover {
+  color: #867CD3 !important; }
 
 .post:before, .post:after {
   content: "";

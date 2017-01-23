@@ -1,0 +1,26 @@
+{
+  "name": "the-grad-list-v2",
+  "version": "1.0.0",
+  "description": "A social platform to share goals before graduation",
+  "main": "index.js",
+  "dependencies": {
+    "bcrypt": "^1.0.1",
+    "dotenv": "^2.0.0",
+    "meteor-node-stubs": "^0.2.4",
+    "sendemail": "^2.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "meteor"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeKnowledge/the-grad-list-v2.git"
+  },
+  "author": "jeKnowledge",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeKnowledge/the-grad-list-v2/issues"
+  },
+  "homepage": "https://github.com/jeKnowledge/the-grad-list-v2#readme"
+}

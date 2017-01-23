@@ -50,7 +50,8 @@ Template.authentication.events({
 
     'click #forgot-password': function(event) {
         var name = $('#sign-in-tab').find('#username-input').val();
-        Meteor.call('findEmailByUsername', name, function(error, result) {
+        /*Meteor.call('findEmailByUsername', name, function(error, result) {
+          console.log(result);
             Accounts.forgotPassword({
                 email: result
             }, function(e, r) {
@@ -60,7 +61,7 @@ Template.authentication.events({
                     console.log("check you email");
                 }
             });
-        });
+        });*/
     },
 
     'click #reset-password': function(event) {
