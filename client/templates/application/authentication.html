@@ -35,8 +35,13 @@
               <p>
                 <input class="text-input form-control form-style" placeholder="Password" type="password" id="password-input" style="border: none;">
               </p>
-              <button id="forgot-password">
-                Forgot Password
+            </div>
+            <div role="tabpanel" class="tab-pane" id="forgot-password-tab">
+              <p>
+                <input class="text-input form-control form-style" placeholder="Email" type="text" id="email-input" style="border: none;">
+              </p>
+              <button class="buttons-style nav-link" id="forgot-password-send">
+                Send new password
               </button>
             </div>
             <div id="authentication-form-btns">
@@ -49,6 +54,9 @@
                 </li>
                 <li class="nav-item">
                   <a id="facebook-login" role="tab" data-toggle="tab" class="buttons-style nav-link" href="#facebook-login"> Login with Facebook</a>
+                </li>
+                <li class="nav-item">
+                  <a id="forgot-password-btn" role="tab" data-toggle="tab" class="buttons-style nav-link" href="#forgot-password-tab">Forgot password</a>
                 </li>
               </ul>
             </div>

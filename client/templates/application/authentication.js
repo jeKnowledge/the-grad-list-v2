@@ -15,6 +15,10 @@ Template.authentication.events({
         currentTab = 'sign_up';
     },
 
+    'click #forgot-password-btn': function(event) {
+        currentTab = 'forgot-password';
+    },
+
     'click #facebook-login': function(event) {
         Meteor.loginWithFacebook({}, function(err) {
             if (err) {
@@ -29,6 +33,25 @@ Template.authentication.events({
             }
             Meteor.call("loginFacebook", Meteor.userId());
         });
+    },
+
+    'click #forgot-password-send': function(event) {
+        if (currentTab == 'forgot-password') {
+          const newPassword = Random.id([10]);
+          const email = $('#forgot-password-tab').find('#email-input').val();
+          var options = {};
+          options.email = email;
+          Meteor.call('changePasswordd', email, newPassword);
+          Meteor.call('sendEmail', email, "teresa@sandboxc4fccdd0623645e2b951ed8b6d201cd5.mailgun.org", "New password on The Grad List", "New password: " + newPassword);
+          sAlert.error('An email has been sent with a new password. If you wish to change it go to Settings in you Profile', {
+              effect: 'slide',
+              position: 'bottom-right',
+              timeout: '3000',
+              onRouteClose: false,
+              stack: false,
+              offset: '80px',
+          });
+        }
     },
 
     'submit form': function(event) {
@@ -47,30 +70,6 @@ Template.authentication.events({
         }
         currentTab = 'sign_up';
     },
-
-    'click #forgot-password': function(event) {
-        var name = $('#sign-in-tab').find('#username-input').val();
-        /*Meteor.call('findEmailByUsername', name, function(error, result) {
-          console.log(result);
-            Accounts.forgotPassword({
-                email: result
-            }, function(e, r) {
-                if (e) {
-                    console.log(e.reason);
-                } else {
-                    console.log("check you email");
-                }
-            });
-        });*/
-    },
-
-    'click #reset-password': function(event) {
-        currentTab = 'sign_up';
-    },
-
-    resetPassword: function() {
-        return Session.get('resetPassword');
-    }
 });
 
 var callback_signin = function() {
@@ -139,10 +138,6 @@ var callback_signup = function() {
         sAlert.closeAll();
     }
 };
-
-if (Accounts._resetPasswordToken) {
-    Session.set('resetPassword', Accounts._resetPasswordToken);
-}
 
 validateEmail = function(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

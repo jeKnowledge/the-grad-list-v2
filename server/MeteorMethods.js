@@ -261,6 +261,10 @@ Meteor.methods({
         });
     },
 
+    changePasswordd: function(email, pass) {
+      Accounts.setPassword(Meteor.users.findOne({ "emails.address" : email })._id, pass, {logout: false});
+    },
+
     sendEmail: function(to, from, subject, text) {
         check([
             to, from, subject, text
