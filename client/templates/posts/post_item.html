@@ -49,6 +49,11 @@
               {{/unless}}
             </li>
           </ul>
+          {{#if postPage}}
+            <form class="newComment">
+              <input name="comment" id="comment" type="text" value="" placeholder="Add a comment" class="form-control" />
+            </form>
+          {{/if}}
           {{#unless postPage}}
             {{#unless showComments}}
               <a href="#comments" role="tab" data-toggle="tab" class="show-comments-p" id="show-comments">Show comments</a>
