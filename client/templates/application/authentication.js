@@ -31,7 +31,7 @@ Template.authentication.events({
                     offset: '80px'
                 });
             }
-            Meteor.call("loginFacebook", Meteor.userId());
+            Meteor.call("loginFacebook");
         });
     },
 

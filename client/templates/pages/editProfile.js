@@ -10,20 +10,8 @@ Template.editProfile.events({
         const country = $(e.target).find('[name=country]').val();
         const university = $(e.target).find('[name=university]').val();
         const username = $(e.target).find('[name=username]').val();
-        const email = $(e.target).find('[name=email]').val();
         const pass = $(e.target).find('[name=password]').val();
         const confirmPass = $(e.target).find('[name=confirm-password]').val();
-        var checkEmail = validateEmail(email);
-        if (checkEmail === false) {
-            sAlert.error('Invalid email', {
-                effect: 'slide',
-                position: 'bottom-right',
-                timeout: '3000',
-                onRouteClose: false,
-                stack: false,
-                offset: '80px'
-            });
-        }
         if (pass != confirmPass) {
             sAlert.error('Passwords do not match', {
                 effect: 'slide',
@@ -46,24 +34,10 @@ Template.editProfile.events({
                 });
             }
             else {
-                Meteor.call('doesEmailExist', email, function(error, result) {
-                    if (result === true && email != Session.get("email")) {
-                        sAlert.error('Email already exists', {
-                            effect: 'slide',
-                            position: 'bottom-right',
-                            timeout: '3000',
-                            onRouteClose: false,
-                            stack: false,
-                            offset: '80px'
-                        });
-                    }
-                    else {
-                        if (pass == confirmPass && checkEmail === true) {
-                          Meteor.call("editProfile", bio, country, university, email, username, Meteor.userId(), pass);
-                          Router.go("/");
-                        }
-                    }
-                });
+                if (pass == confirmPass) {
+                  Meteor.call("editProfile", bio, country, university, username, pass);
+                  Router.go("/");
+                }
               }
         });
     },
@@ -141,11 +115,6 @@ Template.editProfile.helpers({
         } else {
             return false;
         }
-    },
-
-    email: function() {
-      Session.set("email", Meteor.user().emails[0].address);
-      return Meteor.user().emails[0].address;
     },
 
     username: function() {
