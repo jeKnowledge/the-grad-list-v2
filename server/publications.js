@@ -37,8 +37,6 @@ Meteor.publish("usersData", function() {
         return Meteor.users.find({}, {
             fields: {
                 "username": true,
-                "email": true,
-                _id: true,
                 follows: true,
                 followed: true,
                 'services.facebook.name': true,

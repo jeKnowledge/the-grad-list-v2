@@ -24,13 +24,7 @@ Template.postComplete.onCreated(function() {
 Template.postComplete.events({
     'submit form': function(e) {
         e.preventDefault();
-        Posts.update({
-            _id: this._id
-        }, {
-            $push: {
-                imagesOfCompletion: Session.get("picture") || 0
-            }
-        });
+        Meteor.call("updateImagesCompletion", this._id, Session.get("picture"));
         Meteor.call("medals");
         Router.go("/");
     },

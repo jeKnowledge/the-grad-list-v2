@@ -40,10 +40,11 @@ ostrio:files
 email
 shmck:meteor-social-buttons
 pauldowman:dotenv
-check@1.2.3
+check
 ejson@1.0.12
 shell-server
 simple:imgur
 u2622:persistent-session
 http
 random
+ddp-rate-limiter

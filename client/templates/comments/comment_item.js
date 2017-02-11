@@ -8,9 +8,6 @@ Template.commentItem.helpers({
     },
 
     hasProfilePicture: function() {
-        console.log(Meteor.users.findOne({
-                "_id": this.owner
-            }).image);
         if (Meteor.users.findOne({
                 "_id": this.owner
             }).image == 'grad.png') {

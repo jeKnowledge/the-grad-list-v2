@@ -1,5 +1,5 @@
 Meteor.methods({
-    loginFacebook: function(id) {
+    loginFacebook: function() {
         Meteor.users.update(Meteor.userId(), {
             $set: {
                 username: Meteor.user().services.facebook.name,
@@ -17,13 +17,8 @@ Meteor.methods({
         });
     },
 
-    findEmailByUsername: function(username) {
-        return Meteor.users.findOne({
-            "username": username
-        }).emails[0].address;
-    },
-
     completePost: function(id) {
+        check(id, String);
         Posts.update({
             _id: id
         }, {
@@ -44,6 +39,7 @@ Meteor.methods({
     },
 
     doesUserExist: function(name) {
+        check(name, String);
         var user_exists = Meteor.users.findOne({
             username: name
         }, {
@@ -58,9 +54,10 @@ Meteor.methods({
         }
     },
 
-    doesEmailExist: function(name) {
+    doesEmailExist: function(email) {
+      check(email, String);
       var email_exists = Meteor.users.findOne({
-          "emails.address": name
+          "emails.address": email
       }, {
           fields: {
               "_id": 1
@@ -74,6 +71,7 @@ Meteor.methods({
     },
 
     deletePost: function(id) {
+        check(id, String);
         if (Meteor.userId() == Posts.findOne({
                 "_id": id
             }).owner) {
@@ -114,6 +112,7 @@ Meteor.methods({
     },
 
     deleteComment: function(id) {
+        check(id, String);
         if (Meteor.userId() == Comments.findOne({
                 _id: id
             }).owner) {
@@ -122,6 +121,7 @@ Meteor.methods({
     },
 
     forkPost: function(id) {
+        check(id, String);
         var post2 = {
             title: Posts.findOne({
                 _id: id
@@ -158,6 +158,7 @@ Meteor.methods({
     },
 
     likePost: function(id) {
+        check(id, String);
         Posts.update(Posts.findOne({
             _id: id
         }), {
@@ -168,6 +169,7 @@ Meteor.methods({
     },
 
     dislikePost: function(id) {
+        check(id, String);
         Posts.update(Posts.findOne({
             _id: id
         }), {
@@ -177,7 +179,20 @@ Meteor.methods({
         });
     },
 
+    updateImagesCompletion: function(id, picture) {
+      check(id, String);
+      check(picture, String);
+      Posts.update({
+          _id: id
+      }, {
+          $push: {
+              imagesOfCompletion: picture || 0
+          }
+      });
+    },
+
     followId: function(id) {
+        check(id, String);
         Meteor.users.update(Meteor.userId(), {
             $addToSet: {
                 follows: id
@@ -193,6 +208,7 @@ Meteor.methods({
     },
 
     unfollowId: function(id) {
+        check(id, String);
         Meteor.users.update(Meteor.userId(), {
             $pull: {
                 follows: id
@@ -208,6 +224,8 @@ Meteor.methods({
     },
 
     addCommentToPost: function(postId, commentId) {
+        check(postId, String);
+        check(postId, String);
         var temp = Posts.findOne({
             _id: postId
         }).comments;
@@ -219,20 +237,25 @@ Meteor.methods({
         });
     },
 
-    editProfile: function(s_bio, s_country, s_university, s_email, s_username, id, pass) {
+    editProfile: function(s_bio, s_country, s_university, s_username, pass) {
+        check(s_bio, String);
+        check(s_country, String);
+        check(s_university, String);
+        check(s_username, String);
+        check(pass, String);
         Meteor.users.update(Meteor.userId(), {
             $set: {
                 bio: s_bio,
                 country: s_country,
                 university: s_university,
-                'emails.0.address': s_email,
                 username: s_username
             }
         });
-        Accounts.setPassword(id, pass, {logout: false});
+        Accounts.setPassword(this.userId, pass, {logout: false});
     },
 
     add_image: function(id) {
+        check(id, String);
         Meteor.users.update(Meteor.userId(), {
             $set: {
                 image: id,
@@ -252,6 +275,7 @@ Meteor.methods({
     },
 
     increment_tag: function(tag_name) {
+        check(tag_name, String);
         Tags.update({
             title: tag_name
         }, {
@@ -262,21 +286,23 @@ Meteor.methods({
     },
 
     changePasswordd: function(email, pass) {
+      check(email, String);
+      check(pass, String);
       Accounts.setPassword(Meteor.users.findOne({ "emails.address" : email })._id, pass, {logout: false});
     },
 
     sendEmail: function(to, from, subject, text) {
-        check([
-            to, from, subject, text
-        ], [String]);
-        // Let other method calls from the same client start running,
-        // without waiting for the email sending to complete.
-        this.unblock();
-        Email.send({
-            to: to,
-            from: from,
-            subject: subject,
-            text: text
-        });
+      check([
+          to, from, subject, text
+      ], [String]);
+      // Let other method calls from the same client start running,
+      // without waiting for the email sending to complete.
+      this.unblock();
+      Email.send({
+          to: to,
+          from: from,
+          subject: subject,
+          text: text
+      });
     }
 });
