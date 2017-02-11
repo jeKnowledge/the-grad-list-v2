@@ -47,3 +47,4 @@ simple:imgur
 u2622:persistent-session
 http
 random
+ddp-rate-limiter
